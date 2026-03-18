@@ -27,6 +27,161 @@ When tasks involve data retrieval, automation, or reporting, expect to write or 
 
 Credentials and API keys are managed externally — never hardcode them; always read from environment variables or a local `.env` file (not committed).
 
+## Shopify App & API Setup
+
+### Dev Dashboard
+The current Shopify developer tooling is centred on the **Dev Dashboard** at `dev.shopify.com/dashboard` (also accessible via Shopify Admin → store name → Dev Dashboard, or via Partners Dashboard → App distribution → Visit Dev Dashboard). This replaced the old Private Apps model.
+
+**Reference docs:** https://shopify.dev/docs/apps/build/dev-dashboard
+
+### App type for internal automation
+For server-side scripts and automation (product creation, inventory sync, etc.) the correct approach is an **organisation app** using the **client credentials grant** — not a custom app created in Shopify Admin, and not a public app.
+
+- Create the app in the Dev Dashboard
+- Credentials (Client ID + Client Secret) are on the app's Settings page
+- Exchange client ID + secret for a short-lived access token (valid 24 h):
+  ```
+  POST https://{shop}.myshopify.com/admin/oauth/access_token
+  Body: client_id=... & client_secret=... & grant_type=client_credentials
+  ```
+- Use the returned token in all API requests: `X-Shopify-Access-Token: {token}`
+- This flow requires no user interaction — suitable for scripts and cron jobs
+
+**Reference docs:** https://shopify.dev/docs/apps/build/authentication-authorization
+
+### Base client module
+All Shopify scripts must use `scripts/shopify_client.py` — do not reimplement auth or sessions. It handles token acquisition, caching, refresh, and session lifecycle via the `ShopifyAPI` library (`pip install ShopifyAPI`). Usage:
+
+```python
+from scripts.shopify_client import ShopifyClient
+
+with ShopifyClient() as client:
+    data = client.execute("{ shop { name } }")
+```
+
+### Admin API
+Shopify's preferred API is **GraphQL** (not REST). Current stable version: `2026-01`.
+
+**Endpoint:** `POST https://{shop}.myshopify.com/admin/api/2026-01/graphql.json`
+
+Use `productCreate` mutation for product creation. Rate limiting is cost-based (GraphQL) rather than call-count-based (REST).
+
+**Reference docs:** https://shopify.dev/docs/api/admin-graphql
+
+### Required scopes (product management)
+- `write_products` — create/update products and variants
+- `read_products` — query existing products (for idempotency checks)
+- `write_inventory` — manage inventory levels (if needed)
+
+### Env vars convention
+```
+SHOPIFY_STORE_DOMAIN=mowdirect.myshopify.com
+SHOPIFY_CLIENT_ID=...
+SHOPIFY_CLIENT_SECRET=...
+SHOPIFY_API_VERSION=2026-01
+```
+Never commit `.env`; never hardcode credentials.
+
+## Mirakl Marketplace API
+
+**Reference docs:** https://developer.mirakl.com/content/product/mmp/rest/seller/openapi3
+
+### Overview
+Mirakl is the white-label platform powering several retailer marketplaces. Each retailer runs an independent instance with its own base URL and API key — the API surface is identical across all of them.
+
+**Current instances:**
+
+| Marketplace | Operator | Channel code | Base URL |
+|---|---|---|---|
+| B&Q UK | Kingfisher | `BQ_UK` | `https://marketplace.kingfisher.com/api` |
+| Tesco | Tesco | TBC | TBC — separate account needed |
+| The Range | The Range | TBC | TBC — separate account needed |
+
+### Authentication
+Static API key passed as `Authorization` header — no OAuth, no expiry.
+
+```
+GET https://{instance-base-url}/orders
+Header: Authorization: {api_key}
+```
+
+### Key endpoints
+
+| Endpoint | Method | Purpose |
+|---|---|---|
+| `/orders` | GET | Retrieve orders |
+| `/offers` | GET | Retrieve active offers/listings |
+| `/offers` | POST | Create/update listings |
+| `/offers/imports` | POST | Bulk listing import |
+| `/inventory/imports` | POST | Bulk stock update |
+
+### Base client module
+All Mirakl scripts must use `scripts/mirakl_client.py`. Supports multiple instances via named env vars. Usage:
+
+```python
+from scripts.mirakl_client import MiraklClient
+
+client = MiraklClient("KINGFISHER")
+orders = client.get("/orders")
+```
+
+### Env vars convention
+```
+MIRAKL_KINGFISHER_BASE_URL=https://marketplace.kingfisher.com/api
+MIRAKL_KINGFISHER_API_KEY=...
+
+MIRAKL_TESCO_BASE_URL=...
+MIRAKL_TESCO_API_KEY=...
+
+MIRAKL_THERANGE_BASE_URL=...
+MIRAKL_THERANGE_API_KEY=...
+```
+
+## BaseLinker (Base.com) API
+
+**Reference docs:** https://api.baselinker.com/
+
+### Overview
+BaseLinker (rebranded as Base.com) is the central order management and marketplace sync platform. It aggregates orders from Amazon, eBay, ManoMano, OnBuy and other channels, and links to Shopify as an external storage.
+
+### API style
+RPC over HTTP POST — single endpoint, `method` parameter selects the operation:
+
+```
+POST https://api.baselinker.com/connector.php
+Header: X-BLToken: {token}
+Body:   method=getOrders&parameters={"date_from": 1234567890}
+```
+
+- **Auth:** Static API token from BaseLinker panel → Account → My Account → API. No OAuth, no expiry — token is long-lived.
+- **Rate limit:** 100 requests/minute
+- **Response:** JSON, UTF-8
+
+### Key method groups
+
+| Group | Methods |
+|---|---|
+| Orders | `getOrders`, `addOrder`, `setOrderStatus`, `setOrderPayment` |
+| Product Catalog | `getInventoryProductsList`, `getInventoryProductsData`, `addInventoryProduct`, `deleteInventoryProduct` |
+| Stock & Pricing | `updateInventoryProductsStock`, `updateInventoryProductsPrices`, `getInventoryProductsPrices` |
+| External Storages | `getExternalStoragesList`, `getExternalStorageProductsData`, `updateExternalStorageProductsQuantity` |
+| Invoices | `addInvoice`, `getInvoices`, `getInvoiceFile` |
+
+### Base client module
+All BaseLinker scripts must use `scripts/baselinker_client.py` — do not reimplement the HTTP layer. Usage:
+
+```python
+from scripts.baselinker_client import BaseLinkerClient
+
+client = BaseLinkerClient()
+orders = client.call("getOrders", {"date_from": 1234567890})
+```
+
+### Env vars convention
+```
+BASELINKER_API_TOKEN=...
+```
+
 ## Business Context
 
 **Company:** MowDirect (operated by Wayne Theisinger / Compass)

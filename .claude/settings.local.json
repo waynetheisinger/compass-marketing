@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.mowdirect.co.uk)",
+      "WebSearch",
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(gh project view:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh project field-list:*)",
+      "Bash(gh project item-list:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh project list:*)",
+      "Bash(gh label list:*)",
+      "Bash(gh api:*)",
+      "Bash(gh issue list:*)",
+      "Bash(while read id)",
+      "Bash(do gh project item-delete 2 --owner waynetheisinger --id \"$id\")",
+      "Bash(done)",
+      "Bash(REPO=\"waynetheisinger/mowdirect-empire\")",
+      "Bash(__NEW_LINE_631db112465c89f7__ gh api repos/$REPO/milestones -f title=\"Phase 1: Foundations\" -f description=\"Feb-Mar 2026: Technical setup, feed optimisation, marketplace onboarding, campaign architecture\" -f due_on=\"2026-03-31T23:59:59Z\")",
+      "Bash(__NEW_LINE_631db112465c89f7__ gh api repos/$REPO/milestones -f title=\"Phase 2: Spring Peak\" -f description=\"Apr-Jun 2026: Peak season execution, maximum paid spend, affiliate launch, influencer content wave\" -f due_on=\"2026-06-30T23:59:59Z\")",
+      "Bash(__NEW_LINE_631db112465c89f7__ gh api repos/$REPO/milestones -f title=\"Phase 3: Summer Scale\" -f description=\"Jul-Sep 2026: Optimise based on Q2 data, YouTube launch, autumn range pivot, loyalty programme\" -f due_on=\"2026-09-30T23:59:59Z\")",
+      "Bash(__NEW_LINE_631db112465c89f7__ gh api repos/$REPO/milestones -f title=\"Phase 4: Q4 Push\" -f description=\"Oct-Dec 2026: Black Friday execution, clearance, direct mail, 2027 planning\" -f due_on=\"2026-12-31T23:59:59Z\")",
+      "WebFetch(domain:shopify.dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:shopify.github.io)",
+      "WebFetch(domain:api.baselinker.com)",
+      "WebFetch(domain:developer.ebay.com)",
+      "WebFetch(domain:developer.mirakl.com)"
+    ]
+  }
+}
