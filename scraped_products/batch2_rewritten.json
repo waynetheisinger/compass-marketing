@@ -1,0 +1,124 @@
+[
+  {
+    "title": "Spectrum SBSCDC 40V Dual Battery Charger (2A Fast Charge)",
+    "description_html": "<h2>Charge Two Batteries at Once — Spectrum 40V Dual Fast Charger</h2><p>When one battery isn't enough to get through the job, the <strong>Spectrum SBSCDC Dual Battery Charger</strong> keeps you moving. Charge two Spectrum 40V lithium-ion batteries simultaneously — both at a full <strong>2A output</strong> — so you're never waiting idle while your tools sit unused.</p><p>At 2A per port, it replenishes a 2.0Ah battery in roughly an hour and a 4.0Ah pack in around two. Run one tool continuously by rotating two batteries through the charger, or simply top up your full kit in a single charging session.</p><p>The unit is compact for a dual charger — <strong>20×17×9cm</strong> and just <strong>750g</strong> — and sits neatly on a workbench, shelf, or in a tool store. Built-in charge management monitors each port independently, cutting off automatically at full capacity to protect battery health regardless of which battery finishes first.</p><p>Compatible with all Spectrum 40V lithium-ion batteries (2.0Ah and 4.0Ah).</p>",
+    "vendor": "Spectrum",
+    "product_type": "Battery Chargers",
+    "status": "active",
+    "sku": "SBSCDC",
+    "barcode": "5065022450702",
+    "price": "44.95",
+    "metafields": {
+      "custom.display_attributes": [
+        { "code": "cord_battery_power", "label": "Output",            "value": "40V / 2A (per port)" },
+        { "code": "charging_ports",     "label": "Charging Ports",    "value": "2 (simultaneous)" },
+        { "code": "dimensions",         "label": "Dimensions",        "value": "20cm × 17cm × 9cm" },
+        { "code": "product_weight",     "label": "Product Weight",    "value": "750g" }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>Charges two Spectrum 40V batteries simultaneously</li>\n<li>2A per port — replenishes a 2.0Ah battery in ~1 hour, 4.0Ah in ~2 hours</li>\n<li>Independent charge management on each port — auto cut-off at full capacity</li>\n<li>Compatible with all Spectrum 40V lithium-ion batteries (2.0Ah and 4.0Ah)</li>\n<li>Compact design (20×17×9cm) — fits neatly on a workbench or shed shelf</li>\n<li>Lightweight at 750g</li>\n</ul>",
+      "custom.bullet_two": "Charges two batteries simultaneously — keep one in the tool while one charges",
+      "custom.bullet_three": "2A per port — a 2.0Ah battery replenished in around an hour",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBSCDC-Twin-Battery-Charger-Main.webp",
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBSCDC-Twin-Battery-Charger-Close.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-dual-battery-charger-40v-2a-fast-charger/"
+  },
+  {
+    "title": "Spectrum SBS20CB 40V 2.0Ah Lithium-Ion Battery Pack",
+    "description_html": "<h2>Reliable 40V Power for Lighter Sessions — Spectrum 2.0Ah Battery</h2><p>The <strong>Spectrum SBS20CB 40V 2.0Ah Battery Pack</strong> is the compact, lightweight entry point to Spectrum's 40V cordless system. Built with high-quality <strong>18650 lithium-ion cells</strong>, it delivers consistent, stable voltage throughout the discharge cycle — no dropoff, no hesitation, just reliable power from start to finish.</p><p>At 2.0Ah it's ideally suited to lighter tools and shorter sessions: trimming, blowing, a quick tidy-up of a small lawn. At just <strong>710g</strong> and a pocket-sized <strong>9×8×15cm</strong>, it keeps your tool feeling nimble and easy to handle, with no unnecessary bulk.</p><p>As a spare to your 4.0Ah pack, or as a dedicated battery for your lighter Spectrum tools, the SBS20CB offers an affordable way to extend your cordless system without compromise. It fits and works with every Spectrum 40V tool and charges with any Spectrum 40V charger — standard, fast, or dual.</p>",
+    "vendor": "Spectrum",
+    "product_type": "Garden Tool Batteries",
+    "status": "active",
+    "sku": "SBS20CB",
+    "barcode": "5065022450672",
+    "price": "34.95",
+    "metafields": {
+      "custom.display_attributes": [
+        { "code": "cord_battery_capacity",             "label": "Battery Capacity",  "value": "2.0Ah" },
+        { "code": "attribute_voltage",                 "label": "Battery Voltage",   "value": "40V" },
+        { "code": "attribute_battery_cell_type",       "label": "Cell Type",         "value": "18650 Lithium-Ion" },
+        { "code": "product_weight",                    "label": "Product Weight",    "value": "710g" },
+        { "code": "dimensions",                        "label": "Dimensions",        "value": "9cm × 8cm × 15cm" }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>40V 2.0Ah — lightweight power for shorter sessions and lighter tools</li>\n<li>18650 lithium-ion cells for stable, consistent output</li>\n<li>Compact and lightweight at 710g — keeps tools nimble and easy to handle</li>\n<li>Compatible with all Spectrum 40V cordless tools</li>\n<li>Charges with any Spectrum 40V charger (standard, fast, or dual)</li>\n<li>Ideal as a spare alongside the 4.0Ah pack for continuous runtime</li>\n</ul>",
+      "custom.bullet_two": "Lightweight at 710g — keeps your tool nimble without sacrificing performance",
+      "custom.bullet_three": "Compatible with all Spectrum 40V tools and chargers",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS-Battery-Side.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-40v-lithium-ion-battery-pack-2-0ah/"
+  },
+  {
+    "title": "Spectrum SBS220CHM 22cm Cordless Handy Mower (Tool Only)",
+    "description_html": "<h2>Spectrum SBS220CHM — The Mower That Goes Where Others Can't</h2><p>Small lawns, awkward corners, tight edges around borders and obstacles — the <strong>Spectrum SBS220CHM Cordless Handy Mower</strong> is built for exactly these situations. At just <strong>3.8kg</strong>, it's one of the lightest cordless mowers you'll find, and its compact <strong>22cm cutting deck</strong> lets you work into spaces that a full-size mower can't reach.</p><p>Despite its compact dimensions, the SBS220CHM doesn't compromise on quality. A <strong>high-efficiency brushless motor</strong> provides reliable performance, longer battery life per charge, and less ongoing maintenance than a brushed equivalent. Spinning at 6,000rpm, it cuts cleanly and consistently across the cutting height range.</p><p>Three central height settings from <strong>30mm to 50mm</strong> let you adapt to the season and your lawn's condition. The built-in <strong>mulching function</strong> returns finely chopped clippings directly to the lawn — feeding the soil and eliminating the need to collect and dispose of grass waste.</p><p>The flexible handle folds down for compact storage, and the balanced weight distribution makes it easy to lift over steps, carry between areas, or store vertically in a shed or cupboard.</p><p><em>Tool-only model. Compatible with Spectrum 2.0Ah and 4.0Ah batteries and all Spectrum 40V chargers, all available separately.</em></p>",
+    "vendor": "Spectrum",
+    "product_type": "Cordless Lawnmowers",
+    "status": "active",
+    "sku": "SBS220CHM",
+    "barcode": "5065022450627",
+    "price": "69.95",
+    "metafields": {
+      "custom.display_attributes": [
+        { "code": "manufacturer",          "label": "Manufacturer",          "value": "Spectrum" },
+        { "code": "motor",                 "label": "Motor",                 "value": "Brushless" },
+        { "code": "cutting_deck_size_cm",  "label": "Cutting Deck",          "value": "22cm" },
+        { "code": "cutting_heights",       "label": "Cutting Heights",       "value": "30–50mm (3 Positions)" },
+        { "code": "mulching",              "label": "Mulching",              "value": "Yes" },
+        { "code": "drive",                 "label": "Drive",                 "value": "Hand-Propelled" },
+        { "code": "cord_battery_included", "label": "Battery Included",      "value": "No – Optional" },
+        { "code": "attribute_charger",     "label": "Charger Included",      "value": "No – Optional" },
+        { "code": "product_weight",        "label": "Product Weight",        "value": "3.8kg" },
+        { "code": "warranty",              "label": "Warranty",              "value": "5 Years (T&Cs Apply)" }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>Ultra-lightweight at 3.8kg — easy to carry, lift, and store</li>\n<li>22cm cutting deck reaches edges and corners a full-size mower can't</li>\n<li>Brushless motor for efficient, low-maintenance performance</li>\n<li>3-stage cutting height adjustment from 30–50mm</li>\n<li>Mulching function returns clippings to the lawn — no collection needed</li>\n<li>Foldable handle for compact storage</li>\n<li>5-year Spectrum manufacturer's warranty (T&Cs apply)</li>\n</ul>",
+      "custom.bullet_two": "Ultra-lightweight at 3.8kg — easy to carry, manoeuvre, and store anywhere",
+      "custom.bullet_three": "22cm deck and compact form reaches every corner a full-size mower misses",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS220CHM-Handy-Mower-Main.webp",
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS220CHM-Handy-Mower-Left.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-sbs220chm-cordless-handy-mower-tool-only/"
+  },
+  {
+    "title": "Spectrum SBS450CHT 40V Cordless Hedge Trimmer, 45cm Blade (Tool Only)",
+    "description_html": "<h2>Spectrum SBS450CHT — Sharp Results, Less Effort</h2><p>Neat hedges don't have to mean hard work. The <strong>Spectrum SBS450CHT Cordless Hedge Trimmer</strong> combines a powerful brushless motor with a precision laser-cut blade to deliver clean, professional-looking results with minimal fatigue.</p><p>The <strong>brushless motor</strong> is a meaningful upgrade over brush-motor alternatives — it runs more efficiently, generates less heat, lasts longer between services, and extracts more runtime from each battery charge. At <strong>2,600 cuts per minute</strong>, the 45cm cutting blade moves through foliage quickly, keeping trimming sessions short and results consistent.</p><p>With an <strong>18mm cutting capacity</strong>, the SBS450CHT handles the thicker, woodier growth found in established hedges without stalling or snagging. The <strong>90° rotating handle</strong> is a genuine practical feature — it lets you switch between horizontal top cuts and vertical face cuts without adjusting your stance or grip, reducing strain on wrists and shoulders during longer sessions.</p><p>At just <strong>2.91kg</strong>, it's light enough to hold overhead comfortably for as long as the job demands, and the 40V Spectrum battery platform means it shares power with your other Spectrum cordless tools.</p><p><em>Tool-only model. Compatible with Spectrum 2.0Ah and 4.0Ah batteries and all Spectrum 40V chargers, available separately.</em></p>",
+    "vendor": "Spectrum",
+    "product_type": "Cordless Hedgetrimmers",
+    "status": "active",
+    "sku": "SBS450CHT",
+    "barcode": "5065022450658",
+    "price": "59.95",
+    "metafields": {
+      "custom.display_attributes": [
+        { "code": "manufacturer",       "label": "Manufacturer",     "value": "Spectrum" },
+        { "code": "cord_battery_power", "label": "Battery Voltage",  "value": "40V" },
+        { "code": "blade_length",       "label": "Cutting Length",   "value": "45cm" },
+        { "code": "cutting_capacity",   "label": "Cutting Capacity", "value": "18mm" },
+        { "code": "blade_strokes",      "label": "Blade Speed",      "value": "2,600 cuts/min" },
+        { "code": "cutting_angle",      "label": "Handle Rotation",  "value": "90° Adjustable" },
+        { "code": "product_weight",     "label": "Product Weight",   "value": "2.91kg" },
+        { "code": "warranty",           "label": "Warranty",         "value": "5 Years (T&Cs Apply)" }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>Brushless motor — more efficient, longer-lasting, lower maintenance than brush motors</li>\n<li>2,600 cuts/min for fast, smooth trimming in fewer passes</li>\n<li>45cm laser-cut blade with 18mm cutting capacity for established hedges</li>\n<li>90° rotating handle — switch between top cuts and face cuts without changing stance</li>\n<li>Lightweight at 2.91kg — comfortable to hold overhead for extended use</li>\n<li>Compatible with all Spectrum 40V batteries and chargers</li>\n<li>5-year Spectrum manufacturer's warranty (T&Cs apply)</li>\n</ul>",
+      "custom.bullet_two": "Brushless motor for better efficiency, longer runtime, and reduced maintenance",
+      "custom.bullet_three": "90° rotating handle — switch between top and face cuts without moving your feet",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS560CHT-Cordless-Hedge-Trimmer-Main.webp",
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS560CHT-Cordless-Hedge-Trimmer-Left.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-sbs450cht-cordless-hedge-trimmer-battery-powered-48v/"
+  }
+]

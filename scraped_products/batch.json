@@ -1,0 +1,288 @@
+[
+  {
+    "title": "SPECTRUM SBS460CLM Self Propelled Cordless Lawn Mower (Tool Only)",
+    "description_html": "<p><strong>SPECTRUM SBS460CLM Self Propelled Cordless Lawn Mower</strong></p><p>Built for power, performance and convenience, the Spectrum SBS460CLM is a robust cordless lawn mower designed to handle medium to larger lawns with ease. Featuring a self-propelled drive system, this mower takes the effort out of cutting, allowing you to cover more ground comfortably and efficiently.</p><p>At its core is a high-performance brushless motor combined with a double battery drive system, delivering consistent power, longer runtime and enhanced durability. The wide 46cm (18″) cutting deck, constructed from durable metal, ensures excellent coverage and a professional-quality finish with every pass.</p><p>The SBS460CLM offers outstanding versatility with its 4-in-1 functionality—choose between collecting, mulching, rear discharge or side discharge depending on your lawn conditions. The large 60L rear grass catcher (half plastic design) reduces the need for frequent emptying, helping you work more efficiently.</p><p>With a 7-stage central height adjustment ranging from 25mm to 75mm, you can easily adapt to different grass lengths and seasonal requirements. Large wheels (7″ front / 10″ rear) fitted with ball bearings provide smooth movement and improved traction across a variety of terrains.</p><p>Despite its powerful build, the mower remains well-balanced and easy to control, making it a reliable choice for demanding garden maintenance.</p><p><strong>Battery &amp; Charging Options:</strong><br>This is a tool-only model, giving you the flexibility to choose your preferred setup. Compatible with optional 2Ah or 4Ah batteries, along with standard, fast, or dual charger options.</p><p><strong>Key Features:</strong></p><ul><li><p>Self-propelled drive for effortless mowing</p></li><li><p>Double battery system for extended runtime and performance</p></li><li><p>Durable 46cm (18″) metal cutting deck</p></li><li><p>Powerful brushless motor for efficiency and longevity</p></li><li><p>7-stage central height adjustment (25–75mm)</p></li><li><p>4-in-1 functionality: collect, mulch, rear discharge, side discharge</p></li><li><p>Large 60L grass catcher for fewer interruptions</p></li><li><p>Ball-bearing wheels (7″ front / 10″ rear) for smooth operation</p></li><li><p>Solid, high-performance design weighing 25.6kg</p></li></ul>",
+    "vendor": "Spectrum",
+    "product_type": "Lawnmowers",
+    "status": "active",
+    "sku": "SBS460CLM",
+    "barcode": "5065022450634",
+    "price": "299.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "manufacturer",
+          "label": "Manufacturer",
+          "value": "Spectrum"
+        },
+        {
+          "code": "motor",
+          "label": "Motor",
+          "value": "900w"
+        },
+        {
+          "code": "cutting_deck_size_cm",
+          "label": "Cutting deck size (cm)",
+          "value": "46cm"
+        },
+        {
+          "code": "cutting_heights",
+          "label": "Cutting Heights",
+          "value": "25 – 75mm (7 Positions)"
+        },
+        {
+          "code": "mulching",
+          "label": "Mulching",
+          "value": "Yes"
+        },
+        {
+          "code": "cord_battery_included",
+          "label": "Battery Included",
+          "value": "No, Optional"
+        },
+        {
+          "code": "attribute_charger",
+          "label": "Charger",
+          "value": "No / Optional"
+        },
+        {
+          "code": "drive",
+          "label": "Drive",
+          "value": "Self Propelled"
+        },
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "25.6 kg"
+        },
+        {
+          "code": "warranty",
+          "label": "Warranty",
+          "value": "5 Years (T&C's Apply)"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>Collects or mulches the grass</li><li>Cordless Battery Lawnmower</li><li>Self-drive via a powerful transmission</li><li>Steel cutter deck confers strength and impact resistance</li><li>‘Bag full’ indicator means you won’t overfill and block the exit chute</li><li>Delivery 2- 5 Working Days</li><li>Extended five-year manufacturer’s warranty</li><li>See below in the Bundle for your battery and charger options</li>\n</ul>",
+      "custom.bullet_two": "Cordless Battery Lawnmower",
+      "custom.bullet_three": "Self-drive via a powerful transmission",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/SBS460CLM.webp",
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS460CLM-Lawnmower-scaled-e1773826074832.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-sbs460clm-self-propelled-cordless-lawn-mower-tool-only/"
+  },
+  {
+    "title": "SPECTRUM SBS40CB 40V Lithium-Ion Battery Pack, 4.0Ah",
+    "description_html": "<p>The SPECTRUM SBS40CB 40V 4.0Ah battery pack delivers powerful, reliable performance using high‑quality 21700 lithium‑ion cells. Compact at just 8×9×15 cm and weighing around 900g, it offers an excellent balance of portability and extended runtime for 40V garden tools and equipment. Built with durable construction and protective features to ensure long service life, this battery provides steady, consistent output in all outdoor conditions. Compatible with the full SPECTRUM SBS40CB system, it’s an essential upgrade for maintaining optimal tool performance, with fast 2–5 day delivery available.</p><p>Compatible with Spectrum products.</p>",
+    "vendor": "",
+    "product_type": "Lawnmowers",
+    "status": "active",
+    "sku": "SBS40CB",
+    "barcode": "5065022450689",
+    "price": "99.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "0.9kg"
+        },
+        {
+          "code": "dimensions",
+          "label": "Dimensions",
+          "value": "8cm x 9cm x 15cm"
+        },
+        {
+          "code": "cord_battery_capacity",
+          "label": "Battery Capacity",
+          "value": "4Ah"
+        },
+        {
+          "code": "attribute_battery_cell_composition",
+          "label": "Battery cell composition",
+          "value": "Lithium Ion"
+        },
+        {
+          "code": "cord_battery_power",
+          "label": "Battery Power",
+          "value": "40v – 4Ah"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>2 to 5 working day delivery</li><li>40V 4.0Ah lithium battery pack providing reliable power for cordless garden tools and equipment.</li><li>Measures 8x9x15 centimetres, making it easy to handle and store whilst maintaining high performance.</li><li>Robust build quality with net weight of 900 grams, engineered for long-lasting performance.</li><li>Designed for use with SPECTRUM tools and equipment.</li><li>Part of the professional 40V battery system, perfect for demanding garden maintenance tasks.</li>\n</ul>",
+      "custom.bullet_two": "40V 4.0Ah lithium battery pack providing reliable power for cordless garden tools and equipment.",
+      "custom.bullet_three": "Measures 8x9x15 centimetres, making it easy to handle and store whilst maintaining high performance.",
+      "filter.brand": "",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS-Battery-Main.webp",
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS-Battery-Right.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-40v-lithium-ion-battery-pack-4-0ah/"
+  },
+  {
+    "title": "SPECTRUM SBSCBC Standard Battery Charger, 40V 0.5A",
+    "description_html": "<p>The SPECTRUM SBSCBC 40V 0.5A standard battery charger is a reliable power solution for your charging needs. This compact charger, measuring just 8x9x12cm, is designed for efficient and steady charging performance. Each unit is thoughtfully packaged in a protective inner box, ensuring safe delivery and storage. The charger features a standard 0.5A output at 40V, making it suitable for compatible battery systems. Its space-efficient design allows for convenient storage and transport, while the robust construction ensures durability for regular use. The charger comes with clear identification through its unique model number SBSCBC and barcode for easy inventory management. Perfect for both professional and personal applications, this standard charger delivers consistent charging performance when you need it.</p>",
+    "vendor": "",
+    "product_type": "Lawnmowers",
+    "status": "active",
+    "sku": "SBSCBC",
+    "barcode": "5065022450719",
+    "price": "49.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "170g"
+        },
+        {
+          "code": "dimensions",
+          "label": "Dimensions",
+          "value": "8cm x 9cm x 12cm"
+        },
+        {
+          "code": "cord_battery_power",
+          "label": "Battery Power",
+          "value": "40V – 0.5A"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>2–5 day delivery</li><li>Standard 40V charger with a 0.5A output for reliable charging performance.</li><li>Compact 8 × 9 × 12 cm design for easy storage and transport.</li><li>Supplied one per inner box, with 20 units per outer carton for efficient bulk handling.</li><li>SBSCBC model with universal 40V system compatibility with SPECTRUM.</li><li>Durable 170g construction designed for long-term, consistent use.</li>\n</ul>",
+      "custom.bullet_two": "Standard 40V charger with a 0.5A output for reliable charging performance.",
+      "custom.bullet_three": "Compact 8 × 9 × 12 cm design for easy storage and transport.",
+      "filter.brand": "",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBSCBC-Standard-Charger-Main.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-standard-battery-charger-40v-0-5a/"
+  },
+  {
+    "title": "SPECTRUM SBSCSC Single Battery Fast Charger, 40V 2A",
+    "description_html": "<p>Experience efficient charging with this SPECTRUM 40V 2A Fast Charger (Model SBSCSC). This powerful battery charger delivers reliable performance for your 40V devices with a 2-amp charging capacity. Designed with practicality in mind, the compact unit measures just 11x9x17 centimetres, making it easy to store and transport. The charger comes in a sturdy packaging that ensures safe delivery and storage. Perfect for both professional and home use, this fast charger combines functionality with convenience. The robust construction and thoughtful design make it an essential accessory for your 40V battery-powered tools and equipment. Each charger undergoes thorough quality checks to ensure consistent performance and reliability. Whether you’re a DIY enthusiast or a professional, this fast charger delivers the power you need to keep your tools ready for action.</p>",
+    "vendor": "",
+    "product_type": "Cordless Battery Lawnmowers",
+    "status": "active",
+    "sku": "SBSCSC",
+    "barcode": "5065022450696",
+    "price": "99.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "470g"
+        },
+        {
+          "code": "cord_battery_power",
+          "label": "Battery Power",
+          "value": "40V – 2A"
+        },
+        {
+          "code": "dimensions",
+          "label": "Dimensions",
+          "value": "11cm x 9cm x 17cm"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>2–5 day delivery</li><li>40V 2A fast charger designed for efficient and powerful battery charging.</li><li>Compact 11 × 9 × 17 cm size for easy storage and transport.</li><li>Durable 470g construction for long‑lasting, reliable performance.</li><li>EBC20 model engineered specifically for 40V battery systems with precise voltage control.</li><li>Built with integrated safety systems and stable charging circuitry for professional‑grade reliability.</li>\n</ul>",
+      "custom.bullet_two": "40V 2A fast charger designed for efficient and powerful battery charging.",
+      "custom.bullet_three": "Compact 11 × 9 × 17 cm size for easy storage and transport.",
+      "filter.brand": "",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBSCSC-Fast-Charger.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-single-battery-fast-charger-40v-2a/"
+  },
+  {
+    "title": "SPECTRUM SBS480CBV Cordless Handheld Portable Leaf Blower Vacuum, Battery Powered, 48V (Tool only)",
+    "description_html": "<p><span style=\"font-size: 18pt;\"><strong>SBS480CBV Cordless Blower Vac (Tool Only)</strong></span></p><p>Keep your garden neat and tidy all year round with the SBS480CBV Cordless Blower Vac – a versatile and powerful solution for clearing leaves and debris with ease. Designed for convenience and performance, this dual-function machine quickly switches between blowing and vacuuming, making garden maintenance faster and more efficient.</p><p>Powered by a reliable brush motor, the SBS480CBV delivers strong and consistent performance. In blower mode, it produces an impressive air speed of up to 52m/s and a maximum air volume of 264m³/h, allowing you to clear paths, patios, and lawns effortlessly. When switched to vacuum mode, it offers a maximum air speed of 46m/s and a high air volume of 588m³/h, ensuring efficient collection of leaves and garden waste.</p><p>The integrated mulching system, featuring three blades (one static and two rotational), reduces debris at an outstanding 30:1 ratio—helping you fit more into the 12L collection bag and minimise emptying time.</p><p>Designed with user comfort in mind, the adjustable handle ensures better control and handling during use, while the lightweight design at just 4.26kg makes it easy to manoeuvre around the garden.</p><p><strong>Please note:</strong> This is a <em>tool-only</em> product and does not include a battery or charger. Compatible batteries are available in 2.0Ah and 4.0Ah options, along with a choice of three chargers to suit your charging needs.</p><p><strong>Key Features:</strong></p><ul><li><p>Cordless design for maximum freedom of movement</p></li><li><p>Tool-only unit (battery and charger sold separately)</p></li><li><p>Compatible with 2.0Ah and 4.0Ah batteries</p></li><li><p>Choice of three chargers available</p></li><li><p>Powerful brush motor for reliable performance</p></li><li><p>High-performance blower with up to 52m/s air speed</p></li><li><p>Efficient vacuum function with up to 588m³/h air volume</p></li><li><p>Advanced 3-blade mulching system with 30:1 reduction ratio</p></li><li><p>12L collection bag for convenient debris storage</p></li><li><p>Adjustable handle for improved comfort and control</p></li><li><p>Lightweight at only 4.26kg</p></li></ul><p data-is-last-node=\"\" data-is-only-node=\"\">Perfect for keeping your outdoor spaces clean and tidy, the SBS480CBV Cordless Blower Vac is an essential tool for any garden.</p>",
+    "vendor": "",
+    "product_type": "Cordless Leaf Blowers",
+    "status": "active",
+    "sku": "SBS480CBV",
+    "barcode": "5065022450641",
+    "price": "79.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "5.2kg"
+        },
+        {
+          "code": "cord_battery_power",
+          "label": "Battery Power",
+          "value": "40V"
+        },
+        {
+          "code": "air_flow_volume",
+          "label": "Air flow Volume",
+          "value": "264m2"
+        },
+        {
+          "code": "air_flow_speed",
+          "label": "Air flow Speed",
+          "value": "52m/s"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>Cordless leaf blower vacuum offering full freedom of movement for easy garden maintenance</li><li>Lightweight 4.26 kg build helps reduce fatigue during longer cleaning sessions.</li><li>Dual blower and vacuum functions to efficiently clear and collect garden debris.</li><li>SPECTRUM SBS480CBV model designed for reliable outdoor performance.</li><li>Brush motor for dependable operation.</li><li>Adjustable handle for improved comfort and controlIncludes 3 blades (1 static + 2 rotational) delivering a high mulching rate of 30:1.</li><li>12L collecting bag capacity for efficient debris collection.</li><li>Delivery 2 – 5 working days</li>\n</ul>",
+      "custom.bullet_two": "Lightweight 4.26 kg build helps reduce fatigue during longer cleaning sessions.",
+      "custom.bullet_three": "Dual blower and vacuum functions to efficiently clear and collect garden debris.",
+      "filter.brand": "",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS480CBV-Blower-Vac.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS480CBV-Blower-Vac-Left.png"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-sbs480cbv-cordless-handheld-portable-leaf-blower-vacuum-battery-powered-48v-tool-only/"
+  },
+  {
+    "title": "SPECTRUM SBS240CPHT Cordless Pole Hedge Trimmer, Battery Powered, 48V (Tool only)",
+    "description_html": "<p><strong><span style=\"font-size: 18pt;\">Spectrum SBS240CPHT Cordless Pole Hedge Trimmer (Tool Only)</span></strong></p><p>Tackle tall hedges and hard-to-reach areas with ease using the SBS460PHT Cordless Pole Hedge Trimmer. Designed for extended reach and precise cutting, this tool is ideal for maintaining high and wide hedges without the need for ladders.</p><p>Powered by a dependable brush motor, the SBS460PHT delivers consistent cutting performance for everyday garden maintenance. The 460mm dual-action, laser-cut blade ensures clean and efficient trimming, while the 20mm cutting capacity allows you to handle thicker branches with confidence. With a blade speed of 2600 strokes per minute, you can achieve fast, smooth results every time.</p><p>With an overall machine length of 2.4m, this pole hedge trimmer provides excellent reach, making it perfect for taller hedges and awkward angles. The rotating cutting head, combined with a 180° adjustable trimming angle, gives you maximum flexibility to cut both horizontally and vertically with ease.</p><p>Weighing just 3.62kg, the SBS460PHT remains well-balanced and manageable, helping to reduce fatigue during extended use.</p><p><strong>Please note:</strong> This is a <em>tool-only</em> product. Compatible batteries are available in 2.0Ah and 4.0Ah options, along with a choice of three chargers, allowing you to tailor your setup to suit your requirements.</p><p></p>",
+    "vendor": "Spectrum",
+    "product_type": "Cordless Hedgetrimmers",
+    "status": "active",
+    "sku": "SBS240CPHT",
+    "barcode": "5065022450665",
+    "price": "129.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "manufacturer",
+          "label": "Manufacturer",
+          "value": "Spectrum"
+        },
+        {
+          "code": "cutting_capacity",
+          "label": "Cutting Capacity",
+          "value": "18mm"
+        },
+        {
+          "code": "blade_length",
+          "label": "Blade Length",
+          "value": "46cm"
+        },
+        {
+          "code": "cord_battery_power",
+          "label": "Battery Power",
+          "value": "40V"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>Cordless design for unrestricted movement</li><li>Tool-only unit (battery and charger sold separately)</li><li>Compatible with 2.0Ah and 4.0Ah batteries</li><li>Choice of three chargers available</li><li>Reliable brush motor for consistent performance</li><li>460mm dual-action, laser-cut blade for clean, precise cuts</li><li>Approx. 20mm cutting capacity for thicker branches</li><li>2600/min blade strokes for fast, efficient trimming</li><li>Extended 2.4m reach for tall and hard-to-access hedges</li><li>Rotating cutting head for added versatility</li><li>180° adjustable trimming angle for flexible cutting positions</li><li>Lightweight and well-balanced at 3.62kg</li>\n</ul>",
+      "custom.bullet_two": "Tool-only unit (battery and charger sold separately)",
+      "custom.bullet_three": "Compatible with 2.0Ah and 4.0Ah batteries",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS240CPHT-Pole-Hedge-Trimmer-Main.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-sbs240cpht-cordless-pole-hedge-trimmer-battery-powered-48v/"
+  }
+]

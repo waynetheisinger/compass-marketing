@@ -222,6 +222,39 @@ orders = client.call("getOrders", {"date_from": 1234567890})
 BASELINKER_API_TOKEN=...
 ```
 
+## NumaSuite (compass.openinsure.online)
+
+NumaSuite is a bespoke CRM/ERP platform built for Compass/MowDirect, hosted at `compass.openinsure.online`. It handles internal operations: orders, pick screen, stock management, DPD jobs, tickets/support. Jonathan Macleod is the developer/director.
+
+### Priority 1 — Stock sync (urgent, revenue impact)
+NumaSuite holds the authoritative stock levels across all channels including the **bricks and mortar showroom**. Shopify stock levels are currently inaccurate because:
+- New stock arrivals are not reflected → products show as out of stock when they can be sold (missed sales)
+- Showroom sales reduce physical stock without updating Shopify → overselling risk
+
+**The most important script to build** is a stock sync: read current stock levels from NumaSuite → update Shopify inventory via `write_inventory` scope. Should run frequently (e.g. every 15–30 minutes or on a trigger).
+
+### Priority 2 — Marketing data (customer & purchase history)
+NumaSuite is the richest source of consolidated customer and purchase data across all channels (13,600+ customer records synced from Shopify and all marketplaces). For marketing we pull:
+
+- **Customers** — consolidated contact records (name, email, address) for Klaviyo audiences and segments
+- **Purchase history / Sales** — what each customer bought, when, and for how much. Enables RFM segmentation, lapsed customer campaigns, cross-sell targeting.
+- **Products** — catalogue for cross-referencing purchase history against hero product calendar
+
+### What we do NOT use it for
+We do not push data into NumaSuite — Jonathan has already built that pipeline from the marketplace channels. Our scripts only read from it.
+
+### Authentication
+Standard REST API with token authentication (username/password → token). Credentials in `.env`:
+```
+NUMASUITE_BASE_URL=https://compass.openinsure.online
+NUMASUITE_USERNAME=compassAPI@openinsure.online
+NUMASUITE_PASSWORD=...
+NUMASUITE_ORG_ID=6
+```
+
+### Status
+Read endpoints not yet documented — awaiting API details from Jonathon Macleod.
+
 ## Business Context
 
 **Company:** MowDirect (operated by Wayne Theisinger / Compass)

@@ -1,0 +1,43 @@
+{
+  "title": "SPECTRUM SBS240CPHT Cordless Pole Hedge Trimmer, Battery Powered, 48V (Tool only)",
+  "description_html": "<p><strong><span style=\"font-size: 18pt;\">Spectrum SBS240CPHT Cordless Pole Hedge Trimmer (Tool Only)</span></strong></p><p>Tackle tall hedges and hard-to-reach areas with ease using the SBS460PHT Cordless Pole Hedge Trimmer. Designed for extended reach and precise cutting, this tool is ideal for maintaining high and wide hedges without the need for ladders.</p><p>Powered by a dependable brush motor, the SBS460PHT delivers consistent cutting performance for everyday garden maintenance. The 460mm dual-action, laser-cut blade ensures clean and efficient trimming, while the 20mm cutting capacity allows you to handle thicker branches with confidence. With a blade speed of 2600 strokes per minute, you can achieve fast, smooth results every time.</p><p>With an overall machine length of 2.4m, this pole hedge trimmer provides excellent reach, making it perfect for taller hedges and awkward angles. The rotating cutting head, combined with a 180° adjustable trimming angle, gives you maximum flexibility to cut both horizontally and vertically with ease.</p><p>Weighing just 3.62kg, the SBS460PHT remains well-balanced and manageable, helping to reduce fatigue during extended use.</p><p><strong>Please note:</strong> This is a <em>tool-only</em> product. Compatible batteries are available in 2.0Ah and 4.0Ah options, along with a choice of three chargers, allowing you to tailor your setup to suit your requirements.</p><p></p>",
+  "vendor": "Spectrum",
+  "product_type": "Cordless Hedgetrimmers",
+  "status": "active",
+  "sku": "SBS240CPHT",
+  "barcode": "5065022450665",
+  "price": "129.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Spectrum"
+      },
+      {
+        "code": "cutting_capacity",
+        "label": "Cutting Capacity",
+        "value": "18mm"
+      },
+      {
+        "code": "blade_length",
+        "label": "Blade Length",
+        "value": "46cm"
+      },
+      {
+        "code": "cord_battery_power",
+        "label": "Battery Power",
+        "value": "40V"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>Cordless design for unrestricted movement</li><li>Tool-only unit (battery and charger sold separately)</li><li>Compatible with 2.0Ah and 4.0Ah batteries</li><li>Choice of three chargers available</li><li>Reliable brush motor for consistent performance</li><li>460mm dual-action, laser-cut blade for clean, precise cuts</li><li>Approx. 20mm cutting capacity for thicker branches</li><li>2600/min blade strokes for fast, efficient trimming</li><li>Extended 2.4m reach for tall and hard-to-access hedges</li><li>Rotating cutting head for added versatility</li><li>180° adjustable trimming angle for flexible cutting positions</li><li>Lightweight and well-balanced at 3.62kg</li>\n</ul>",
+    "custom.bullet_two": "Tool-only unit (battery and charger sold separately)",
+    "custom.bullet_three": "Compatible with 2.0Ah and 4.0Ah batteries",
+    "filter.brand": "Spectrum",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS240CPHT-Pole-Hedge-Trimmer-Main.webp"
+  ],
+  "source_url": "https://compassgm.co.uk/product/spectrum-sbs240cpht-cordless-pole-hedge-trimmer-battery-powered-48v/"
+}

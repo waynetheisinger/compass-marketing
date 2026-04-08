@@ -1,0 +1,93 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0\froman\fcharset0 Times New Roman;}{\f1\fswiss\fcharset0 Arial;}}
+{\colortbl;\red0\green0\blue0;\red68\green114\blue196;}
+
+\f1\fs28\b\cf2 MowDirect Internal Reporting Tool \emdash  Design Documentation\cf0\b0\fs20\par
+\par
+\f1\fs18\i Prepared for: Google Ads API Basic Access Application\i0\par
+\f1\fs18 Organisation: Compass / MowDirect\par
+Date: April 2026\par
+\par
+\line
+\par
+
+{\b\fs22 1. Overview}\par
+\par
+MowDirect is a UK-based ecommerce retailer specialising in garden machinery, operating primarily through Shopify with additional sales channels on eBay, Amazon, and B\&Q (Mirakl). This document describes an internal automated reporting tool being developed to consolidate marketing spend and sales performance data from all channels into a single monthly report for internal stakeholders and funders.\par
+\par
+The Google Ads API integration is one component of this broader reporting system. It is used solely to retrieve campaign performance and spend data for inclusion in the monthly report. All campaign management is handled by a third-party partner agency through the Google Ads web interface \emdash  this tool performs read-only data retrieval and does not create, modify, or delete any campaigns, ad groups, or ads.\par
+\par
+
+{\b\fs22 2. Tool Architecture}\par
+\par
+The reporting tool is a Python-based command-line script (\f0\i scripts/monthly_report.py\f1\i0 ) that:\par
+\par
+{\pard\li360
+1. Fetches data from each connected platform API\par
+2. Aggregates fees, ad spend, and gross revenue by channel\par
+3. Writes a formatted Excel workbook to a local reports/ directory\par
+4. Outputs a summary to the terminal\par
+\par}
+
+The tool runs on demand (manually triggered) or can be scheduled via cron. It is deployed on a single internal machine \emdash  it is not a web application, SaaS product, or service offered to third parties.\par
+\par
+
+{\b\fs22 3. Data Sources Connected}\par
+\par
+{\pard\li360
+\b eBay Finances API\b0  \emdash  transaction fees and Promoted Listings ad spend\par
+\b Shopify GraphQL API\b0  \emdash  payment processing fees\par
+\b Mirakl API (B\&Q Kingfisher)\b0  \emdash  marketplace orders and commission invoices\par
+\b Amazon (BaseLinker fallback)\b0  \emdash  gross order value\par
+\b Google Ads API\b0  \emdash  campaign spend by campaign (read-only)\par
+\par}
+
+{\b\fs22 4. Google Ads API Usage}\par
+\par
+{\b 4.1 Access Pattern}\par
+\par
+The tool connects to a single Google Ads customer account (MowDirect\rquote s account, managed by a partner agency). It uses a Manager Account (MCC) created by the developer to authenticate via OAuth 2.0.\par
+\par
+{\b 4.2 API Operations Used}\par
+\par
+Only the following read-only operations are used:\par
+\par
+{\pard\li360
+\b GoogleAdsService.SearchStream\b0  (or Search) \emdash  to query the \f0\i campaign\f1\i0  and \f0\i segments\f1\i0  resources for spend data within a specified date range\par
+\par}
+
+Example query:\par
+{\pard\li360\f0\fs18
+SELECT campaign.name, campaign.status, metrics.cost_micros, metrics.impressions, metrics.clicks\par
+FROM campaign\par
+WHERE segments.date BETWEEN \lquote 2026-03-01\rquote  AND \lquote 2026-03-31\rquote \par
+\f1\fs20\par}
+
+{\b 4.3 Call Volume}\par
+\par
+The tool runs once per month per reporting period. Each run makes a single API query (one report request covering the month). Estimated usage: 1\endash 5 API calls per month, well within Basic Access limits.\par
+\par
+{\b 4.4 Data Handling}\par
+\par
+Retrieved data is written to a local Excel file. No data is stored in a database, transmitted to third parties, or used outside of internal reporting. No customer PII is accessed or stored.\par
+\par
+
+{\b\fs22 5. Authentication}\par
+\par
+Authentication uses OAuth 2.0 with a long-lived refresh token stored in a local \f0\i .env\f1\i0  file on the reporting machine. Credentials are not committed to version control, shared, or distributed.\par
+\par
+
+{\b\fs22 6. Compliance}\par
+\par
+{\pard\li360
+\b\u8226? Read-only:\b0  The tool makes no write operations to Google Ads.\par
+\b\u8226? Single account:\b0  Data is retrieved only for the MowDirect account.\par
+\b\u8226? No resale:\b0  The tool and its output are for internal use only; API access is not resold or redistributed.\par
+\b\u8226? No automation of ad management:\b0  All campaign decisions remain with the partner agency.\par
+\par}
+
+{\b\fs22 7. Summary}\par
+\par
+This is a lightweight internal tool that reads Google Ads campaign spend data once per month for inclusion in a consolidated channel performance report. It does not manage, automate, or interact with campaigns in any way. Basic Access is required because the Explorer token limit (1,000 operations/day) is insufficient even for a single monthly report query.\par
+\par
+}
