@@ -1,0 +1,1844 @@
+{
+  "generated": "2026-04-14T08:17:49.246769",
+  "march_2026": {
+    "net_sales": 504276.88,
+    "gross_sales": 528540.63,
+    "orders": 1815,
+    "by_shopify_type": [
+      {
+        "product_type": "Lawnmowers",
+        "net_sales": 199604.63,
+        "gross_sales": 202896.68,
+        "orders": 1118
+      },
+      {
+        "product_type": "Ride-On Mowers",
+        "net_sales": 98881.88,
+        "gross_sales": 101172.71,
+        "orders": 81
+      },
+      {
+        "product_type": "Lawn Tractors",
+        "net_sales": 62162.54,
+        "gross_sales": 65969.21,
+        "orders": 39
+      },
+      {
+        "product_type": null,
+        "net_sales": 62020.98,
+        "gross_sales": 75125.19,
+        "orders": 95
+      },
+      {
+        "product_type": "Lawn Aerators",
+        "net_sales": 30437.71,
+        "gross_sales": 30437.71,
+        "orders": 100
+      },
+      {
+        "product_type": "Garden Tractor",
+        "net_sales": 11996.67,
+        "gross_sales": 11996.67,
+        "orders": 4
+      },
+      {
+        "product_type": "Tillers & Cultivators",
+        "net_sales": 11101.94,
+        "gross_sales": 11101.94,
+        "orders": 29
+      },
+      {
+        "product_type": "Portable Fuel Cans",
+        "net_sales": 10326.33,
+        "gross_sales": 10326.33,
+        "orders": 307
+      },
+      {
+        "product_type": "Brushcutters/Strimmers",
+        "net_sales": 4501.77,
+        "gross_sales": 4501.77,
+        "orders": 25
+      },
+      {
+        "product_type": "Garden Tractors",
+        "net_sales": 4498.33,
+        "gross_sales": 4498.33,
+        "orders": 2
+      },
+      {
+        "product_type": "Chainsaws",
+        "net_sales": 3353.34,
+        "gross_sales": 4610.01,
+        "orders": 8
+      },
+      {
+        "product_type": "Sweepers",
+        "net_sales": 1440.69,
+        "gross_sales": 1440.69,
+        "orders": 5
+      },
+      {
+        "product_type": "Blowers & Vacs",
+        "net_sales": 1153.73,
+        "gross_sales": 1153.73,
+        "orders": 11
+      },
+      {
+        "product_type": "Trailers",
+        "net_sales": 882.36,
+        "gross_sales": 1395.68,
+        "orders": 8
+      },
+      {
+        "product_type": "Log Splitters",
+        "net_sales": 707.42,
+        "gross_sales": 707.42,
+        "orders": 3
+      },
+      {
+        "product_type": "Chippers",
+        "net_sales": 541.62,
+        "gross_sales": 541.62,
+        "orders": 1
+      },
+      {
+        "product_type": "Hedgetrimmers",
+        "net_sales": 422.49,
+        "gross_sales": 422.49,
+        "orders": 3
+      },
+      {
+        "product_type": "Fuel Cans",
+        "net_sales": 242.45,
+        "gross_sales": 242.45,
+        "orders": 5
+      }
+    ],
+    "categories": {
+      "petrol": {
+        "net_sales": 489685.29,
+        "gross_sales": 502290.46,
+        "orders": 1447,
+        "products": [
+          {
+            "title": "Mountfield MTF66M Compact Rear-Collect & Side-Discharge Ride-On Mower with Gear Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 38098.29,
+            "gross_sales": 38098.29,
+            "orders": 32
+          },
+          {
+            "title": "Spectrum TG46S 3-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 36829.33,
+            "gross_sales": 36829.33,
+            "orders": 218
+          },
+          {
+            "title": "Spectrum DCT38H 38\" Lawn Tractor with Hydrostatic Drive PRE SEASON SPECIAL PRICE!",
+            "product_type": null,
+            "net_sales": 34999.1,
+            "gross_sales": 36665.72,
+            "orders": 22
+          },
+          {
+            "title": "Spectrum DC24-4 Ultra-Compact Rear-Collect/Side-Discharge Ride-On Mower with Manual Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 33082.01,
+            "gross_sales": 33082.01,
+            "orders": 29
+          },
+          {
+            "title": "Mountfield T30M Gear Drive 2-in-1 Lawn Tractor",
+            "product_type": "Lawn Tractors",
+            "net_sales": 31983.36,
+            "gross_sales": 31983.36,
+            "orders": 20
+          },
+          {
+            "title": "Spectrum TG51PD Self-Propelled Petrol Lawnmower (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 29196.99,
+            "gross_sales": 29196.99,
+            "orders": 153
+          },
+          {
+            "title": "Spectrum TG40PD Self-Propelled Petrol Lawnmower (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 25122.99,
+            "gross_sales": 25122.99,
+            "orders": 201
+          },
+          {
+            "title": "Spectrum TG46SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 19831.44,
+            "gross_sales": 19831.44,
+            "orders": 100
+          },
+          {
+            "title": "Spectrum KT400-3 Pro 3-in-1 Petrol Lawn Scarifier/Aerator/Sweeper-Groomer",
+            "product_type": "Lawn Aerators",
+            "net_sales": 19723.4,
+            "gross_sales": 19723.4,
+            "orders": 61
+          },
+          {
+            "title": "Spectrum TG40PD Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 19246.57,
+            "gross_sales": 19496.49,
+            "orders": 156
+          },
+          {
+            "title": "Spectrum TG40SE Self-Propelled Petrol Lawnmower with Electric Start (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 14997.51,
+            "gross_sales": 14997.51,
+            "orders": 90
+          },
+          {
+            "title": "Spectrum DCT38M-SD  38\" Side Discharge and Mulch Lawn Tractor with Manual Drive PRE SEASON SPECIAL PRICE!",
+            "product_type": null,
+            "net_sales": 12749.74,
+            "gross_sales": 12749.74,
+            "orders": 9
+          },
+          {
+            "title": "Mountfield 827M Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 10498.28,
+            "gross_sales": 10498.28,
+            "orders": 9
+          },
+          {
+            "title": "Honda HF 2625 HTE Premium Lawn Tractor",
+            "product_type": null,
+            "net_sales": 9498.34,
+            "gross_sales": 9498.34,
+            "orders": 2
+          },
+          {
+            "title": "Feider HFT200 Scythe-Bar Mower",
+            "product_type": "Lawnmowers",
+            "net_sales": 7990.82,
+            "gross_sales": 7990.82,
+            "orders": 16
+          },
+          {
+            "title": "Mountfield SP185 3-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 7677.5,
+            "gross_sales": 7677.5,
+            "orders": 37
+          },
+          {
+            "title": "Stiga Park 900 WX 4WD V-Twin Front-Cut Ride-On Lawnmower Including Combi Pro 125 QF Deck",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 7165.83,
+            "gross_sales": 7165.83,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum DCT38M-RDM  38\" Lawn Tractor with Manual Drive PRE SEASON SPECIAL PRICE!",
+            "product_type": null,
+            "net_sales": 6333.2,
+            "gross_sales": 6333.2,
+            "orders": 4
+          },
+          {
+            "title": "Spectrum SW420-Expert 2-in-1 Petrol Lawn Scarifier/Aerator",
+            "product_type": "Lawn Aerators",
+            "net_sales": 6174.08,
+            "gross_sales": 6174.08,
+            "orders": 23
+          },
+          {
+            "title": "Mountfield MTF66MQ Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive Ex Demo model",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 5873.3,
+            "gross_sales": 8164.13,
+            "orders": 7
+          },
+          {
+            "title": "Spectrum TG51PD Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 5324.07,
+            "gross_sales": 5324.07,
+            "orders": 28
+          },
+          {
+            "title": "Feider HRTF220 Pro Two-Wheel Rear-Tine Rotary Cultivator",
+            "product_type": "Tillers & Cultivators",
+            "net_sales": 4999.59,
+            "gross_sales": 4999.59,
+            "orders": 12
+          },
+          {
+            "title": "Feider RTF220 Pro Two-Wheel Rear-Tine Rotary Cultivator",
+            "product_type": "Tillers & Cultivators",
+            "net_sales": 4791.7,
+            "gross_sales": 4791.7,
+            "orders": 10
+          },
+          {
+            "title": "Mountfield 1538H Rear-Collect Lawn Tractor with Hydrostatic Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 4665.0,
+            "gross_sales": 6997.5,
+            "orders": 3
+          },
+          {
+            "title": "Mountfield MTF 98M SD Side-Discharge Lawn Tractor with Manual Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 4497.51,
+            "gross_sales": 4497.51,
+            "orders": 3
+          },
+          {
+            "title": "Stiga Tornado 398M Side-Discharge Lawn Tractor",
+            "product_type": "Lawn Tractors",
+            "net_sales": 4497.51,
+            "gross_sales": 4497.51,
+            "orders": 3
+          },
+          {
+            "title": "Harry T92H Rear-Collect Lawn Tractor with Hydrostatic Transmission",
+            "product_type": "Lawn Tractors",
+            "net_sales": 3831.66,
+            "gross_sales": 3831.66,
+            "orders": 2
+          },
+          {
+            "title": "Honda HF 2317 HME Garden Tractor",
+            "product_type": "Garden Tractor",
+            "net_sales": 3582.5,
+            "gross_sales": 3582.5,
+            "orders": 1
+          },
+          {
+            "title": "Harry T84H Rear-Collect Lawn Tractor with Hydrostatic Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 3491.66,
+            "gross_sales": 3491.66,
+            "orders": 2
+          },
+          {
+            "title": "Honda HRD 536 QX Self-Propelled Rear Roller Petrol Lawn Mower",
+            "product_type": "Lawnmowers",
+            "net_sales": 3399.99,
+            "gross_sales": 3399.99,
+            "orders": 3
+          },
+          {
+            "title": "Honda HRN 536 VK Self-Propelled Petrol Lawn Mower",
+            "product_type": null,
+            "net_sales": 3287.5,
+            "gross_sales": 3287.5,
+            "orders": 5
+          },
+          {
+            "title": "Mountfield 2240H Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive",
+            "product_type": "Garden Tractor",
+            "net_sales": 3165.83,
+            "gross_sales": 3165.83,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield 1738H Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive",
+            "product_type": "Garden Tractor",
+            "net_sales": 2749.17,
+            "gross_sales": 2749.17,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield 1638H Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive",
+            "product_type": "Garden Tractor",
+            "net_sales": 2499.17,
+            "gross_sales": 2499.17,
+            "orders": 1
+          },
+          {
+            "title": "Stiga Estate 598 Rear-Collect Lawn Tractor with Hydrostatic Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 2415.83,
+            "gross_sales": 2415.83,
+            "orders": 1
+          },
+          {
+            "title": "Atco GT 38H Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive",
+            "product_type": "Garden Tractors",
+            "net_sales": 2415.83,
+            "gross_sales": 2415.83,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield SP41 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 2199.48,
+            "gross_sales": 2382.77,
+            "orders": 13
+          },
+          {
+            "title": "Stiga Tornado 5108 Side-Discharge Garden Tractor with Hydrostatic Drive",
+            "product_type": "Garden Tractors",
+            "net_sales": 2082.5,
+            "gross_sales": 2082.5,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield 1543H-SD Side-Discharge Lawn Tractor with Hydrostatic Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 1999.17,
+            "gross_sales": 1999.17,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield SP42 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 1867.5,
+            "gross_sales": 1867.5,
+            "orders": 9
+          },
+          {
+            "title": "Mountfield 1328H Compact Rear-Collect Ride-On Mower with Hydrostatic Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 1832.5,
+            "gross_sales": 1832.5,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield 1538H-SD Side-Discharge Lawn Tractor with Hydrostatic Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 1832.5,
+            "gross_sales": 1832.5,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-7310SX Petrol Chainsaw (70cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 1715.0,
+            "gross_sales": 1715.0,
+            "orders": 2
+          },
+          {
+            "title": "Mountfield SP51H 3-in-1 Self-Propelled Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 1704.15,
+            "gross_sales": 1704.15,
+            "orders": 5
+          },
+          {
+            "title": "Spectrum TG56SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 1666.51,
+            "gross_sales": 1666.51,
+            "orders": 4
+          },
+          {
+            "title": "Mountfield 1538M-SD Side-Discharge Lawn Tractor with Manual Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 1499.17,
+            "gross_sales": 1499.17,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG40SE Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 1483.04,
+            "gross_sales": 1483.04,
+            "orders": 8
+          },
+          {
+            "title": "Alpina AT3 98AST Side Discharge Lawn Tractor",
+            "product_type": "Lawn Tractors",
+            "net_sales": 1449.17,
+            "gross_sales": 2923.34,
+            "orders": 2
+          },
+          {
+            "title": "Mountfield S421R-PD Self-Propelled Petrol Rear-Roller Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 1330.0,
+            "gross_sales": 1330.0,
+            "orders": 4
+          },
+          {
+            "title": "Mountfield SP46 Elite 3-in-1 Self-Propelled Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 1263.32,
+            "gross_sales": 1263.32,
+            "orders": 4
+          },
+          {
+            "title": "Spectrum Qingain QG18P Hand Propelled Petrol Lawnmower - WITH FREE BLADE WORTH \u00a324.95!",
+            "product_type": null,
+            "net_sales": 1249.6,
+            "gross_sales": 1374.56,
+            "orders": 11
+          },
+          {
+            "title": "Alpina AT2 66 QA Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 1249.17,
+            "gross_sales": 1249.17,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield SP53 Elite 3-in-1 Self-Propelled Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 1197.51,
+            "gross_sales": 1197.51,
+            "orders": 3
+          },
+          {
+            "title": "Racing 139PTIL63 Petrol Front-Tine Tiller",
+            "product_type": "Tillers & Cultivators",
+            "net_sales": 1094.82,
+            "gross_sales": 1094.82,
+            "orders": 6
+          },
+          {
+            "title": "Feider FRT75BS125  Rear-Collect Ride-On Mower with Manual Drive & Briggs Engine",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 1082.5,
+            "gross_sales": 1082.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG46SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 1041.45,
+            "gross_sales": 1041.45,
+            "orders": 5
+          },
+          {
+            "title": "Honda HRX 476 QY Self-Propelled Rear Roller Petrol Lawn Mower",
+            "product_type": "Lawnmowers",
+            "net_sales": 1004.17,
+            "gross_sales": 2008.34,
+            "orders": 2
+          },
+          {
+            "title": "Mountfield SP46 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 996.68,
+            "gross_sales": 996.68,
+            "orders": 4
+          },
+          {
+            "title": "Masport 500 AL Hand-Propelled  Petrol Lawnmower with Low-Vibration Handlebar",
+            "product_type": "Lawnmowers",
+            "net_sales": 898.34,
+            "gross_sales": 898.34,
+            "orders": 2
+          },
+          {
+            "title": "Mountfield SP53H 3-in-1 Self-Propelled Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 831.66,
+            "gross_sales": 1156.66,
+            "orders": 3
+          },
+          {
+            "title": "Stiga SWS 600 G Self-Propelled Sweeper",
+            "product_type": "Sweepers",
+            "net_sales": 765.83,
+            "gross_sales": 765.83,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield HP42 Hand-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 763.32,
+            "gross_sales": 763.32,
+            "orders": 4
+          },
+          {
+            "title": "Stiga Twinclip 955 VR Variable-Speed Petrol Rear-Roller Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 749.17,
+            "gross_sales": 749.17,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-4510ES Petrol Chainsaw (38cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 748.34,
+            "gross_sales": 748.34,
+            "orders": 2
+          },
+          {
+            "title": "Stiga Combi 753 S 4-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 715.0,
+            "gross_sales": 715.0,
+            "orders": 2
+          },
+          {
+            "title": "Mountfield SP505R-V Variable-Speed Petrol Rear-Roller Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 682.5,
+            "gross_sales": 1365.0,
+            "orders": 2
+          },
+          {
+            "title": "Masport Widecut 800 AL SP Combination 3-in-1 Self-Propelled Petrol Lawnmower with Aluminium Deck",
+            "product_type": "Lawnmowers",
+            "net_sales": 615.83,
+            "gross_sales": 615.83,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum DM26PBV Petrol Blower-Vac (Amazon)",
+            "product_type": "Blowers & Vacs",
+            "net_sales": 583.03,
+            "gross_sales": 583.03,
+            "orders": 7
+          },
+          {
+            "title": "Mountfield SP53 3-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 581.66,
+            "gross_sales": 581.66,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum DM26L Petrol Brushcutter and Strimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 580.81,
+            "gross_sales": 580.81,
+            "orders": 6
+          },
+          {
+            "title": "Echo CS-501SX Petrol Chainsaw (45cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 565.83,
+            "gross_sales": 565.83,
+            "orders": 1
+          },
+          {
+            "title": "Feider FBT220 Petrol Chipper-Shredder",
+            "product_type": "Chippers",
+            "net_sales": 541.62,
+            "gross_sales": 541.62,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield SP555-V 3-in-1 Variable-Speed Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 540.83,
+            "gross_sales": 540.83,
+            "orders": 1
+          },
+          {
+            "title": "Masport Widecut 800 ST SP Combination 3-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 524.17,
+            "gross_sales": 524.17,
+            "orders": 1
+          },
+          {
+            "title": "Stiga Combi 753 V 4-in-1 Variable-Speed Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 507.5,
+            "gross_sales": 507.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum QG20SP  Petrol Self Propelled Lawnmower \u2013 WITH FREE BLADE WORTH \u00a339.95!",
+            "product_type": null,
+            "net_sales": 499.86,
+            "gross_sales": 499.86,
+            "orders": 3
+          },
+          {
+            "title": "Masport Contractor 625 AL Hand-Propelled Petrol Lawnmower with Low-Vibration Handlebar",
+            "product_type": "Lawnmowers",
+            "net_sales": 457.5,
+            "gross_sales": 457.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TY8000V Electric Upright 8-Tonne log Splitter",
+            "product_type": "Log Splitters",
+            "net_sales": 449.17,
+            "gross_sales": 449.17,
+            "orders": 1
+          },
+          {
+            "title": "Honda Izy HRG 416 SK Self Propelled Petrol Lawn Mower",
+            "product_type": "Lawnmowers",
+            "net_sales": 439.12,
+            "gross_sales": 439.12,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield MHT 2322 Petrol Hedgetrimmer",
+            "product_type": "Hedgetrimmers",
+            "net_sales": 422.49,
+            "gross_sales": 422.49,
+            "orders": 3
+          },
+          {
+            "title": "Feider FTDT4125 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 417.33,
+            "gross_sales": 807.84,
+            "orders": 6
+          },
+          {
+            "title": "Stiga SVP 40 G Petrol Scarifier",
+            "product_type": "Lawn Aerators",
+            "net_sales": 415.83,
+            "gross_sales": 415.83,
+            "orders": 1
+          },
+          {
+            "title": "Honda Izy HRG 466 PK Petrol Lawn Mower",
+            "product_type": "Lawnmowers",
+            "net_sales": 411.62,
+            "gross_sales": 411.62,
+            "orders": 1
+          },
+          {
+            "title": "Echo SRM-2621TESU High-Torque Petrol Brushcutter",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 399.17,
+            "gross_sales": 399.17,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield HW531-PD 4-in-1 Self-Propelled Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 390.83,
+            "gross_sales": 390.83,
+            "orders": 1
+          },
+          {
+            "title": "Masport 250 ST SP Combination 3-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 345.83,
+            "gross_sales": 345.83,
+            "orders": 1
+          },
+          {
+            "title": "Atco Liner 16S Self-Propelled Petrol Rear-Roller Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 332.5,
+            "gross_sales": 332.5,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-362WES Petrol Chainsaw (35cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 324.17,
+            "gross_sales": 324.17,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield HP41 Hand-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 315.0,
+            "gross_sales": 315.0,
+            "orders": 2
+          },
+          {
+            "title": "HONDA HHB 25 E Petrol Handheld Leaf Blower",
+            "product_type": "Blowers & Vacs",
+            "net_sales": 287.5,
+            "gross_sales": 287.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum 'Qingain' QG20P Push Petrol Lawnmower \u2013 WITH FREE BLADE WORTH \u00a339.95!",
+            "product_type": null,
+            "net_sales": 283.24,
+            "gross_sales": 424.86,
+            "orders": 3
+          },
+          {
+            "title": "Atco Classic 18S 3-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 282.5,
+            "gross_sales": 282.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG51SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 274.96,
+            "gross_sales": 274.96,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield TR 425 HJ 4-Stroke Curved-Shaft Petrol Grass-Trimmer (Honda Engine)",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 249.17,
+            "gross_sales": 249.17,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum DM26C Curved-Shaft Petrol Grass and weed Strimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 222.51,
+            "gross_sales": 222.51,
+            "orders": 3
+          },
+          {
+            "title": "Stiga SRC 36 V Petrol Front-Tine Tiller",
+            "product_type": "Tillers & Cultivators",
+            "net_sales": 215.83,
+            "gross_sales": 215.83,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield/Stiga Mulching Kit with Blades - for 98cm Rear-Collect Tractors | 299900374/0",
+            "product_type": null,
+            "net_sales": 208.34,
+            "gross_sales": 208.34,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum TY5000H 5 Tonne Log Splitter",
+            "product_type": "Log Splitters",
+            "net_sales": 208.29,
+            "gross_sales": 208.29,
+            "orders": 1
+          },
+          {
+            "title": "Stiga Combi 340 C 3-in-1 Hand-Propelled Electric Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 199.17,
+            "gross_sales": 199.17,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum DM26PB Petrol Leaf Blower",
+            "product_type": "Blowers & Vacs",
+            "net_sales": 183.24,
+            "gross_sales": 183.24,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum Qingain QG18SP Self Propelled Petrol Lawnmower - WITH FREE BLADE WORTH \u00a324.95!",
+            "product_type": null,
+            "net_sales": 158.29,
+            "gross_sales": 474.87,
+            "orders": 3
+          },
+          {
+            "title": "Spectrum DM26H Petrol Brushcutter and Strimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 141.62,
+            "gross_sales": 141.62,
+            "orders": 1
+          },
+          {
+            "title": "Harry BC220SS Petrol Brushcutter",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 124.17,
+            "gross_sales": 124.17,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum DM26PBV Petrol Blower-Vac",
+            "product_type": "Blowers & Vacs",
+            "net_sales": 99.96,
+            "gross_sales": 99.96,
+            "orders": 1
+          },
+          {
+            "title": "Stiga Collection Box for SWS 600 G Self-Propelled Sweeper | 290602020/16",
+            "product_type": null,
+            "net_sales": 87.5,
+            "gross_sales": 87.5,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield Tow Bar - for 84cm & 98cm Rear-Collect Tractors | 299900395/0",
+            "product_type": null,
+            "net_sales": 66.67,
+            "gross_sales": 66.67,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TY5-7 Log Splitter Stand",
+            "product_type": "Log Splitters",
+            "net_sales": 49.96,
+            "gross_sales": 49.96,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-4310SX Petrol Chainsaw (33cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 0.0,
+            "gross_sales": 449.17,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield Princess 38 Electric 4-Wheel Roller Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 0.0,
+            "gross_sales": 165.83,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-7310SX Petrol Chainsaw (50cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 0.0,
+            "gross_sales": 807.5,
+            "orders": 1
+          }
+        ]
+      },
+      "fuel_cans": {
+        "net_sales": 10568.78,
+        "gross_sales": 10568.78,
+        "orders": 416,
+        "products": [
+          {
+            "title": "Spectrum PFC-20G-M Jerry Can \u2013 20 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 7012.4,
+            "gross_sales": 7012.4,
+            "orders": 175
+          },
+          {
+            "title": "Spectrum PFC-10G-M Jerry Can \u2013 10 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 1529.05,
+            "gross_sales": 1529.05,
+            "orders": 77
+          },
+          {
+            "title": "Spectrum Metal Jerry Can Spout - PFC-SPOUT",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 689.23,
+            "gross_sales": 689.23,
+            "orders": 99
+          },
+          {
+            "title": "Spectrum PFC-20R-P Anti Spill Petrol Can \u2013 20 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 553.16,
+            "gross_sales": 553.16,
+            "orders": 21
+          },
+          {
+            "title": "Spectrum PFC-5R-P Anti Spill Petrol Can \u2013 5 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 281.63,
+            "gross_sales": 281.63,
+            "orders": 24
+          },
+          {
+            "title": "20 Litre Khaki Steel Jerry Can (F-2200)",
+            "product_type": "Fuel Cans",
+            "net_sales": 242.45,
+            "gross_sales": 242.45,
+            "orders": 5
+          },
+          {
+            "title": "Spectrum PFC-10R-P Anti Spill Petrol Can \u2013 10 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 230.07,
+            "gross_sales": 230.07,
+            "orders": 14
+          },
+          {
+            "title": "Sealey JCY20G Green Metal Jerry Can - 20 Litres",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 30.79,
+            "gross_sales": 30.79,
+            "orders": 1
+          }
+        ]
+      },
+      "other": {
+        "net_sales": 2897.77,
+        "gross_sales": 14141.35,
+        "orders": 86,
+        "products": [
+          {
+            "title": "Spectrum 122cm Steel Towed Spike-Type Roller Aerator | SP31130",
+            "product_type": "Lawn Aerators",
+            "net_sales": 4124.4,
+            "gross_sales": 4124.4,
+            "orders": 15
+          },
+          {
+            "title": "Spectrum TG50-Utility Lawnmower (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 2166.58,
+            "gross_sales": 2166.58,
+            "orders": 13
+          },
+          {
+            "title": "Spectrum TG561-SWT Self Propelled Wheeled Trimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 1333.16,
+            "gross_sales": 1333.16,
+            "orders": 4
+          },
+          {
+            "title": "PDI & Fully Assembled Tractor Delivery",
+            "product_type": null,
+            "net_sales": 828.32,
+            "gross_sales": 828.32,
+            "orders": 6
+          },
+          {
+            "title": "Spectrum 91cm Towed Steel Lawn-Roller | SP45103",
+            "product_type": null,
+            "net_sales": 799.84,
+            "gross_sales": 799.84,
+            "orders": 4
+          },
+          {
+            "title": "Spectrum TG561-SWT Self Propelled Wheeled Trimmer (Amazon)",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 739.9,
+            "gross_sales": 739.9,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum 97cm Towed Lawn & Leaf Sweeper | SP31105",
+            "product_type": "Sweepers",
+            "net_sales": 674.86,
+            "gross_sales": 674.86,
+            "orders": 4
+          },
+          {
+            "title": "Spectrum 227kg-Capacity Steel Tipping Trailer | SP22124",
+            "product_type": "Trailers",
+            "net_sales": 549.87,
+            "gross_sales": 549.87,
+            "orders": 3
+          },
+          {
+            "title": "Spectrum TG50-Utility Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 499.86,
+            "gross_sales": 499.86,
+            "orders": 3
+          },
+          {
+            "title": "Spectrum GNP560-WT Wheeled Trimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 496.66,
+            "gross_sales": 496.66,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum 272kg-Capacity Poly Tipping Trailer | SP22144",
+            "product_type": "Trailers",
+            "net_sales": 332.49,
+            "gross_sales": 845.81,
+            "orders": 5
+          },
+          {
+            "title": "Spectrum 181kg-Capacity Poly Tipping Cart | SP22111-4",
+            "product_type": null,
+            "net_sales": 183.29,
+            "gross_sales": 183.29,
+            "orders": 1
+          },
+          {
+            "title": "Pre-delivery Puncture Prevention Service",
+            "product_type": null,
+            "net_sales": 174.87,
+            "gross_sales": 174.87,
+            "orders": 3
+          },
+          {
+            "title": "Webb WEISWB Electric Garden Shredder with 40L Collection Box \u2013 2500W",
+            "product_type": null,
+            "net_sales": 132.46,
+            "gross_sales": 132.46,
+            "orders": 1
+          },
+          {
+            "title": "1 Litre 10W/30 Lawnmower Engine Oil  - 4 Stroke Oil",
+            "product_type": null,
+            "net_sales": 66.2,
+            "gross_sales": 66.2,
+            "orders": 10
+          },
+          {
+            "title": "Spectrum CL40-R-DUO 4.0mm Round Strimmer Line",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 46.68,
+            "gross_sales": 46.68,
+            "orders": 4
+          },
+          {
+            "title": "Spectrum CL40-R-SQ 4.0mm Square Strimmer Line",
+            "product_type": null,
+            "net_sales": 11.67,
+            "gross_sales": 11.67,
+            "orders": 1
+          },
+          {
+            "title": "Handy Sure-Start Fuel Additive - 250ml",
+            "product_type": null,
+            "net_sales": 9.96,
+            "gross_sales": 9.96,
+            "orders": 1
+          },
+          {
+            "title": "Spark Plug - JR BOU012 ( Equivalent to NGK BPR5ES OR CHAMPION RN11YC)",
+            "product_type": null,
+            "net_sales": 4.12,
+            "gross_sales": 4.12,
+            "orders": 1
+          },
+          {
+            "title": "Square Nylon Trimmer-Line - Replacement Strimmer -  3.3mm x 9m - JR FNY042",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 2.92,
+            "gross_sales": 2.92,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum 48\u2033 Towed Steel Garden Lawn Roller - SP45203",
+            "product_type": null,
+            "net_sales": 0.0,
+            "gross_sales": 449.92,
+            "orders": 2
+          },
+          {
+            "title": null,
+            "product_type": null,
+            "net_sales": -10280.34,
+            "gross_sales": 0.0,
+            "orders": 0
+          }
+        ]
+      },
+      "cordless": {
+        "net_sales": 1125.04,
+        "gross_sales": 1540.04,
+        "orders": 14,
+        "products": [
+          {
+            "title": "Mountfield/Stiga Battery Charger for Ride-Ons & Tractor Mowers |  1134-9250-01",
+            "product_type": null,
+            "net_sales": 333.1,
+            "gross_sales": 333.1,
+            "orders": 5
+          },
+          {
+            "title": "Mountfield Princess 38 Li KIT 48v Cordless 4-Wheel Rear-Roller Lawnmower (Inc. Battery & Charger)",
+            "product_type": "Lawnmowers",
+            "net_sales": 290.83,
+            "gross_sales": 581.66,
+            "orders": 2
+          },
+          {
+            "title": "Stiga E450 48v/5Ah ePower Lithium-Ion Battery | 274015004/ST1",
+            "product_type": null,
+            "net_sales": 165.83,
+            "gross_sales": 165.83,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield MTR 20 Li KIT 20v Cordless Grass-Trimmer (Inc. Battery & Charger)",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 165.0,
+            "gross_sales": 165.0,
+            "orders": 2
+          },
+          {
+            "title": "Redback 40v/4Ah Lithium-Ion Battery | EP40",
+            "product_type": null,
+            "net_sales": 83.29,
+            "gross_sales": 83.29,
+            "orders": 1
+          },
+          {
+            "title": "Energizer\u00ae CHUK 40v Battery Charger",
+            "product_type": null,
+            "net_sales": 43.66,
+            "gross_sales": 43.66,
+            "orders": 1
+          },
+          {
+            "title": "Honda CV3680XABM Fast Battery Charger",
+            "product_type": null,
+            "net_sales": 43.33,
+            "gross_sales": 43.33,
+            "orders": 1
+          },
+          {
+            "title": "Stiga E440 48v/4Ah ePower Lithium-Ion Battery 274014004/ST1",
+            "product_type": null,
+            "net_sales": 0.0,
+            "gross_sales": 124.17,
+            "orders": 1
+          }
+        ]
+      }
+    }
+  },
+  "april_2026_partial": {
+    "net_sales": 107574.19,
+    "gross_sales": 115302.71,
+    "orders": 438,
+    "by_shopify_type": [
+      {
+        "product_type": "Lawnmowers",
+        "net_sales": 53548.76,
+        "gross_sales": 54515.34,
+        "orders": 287
+      },
+      {
+        "product_type": "Lawn Tractors",
+        "net_sales": 20025.02,
+        "gross_sales": 21607.52,
+        "orders": 13
+      },
+      {
+        "product_type": "Ride-On Mowers",
+        "net_sales": 10785.74,
+        "gross_sales": 13200.74,
+        "orders": 11
+      },
+      {
+        "product_type": null,
+        "net_sales": 8776.52,
+        "gross_sales": 7637.52,
+        "orders": 20
+      },
+      {
+        "product_type": "Tillers & Cultivators",
+        "net_sales": 5260.54,
+        "gross_sales": 5739.71,
+        "orders": 14
+      },
+      {
+        "product_type": "Lawn Aerators",
+        "net_sales": 3191.22,
+        "gross_sales": 3441.18,
+        "orders": 12
+      },
+      {
+        "product_type": "Garden Tractors",
+        "net_sales": 2415.83,
+        "gross_sales": 2415.83,
+        "orders": 1
+      },
+      {
+        "product_type": "Brushcutters/Strimmers",
+        "net_sales": 2172.04,
+        "gross_sales": 2517.0,
+        "orders": 13
+      },
+      {
+        "product_type": "Portable Fuel Cans",
+        "net_sales": 1565.31,
+        "gross_sales": 1623.0,
+        "orders": 66
+      },
+      {
+        "product_type": "Chippers",
+        "net_sales": 749.96,
+        "gross_sales": 749.96,
+        "orders": 1
+      },
+      {
+        "product_type": "Blowers & Vacs",
+        "net_sales": 607.46,
+        "gross_sales": 607.46,
+        "orders": 2
+      },
+      {
+        "product_type": "Sweepers",
+        "net_sales": 166.62,
+        "gross_sales": 166.62,
+        "orders": 1
+      },
+      {
+        "product_type": "Trailers",
+        "net_sales": -166.66,
+        "gross_sales": 0.0,
+        "orders": 0
+      },
+      {
+        "product_type": "Chainsaws",
+        "net_sales": -1524.17,
+        "gross_sales": 1080.83,
+        "orders": 3
+      }
+    ],
+    "categories": {
+      "petrol": {
+        "net_sales": 101046.92,
+        "gross_sales": 109345.13,
+        "orders": 355,
+        "products": [
+          {
+            "title": "Spectrum TG46SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 14205.39,
+            "gross_sales": 14205.39,
+            "orders": 68
+          },
+          {
+            "title": "Mountfield MTF66M Compact Rear-Collect & Side-Discharge Ride-On Mower with Gear Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 9701.67,
+            "gross_sales": 10867.5,
+            "orders": 9
+          },
+          {
+            "title": "Spectrum TG51PD Self-Propelled Petrol Lawnmower (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 9541.5,
+            "gross_sales": 9541.5,
+            "orders": 50
+          },
+          {
+            "title": "Spectrum TG40SE Self-Propelled Petrol Lawnmower with Electric Start (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 9165.07,
+            "gross_sales": 9165.07,
+            "orders": 55
+          },
+          {
+            "title": "Spectrum TG40PD Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 6748.57,
+            "gross_sales": 7123.54,
+            "orders": 58
+          },
+          {
+            "title": "Mountfield T30M Gear Drive 2-in-1 Lawn Tractor",
+            "product_type": "Lawn Tractors",
+            "net_sales": 6538.35,
+            "gross_sales": 8120.85,
+            "orders": 5
+          },
+          {
+            "title": "Harry T84H Rear-Collect Lawn Tractor with Hydrostatic Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 3491.66,
+            "gross_sales": 3491.66,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum TG46S 3-in-1 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 3199.66,
+            "gross_sales": 3599.64,
+            "orders": 18
+          },
+          {
+            "title": "Stiga Tornado 398M Side-Discharge Lawn Tractor",
+            "product_type": "Lawn Tractors",
+            "net_sales": 2998.34,
+            "gross_sales": 2998.34,
+            "orders": 2
+          },
+          {
+            "title": "Mountfield MTF 98M SD Side-Discharge Lawn Tractor with Manual Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 2998.34,
+            "gross_sales": 2998.34,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum DCT38M-SD  38\" Side Discharge and Mulch Lawn Tractor with Manual Drive PRE SEASON SPECIAL PRICE!",
+            "product_type": null,
+            "net_sales": 2833.24,
+            "gross_sales": 2833.24,
+            "orders": 2
+          },
+          {
+            "title": "Feider HRTF220 Pro Two-Wheel Rear-Tine Rotary Cultivator",
+            "product_type": "Tillers & Cultivators",
+            "net_sales": 2499.77,
+            "gross_sales": 2499.77,
+            "orders": 6
+          },
+          {
+            "title": "Atco GT 38H Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive",
+            "product_type": "Garden Tractors",
+            "net_sales": 2415.83,
+            "gross_sales": 2415.83,
+            "orders": 1
+          },
+          {
+            "title": "Feider RTF220 Pro Two-Wheel Rear-Tine Rotary Cultivator",
+            "product_type": "Tillers & Cultivators",
+            "net_sales": 2395.85,
+            "gross_sales": 2875.02,
+            "orders": 6
+          },
+          {
+            "title": "Spectrum DC24-4 Ultra-Compact Rear-Collect/Side-Discharge Ride-On Mower with Manual Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": 2333.24,
+            "gross_sales": 2333.24,
+            "orders": 2
+          },
+          {
+            "title": "Atco GT 30H Rear-Collect Lawn Tractor with Hydrostatic Drive",
+            "product_type": "Lawn Tractors",
+            "net_sales": 2082.5,
+            "gross_sales": 2082.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG51PD Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 1978.14,
+            "gross_sales": 1978.14,
+            "orders": 10
+          },
+          {
+            "title": "Honda HRN 536 VK Self-Propelled Petrol Lawn Mower",
+            "product_type": null,
+            "net_sales": 1972.5,
+            "gross_sales": 1972.5,
+            "orders": 3
+          },
+          {
+            "title": "Harry T92H Rear-Collect Lawn Tractor with Hydrostatic Transmission",
+            "product_type": "Lawn Tractors",
+            "net_sales": 1915.83,
+            "gross_sales": 1915.83,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum DCT38M-RDM  38\" Lawn Tractor with Manual Drive PRE SEASON SPECIAL PRICE!",
+            "product_type": null,
+            "net_sales": 1583.29,
+            "gross_sales": 1583.29,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG51SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 1374.8,
+            "gross_sales": 1374.8,
+            "orders": 5
+          },
+          {
+            "title": "Spectrum SW420-Expert 2-in-1 Petrol Lawn Scarifier/Aerator",
+            "product_type": "Lawn Aerators",
+            "net_sales": 1374.8,
+            "gross_sales": 1374.8,
+            "orders": 5
+          },
+          {
+            "title": "Spectrum TG56SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 1249.94,
+            "gross_sales": 1249.94,
+            "orders": 3
+          },
+          {
+            "title": "Feider FBT420 Petrol Chipper",
+            "product_type": "Chippers",
+            "net_sales": 749.96,
+            "gross_sales": 749.96,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield SP46 Self-Propelled Petrol Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 747.51,
+            "gross_sales": 747.51,
+            "orders": 3
+          },
+          {
+            "title": "Mountfield SP51H 3-in-1 Self-Propelled Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 681.66,
+            "gross_sales": 681.66,
+            "orders": 2
+          },
+          {
+            "title": "Masport RRSP 18 Self-Propelled Petrol Rear-Roller Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 665.83,
+            "gross_sales": 665.83,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum 'Qingain' QG20P Push Petrol Lawnmower \u2013 WITH FREE BLADE WORTH \u00a339.95!",
+            "product_type": null,
+            "net_sales": 566.48,
+            "gross_sales": 566.48,
+            "orders": 4
+          },
+          {
+            "title": "Mountfield SP555-V 3-in-1 Variable-Speed Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 540.83,
+            "gross_sales": 540.83,
+            "orders": 1
+          },
+          {
+            "title": "Masport Rotarola RR 18 Hand-Propelled Petrol Rear-Roller Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 504.17,
+            "gross_sales": 504.17,
+            "orders": 1
+          },
+          {
+            "title": "Feider HFT200 Scythe-Bar Mower",
+            "product_type": "Lawnmowers",
+            "net_sales": 499.17,
+            "gross_sales": 499.17,
+            "orders": 1
+          },
+          {
+            "title": "Echo SRM-3021TESU High-Torque Petrol Brushcutter",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 457.5,
+            "gross_sales": 457.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG48-PRO Honda Powered Petrol Self Propelled Lawnmower - 4 blade",
+            "product_type": "Lawnmowers",
+            "net_sales": 415.83,
+            "gross_sales": 415.83,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield SP53 Elite 3-in-1 Self-Propelled Petrol Lawnmower (with Honda Engine)",
+            "product_type": "Lawnmowers",
+            "net_sales": 399.17,
+            "gross_sales": 399.17,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield HW531-PD 4-in-1 Self-Propelled Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 390.83,
+            "gross_sales": 390.83,
+            "orders": 1
+          },
+          {
+            "title": "Echo SRM-2621TESL High-Torque Petrol Brushcutter",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 365.83,
+            "gross_sales": 365.83,
+            "orders": 1
+          },
+          {
+            "title": "Racing 139PTIL63 Petrol Front-Tine Tiller",
+            "product_type": "Tillers & Cultivators",
+            "net_sales": 364.92,
+            "gross_sales": 364.92,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum DM26L Petrol Brushcutter and Strimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 330.0,
+            "gross_sales": 330.0,
+            "orders": 4
+          },
+          {
+            "title": "Stiga CS 755 Petrol Chainsaw (45cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 282.5,
+            "gross_sales": 282.5,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG46SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 249.96,
+            "gross_sales": 249.96,
+            "orders": 1
+          },
+          {
+            "title": "Mountfield TR 425 HJ 4-Stroke Curved-Shaft Petrol Grass-Trimmer (Honda Engine)",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 249.17,
+            "gross_sales": 249.17,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-3510ES Petrol Chainsaw (35cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 232.5,
+            "gross_sales": 232.5,
+            "orders": 1
+          },
+          {
+            "title": "Stiga Combi 340 C 3-in-1 Hand-Propelled Electric Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 199.17,
+            "gross_sales": 199.17,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum KT400-3 Pro 3-in-1 Petrol Lawn Scarifier/Aerator/Sweeper-Groomer",
+            "product_type": "Lawn Aerators",
+            "net_sales": 166.66,
+            "gross_sales": 416.62,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG40SE Self-Propelled Petrol Lawnmower with Electric Start",
+            "product_type": "Lawnmowers",
+            "net_sales": 166.63,
+            "gross_sales": 358.26,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum DM26C Curved-Shaft Petrol Grass and weed Strimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 148.34,
+            "gross_sales": 148.34,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum TG40PD Self-Propelled Petrol Lawnmower (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 124.99,
+            "gross_sales": 124.99,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum Qingain QG18P Hand Propelled Petrol Lawnmower - WITH FREE BLADE WORTH \u00a324.95!",
+            "product_type": null,
+            "net_sales": 124.96,
+            "gross_sales": 124.96,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum DM26PBV Petrol Blower-Vac",
+            "product_type": "Blowers & Vacs",
+            "net_sales": 83.29,
+            "gross_sales": 83.29,
+            "orders": 1
+          },
+          {
+            "title": "Blade - Fits Feider FTDT5175ES Lawnmower | MowDirect",
+            "product_type": null,
+            "net_sales": 29.12,
+            "gross_sales": 29.12,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-501SX Petrol Chainsaw (45cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": 0.0,
+            "gross_sales": 565.83,
+            "orders": 1
+          },
+          {
+            "title": "Echo CS-362WES Petrol Chainsaw (35cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": -324.17,
+            "gross_sales": 0.0,
+            "orders": 0
+          },
+          {
+            "title": "Alpina AT2 66 QA Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive",
+            "product_type": "Ride-On Mowers",
+            "net_sales": -1249.17,
+            "gross_sales": 0.0,
+            "orders": 0
+          },
+          {
+            "title": "Echo CS-7310SX Petrol Chainsaw (70cm Guide Bar)",
+            "product_type": "Chainsaws",
+            "net_sales": -1715.0,
+            "gross_sales": 0.0,
+            "orders": 0
+          }
+        ]
+      },
+      "other": {
+        "net_sales": 4712.09,
+        "gross_sales": 4084.71,
+        "orders": 22,
+        "products": [
+          {
+            "title": "Spectrum 122cm Steel Towed Spike-Type Roller Aerator | SP31130",
+            "product_type": "Lawn Aerators",
+            "net_sales": 1649.76,
+            "gross_sales": 1649.76,
+            "orders": 6
+          },
+          {
+            "title": null,
+            "product_type": null,
+            "net_sales": 1139.0,
+            "gross_sales": 0.0,
+            "orders": 0
+          },
+          {
+            "title": "Echo PB-770 Backpack Blower",
+            "product_type": "Blowers & Vacs",
+            "net_sales": 524.17,
+            "gross_sales": 524.17,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG561-SWT Self Propelled Wheeled Trimmer (Amazon)",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 369.95,
+            "gross_sales": 369.95,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG50-Utility Lawnmower (Amazon)",
+            "product_type": "Lawnmowers",
+            "net_sales": 333.32,
+            "gross_sales": 333.32,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum GNP560-WT Wheeled Trimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 248.33,
+            "gross_sales": 248.33,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum 181kg-Capacity Poly Tipping Cart | SP22111-4",
+            "product_type": null,
+            "net_sales": 183.29,
+            "gross_sales": 183.29,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum 97cm Towed Lawn & Leaf Sweeper | SP31105",
+            "product_type": "Sweepers",
+            "net_sales": 166.62,
+            "gross_sales": 166.62,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG50-Utility Lawnmower",
+            "product_type": "Lawnmowers",
+            "net_sales": 166.62,
+            "gross_sales": 166.62,
+            "orders": 1
+          },
+          {
+            "title": "Pre-delivery Puncture Prevention Service",
+            "product_type": null,
+            "net_sales": 58.29,
+            "gross_sales": 58.29,
+            "orders": 1
+          },
+          {
+            "title": "1 Litre 10W/30 Lawnmower Engine Oil  - 4 Stroke Oil",
+            "product_type": null,
+            "net_sales": 19.86,
+            "gross_sales": 19.86,
+            "orders": 3
+          },
+          {
+            "title": "Protective Cover for Lawnmowers - JR BCH001",
+            "product_type": null,
+            "net_sales": 16.62,
+            "gross_sales": 16.62,
+            "orders": 1
+          },
+          {
+            "title": "Square Nylon Trimmer-Line - Replacement Strimmer Line - ( 3mm x 9m ) JR FNY040",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 2.92,
+            "gross_sales": 2.92,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum CL40-R-DUO 4.0mm Round Strimmer Line",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 0.0,
+            "gross_sales": 11.67,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum TG561-SWT Self Propelled Wheeled Trimmer",
+            "product_type": "Brushcutters/Strimmers",
+            "net_sales": 0.0,
+            "gross_sales": 333.29,
+            "orders": 1
+          },
+          {
+            "title": "Spectrum 272kg-Capacity Poly Tipping Trailer | SP22144",
+            "product_type": "Trailers",
+            "net_sales": -166.66,
+            "gross_sales": 0.0,
+            "orders": 0
+          }
+        ]
+      },
+      "fuel_cans": {
+        "net_sales": 1565.31,
+        "gross_sales": 1623.0,
+        "orders": 67,
+        "products": [
+          {
+            "title": "Spectrum PFC-20G-M Jerry Can \u2013 20 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 788.28,
+            "gross_sales": 829.76,
+            "orders": 30
+          },
+          {
+            "title": "Spectrum PFC-20R-P Anti Spill Petrol Can \u2013 20 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 583.01,
+            "gross_sales": 583.01,
+            "orders": 25
+          },
+          {
+            "title": "Spectrum PFC-10G-M Jerry Can \u2013 10 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 83.08,
+            "gross_sales": 83.08,
+            "orders": 3
+          },
+          {
+            "title": "Spectrum PFC-10R-P Anti Spill Petrol Can \u2013 10 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 61.95,
+            "gross_sales": 78.16,
+            "orders": 4
+          },
+          {
+            "title": "Spectrum PFC-5R-P Anti Spill Petrol Can \u2013 5 Litre",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 29.95,
+            "gross_sales": 29.95,
+            "orders": 2
+          },
+          {
+            "title": "Spectrum Metal Jerry Can Spout - PFC-SPOUT",
+            "product_type": "Portable Fuel Cans",
+            "net_sales": 19.04,
+            "gross_sales": 19.04,
+            "orders": 3
+          }
+        ]
+      },
+      "cordless": {
+        "net_sales": 249.87,
+        "gross_sales": 249.87,
+        "orders": 2,
+        "products": [
+          {
+            "title": "Redback 40v/4Ah Lithium-Ion Battery | EP40",
+            "product_type": null,
+            "net_sales": 249.87,
+            "gross_sales": 249.87,
+            "orders": 2
+          }
+        ]
+      }
+    }
+  }
+}
