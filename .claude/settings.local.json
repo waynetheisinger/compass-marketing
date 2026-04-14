@@ -57,7 +57,9 @@
       "Bash(PYTHONPATH=. timeout 180 python3.11:*)",
       "Bash(sed -n '283,295p' scripts/report/data_sources.py)",
       "Bash(sed -n '316,330p' scripts/report/data_sources.py)",
-      "Bash(sed -n '366,380p' scripts/report/data_sources.py)"
+      "Bash(sed -n '366,380p' scripts/report/data_sources.py)",
+      "Bash(pdftotext /Users/waynetheisinger/compass/marketingPlan/API.pdf -)",
+      "Bash(pip list:*)"
     ]
   }
 }
