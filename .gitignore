@@ -5,3 +5,15 @@ __pycache__/
 *.pyo
 
 logs/
+
+# Claude Code's per-task scratch worktrees — each one is a real git worktree
+# (an embedded repo from git's point of view) and is cleaned up by the
+# harness; never source.
+.claude/worktrees/
+
+# LibreOffice writes a hidden lock file next to any open workbook
+# (.~lock.<name>.xls#). They vanish when the file is closed.
+.~lock.*#
+
+# macOS Finder metadata.
+.DS_Store
