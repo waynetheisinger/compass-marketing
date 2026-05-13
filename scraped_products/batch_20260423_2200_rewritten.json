@@ -1,0 +1,81 @@
+{
+  "title": "Spectrum 5-Piece Cordless Garden Tool Kit — Self-Propelled Mower, Hedge Trimmer, Pole Trimmer, Handy Mower & Blower Vac",
+  "description_html": "<p>Tackle every garden job from one battery platform. The Spectrum five-piece cordless kit gives you a self-propelled lawnmower, hedge trimmer, pole hedge trimmer, handy mower and blower vacuum — all running on the same SBS cordless system, so a single battery powers your whole garden routine.</p>\n<h3>What's in the kit</h3>\n<h4>SBS460CLM — Self-Propelled Cordless Lawnmower</h4>\n<p>A 46cm metal-deck mower built for medium and larger lawns, with a brushless motor and a dual-battery bay for sustained run time. Self-propelled drive takes the effort out of pushing, and four cutting modes (collect, mulch, side discharge or rear discharge) cover every lawn condition. Seven cutting heights from 25–75mm.</p>\n<h4>SBS560CHT — Cordless Hedge Trimmer</h4>\n<p>Light in the hand and balanced for control, with clean, precise cuts that keep borders and formal hedges sharp. A practical alternative to petrol when you want quiet, low-vibration trimming you can pick up and use straight away.</p>\n<h4>SBS240CPHT — Cordless Pole Hedge Trimmer</h4>\n<p>Reaches up to 2.4m with a 180° adjustable head, so tall hedges and awkward angles can be cut from the ground. The 460mm dual-action, laser-cut blade runs at 2,600 strokes per minute and handles branches up to 20mm thick.</p>\n<h4>SBS220CHM — Cordless Handy Mower</h4>\n<p>Compact and manoeuvrable for edges, tight corners and the spots your main mower can't reach. Paired with the SBS460CLM, it gives you a properly finished lawn with no missed strips.</p>\n<h4>SBS480CBV — Cordless Blower Vacuum</h4>\n<p>Three jobs in one machine: blow debris off paths, vacuum loose leaves, and shred them down for easier disposal. Ideal for post-mow tidy-ups and autumn clearance.</p>\n<h3>Why buy the kit</h3>\n<ul>\n<li>One SBS battery platform powers all five tools — buy batteries once, use them everywhere</li>\n<li>No fuel, no cables, no annual servicing — start work the moment you step outside</li>\n<li>Backed by Spectrum's 5-year warranty (T&amp;Cs apply)</li>\n<li>Bundle price saves significantly versus buying each tool individually</li>\n</ul>\n<p><strong>Please note:</strong> batteries and charger are not included with this kit and are sold separately, so you can match battery capacity to the size of your garden.</p>",
+  "vendor": "Spectrum",
+  "product_type": "Cordless Garden Tool Kits",
+  "status": "active",
+  "sku": "SBS460CLM-BUNDLE",
+  "barcode": "",
+  "price": "499.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Spectrum"
+      },
+      {
+        "code": "motor",
+        "label": "Motor",
+        "value": "900w"
+      },
+      {
+        "code": "cutting_deck_size_cm",
+        "label": "Cutting deck size (cm)",
+        "value": "46cm"
+      },
+      {
+        "code": "cutting_heights",
+        "label": "Cutting Heights",
+        "value": "25 – 75mm (7 Positions)"
+      },
+      {
+        "code": "mulching",
+        "label": "Mulching",
+        "value": "Yes"
+      },
+      {
+        "code": "cord_battery_included",
+        "label": "Battery Included",
+        "value": "No, Optional"
+      },
+      {
+        "code": "attribute_charger",
+        "label": "Charger",
+        "value": "No / Optional"
+      },
+      {
+        "code": "drive",
+        "label": "Drive",
+        "value": "Self Propelled"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "25.6 kg"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "5 Years (T&C's Apply)"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>SBS460CLM self-propelled cordless lawnmower — 46cm metal cutting deck and four cutting modes (collect, mulch, side or rear discharge)</li>\n<li>SBS560CHT cordless hedge trimmer for clean, precise hedge work</li>\n<li>SBS240CPHT cordless pole hedge trimmer — 2.4m reach, 180° adjustable head, 20mm cut capacity</li>\n<li>SBS220CHM cordless handy mower for edges, tight corners and finishing work</li>\n<li>SBS480CBV cordless blower vacuum — blow, vacuum and mulch in a single tool</li>\n<li>One SBS battery platform powers every tool in the kit</li>\n<li>Backed by Spectrum's 5-year warranty (T&C's apply); batteries and charger sold separately</li>\n</ul>",
+    "custom.bullet_two": "Five Spectrum cordless tools — mower, hedge trimmer, pole trimmer, handy mower and blower vac — all running on the same SBS battery platform.",
+    "custom.bullet_three": "Backed by Spectrum's 5-year warranty (T&C's apply); batteries and charger sold separately so you can match capacity to the size of your garden.",
+    "filter.brand": "Spectrum",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/04/Cordless-lawn-care-tool-kit.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/04/Untitled-design-1.jpg",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS460CLM-Lawnmower-scaled-e1773826074832.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS480CBV-Blower-Vac-Left.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS220CHM-Handy-Mower-Left.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS560CHT-Cordless-Hedge-Trimmer-Main.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS240CPHT-Pole-Hedge-Trimmer-Main.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS-Battery-Side.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/SBSCDC.jpg"
+  ],
+  "source_url": "https://compassgm.co.uk/product/spectrum-cordless-kit/"
+}

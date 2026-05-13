@@ -1,0 +1,81 @@
+{
+  "title": "Spectrum Cordless Complete Garden Maintenance Set - Special Summer Price",
+  "description_html": "<h2><span role=\"text\"><strong>Complete Cordless Garden Bundle</strong></span></h2><p>Upgrade your entire garden setup in one go with this <strong>powerful, fully cordless range</strong>. Designed to give you <strong>total freedom, consistent performance, and professional results</strong>, this bundle covers everything from mowing to trimming and clearing — all without cables, fuel, or hassle.</p><h3><span role=\"text\"><strong>Self-Propelled Cordless Lawn Mower (SBS460CLM)</strong></span></h3><p>Take the effort out of mowing with a machine built for <strong>power, coverage, and comfort</strong>.</p><p>With its <strong>self-propelled drive</strong>, you’re not pushing — the mower does the hard work for you, making it ideal for medium to larger lawns. The <strong>wide 42cm durable metal cutting deck</strong> means fewer passes and faster results, while the <strong>brushless motor and dual battery system</strong> deliver consistent power from start to finish.</p><p>You also get full flexibility with <strong>4 cutting modes (collect, mulch, side or rear discharge)</strong>, so you can adapt to any lawn condition.</p><p><strong>Benefit:</strong> Less effort, faster mowing, and a cleaner, more professional finish every time.</p><h3><span role=\"text\"><strong>Cordless Hedge Trimmer (SBS560CHT)</strong></span></h3><p>Keep your hedges sharp, neat, and under control — without the strain.</p><p>This lightweight cordless trimmer is designed to give you <strong>clean, precise cuts with minimal effort</strong>, helping you maintain crisp edges and tidy borders. It’s ideal for regular garden maintenance without the noise and inconvenience of petrol tools.</p><p><strong>Benefit:</strong> Faster trimming with smoother results and less fatigue.</p><h3><span role=\"text\"><strong>Cordless Handy Mower (SBS220CHM)&nbsp;&nbsp;</strong></span></h3><p>Perfect for the areas your main mower can’t reach.</p><p>Designed for <strong>tight spaces, edges, and awkward corners</strong>, this compact mower lets you finish the job properly — no missed patches or rough edges.</p><p><strong>Benefit:</strong> Total lawn precision, even in hard-to-reach areas.</p><h3><span role=\"text\"><strong>Cordless Pole Hedge Trimmer (SBS240CPHT)</strong></span></h3><p>With an overall machine length of 2.4m, this pole hedge trimmer provides excellent reach, making it perfect for taller hedges and awkward angles. The rotating cutting head, combined with a 180° adjustable trimming angle, gives you maximum flexibility to cut both horizontally and vertically with ease.</p><p>Powered by a dependable brush motor, the SBS460PHT delivers consistent cutting performance for everyday garden maintenance. The 460mm dual-action, laser-cut blade ensures clean and efficient trimming, while the 20mm cutting capacity allows you to handle thicker branches with confidence. With a blade speed of 2600 strokes per minute, you can achieve fast, smooth results every time.</p><h3><span role=\"text\">&nbsp;<strong>Cordless Leaf Blower Vacuum (SBS480CBV)</strong></span></h3><p><strong>Clear, Collect &amp; Tidy Your Garden In Minutes</strong></p><p>This versatile tool lets you <strong>blow debris, vacuum leaves, and reduce waste </strong>all with one machine — making post-mow clean-up or autumn maintenance quick and easy.</p><p><strong>Benefit:</strong> Less time cleaning up, more time enjoying your garden.</p><h3><span role=\"text\">&nbsp;<strong>Why This Bundle Works</strong></span></h3><ul><li><strong>Fully cordless freedom</strong> – no cables, no petrol, no restrictions</li><li><strong>One battery system</strong> – power your entire range</li><li><strong>Complete garden solution</strong> – mow, trim, edge, and clear</li><li><strong>Serious value</strong> – everything you need for just <strong>£499.95</strong></li></ul><p>Instead of buying each tool separately, this bundle gives you a <strong>complete cordless ecosystem at a fraction of the cost</strong> — perfect for homeowners who want <strong>professional results without the professional price tag</strong>.</p>",
+  "vendor": "Spectrum",
+  "product_type": "Lawnmowers",
+  "status": "active",
+  "sku": "SBS460CLM-BUNDLE",
+  "barcode": "",
+  "price": "499.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Spectrum"
+      },
+      {
+        "code": "motor",
+        "label": "Motor",
+        "value": "900w"
+      },
+      {
+        "code": "cutting_deck_size_cm",
+        "label": "Cutting deck size (cm)",
+        "value": "46cm"
+      },
+      {
+        "code": "cutting_heights",
+        "label": "Cutting Heights",
+        "value": "25 – 75mm (7 Positions)"
+      },
+      {
+        "code": "mulching",
+        "label": "Mulching",
+        "value": "Yes"
+      },
+      {
+        "code": "cord_battery_included",
+        "label": "Battery Included",
+        "value": "No, Optional"
+      },
+      {
+        "code": "attribute_charger",
+        "label": "Charger",
+        "value": "No / Optional"
+      },
+      {
+        "code": "drive",
+        "label": "Drive",
+        "value": "Self Propelled"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "25.6 kg"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "5 Years (T&C's Apply)"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>Self-propelled lawn mower – effortless mowing with a wide cut and pro-level finish</li><li>Hedge trimmer – clean, precise cutting for perfectly shaped hedges</li><li>Handy mower – ideal for edges, small areas, and tight spaces</li><li>Leaf blower vacuum – clear, collect, and tidy in minutes</li>\n</ul>",
+    "custom.bullet_two": "Hedge trimmer – clean, precise cutting for perfectly shaped hedges",
+    "custom.bullet_three": "Handy mower – ideal for edges, small areas, and tight spaces",
+    "filter.brand": "Spectrum",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/04/Cordless-lawn-care-tool-kit.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/04/Untitled-design-1.jpg",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS460CLM-Lawnmower-scaled-e1773826074832.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS480CBV-Blower-Vac-Left.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS220CHM-Handy-Mower-Left.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS560CHT-Cordless-Hedge-Trimmer-Main.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS240CPHT-Pole-Hedge-Trimmer-Main.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS-Battery-Side.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/03/SBSCDC.jpg"
+  ],
+  "source_url": "https://compassgm.co.uk/product/spectrum-cordless-kit/"
+}

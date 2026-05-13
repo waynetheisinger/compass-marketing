@@ -27,6 +27,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Wayne Theisinger commission — flat 4% of total net (ex-VAT) revenue
+# across all channels, shown as a single line on the Summary tab.
+WAYNE_COMMISSION_RATE = 0.04
+
 # ---------------------------------------------------------------------------
 # Argument parsing
 # ---------------------------------------------------------------------------
@@ -52,6 +56,19 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Use mock data instead of live APIs (for format review)",
     )
+    parser.add_argument(
+        "--wayne-commission",
+        type=float,
+        default=None,
+        metavar="GBP",
+        help=(
+            "Override the auto-computed Wayne Theisinger commission with a "
+            "fixed £ value — typically the audited month-end figure that "
+            "accounts for true returns and refunds beyond what the "
+            "marketplaces capture. Without this flag the line defaults to "
+            f"{WAYNE_COMMISSION_RATE:.0%} of Net Revenue across all channels."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -67,10 +84,18 @@ def _month_bounds(year: int, month: int) -> tuple[datetime, datetime]:
 # Live data assembly
 # ---------------------------------------------------------------------------
 
-def _assemble_live(start: datetime, end: datetime) -> dict:
+def _assemble_live(
+    start: datetime,
+    end: datetime,
+    wayne_commission_override: float | None = None,
+) -> dict:
     """
     Fetch data from all APIs and build the report_data dict for excel_writer.
     Missing credentials → None data with a note string.
+
+    `wayne_commission_override`: if provided, used as the Wayne commission £
+    value (a manual audited figure); otherwise the line defaults to
+    `WAYNE_COMMISSION_RATE × total net revenue`.
     """
     from scripts.report import data_sources as ds
     from scripts.report import transforms as tr
@@ -94,6 +119,15 @@ def _assemble_live(start: datetime, end: datetime) -> dict:
     print("Fetching Amazon fees …")
     amazon_rows, amazon_note = ds.fetch_amazon_fees(start, end)
 
+    print("Fetching Amazon FBA returns / removals (slow — async reports) …")
+    fba_returns_data, fba_returns_note = ds.fetch_amazon_fba_returns(start, end)
+
+    print("Fetching Amazon cancelled orders …")
+    amazon_cancelled, amazon_cancel_note = ds.fetch_amazon_cancelled_orders(start, end)
+
+    print("Fetching Mirakl cancelled orders …")
+    mirakl_cancelled, mirakl_cancel_note = ds.fetch_mirakl_cancelled_orders(start, end)
+
     print("Fetching Google Ads spend …")
     google_rows, google_note = ds.fetch_google_ads_spend(start, end)
 
@@ -101,15 +135,19 @@ def _assemble_live(start: datetime, end: datetime) -> dict:
     amazon_ads_rows, amazon_ads_note = ds.fetch_amazon_ads_spend(start, end)
 
     # ── eBay ───────────────────────────────────────────────────────────────
+    # Order proceeds are inc-VAT; refunds also inc-VAT. Net revenue is what
+    # remained after refunds, then ÷1.20 to match the ex-VAT basis used by
+    # every other channel. Marketplace fees + ad spend come from the new
+    # rich aggregate shape (post-2026 eBay Finances API layout).
     ebay_aggregated = tr.aggregate_ebay_transactions(ebay_txns or [])
     ebay_fee_rows   = [r for r in tr.ebay_fee_rows(ebay_aggregated) if not r["is_ad_spend"]]
-    ebay_ad_amount  = abs(ebay_aggregated.get("AD_FEE", 0.0))
-    ebay_gross      = abs(ebay_aggregated.get("SALE", 0.0))
+    ebay_ad_amount  = ebay_aggregated["ad_spend"]
+    ebay_net        = (ebay_aggregated["order_proceeds"] - ebay_aggregated["refunds"]) / 1.20
 
     ebay_channel = {
         "name":       "eBay",
         "source":     "eBay Finances API",
-        "gross":      ebay_gross,
+        "net":        round(ebay_net, 2),
         "total_fees": sum(r["amount"] for r in ebay_fee_rows),
         "fee_rows":   ebay_fee_rows,
         "note":       ebay_note,
@@ -126,7 +164,7 @@ def _assemble_live(start: datetime, end: datetime) -> dict:
     bq_channel  = {
         "name":       "B&Q (Mirakl)",
         "source":     "Mirakl API",
-        "gross":      bq_agg["gross"],
+        "net":        bq_agg["net"],
         "total_fees": sum(r["amount"] for r in bq_fee_rows),
         "fee_rows":   bq_fee_rows,
         "note":       mirakl_note,
@@ -137,26 +175,27 @@ def _assemble_live(start: datetime, end: datetime) -> dict:
     shopify_channel = {
         "name":       "Shopify Direct",
         "source":     "Shopify GraphQL",
-        "gross":      shopify_agg["gross"],
+        "net":        shopify_agg["net"],
         "total_fees": shopify_agg["fee_amount"],
         "fee_rows":   [{"label": "Payment processing fees", "amount": shopify_agg["fee_amount"]}],
         "note":       shopify_note,
     }
 
     # ── Amazon ─────────────────────────────────────────────────────────────
-    amazon_commission, amazon_fba = tr.aggregate_amazon_fees(amazon_rows or [])
+    # `aggregate_amazon_fees` still splits commission vs FBA so we keep
+    # the marketplace-fee tab clean; FBA aggregates are no longer reported.
+    amazon_commission, _amazon_fba_unused = tr.aggregate_amazon_fees(amazon_rows or [])
     amazon_fee_rows = [{"label": k, "amount": v} for k, v in amazon_commission.items()]
-    amazon_fba_rows = [{"label": k, "amount": v} for k, v in amazon_fba.items()]
 
-    # Estimate gross from BaseLinker if SP-API not connected
+    # Estimate net revenue from BaseLinker if SP-API not connected
     bl_amazon   = (bl_data or {}).get("amazon", [])
     bl_az_summ  = tr.aggregate_baselinker_orders({"amazon": bl_amazon}).get("amazon", {})
-    amazon_gross_estimate = bl_az_summ.get("gross", 0)
+    amazon_net_estimate = bl_az_summ.get("net", 0)
 
     amazon_channel = {
         "name":       "Amazon",
         "source":     "SP-API Settlement" if not amazon_note else "BaseLinker (fallback)",
-        "gross":      amazon_gross_estimate,
+        "net":        amazon_net_estimate,
         "total_fees": sum(r["amount"] for r in amazon_fee_rows),
         "fee_rows":   amazon_fee_rows,
         "note":       amazon_note,
@@ -195,16 +234,65 @@ def _assemble_live(start: datetime, end: datetime) -> dict:
         if n and not n.startswith("PARTIAL")
     ]
 
+    # ── Cancellations ───────────────────────────────────────────────────────
+    cancellations = {
+        "Shopify Direct": tr.aggregate_shopify_cancellations(shopify_rows or []),
+        "Amazon":         tr.aggregate_amazon_cancellations(amazon_cancelled or [])
+                          if amazon_cancelled is not None else None,
+        "B&Q (Mirakl)":   tr.aggregate_mirakl_cancellations(mirakl_cancelled or [])
+                          if mirakl_cancelled is not None else None,
+    }
+    cancellation_notes = {
+        "Shopify Direct": shopify_note,
+        "Amazon":         amazon_cancel_note,
+        "B&Q (Mirakl)":   mirakl_cancel_note,
+    }
+
+    # ── FBA returns / removals ──────────────────────────────────────────────
+    fba_returns_payload: dict = {}
+    if fba_returns_data:
+        fba_returns_payload = {
+            "customer_returns_summary":   tr.aggregate_customer_returns(
+                fba_returns_data.get("customer_returns") or []),
+            "removal_shipments_summary":  tr.aggregate_removal_shipments(
+                fba_returns_data.get("removal_shipments") or []),
+            "inventory_snapshot_summary": tr.aggregate_inventory_snapshot(
+                fba_returns_data.get("inventory_snapshot") or []),
+            "removal_fee_totals":         tr.extract_removal_fees(amazon_rows or []),
+        }
+
     # ── Summary ─────────────────────────────────────────────────────────────
-    gross_by_channel = {ch["name"]: ch["gross"] for ch in channels}
-    all_fee_rows     = [r_ for ch in channels for r_ in ch["fee_rows"]]
-    summary          = tr.build_summary(all_fee_rows, amazon_fba_rows, ad_rows, gross_by_channel)
+    # FBA cost-of-sales no longer rolls into the headline deductions; the
+    # Summary tab carries a "Commission paid to Wayne Theisinger" line.
+    # Default is WAYNE_COMMISSION_RATE × total net revenue; can be overridden
+    # via --wayne-commission for the post-audit run. All revenue figures
+    # here are net (ex-VAT).
+    net_by_channel = {ch["name"]: ch["net"] for ch in channels}
+    all_fee_rows   = [r_ for ch in channels for r_ in ch["fee_rows"]]
+    auto_commission = round(sum(net_by_channel.values()) * WAYNE_COMMISSION_RATE, 2)
+    if wayne_commission_override is not None:
+        wayne_commission = round(float(wayne_commission_override), 2)
+        wayne_commission_note = "Invoiced Value"
+        wayne_commission_overridden = True
+    else:
+        wayne_commission = auto_commission
+        wayne_commission_note = (
+            f"{WAYNE_COMMISSION_RATE:.0%} of Net Revenue across all channels "
+            "(pre-audit estimate)."
+        )
+        wayne_commission_overridden = False
+    summary = tr.build_summary(all_fee_rows, ad_rows, net_by_channel,
+                               wayne_commission=wayne_commission,
+                               wayne_commission_note=wayne_commission_note,
+                               wayne_commission_overridden=wayne_commission_overridden)
 
     return {
         "summary":                  summary,
         "channels":                 channels,
-        "fba_rows":                 amazon_fba_rows,
-        "amazon_fba_note":          amazon_note,
+        "fba_returns":              fba_returns_payload,
+        "fba_returns_note":         fba_returns_note,
+        "cancellations":            cancellations,
+        "cancellation_notes":       cancellation_notes,
         "ad_spend_rows":            ad_rows,
         "ad_spend_not_connected":   not_connected_ads,
         "ad_spend_platform_summary": ad_platform_summary,
@@ -223,8 +311,13 @@ def _assemble_live(start: datetime, end: datetime) -> dict:
 # Dry-run (mock) assembly — delegates to mock_report constants
 # ---------------------------------------------------------------------------
 
-def _assemble_mock() -> dict:
-    """Build report_data from the same mock constants used by mock_report.py."""
+def _assemble_mock(wayne_commission_override: float | None = None) -> dict:
+    """
+    Build report_data from the same mock constants used by mock_report.py.
+
+    `wayne_commission_override` mirrors the live path so dry-runs can also
+    preview the audited-override variant of the Summary tab.
+    """
     # Import mock data directly from mock_report
     import importlib.util, pathlib
     spec = importlib.util.spec_from_file_location(
@@ -243,15 +336,16 @@ def _assemble_mock() -> dict:
         channels.append({
             "name":       ch["name"],
             "source":     ch["source"],
-            "gross":      ch["gross"],
+            # Mock CHANNELS' values are illustrative — treated as net for the
+            # new ex-VAT layout. (No back-out is applied to keep the round
+            # numbers readable in the mock workbook.)
+            "net":        ch["net"],
             "total_fees": sum(r["amount"] for r in ch_fee_rows),
             "fee_rows":   ch_fee_rows,
             "note":       None,
         })
 
     amazon_ch    = next(c for c in CHANNELS if c["name"] == "Amazon")
-    fba_rows     = [{"label": label, "amount": amount} for label, amount in amazon_ch["fba_costs"]]
-    total_fba    = sum(r["amount"] for r in fba_rows)
 
     google_rows  = [
         {
@@ -279,8 +373,23 @@ def _assemble_mock() -> dict:
          "impressions": None, "clicks": None}
     ] + amazon_ads
 
-    gross_by_channel = {ch["name"]: ch["gross"] for ch in channels}
-    summary = tr.build_summary(all_fee_rows, fba_rows, ad_rows, gross_by_channel)
+    net_by_channel = {ch["name"]: ch["net"] for ch in channels}
+    auto_commission = round(sum(net_by_channel.values()) * WAYNE_COMMISSION_RATE, 2)
+    if wayne_commission_override is not None:
+        wayne_commission = round(float(wayne_commission_override), 2)
+        wayne_commission_note = "Invoiced Value"
+        wayne_commission_overridden = True
+    else:
+        wayne_commission = auto_commission
+        wayne_commission_note = (
+            f"{WAYNE_COMMISSION_RATE:.0%} of Net Revenue across all channels "
+            "(pre-audit estimate)."
+        )
+        wayne_commission_overridden = False
+    summary = tr.build_summary(all_fee_rows, ad_rows, net_by_channel,
+                               wayne_commission=wayne_commission,
+                               wayne_commission_note=wayne_commission_note,
+                               wayne_commission_overridden=wayne_commission_overridden)
 
     ad_platform_summary = [
         {"platform": "Google Ads", "spend": sum(r["spend"] for r in google_rows), "note": None},
@@ -292,8 +401,6 @@ def _assemble_mock() -> dict:
     return {
         "summary":                   summary,
         "channels":                  channels,
-        "fba_rows":                  fba_rows,
-        "amazon_fba_note":           None,
         "ad_spend_rows":             ad_rows,
         "ad_spend_not_connected":    [],
         "ad_spend_platform_summary": ad_platform_summary,
@@ -328,9 +435,10 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.dry_run:
         print("Mode: DRY RUN (mock data)")
-        report_data = _assemble_mock()
+        report_data = _assemble_mock(wayne_commission_override=args.wayne_commission)
     else:
-        report_data = _assemble_live(start, end)
+        report_data = _assemble_live(start, end,
+                                     wayne_commission_override=args.wayne_commission)
 
     from scripts.report.excel_writer import build_workbook
     wb = build_workbook(report_data, month_label)
@@ -343,13 +451,13 @@ def main(argv: list[str] | None = None) -> None:
 
     summary = report_data["summary"]
     print(f"\nDone → {out_path}")
-    print(f"  Gross revenue:          £{summary['gross']:>12,.2f}")
+    print(f"  Net revenue (ex-VAT):   £{summary['net']:>12,.2f}")
     print(f"  Marketplace fees:       £{summary['total_fees']:>12,.2f}")
-    print(f"  FBA cost of sales:      £{summary['total_fba']:>12,.2f}")
+    print(f"  Commission paid to WT:  £{summary['wayne_commission']:>12,.2f}")
     print(f"  Ad spend:               £{summary['total_ads']:>12,.2f}")
     print(f"  ─────────────────────────────────────")
     print(f"  Combined deductions:    £{summary['combined']:>12,.2f}")
-    print(f"  Net contribution:       £{summary['net']:>12,.2f}")
+    print(f"  Contribution:           £{summary['contribution']:>12,.2f}")
 
 
 if __name__ == "__main__":

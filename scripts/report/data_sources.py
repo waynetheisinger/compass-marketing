@@ -199,7 +199,9 @@ def fetch_shopify_fees(
     """
     Fetch Shopify orders and extract payment processing fees.
 
-    Returns list of dicts: {order_id, created_at, gross, fee_amount, gateway}
+    Returns list of dicts: {order_id, created_at, net, fee_amount, gateway}
+    where `net` is the order total with 20% UK VAT backed out — the funder
+    report is presented on an ex-VAT basis.
     """
     required = ["SHOPIFY_STORE_DOMAIN", "SHOPIFY_CLIENT_ID", "SHOPIFY_CLIENT_SECRET"]
     if missing := [v for v in required if not os.environ.get(v)]:
@@ -218,6 +220,9 @@ def fetch_shopify_fees(
                 id
                 name
                 createdAt
+                cancelledAt
+                cancelReason
+                displayFinancialStatus
                 totalPriceSet { shopMoney { amount } }
                 transactions {
                   fees {
@@ -239,7 +244,8 @@ def fetch_shopify_fees(
         with ShopifyClient() as client:
             while True:
                 data = client.execute(query, {"cursor": cursor})
-                orders_data = data.get("data", {}).get("orders", {})
+                # ShopifyClient.execute() already unwraps the GraphQL `data` envelope
+                orders_data = data.get("orders", {})
                 for edge in orders_data.get("edges", []):
                     node = edge["node"]
                     fee_total = sum(
@@ -247,12 +253,17 @@ def fetch_shopify_fees(
                         for txn in node.get("transactions", [])
                         for fee in txn.get("fees", [])
                     )
+                    total_inc_vat = float(node["totalPriceSet"]["shopMoney"]["amount"])
                     rows.append({
-                        "order_id":   node["id"],
-                        "name":       node["name"],
-                        "created_at": node["createdAt"],
-                        "gross":      float(node["totalPriceSet"]["shopMoney"]["amount"]),
-                        "fee_amount": fee_total,
+                        "order_id":     node["id"],
+                        "name":         node["name"],
+                        "created_at":   node["createdAt"],
+                        "cancelled_at": node.get("cancelledAt"),
+                        "cancel_reason": node.get("cancelReason"),
+                        "financial_status": node.get("displayFinancialStatus"),
+                        # 20% standard-rate UK VAT — MowDirect catalogue is wholly standard-rated.
+                        "net":          round(total_inc_vat / 1.20, 2),
+                        "fee_amount":   fee_total,
                     })
 
                 page_info = orders_data.get("pageInfo", {})
@@ -314,9 +325,11 @@ def fetch_amazon_fees(
     Returns (rows, note) where note is None on success or a coverage warning.
     """
     sp_required = [
-        "AMAZON_SP_CLIENT_ID",
-        "AMAZON_SP_CLIENT_SECRET",
-        "AMAZON_SP_REFRESH_TOKEN",
+        "AMAZON_LWA_CLIENT_ID",
+        "AMAZON_LWA_CLIENT_SECRET",
+        "AMAZON_REFRESH_TOKEN",
+        "AMAZON_MARKETPLACE_ID",
+        "AMAZON_ENDPOINT",
         "AMAZON_SELLER_ID",
     ]
     if missing := [v for v in sp_required if not os.environ.get(v)]:
@@ -350,6 +363,125 @@ def fetch_amazon_fees(
         client = AmazonClient()
         rows = client.get_settlement_fees(start, end)
         return rows, None
+    except Exception as exc:
+        return None, f"ERROR — {exc}"
+
+
+# ---------------------------------------------------------------------------
+# Amazon FBA returns / removals / unfulfillable inventory
+# ---------------------------------------------------------------------------
+
+def fetch_amazon_fba_returns(
+    start: datetime,
+    end: datetime,
+) -> tuple[dict | None, str | None]:
+    """
+    Fetch FBA returns activity for the period:
+      - customer_returns: returns received from customers (with disposition)
+      - removal_shipments: units shipped back to seller or disposed
+      - inventory_snapshot: current unfulfillable / sellable counts at Amazon
+
+    Returns ({customer_returns, removal_shipments, inventory_snapshot}, note).
+    Uses SP-API Reports API (async) for the historical reports + Inventory API
+    for the snapshot — no extra credentials beyond what fetch_amazon_fees needs.
+    """
+    sp_required = [
+        "AMAZON_LWA_CLIENT_ID",
+        "AMAZON_LWA_CLIENT_SECRET",
+        "AMAZON_REFRESH_TOKEN",
+        "AMAZON_MARKETPLACE_ID",
+        "AMAZON_ENDPOINT",
+        "AMAZON_SELLER_ID",
+    ]
+    if missing := [v for v in sp_required if not os.environ.get(v)]:
+        return None, f"NOT CONNECTED — SP-API missing: {', '.join(missing)}"
+
+    from scripts.amazon_client import AmazonClient
+    client = AmazonClient()
+
+    errors: list[str] = []
+
+    def _safe(label: str, fn):
+        try:
+            return fn()
+        except Exception as exc:
+            errors.append(f"{label}: {exc}")
+            return []
+
+    customer_returns   = _safe("customer_returns",   lambda: client.get_fba_customer_returns(start, end))
+    removal_shipments  = _safe("removal_shipments",  lambda: client.get_fba_removal_shipments(start, end))
+    inventory_snapshot = _safe("inventory_snapshot", lambda: client.get_fba_inventory_summary())
+
+    payload = {
+        "customer_returns":   customer_returns,
+        "removal_shipments":  removal_shipments,
+        "inventory_snapshot": inventory_snapshot,
+    }
+    note = ("PARTIAL — " + "; ".join(errors)) if errors else None
+    return payload, note
+
+
+# ---------------------------------------------------------------------------
+# Cancellations — Shopify, Amazon, Mirakl, BaseLinker
+# ---------------------------------------------------------------------------
+
+def fetch_amazon_cancelled_orders(
+    start: datetime,
+    end: datetime,
+) -> tuple[list[dict] | None, str | None]:
+    """
+    Fetch Amazon orders with OrderStatus=Canceled in the period.
+    Returns rows passed through from SP-API (incl. IsBuyerRequestedCancellation).
+    """
+    sp_required = [
+        "AMAZON_LWA_CLIENT_ID", "AMAZON_LWA_CLIENT_SECRET",
+        "AMAZON_REFRESH_TOKEN", "AMAZON_MARKETPLACE_ID",
+        "AMAZON_ENDPOINT", "AMAZON_SELLER_ID",
+    ]
+    if missing := [v for v in sp_required if not os.environ.get(v)]:
+        return None, f"NOT CONNECTED — SP-API missing: {', '.join(missing)}"
+    try:
+        from scripts.amazon_client import AmazonClient
+        return AmazonClient().get_cancelled_orders(start, end), None
+    except Exception as exc:
+        return None, f"ERROR — {exc}"
+
+
+def fetch_mirakl_cancelled_orders(
+    start: datetime,
+    end: datetime,
+    instance: str = "KINGFISHER",
+) -> tuple[list[dict] | None, str | None]:
+    """
+    Fetch B&Q (Mirakl) orders with state in {CANCELED, REFUSED}.
+    REFUSED = seller declined to accept; CANCELED = mostly customer-driven.
+    """
+    prefix = f"MIRAKL_{instance.upper()}"
+    if not (os.environ.get(f"{prefix}_BASE_URL") and os.environ.get(f"{prefix}_API_KEY")):
+        return None, f"NOT CONNECTED — {prefix}_BASE_URL / API_KEY missing"
+    try:
+        from scripts.mirakl_client import MiraklClient
+        client = MiraklClient(instance)
+
+        orders: list[dict] = []
+        page_token: str | None = None
+        while True:
+            params: dict = {
+                "start_update_date":  start.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "end_update_date":    end.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "order_state_codes":  "CANCELED,REFUSED",
+                "max":                100,
+            }
+            if page_token:
+                params["page_token"] = page_token
+            data = client.get("/orders", params=params)
+            batch = data.get("orders", [])
+            orders.extend(batch)
+            page_token = data.get("next_page_token")
+            if not page_token or not batch:
+                break
+
+        return orders, None
     except Exception as exc:
         return None, f"ERROR — {exc}"
 

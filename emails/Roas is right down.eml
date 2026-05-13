@@ -1,0 +1,237 @@
+Delivered-To: wayne@mowdirect.co.uk
+Received: by 2002:a17:906:f59a:b0:b9d:15bb:8597 with SMTP id cm26csp1799443ejd;
+        Mon, 13 Apr 2026 03:25:33 -0700 (PDT)
+X-Received: by 2002:a05:6830:61c1:b0:7d7:4a7d:fd40 with SMTP id 46e09a7af769-7dc27f23b8cmr7285814a34.22.1776075933571;
+        Mon, 13 Apr 2026 03:25:33 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776075933; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=UhYxdaWsNxM6GuVAES99OJU4Q2iSvVAJL0bZwqkoEO1YQ8k2uNpiCLtLIHeN07f2xt
+         OS3xMGb7i7LfQtXOPt9OWTQ9jhASnvV9ruWpM8SAw6fPWIrqr7JFgZAV5J0qNPkLV3vA
+         3ceGHUoSKcE2Bodt9OAjiJSKJ6LbxVJdwyQaHTsFVjMuGIjGQZaFD6I1PpCK3c+50WOp
+         gXvmdKUY25VjUhJ/9MbslrhZjMB27+IabsrRGRbDHlM39wFtYP9VAZGESxvQH7ARjBzx
+         gEG2vTElbbAN1nNqnPlaISGwr/J74j4SfNjAY8oiUMY7QwSNRK23Vet7VvLmqtkmTx0b
+         ii+Q==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=slQXaGfgmG9fSS17PIa8bvZvTxI6rkrr+MPKd2IzgGg=;
+        fh=pqRHZmNWapZ/xNV3fxKs70Cn6wcg97mv6rVdGKgRRYY=;
+        b=EBr1hndaY5chbciOrqOOAJ17+cCWcB38px4fthMq4hQZD7RIylzKjKZ7DEODOKV75U
+         5mKSSRWD/+kctrG7Du2yuy5lEHrHkkgc5nmeoR3/cCQJteimrN6cOVhybNgKzjILb4jc
+         Mvzi53BeyEomhikg8slG3ePg/uFN6oaaP9bzbfAQGBDQn2ZfR7c6c4ESDP/dixCBp68x
+         5VFyZSLKcBq4NHzHcjJJWWd1etEYu6hcw0hq7K4mCewZHplaaWBzDjfp0WW+xmcWHOve
+         ROlaXaqAcniJQp1E5IgC98o250u+QiHFYFUII0iYVbzefjVJrs1DOiFzmGSZZ1Nd5eaN
+         VGFg==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@clickslice.co.uk header.s=google header.b=JV7ZJ5jj;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of richard@clickslice.co.uk designates 209.85.220.41 as permitted sender) smtp.mailfrom=richard@clickslice.co.uk;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=clickslice.co.uk;
+       dara=neutral header.i=@mowdirect.co.uk
+Return-Path: <richard@clickslice.co.uk>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 46e09a7af769-7dc268563fcsor3276119a34.11.2026.04.13.03.25.33
+        for <wayne@mowdirect.co.uk>
+        (Google Transport Security);
+        Mon, 13 Apr 2026 03:25:33 -0700 (PDT)
+Received-SPF: pass (google.com: domain of richard@clickslice.co.uk designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@clickslice.co.uk header.s=google header.b=JV7ZJ5jj;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of richard@clickslice.co.uk designates 209.85.220.41 as permitted sender) smtp.mailfrom=richard@clickslice.co.uk;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=clickslice.co.uk;
+       dara=neutral header.i=@mowdirect.co.uk
+ARC-Seal: i=1; a=rsa-sha256; t=1776075933; cv=none;
+        d=google.com; s=arc-20240605;
+        b=JlQoMsdK8TTG8F1kp79nPv8cidoKo3iH1Mxos7CR+i1MpEz+KHgnX3Hsf9/lkk9maS
+         ny2kfYNTM9YExgq8GUw7M++w7svfjlBzbDmOv7peu5jfqnFHGbKlQKPQcfYbmrkuNlTK
+         ZnSAYWiWKnJJudTD61KMjbyHkuylJkztNTndjeHDEW7aWH9TPhZDb/2tXdvYQpR6Dw8g
+         foManaEgJc7E6uy+S8Dp+uZj7bogZXKxMyz2IAx6fk6R5wMHhNGqhTcWGrtFx/Hsr/zz
+         lKqS7zM+u7jjALqoNsbkrini/EEHDE13j0I1JcxK14HrOW80dsJDMnZpWofwnwnO6FfJ
+         bzPQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=slQXaGfgmG9fSS17PIa8bvZvTxI6rkrr+MPKd2IzgGg=;
+        fh=pqRHZmNWapZ/xNV3fxKs70Cn6wcg97mv6rVdGKgRRYY=;
+        b=POh0iKIuc1J5e67uEX1wRE3UU+lv8XmAD43fcUqv6VgXCi6EmAehoIA3hv3rjxb9GW
+         4ZtGrkJEnIoZgvcs15LoFG8Ui3vPqiqFByBNzSs6U4R5oAHPZtRA9F9aqIK93396ZJb9
+         bNB7CpXav2FSqr3Adlc8qzdIKfKnqNZI2N7WqCmzK2LcfvdpuKA7p6hhggwHwi42dvy7
+         8pZIgNawvjsBrZM8CSZlGWBSaHmgyhWzU9p9lOf1kx1Wv/n3+gH2tF2eG3751xm34YpB
+         zZFNnJqgNzGLTi2S7WYGgRAGPAAaKYwQBfZxfClj9o7JHj7MSl42lK+UTiS6w11EzMS7
+         r/iw==;
+        darn=mowdirect.co.uk
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=clickslice.co.uk; s=google; t=1776075933; x=1776680733; darn=mowdirect.co.uk;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=slQXaGfgmG9fSS17PIa8bvZvTxI6rkrr+MPKd2IzgGg=;
+        b=JV7ZJ5jjkK3XwUbYLnIhE8V171Dh/1S7KrTLF8lIyNFC3Diw6zxpPN1GR+chc4fiXC
+         c7FPf+W3hV44TOkd2JQSEnkEHfozQ4WeN6eMR6kA+ytMP8lp+akwpkRyYcYsPB1OsKiq
+         d+PEzJshwgy0YvyDIZurWkya42jQyxDLcO3CE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1776075933; x=1776680733;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=slQXaGfgmG9fSS17PIa8bvZvTxI6rkrr+MPKd2IzgGg=;
+        b=khUd+vDMKyzEm61SIGGNKcMWiPWJjC13zA+bGzracgNRw6aRezAdIe9cpwVZHEAeH+
+         88gGrvNSjQGjSYYIy80A7Xrk6xFp07KY92y6kjO9hcSZIjd51/mmprYPtR7MGWwOTyhO
+         LU3O9cirdToVVvHXbsK+LAZQnCcdtgRrjFnuH8dFdx85zKs9rhj0Si6sW0KvFmFNcBJi
+         r+uVZnTXUQCs7co7GFKHEOoSoSBxVhNC0K9lSkqe6y0Rds3jHgXOLu7g4nfW8PVcOaQj
+         58kTyydpszuoc2x1GfroofhmIegooIO1sesmklY2eerauIjrZ8NkoU1TiwZ3XpSXs/ls
+         JUlw==
+X-Gm-Message-State: AOJu0Yxzp4ZO3TwMrQwQNAXAPo8k7/QQFZrqI8Xe53+D2Bx2+iD/egBO
+	0ALE0k43MTzHUbeYbPLfTZrnjjd+l4rsHI6EfzbZpYNFcp3rmOeCOF37Yle8y/5OaBdtOG58Loz
+	hhYvw/SKrXsZru1fRLkyxGz6cf2L01npCDw3IrF7flevh9wPecAqtI6w=
+X-Gm-Gg: AeBDieulBaCUegDHw/CR8xf3frpVMmpr6/wcOWm/9lLj3p3p38lDtqFoN3hGN4gvhRj
+	GA935Irh0MhYIp1QJqJeGwziaPijB2CZrmo1CRkf9dpuNn31fMUNuxk06GylV3G/rAcuwJXSoX/
+	UIHj5t2XDSnA8VAagz+t0hitGNnKS2XOX4xAlPmCMKjTYzKKtVSNTa36jiDcznU6BY4fp34In/F
+	Wj0fiiSShpoeX3fGmB1GHkFxBEgtaRVMgOo+5ORAaQBpwTLtZliz8CAyfSEib5SZ3T2b+4mSM9R
+	+KmvbAlvGzFlAPx+w50r0lKcblzjH2HUFkPFS0hF4Q==
+X-Received: by 2002:a05:6820:80c6:b0:682:ecb8:c13 with SMTP id
+ 006d021491bc7-68be8fce0b4mr6099921eaf.63.1776075932730; Mon, 13 Apr 2026
+ 03:25:32 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAG9doe5RyFvpt+CpQsH=h4E34dkFfE8jPvz-=CVN7EJB=WTsLw@mail.gmail.com>
+In-Reply-To: <CAG9doe5RyFvpt+CpQsH=h4E34dkFfE8jPvz-=CVN7EJB=WTsLw@mail.gmail.com>
+From: Richard Walker-Smith <richard@clickslice.co.uk>
+Date: Mon, 13 Apr 2026 11:25:21 +0100
+X-Gm-Features: AQROBzBHHDac0IHN6nP8TG4O7whL6mPJzUu3d3S32QBZsOdE9OvfemVQs793vAM
+Message-ID: <CABnUOzxdSLW0ALmWoDw9j+4h1EyeEU2-bQ_StsGNtmqHbE=66w@mail.gmail.com>
+Subject: Re: Roas is right down
+To: Wayne Theisinger <wayne@mowdirect.co.uk>
+Cc: "Andrew Gunn ( Compass Garden Machinery)" <andrew.gunn@compassgm.co.uk>
+Content-Type: multipart/alternative; boundary="0000000000001096fb064f54e71d"
+
+--0000000000001096fb064f54e71d
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Wayne,
+
+Absolutely - I'm hyper aware that the ROAS hasn=E2=80=99t been as strong si=
+nce the
+tail end of March and I=E2=80=99ve been regularly adjusting budgets and tar=
+get ROAS
+in response, so spend is already significantly reduced. I will continue
+with the same strategy of targeting for ROAS primarily, with spend scaling
+up or down accordingly rather than the other way around.
+
+
+Thanks for the context.
+
+
+Best,
+
+*Richard Walker-Smith *
+Google Ads Specialist | ClickSlice
+Direct Line: 0 <+447803775766>*7782 256642*
+Main Office Line: *020 3287 3638 <+442032873638>*
+Website: https://www.clickslice.co.uk
+
+
+On Mon, Apr 13, 2026 at 8:17=E2=80=AFAM Wayne Theisinger <wayne@mowdirect.c=
+o.uk>
+wrote:
+
+> Hi Richard,
+>
+> It looks like global uncertainty is really impacting our sales. Given the
+> current climate, could you please pull back on the spend and focus on
+> getting the ROAS back toward our target of 8?
+>
+> We are planning to restructure our onsite marketing to help offset market
+> fears. This will include shifting our focus to electric products and
+> highlighting the fuel efficiency of our petrol range by including
+> accessories like petrol cans.
+>
+> Until these onsite changes are fully implemented, I want to ensure we
+> aren't burning through our budget unnecessarily.
+>
+> Best regards,
+>
+> Wayne
+>
+
+--0000000000001096fb064f54e71d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span id=3D"gmail-docs-internal-guid-6124ade8-7fff-133f-68=
+11-a4c43334f524"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;ma=
+rgin-bottom:0pt"><span style=3D"font-family:Arial,sans-serif;color:rgb(0,0,=
+0);background-color:transparent;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;font-variant-alternates:normal;vertical-align:baseline">Hi =
+Wayne,</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0p=
+t;margin-bottom:0pt"><span style=3D"font-family:Arial,sans-serif;color:rgb(=
+0,0,0);background-color:transparent;font-variant-numeric:normal;font-varian=
+t-east-asian:normal;font-variant-alternates:normal;vertical-align:baseline"=
+>Absolutely - I&#39;m hyper aware that the ROAS hasn=E2=80=99t been as stro=
+ng since the tail end of March and I=E2=80=99ve been regularly adjusting bu=
+dgets and target ROAS in response, so spend is already significantly reduce=
+d. I will continue with the same strategy of targeting for ROAS primarily, =
+with spend scaling up or down accordingly rather than the other way around.=
+</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-b=
+ottom:0pt"><span style=3D"font-family:Arial,sans-serif;color:rgb(0,0,0);bac=
+kground-color:transparent;font-variant-numeric:normal;font-variant-east-asi=
+an:normal;font-variant-alternates:normal;vertical-align:baseline"><br></spa=
+n></p><p style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span =
+style=3D"font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:tra=
+nsparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-va=
+riant-alternates:normal;vertical-align:baseline">Thanks for the context.</s=
+pan></p><p style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><spa=
+n style=3D"font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:t=
+ransparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-=
+variant-alternates:normal;vertical-align:baseline"><br></span></p><p style=
+=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-=
+family:Arial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-=
+variant-numeric:normal;font-variant-east-asian:normal;font-variant-alternat=
+es:normal;vertical-align:baseline">Best,</span></p></span><br class=3D"gmai=
+l-Apple-interchange-newline"><div><div dir=3D"ltr" class=3D"gmail_signature=
+" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div style=3D"color:r=
+gb(136,136,136)"><strong style=3D"color:rgb(68,68,68);font-size:large">Rich=
+ard Walker-Smith=C2=A0</strong><br></div><div style=3D"color:rgb(80,0,80)">=
+<div style=3D"color:rgb(34,34,34)"><div><span style=3D"color:rgb(102,102,10=
+2)">Google Ads Specialist=C2=A0<span style=3D"font-family:arial,helvetica,s=
+ans-serif">|=C2=A0</span>ClickSlice=C2=A0</span></div><div><span style=3D"f=
+ont-family:arial,helvetica,sans-serif">Direct Line:=C2=A0<span style=3D"col=
+or:rgb(0,0,255)"><a href=3D"tel:+447803775766" rel=3D"noopener" style=3D"co=
+lor:rgb(0,0,255)" target=3D"_blank">0</a><u>7782 256642</u></span><br></spa=
+n><div><span style=3D"font-family:arial,helvetica,sans-serif">Main Office L=
+ine:=C2=A0</span><span style=3D"color:rgb(0,0,255);font-family:arial,helvet=
+ica,sans-serif"><u><a href=3D"tel:+442032873638" rel=3D"noopener" style=3D"=
+color:rgb(0,0,255)" target=3D"_blank">020 3287 3638</a></u></span></div><sp=
+an style=3D"font-family:arial,helvetica,sans-serif">Website:=C2=A0</span><s=
+pan style=3D"font-family:arial,helvetica,sans-serif;color:rgb(0,0,255)"><a =
+href=3D"https://www.clickslice.co.uk/" rel=3D"noopener" hspace=3D"streak-tr=
+ack" style=3D"color:rgb(0,0,255)" target=3D"_blank">https://www.clickslice.=
+co.uk</a></span></div></div><div style=3D"color:rgb(34,34,34)"><img src=3D"=
+https://clickslice.co.uk/wp-content/uploads/2018/06/Webp.net-resizeimage-25=
+.png"></div></div></div></div></div><br></div><br><div class=3D"gmail_quote=
+ gmail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, Apr 1=
+3, 2026 at 8:17=E2=80=AFAM Wayne Theisinger &lt;<a href=3D"mailto:wayne@mow=
+direct.co.uk">wayne@mowdirect.co.uk</a>&gt; wrote:<br></div><blockquote cla=
+ss=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid =
+rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr"><div class=3D"gmail_def=
+ault" style=3D"font-size:small">Hi Richard,</div><div style=3D"font-size:sm=
+all"><br></div><div style=3D"font-size:small">It looks like global uncertai=
+nty is<span class=3D"gmail_default" style=3D"font-size:small"> really</span=
+>=C2=A0impact<span class=3D"gmail_default" style=3D"font-size:small">ing</s=
+pan> our sales. Given the current climate, could you please pull back on th=
+e spend and focus on getting the ROAS back toward our target of 8?</div><di=
+v style=3D"font-size:small"><br></div><div style=3D"font-size:small">We are=
+ planning to restructure our onsite marketing to help offset market fears. =
+This will include shifting our focus to electric products and highlighting =
+the fuel efficiency of our petrol range by including accessories like petro=
+l cans.</div><div style=3D"font-size:small"><br></div><div style=3D"font-si=
+ze:small">Until these onsite changes are fully implemented, I want to ensur=
+e we aren&#39;t burning through our budget unnecessarily.</div><div style=
+=3D"font-size:small"><br></div><div style=3D"font-size:small">Best regards,=
+</div><div style=3D"font-size:small"><br></div><div style=3D"font-size:smal=
+l">Wayne</div></div>
+</blockquote></div>
+
+--0000000000001096fb064f54e71d--

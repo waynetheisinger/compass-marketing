@@ -1,0 +1,244 @@
+Delivered-To: wayne@mowdirect.co.uk
+Received: by 2002:a17:906:f59a:b0:b9d:15bb:8597 with SMTP id cm26csp1718840ejd;
+        Mon, 13 Apr 2026 00:01:47 -0700 (PDT)
+X-Received: by 2002:a05:6a20:3d0c:b0:398:a027:4732 with SMTP id adf61e73a8af0-39fe408976bmr13699967637.52.1776063707010;
+        Mon, 13 Apr 2026 00:01:47 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776063707; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=lp/jIm6EebFRoQaCeWRqOl4lr0gIWobXOTxjQ+FfRgoq4y8y/pbc9chIkdLfDh8WXB
+         UB643i3EdpA3PJ0+iLFOkZx2K70ja9z96bFCD1frcOibbjQlGjhmyxJHHZbFzRmQXd2c
+         nOS0rtXfDChV6BPlRF0DpYJH0/Rg2qU9yz4x1Kz4XawnSBaThkHzBb+sa2j485pNmQsM
+         335QKJ0j7N2l010bDAoYgBCHt2WHcmLLjJl+sVjupiMk+6UWv3bS9hD9+SlySt/lRire
+         kMOgetNzABcB0BVIYVDHl/mMkq9+zJTvzSSJZIyyAQT6FVAGtXVtfnYDSH9c8rbvALNO
+         3AOA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from;
+        bh=oIXCWEupd8IJgsnsk8MZzfavTX4sYlXH+mU9/IJyD84=;
+        fh=Iutt1EIdJ7maxTaLqcF9Cg0NpkrT4NjuZ2VBScljMsM=;
+        b=HJb6VhnIPMnGtla64FNMzwHkWsiXagPW3YIR0+ZA/2NMfaMvUrmgmnKHqO9EPiv3DN
+         JsAGalp+i8fXM7DNKJsQOm8xts/kYVaJ6GHHNrpch1N2RruWb6YGgIhpfR0Qn0kvRHek
+         045SGtpkpHrIvZlEIP6KdwY9XUDnQWh6tJigsNVqrz+fYGKoy0v+hTNQ1yqMeOv4aYV5
+         X29zy2ejnW0XoVhS/nxCVRqN4km0SwdsJeq658MyxhSS4bygSd6IHcb8x4wxcdRbnrJk
+         oZvqfJlyAFMzDLvdYm7g+bbRviIQ+g7Zr1UJCoi1GWqF5P8hBWjqRFBZxBMVf5o/tjGV
+         Hs5Q==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       arc=pass (i=1 spf=pass spfdomain=compassgm.co.uk dkim=pass dkdomain=compassgm.co.uk dmarc=pass fromdomain=compassgm.co.uk);
+       spf=pass (google.com: domain of andrew.gunn@compassgm.co.uk designates 2a01:111:f403:c206::4 as permitted sender) smtp.mailfrom=andrew.gunn@compassgm.co.uk;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=compassgm.co.uk
+Return-Path: <andrew.gunn@compassgm.co.uk>
+Received: from CWXP265CU010.outbound.protection.outlook.com (mail-ukwestazlp170120004.outbound.protection.outlook.com. [2a01:111:f403:c206::4])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c792a0aa9a4si14636656a12.325.2026.04.13.00.01.46
+        for <wayne@mowdirect.co.uk>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Apr 2026 00:01:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of andrew.gunn@compassgm.co.uk designates 2a01:111:f403:c206::4 as permitted sender) client-ip=2a01:111:f403:c206::4;
+Authentication-Results: mx.google.com;
+       arc=pass (i=1 spf=pass spfdomain=compassgm.co.uk dkim=pass dkdomain=compassgm.co.uk dmarc=pass fromdomain=compassgm.co.uk);
+       spf=pass (google.com: domain of andrew.gunn@compassgm.co.uk designates 2a01:111:f403:c206::4 as permitted sender) smtp.mailfrom=andrew.gunn@compassgm.co.uk;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=compassgm.co.uk
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=lImDE1tYYUTKwkORlJ9M9Wqqx+vzjqq5hyjku55uah/CSS5URQ2gEBPsLoSIT9AGGa91nYRb75aVsnzlF+zyDASP32rIH8/wvvIQ2INfEnppHbOxKmJLeOIAQjqnIOCjyFcMMzWhx7hVAJcMzzG03EgZxrh//4OYWPes77Iy2c8uxsKyRrHTXV0Z4nlV0TmYhGvUJGBuCQTlIkfULEgGS1TPKATzPnb2UPzlhz1/RlWh8OLB3oFR15q5Lt2Sy84QJVz435gL/C2upgK4Zxl1xRBvdZMgpcJiIJClxoMr5Pl5c8cXKewXTln21gVGyIpIOxYQt8Li9AuqssZ4IoxYuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=oIXCWEupd8IJgsnsk8MZzfavTX4sYlXH+mU9/IJyD84=;
+ b=e9UfVH1sj6PpYfcxvHyN3HG/+y8MkUbuFnvb3MnmoVrIcPk9gfYT99qmC4JFguUjIQFJ2n63QDWLIbaz54VQHSNlvtgVfO4P2oFfwbvR27HRiNdETd+iq/N9Hek5Qz8hvmyE68jjaUPabPsBnji9SRkBWJWUaUpF1rMhNR7wpZ6n3ypU0LUYAcaLMfxQgealFzJfzoHOYz2mZyNqMn6aZY1N/YFDLsVqMRdCTzeYaTL4fC+g37TM1I7jiwYjfRziHtLi9WAIY/nayaDGeiBvVEgbBZKfDxifjPDf6KrPXNvMKR9TXkYWMRCCLqemfmDba6EWsmdVKtc44mLy1VO9+A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=compassgm.co.uk; dmarc=pass action=none
+ header.from=compassgm.co.uk; dkim=pass header.d=compassgm.co.uk; arc=none
+Received: from CWLP302MB0202.GBRP302.PROD.OUTLOOK.COM (2603:10a6:400:224::9)
+ by LO8P302MB1796.GBRP302.PROD.OUTLOOK.COM (2603:10a6:600:3ef::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.48; Mon, 13 Apr
+ 2026 07:01:43 +0000
+Received: from CWLP302MB0202.GBRP302.PROD.OUTLOOK.COM
+ ([fe80::d7fe:3b34:3629:cebd]) by CWLP302MB0202.GBRP302.PROD.OUTLOOK.COM
+ ([fe80::d7fe:3b34:3629:cebd%4]) with mapi id 15.20.9769.046; Mon, 13 Apr 2026
+ 07:01:43 +0000
+From: "Andrew Gunn ( Compass Garden Machinery)" <andrew.gunn@compassgm.co.uk>
+To: Wayne Theisinger <wayne@mowdirect.co.uk>, "Ben Porter ( Compass Garden
+ Machinery)" <ben.porter@compassgm.co.uk>
+Subject: Re: Sales collapse
+Thread-Topic: Sales collapse
+Thread-Index: AQHcyxJsbL+REZIAwkqZ0vRBdM/FfrXckDPr
+Date: Mon, 13 Apr 2026 07:01:43 +0000
+Message-ID:
+ <CWLP302MB02023BAE15DF330D2756A41FA5242@CWLP302MB0202.GBRP302.PROD.OUTLOOK.COM>
+References:
+ <CAG9doe5p8dUFf_JJ4y9A1xka=-mDDp0v4TVa1p5eNAUKZ8HXFg@mail.gmail.com>
+In-Reply-To:
+ <CAG9doe5p8dUFf_JJ4y9A1xka=-mDDp0v4TVa1p5eNAUKZ8HXFg@mail.gmail.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-GB
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=compassgm.co.uk;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: CWLP302MB0202:EE_|LO8P302MB1796:EE_
+x-ms-office365-filtering-correlation-id: 1dc9516c-30c9-465e-c558-08de992a852e
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|376014|366016|1800799024|38070700021|22082099003|56012099003|18002099003|8096899003;
+x-microsoft-antispam-message-info:
+ kdXaNSS8mVdWTZAMYnvSVqH/QYLgQH4qWTSUQx2BgHYTcgK+Ao9/GFufuVRnYztRMMIGlFQfKf9eTaheAp3DDwG0Oieimgu2bGH76sldJmyV1Rub4/l2l4IrBn8WJkewIcmxYy+pl3adwm5LPgOHTQc5WJpf2Dtvf+HjXHHciNBKnW9zVq2EZ4YmP/qquwi5ZNICwWwfzKkTYMyWI2hgdXmoodak0waeXoBOdKp+hE2PyEy1pzy/zHjHCP8WvwIj9DEwnZxuNZVMenvAcjRWE2z4SpEIfVVGw2d/iMx9kuXNf/FwADmU0uB+wuhJBb/SiGetbiDSDr80EuST9UdU10v41g7BEzyzFBhWnjS0kttd+MlrfiC1uU2ab/PA8A6qgxg96NcEovOe89c7leaLe82z3Ocmh8DRAL6TxxEzxD3sRb+omBYiaOPKHACM/y3iBald4FhsCUE6u5HIcHmG1DeVLTQKywun23PLLq424mG4TN1Uu5mCGCRtG+8bBLpFxeevKCgrGkaOLw1DHABdN/jm5xUhb5sgLZiWoQ9W/qSweQmRidfHVgIEgLjhdGr/tdxoFijmECGXufHtI7m3WvwxNez3nhMImyUbmYk55HqC2rKEP+/kLBWBTGgYFhTpWXFCYSK0IuysLxxVk4cINAkz1U/+llRDmkHkT9/+OKfDkopEZNNIt9F3dtvpLsUzCx1PHtCe/4LeM2jNDlree11Hm/OiZ+WTrt5iTkkECUecSwxmpzv5kkTXX+JmKfiBDc1t96pYRUZ3vzsqX+Gm58LZ9Lx0zpEoFK9OsjWNfJs=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CWLP302MB0202.GBRP302.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(38070700021)(22082099003)(56012099003)(18002099003)(8096899003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?P+5vfjF8U9rqYGIKgUX6uKekQlXpgSHFShmKwe64SKN96CUfojtBO6eKqsl3?=
+ =?us-ascii?Q?N5RPHTep8G8yhrF4a7OEMkJhfDXwyxxNQne3P1pdtzpEZajuT0tQ3XJhwBKe?=
+ =?us-ascii?Q?FLutlR7oDxK5NCcw8tBkXaZJQbLutbV/elJFd1q0+gLhECHRaMkeNEc2uQ/t?=
+ =?us-ascii?Q?5tRlFNbZQI9YeAEzU90OdM1+d+/qgkMQG7dSxWNWhvtdiobM77EsBvYqUUeS?=
+ =?us-ascii?Q?3dn2P4boGVnHiU5bTpG6pasbUG95b9klWFYFobz1jQdrmEab029IboYUwamH?=
+ =?us-ascii?Q?TnsFQbjMhEE7Ns3ciP/dV5tlVtHqKwsg3B8m4wUk8rTeqFBFJe+FeSqH66ee?=
+ =?us-ascii?Q?oF8SphK6k8ZdzAjM+43QcowwzXYOrJI8mmXJZ3htrZBBsx19A+yS0cW7zvke?=
+ =?us-ascii?Q?HXuEyF/6aoUXKA58cmrl52vXNLAx+xFImJWppGzkLpuWEce3hiJBcXA8XVtd?=
+ =?us-ascii?Q?0EjT/4Y0Rhc7/Q392JDXXXe5UkPaLMU63xwcc/aneIZrYafW47du9e0d0sbT?=
+ =?us-ascii?Q?Sgdbxd783V6IlYyFi3H5ngCOHolooP0Lk4l5BG5Yjv4PFd9JLqCrnL7EGpKS?=
+ =?us-ascii?Q?FSHyGsSCGOjo+XVPWnXIfg/rTQPHYoWTh1YbLpgh3IvvdqhnPcVZVxRfVbdg?=
+ =?us-ascii?Q?caaAWt+Ra/49zEB1knTHUX62uTI6U6o/1+srEGjxFbL/JbWSiv28p03J4ffW?=
+ =?us-ascii?Q?iIuCRdSw7Yzo3FN8wRmTZGFIXRwi4O2//tbGacIqt0zUFgMVWwk+BZK7Yot1?=
+ =?us-ascii?Q?f6/wpSKBtVCrKCuIyyeqBD4SM7cy6tRQWyGK7vwO67iHw0mBIoJ47u9jv0/L?=
+ =?us-ascii?Q?8yzkOKxwglWhpJKBm2hNr55MlzBc219nA5auncI0YkvDbT63jpuJHycq+aiF?=
+ =?us-ascii?Q?WXM5v74HVu1FiNTOxYl7qb0VvVlkTY8fO8fPJOoTkktQuT5ATJx3p8ogfK3H?=
+ =?us-ascii?Q?yyBBFYxqnaykte+zUyAVg1tQS+JnsG6RaMi5XRP4vZJL/HpaLS/3dGTve/Mq?=
+ =?us-ascii?Q?nxg8qVNy8BaU4EiwdLWw+i7GypzxNfghujjV+XHiSqGRp4MsgTcGwMUoIwZC?=
+ =?us-ascii?Q?Li4R/Vcu6BOL1NS0pyZi13OdKHDEG3/aPhv8RUva4BxnkndbC99QowwUfKQ8?=
+ =?us-ascii?Q?xhd+JlU3TarXKYp4/Ae1gwTPUa6OsTVHJMGS2fsXqhMRImrdZJf97TeAy47P?=
+ =?us-ascii?Q?eDKvLejEpBreL3RKvsuaIShSm2VuQi2mQUJ9kSjLfZa4okKCKU7izpknaFwK?=
+ =?us-ascii?Q?TGmIlirSG8eRscVlgOlXZiQg2S3nH4n6TIa6jwa54aNEtoRb9EuicDTa46Q2?=
+ =?us-ascii?Q?jacUG41PiqUXa/dDv4A1YuOdd6uSVUSGik9D5aM8mPkiLI6U8Rgy/8We+ECp?=
+ =?us-ascii?Q?in4UD9dljttXTqF+lhdroyQkvXgDzw7K1U5oRi/0EUTQjbcw/8tY5H01gYIh?=
+ =?us-ascii?Q?7nlQ5hmN5u9EDML4UN8p2nSvVFCFw5mqQ6eQriBrU569gLvvfgIoouPN4xWo?=
+ =?us-ascii?Q?xZe/b168c4x3WXfoq6Urro4pHxnsgRF3S7/8taSiDrS7fUnzkKNAeo9WpW52?=
+ =?us-ascii?Q?z3nSnXn7juCiJbBOTmdzjOAuUiYFkJYAqzpMlqLSbGrh5PWZ6CDuEFtKjdIk?=
+ =?us-ascii?Q?Bya9SBp0q6Sh1/I5oFSN9qWG2wYk8CVOVtwcbAHVsm+6Oc0FBvOxzXKpHOjm?=
+ =?us-ascii?Q?wWYI10VmHb5EPthl9pluCDI/dqRrkKW1+vyEHSfAxTJYUFWh1QdU5cabbskj?=
+ =?us-ascii?Q?JBq2Ipf3iQMfvbAwY4vRP/uM/ZCO1Qs=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_CWLP302MB02023BAE15DF330D2756A41FA5242CWLP302MB0202GBRP_"
+MIME-Version: 1.0
+X-OriginatorOrg: compassgm.co.uk
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: CWLP302MB0202.GBRP302.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1dc9516c-30c9-465e-c558-08de992a852e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2026 07:01:43.4919
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d84aabb6-d54b-4cf2-99ee-07e175654e44
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: q4wnYAxh3dygNsfWPZxyIXfBdjayzQH2mdp6RO8wLgQSMyTEEk8c+I7sO2zGymFCuYdtGy7U94nSJAONRKzsbg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO8P302MB1796
+
+--_000_CWLP302MB02023BAE15DF330D2756A41FA5242CWLP302MB0202GBRP_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Wayne.  Agree.  However we cannot sacrifice margin and also must focus o=
+n stock items.  I am hoping to talk to Ben about this later
+Also I am feeling marketing cash going out too fast atm. Can you check clic=
+k slice is not over spend.  Thx
+
+Sent from Outlook for iOS<https://aka.ms/o0ukef>
+________________________________
+From: Wayne Theisinger <wayne@mowdirect.co.uk>
+Sent: Monday, April 13, 2026 2:54:33 PM
+To: Andrew Gunn ( Compass Garden Machinery) <andrew.gunn@compassgm.co.uk>; =
+Ben Porter ( Compass Garden Machinery) <ben.porter@compassgm.co.uk>
+Subject: Sales collapse
+
+Hi Andrew and Ben,
+
+The weather has picked up, but unfortunately, sales haven't followed suit. =
+It appears that global uncertainty is hitting us, and we are going to need =
+a strategy to counteract this trend.
+
+I am going to put together a plan over the course of today and tomorrow mor=
+ning. I think we should have a call tomorrow afternoon to discuss it.
+
+Please let me know what time works best for you both.
+
+Best regards,
+
+Wayne
+
+
+--_000_CWLP302MB02023BAE15DF330D2756A41FA5242CWLP302MB0202GBRP_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+</head>
+<body>
+<div style=3D"font-family: Aptos, -apple-system, HelveticaNeue, sans-serif;=
+font-size: 12pt">
+<div style=3D"font-family: Aptos, Aptos_MSFontService, -apple-system, Robot=
+o, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" dir=
+=3D"ltr">
+Hi Wayne. &nbsp;Agree. &nbsp;However we cannot sacrifice margin and also mu=
+st focus on stock items. &nbsp;I am hoping to talk to Ben about this later<=
+/div>
+<div style=3D"font-family: Aptos, Aptos_MSFontService, -apple-system, Robot=
+o, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" dir=
+=3D"ltr">
+Also I am feeling marketing cash going out too fast atm. Can you check clic=
+k slice is not over spend. &nbsp;Thx&nbsp;</div>
+</div>
+<div id=3D"ms-outlook-mobile-body-separator-line" style=3D"font-family: Apt=
+os, -apple-system, HelveticaNeue, sans-serif;font-size: 12pt" dir=3D"auto">
+<br>
+</div>
+<div id=3D"ms-outlook-mobile-signature" style=3D"font-family: Aptos, -apple=
+-system, HelveticaNeue, sans-serif;font-size: 12pt">
+Sent from <a href=3D"https://aka.ms/o0ukef">Outlook for iOS</a></div>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
+yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> Wayne Theisinger &lt;=
+wayne@mowdirect.co.uk&gt;<br>
+<b>Sent:</b> Monday, April 13, 2026 2:54:33 PM<br>
+<b>To:</b> Andrew Gunn ( Compass Garden Machinery) &lt;andrew.gunn@compassg=
+m.co.uk&gt;; Ben Porter ( Compass Garden Machinery) &lt;ben.porter@compassg=
+m.co.uk&gt;<br>
+<b>Subject:</b> Sales collapse</font>
+<div>&nbsp;</div>
+</div>
+<div>
+<div dir=3D"ltr">
+<div style=3D"font-size:small">Hi Andrew and Ben,</div>
+<div style=3D"font-size:small"><br>
+</div>
+<div style=3D"font-size:small">The weather has picked up, but unfortunately=
+, sales haven't followed suit. It appears that global uncertainty is hittin=
+g us, and we are going to need a strategy to counteract this trend.</div>
+<div style=3D"font-size:small"><br>
+</div>
+<div style=3D"font-size:small">I am going to put together a plan over the c=
+ourse of today and tomorrow morning. I think we should have a call tomorrow=
+ afternoon to discuss it.</div>
+<div style=3D"font-size:small"><br>
+</div>
+<div style=3D"font-size:small">Please let me know what time works best for =
+you both.</div>
+<div style=3D"font-size:small"><br>
+</div>
+<div style=3D"font-size:small">Best regards,</div>
+<div style=3D"font-size:small"><br>
+</div>
+<div style=3D"font-size:small">Wayne</div>
+<div class=3D"x_gmail_default" style=3D"font-size:small"><br>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_CWLP302MB02023BAE15DF330D2756A41FA5242CWLP302MB0202GBRP_--

@@ -26,7 +26,7 @@ CHANNELS = [
     {
         "name": "Shopify Direct",
         "source": "Shopify GraphQL (mock)",
-        "gross": 174_254.00,
+        "net": 174_254.00,
         "fees": [
             ("Payment processing (Shopify Payments 1.5%)", 2_614.00),
         ],
@@ -36,7 +36,7 @@ CHANNELS = [
     {
         "name": "eBay",
         "source": "eBay Finances API (mock)",
-        "gross": 108_909.00,
+        "net": 108_909.00,
         "fees": [
             ("Referral / final value fees (11%)",  11_980.00),
             ("Promoted Listings spend",              2_178.00),
@@ -51,7 +51,7 @@ CHANNELS = [
     {
         "name": "Amazon",
         "source": "SP-API Settlement (mock)",
-        "gross": 87_127.00,
+        "net": 87_127.00,
         # Referral fee is a commission (marketing cost of selling on Amazon)
         "fees": [
             ("Referral fees / commission (12%)",  10_455.00),
@@ -70,7 +70,7 @@ CHANNELS = [
     {
         "name": "ManoMano",
         "source": "BaseLinker (mock)",
-        "gross": 34_851.00,
+        "net": 34_851.00,
         "fees": [
             ("Commission (18%)", 6_273.00),
         ],
@@ -80,7 +80,7 @@ CHANNELS = [
     {
         "name": "OnBuy",
         "source": "BaseLinker (mock)",
-        "gross": 17_425.00,
+        "net": 17_425.00,
         "fees": [
             ("Commission (7%)", 1_220.00),
         ],
@@ -90,7 +90,7 @@ CHANNELS = [
     {
         "name": "B&Q (Mirakl)",
         "source": "Mirakl API (mock)",
-        "gross": 13_069.00,
+        "net": 13_069.00,
         "fees": [
             ("Commission (13%)",            1_699.00),
             ("Listing / platform charges",    120.00),
@@ -225,19 +225,27 @@ def grand_total_row(ws, row, ncols, label, col_values, bg=DARK_GREEN):
 # Derived totals
 # ---------------------------------------------------------------------------
 
+WAYNE_COMMISSION_RATE = 0.04  # 4% of total net revenue, replaces FBA cost-of-sales
+
+
 def totals():
+    """
+    Mock totals. Channel values in CHANNELS are illustrative round numbers —
+    treated here as the **net** (ex-VAT) revenue base for the funder
+    report. No 1.20 back-out applied to keep the mock readable.
+    """
     all_fees      = sum(f for ch in CHANNELS for _, f in ch["fees"])
-    all_fba       = sum(f for ch in CHANNELS for _, f in ch["fba_costs"])
     all_google    = sum(s for _, s, _, _ in GOOGLE_ADS)
     all_mkt_ads   = sum(s for ch in CHANNELS for _, s, _, _ in ch["ad_spend"])
     all_ads       = all_google + all_mkt_ads
-    all_gross     = sum(ch["gross"] for ch in CHANNELS)
+    all_net       = sum(ch["net"] for ch in CHANNELS)
+    commission    = round(all_net * WAYNE_COMMISSION_RATE, 2)
     return {
-        "gross":    all_gross,
-        "fees":     all_fees,
-        "fba":      all_fba,
-        "ads":      all_ads,
-        "combined": all_fees + all_fba + all_ads,
+        "net":        all_net,
+        "fees":       all_fees,
+        "commission": commission,
+        "ads":        all_ads,
+        "combined":   all_fees + commission + all_ads,
     }
 
 
@@ -256,24 +264,24 @@ def build_summary(wb):
     t = totals()
 
     # ── Key metrics table ────────────────────────────────────────────────────
-    header_row(ws, 3, ["Metric", "Amount (£)", "% of Gross Revenue", "Notes"])
+    header_row(ws, 3, ["Metric", "Amount (£)", "% of Net Revenue", "Notes"])
 
     metrics = [
-        ("Gross Revenue (all channels)",     t["gross"],    t["gross"] / t["gross"],
+        ("Net Revenue (all channels, ex-VAT)", t["net"], t["net"] / t["net"],
          "Shopify + eBay + Amazon + ManoMano + OnBuy + B&Q"),
         None,
-        ("Marketplace commissions & fees",   t["fees"],     t["fees"]  / t["gross"],
+        ("Marketplace commissions & fees",   t["fees"],     t["fees"]  / t["net"],
          "Referral fees, subscriptions, listing charges — see Marketplace Fees tab"),
-        ("Amazon FBA cost of sales",         t["fba"],      t["fba"]   / t["gross"],
-         "Fulfilment, storage, inbound, prep — see FBA Cost of Sales tab"),
-        ("Total paid ad spend",              t["ads"],      t["ads"]   / t["gross"],
+        ("Commission paid to Wayne Theisinger", t["commission"], t["commission"] / t["net"],
+         "4% of Net Revenue across all channels."),
+        ("Total paid ad spend",              t["ads"],      t["ads"]   / t["net"],
          "Google Ads + eBay Promoted Listings + Amazon Sponsored Products"),
         None,
-        ("Total deductions (fees + FBA + ads)", t["combined"], t["combined"] / t["gross"],
+        ("Total deductions (fees + commission + ads)", t["combined"], t["combined"] / t["net"],
          "All costs combined"),
-        ("Net contribution",                 t["gross"] - t["combined"],
-         (t["gross"] - t["combined"]) / t["gross"],
-         "Gross revenue after all marketplace costs"),
+        ("Contribution after deductions",    t["net"] - t["combined"],
+         (t["net"] - t["combined"]) / t["net"],
+         "Net revenue minus all marketplace costs."),
     ]
 
     r = 4
@@ -285,7 +293,7 @@ def build_summary(wb):
             r += 1
             continue
         label, amount, pct, note = m
-        is_key = label.startswith("Total deductions") or label.startswith("Net contribution")
+        is_key = label.startswith("Total deductions") or label.startswith("Contribution")
         bg = LIGHT_GREEN if is_key else shading[shade_i % 2]
         shade_i += 1
         ws.row_dimensions[r].height = 18
@@ -301,42 +309,24 @@ def build_summary(wb):
     # Left: commission by channel  |  Right: FBA by cost type
     section_heading(ws, r, "  Commissions & Fees by Channel", 4)
     r += 1
-    header_row(ws, r, ["Channel", "Gross Revenue (£)", "Commissions & Fees (£)", "Fee %"])
+    header_row(ws, r, ["Channel", "Net Revenue (£)", "Commissions & Fees (£)", "Fee %"])
     r += 1
     for ch in CHANNELS:
         ch_fees = sum(f for _, f in ch["fees"])
         bg = PALE_GREEN if r % 2 == 0 else WHITE
         data_cell(ws, r, 1, ch["name"],  align="left", bg=bg, bold_=True)
-        data_cell(ws, r, 2, ch["gross"], fmt=GBP, bg=bg)
+        data_cell(ws, r, 2, ch["net"], fmt=GBP, bg=bg)
         data_cell(ws, r, 3, ch_fees,     fmt=GBP, bg=bg)
-        data_cell(ws, r, 4, ch_fees / ch["gross"], fmt=PCT, bg=bg)
+        data_cell(ws, r, 4, ch_fees / ch["net"], fmt=PCT, bg=bg)
         r += 1
     subtotal_row(ws, r, 4, "TOTAL",
-                 {2: (t["gross"], GBP), 3: (t["fees"], GBP),
-                  4: (t["fees"] / t["gross"], PCT)})
-    r += 2
-
-    section_heading(ws, r, "  Amazon FBA Cost of Sales", 4, bg=MID_BLUE)
-    r += 1
-    header_row(ws, r, ["Cost Type", "Amount (£)", "% of Amazon Revenue", "Notes"],
-               bg=DARK_BLUE)
-    r += 1
-    amazon_ch = next(c for c in CHANNELS if c["name"] == "Amazon")
-    for cost_type, amount in amazon_ch["fba_costs"]:
-        bg = PALE_BLUE if r % 2 == 0 else WHITE
-        data_cell(ws, r, 1, cost_type, align="left", bg=bg)
-        data_cell(ws, r, 2, amount, fmt=GBP, bg=bg)
-        data_cell(ws, r, 3, amount / amazon_ch["gross"], fmt=PCT, bg=bg)
-        data_cell(ws, r, 4, "", bg=bg)
-        r += 1
-    subtotal_row(ws, r, 4, "TOTAL FBA COST OF SALES",
-                 {2: (t["fba"], GBP), 3: (t["fba"] / amazon_ch["gross"], PCT)},
-                 bg=LIGHT_BLUE, fg=DARK_BLUE)
+                 {2: (t["net"], GBP), 3: (t["fees"], GBP),
+                  4: (t["fees"] / t["net"], PCT)})
     r += 2
 
     section_heading(ws, r, "  Ad Spend by Platform", 4)
     r += 1
-    header_row(ws, r, ["Platform", "Spend (£)", "% of Gross Revenue", "Notes"])
+    header_row(ws, r, ["Platform", "Spend (£)", "% of Net Revenue", "Notes"])
     r += 1
     all_google = sum(s for _, s, _, _ in GOOGLE_ADS)
     ad_rows = [
@@ -353,11 +343,11 @@ def build_summary(wb):
         bg = PALE_GREEN if r % 2 == 0 else WHITE
         data_cell(ws, r, 1, platform, align="left", bg=bg, bold_=True)
         data_cell(ws, r, 2, spend, fmt=GBP, bg=bg)
-        data_cell(ws, r, 3, spend / t["gross"], fmt=PCT, bg=bg)
+        data_cell(ws, r, 3, spend / t["net"], fmt=PCT, bg=bg)
         data_cell(ws, r, 4, note, align="left", bg=bg, fg=MUTED_TEXT, italic=True)
         r += 1
     subtotal_row(ws, r, 4, "TOTAL",
-                 {2: (t["ads"], GBP), 3: (t["ads"] / t["gross"], PCT)})
+                 {2: (t["ads"], GBP), 3: (t["ads"] / t["net"], PCT)})
     r += 2
 
     mock_banner(ws, r, 4)
@@ -375,8 +365,8 @@ def build_marketplace(wb):
     ws.row_dimensions[2].height = 4
 
     header_row(ws, 3,
-               ["Channel", "Fee Type", "Amount (£)", "Channel Revenue (£)",
-                "Fee as % of Revenue", "Data Source", "Coverage"])
+               ["Channel", "Fee Type", "Amount (£)", "Net Channel Revenue (£)",
+                "Fee as % of Net Revenue", "Data Source", "Coverage"])
 
     t = totals()
     r = 4
@@ -388,9 +378,9 @@ def build_marketplace(wb):
                       align="left", bg=bg, bold_=(j == 0))
             data_cell(ws, r, 2, fee_type, align="left", bg=bg)
             data_cell(ws, r, 3, amount, fmt=GBP, bg=bg)
-            data_cell(ws, r, 4, ch["gross"] if j == 0 else None,
+            data_cell(ws, r, 4, ch["net"] if j == 0 else None,
                       fmt=GBP, bg=bg)
-            data_cell(ws, r, 5, amount / ch["gross"], fmt=PCT, bg=bg)
+            data_cell(ws, r, 5, amount / ch["net"], fmt=PCT, bg=bg)
             data_cell(ws, r, 6, ch["source"] if j == 0 else "",
                       align="left", bg=bg, fg=MUTED_TEXT, italic=True)
             data_cell(ws, r, 7, "MOCK DATA", align="center",
@@ -398,151 +388,20 @@ def build_marketplace(wb):
             r += 1
         # Channel subtotal
         subtotal_row(ws, r, 7, f"{ch['name']} subtotal",
-                     {3: (ch_fees, GBP), 4: (ch["gross"], GBP),
-                      5: (ch_fees / ch["gross"], PCT)})
+                     {3: (ch_fees, GBP), 4: (ch["net"], GBP),
+                      5: (ch_fees / ch["net"], PCT)})
         r += 1
 
     grand_total_row(ws, r, 7, "GRAND TOTAL — MARKETPLACE FEES",
-                   {3: (t["fees"], GBP), 4: (t["gross"], GBP),
-                    5: (t["fees"] / t["gross"], PCT)})
+                   {3: (t["fees"], GBP), 4: (t["net"], GBP),
+                    5: (t["fees"] / t["net"], PCT)})
     r += 2
     mock_banner(ws, r, 7)
 
-    # Note clarifying what is NOT on this tab
-    r += 1
-    ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=7)
-    c = ws.cell(row=r, column=1,
-                value="ℹ  Amazon FBA operational costs (fulfilment, storage, inbound, prep) "
-                      "are excluded from this tab — see 'FBA Cost of Sales' tab.")
-    c.fill = fill(PALE_BLUE)
-    c.font = Font(size=9, color=DARK_BLUE, italic=True)
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    ws.row_dimensions[r].height = 20
-
 
 # ---------------------------------------------------------------------------
-# Tab 3 — FBA Cost of Sales  (NEW)
-# ---------------------------------------------------------------------------
-
-def build_fba(wb):
-    ws = wb.create_sheet("FBA Cost of Sales")
-    ws.sheet_view.showGridLines = False
-    set_col_widths(ws, [36, 14, 16, 16, 36])
-    title_row(ws, f"Amazon FBA — Cost of Sales  |  {MONTH_LABEL}", 5, bg=DARK_BLUE)
-    ws.row_dimensions[2].height = 4
-
-    amazon_ch = next(c for c in CHANNELS if c["name"] == "Amazon")
-    t = totals()
-
-    # ── Explanation banner ────────────────────────────────────────────────────
-    ws.merge_cells("A3:E3")
-    ws.row_dimensions[3].height = 30
-    c = ws["A3"]
-    c.value = ("These are operational costs charged by Amazon for physical fulfilment of orders "
-               "via FBA (Fulfilment by Amazon). They are costs of sale, not marketing spend, "
-               "and are tracked separately from the marketing budget.")
-    c.fill = fill(PALE_BLUE)
-    c.font = Font(size=9, color=DARK_BLUE, italic=True)
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1, wrap_text=True)
-
-    header_row(ws, 4,
-               ["FBA Cost Type", "Amount (£)",
-                "% of Amazon Revenue", "% of Total Gross Revenue", "Notes"],
-               bg=DARK_BLUE, fg=WHITE)
-
-    fba_notes = {
-        "FBA fulfilment fees (pick, pack & ship)":
-            "Charged per unit shipped. Varies by size/weight.",
-        "FBA storage fees (standard, March)":
-            "Monthly charge based on cubic footage. Long-term storage rates apply after 365 days.",
-        "FBA inbound shipping (stock to warehouse)":
-            "Cost of sending stock from MowDirect / supplier to Amazon fulfilment centre.",
-        "FBA prep & labelling":
-            "Per-unit labelling, bagging, or bundling required by Amazon.",
-    }
-
-    r = 5
-    for cost_type, amount in amazon_ch["fba_costs"]:
-        bg = PALE_BLUE if r % 2 == 0 else WHITE
-        data_cell(ws, r, 1, cost_type, align="left", bg=bg, bold_=True)
-        data_cell(ws, r, 2, amount, fmt=GBP, bg=bg)
-        data_cell(ws, r, 3, amount / amazon_ch["gross"], fmt=PCT, bg=bg)
-        data_cell(ws, r, 4, amount / t["gross"],         fmt=PCT, bg=bg)
-        data_cell(ws, r, 5, fba_notes.get(cost_type, ""), align="left",
-                  bg=bg, fg=MUTED_TEXT, italic=True)
-        r += 1
-
-    # Totals
-    ws.row_dimensions[r].height = 18
-    for col in range(1, 6):
-        ws.cell(row=r, column=col).fill = fill(LIGHT_BLUE)
-    data_cell(ws, r, 1, "TOTAL FBA COST OF SALES",
-              align="left", bg=LIGHT_BLUE, bold_=True, fg=DARK_BLUE)
-    data_cell(ws, r, 2, t["fba"], fmt=GBP, bg=LIGHT_BLUE, bold_=True, fg=DARK_BLUE)
-    data_cell(ws, r, 3, t["fba"] / amazon_ch["gross"], fmt=PCT,
-              bg=LIGHT_BLUE, bold_=True, fg=DARK_BLUE)
-    data_cell(ws, r, 4, t["fba"] / t["gross"], fmt=PCT,
-              bg=LIGHT_BLUE, bold_=True, fg=DARK_BLUE)
-    data_cell(ws, r, 5, "", bg=LIGHT_BLUE)
-    r += 2
-
-    # ── Context: Amazon referral fee shown separately for clarity ─────────────
-    section_heading(ws, r,
-                    "  For reference: Amazon referral fee (commission) — on Marketplace Fees tab",
-                    5, bg=MID_BLUE)
-    r += 1
-    header_row(ws, r, ["Fee Type", "Amount (£)", "% of Amazon Revenue", "", "Notes"],
-               bg=DARK_BLUE)
-    r += 1
-    amazon_ref = next(f for ft, f in amazon_ch["fees"])
-    bg = PALE_BLUE
-    data_cell(ws, r, 1, "Referral fees / commission (12%)", align="left", bg=bg)
-    data_cell(ws, r, 2, amazon_ref, fmt=GBP, bg=bg)
-    data_cell(ws, r, 3, amazon_ref / amazon_ch["gross"], fmt=PCT, bg=bg)
-    data_cell(ws, r, 4, "", bg=bg)
-    data_cell(ws, r, 5,
-              "Commission on each sale — treated as marketing cost of channel, not FBA operational cost.",
-              align="left", bg=bg, fg=MUTED_TEXT, italic=True)
-    r += 2
-
-    # ── FBA vs marketing budget comparison ───────────────────────────────────
-    section_heading(ws, r, "  FBA Cost of Sales vs Marketing Budget — Amazon channel", 5,
-                    bg=MID_BLUE)
-    r += 1
-    header_row(ws, r, ["Cost bucket", "Amount (£)", "% of Amazon Revenue", "", ""],
-               bg=DARK_BLUE)
-    r += 1
-    amazon_ads = sum(s for _, s, _, _ in amazon_ch["ad_spend"])
-    for label, amount in [
-        ("Amazon referral commission",  amazon_ref),
-        ("Amazon Sponsored Products",   amazon_ads),
-        ("FBA fulfilment fees",
-         next(f for ct, f in amazon_ch["fba_costs"] if "fulfilment" in ct)),
-        ("FBA storage fees",
-         next(f for ct, f in amazon_ch["fba_costs"] if "storage" in ct)),
-        ("FBA inbound shipping",
-         next(f for ct, f in amazon_ch["fba_costs"] if "inbound" in ct)),
-        ("FBA prep & labelling",
-         next(f for ct, f in amazon_ch["fba_costs"] if "prep" in ct)),
-    ]:
-        bg = PALE_BLUE if r % 2 == 0 else WHITE
-        data_cell(ws, r, 1, label, align="left", bg=bg)
-        data_cell(ws, r, 2, amount, fmt=GBP, bg=bg)
-        data_cell(ws, r, 3, amount / amazon_ch["gross"], fmt=PCT, bg=bg)
-        data_cell(ws, r, 4, "", bg=bg)
-        data_cell(ws, r, 5, "", bg=bg)
-        r += 1
-
-    amazon_all = amazon_ref + amazon_ads + t["fba"]
-    subtotal_row(ws, r, 5, "TOTAL AMAZON COSTS",
-                 {2: (amazon_all, GBP), 3: (amazon_all / amazon_ch["gross"], PCT)},
-                 bg=LIGHT_BLUE, fg=DARK_BLUE)
-    r += 2
-    mock_banner(ws, r, 5)
-
-
-# ---------------------------------------------------------------------------
-# Tab 4 — Ad Spend
+# Tab — Ad Spend
+# (FBA Cost of Sales tab removed — see git history for the prior layout.)
 # ---------------------------------------------------------------------------
 
 def build_ad_spend(wb):
@@ -684,7 +543,6 @@ def main():
 
     build_summary(wb)
     build_marketplace(wb)
-    build_fba(wb)
     build_ad_spend(wb)
     build_raw(wb)
 

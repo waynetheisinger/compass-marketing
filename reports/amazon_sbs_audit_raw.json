@@ -1,0 +1,3664 @@
+{
+  "shopify": {
+    "SBS460CLM": {
+      "sku": "SBS460CLM",
+      "title": "Default Title",
+      "price": "319.95",
+      "compareAtPrice": "399.95",
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15833926730101",
+        "title": "Spectrum SBS460CLM 46cm Self-Propelled Cordless Lawn Mower \u2014 Bare Tool (Batteries & Charger Sold Separately)",
+        "handle": "spectrum-sbs460clm-46cm-self-propelled-cordless-lawn-mower-tool-only",
+        "status": "ACTIVE",
+        "productType": "Cordless Lawnmowers",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>Spectrum SBS460CLM \u2014 The Cordless Mower Built for Real Lawns</h2><p>If your lawn demands more than a basic push-along can deliver, the Spectrum SBS460CLM is where performance meets practicality. Engineered for medium to large gardens, this self-propelled cordless mower takes the hard work out of lawn care \u2014 you guide it, and the transmission does the rest.</p><p>At the heart of the SBS460CLM is a high-efficiency <strong>brushless motor</strong> drawing power from a dual-battery configuration. This twin-battery setup doesn't just extend your runtime \u2014 it maintains consistent cutting speed from the first strip to the last, even in thicker grass.</p><p>The <strong>46cm (18\") metal cutting deck</strong> covers ground quickly without compromising finish quality. Seven central cutting heights from <strong>25mm to 75mm</strong> let you dial in the perfect cut for the season \u2014 scalp-close in spring, or a lush longer finish in the summer heat. Adjustment takes seconds with the single central lever.</p><p>When it comes to grass disposal, the SBS460CLM gives you four options: rear collection into the <strong>60-litre grass bag</strong>, mulching back into the lawn, rear discharge, or side discharge. A bag-full indicator means no blockages, no guesswork.</p><p>Large ball-bearing wheels \u2014 7\" front and 10\" rear \u2014 roll smoothly across uneven ground and resist turf damage. Despite a solid, substantial build, the mower remains well-balanced and manageable throughout your session.</p><p><em>This is a tool-only model. Compatible with optional Spectrum 2Ah and 4Ah batteries. Choose from standard, fast, or dual charger options \u2014 all available separately.</em></p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbs460clm-46cm-self-propelled-cordless-lawn-mower-tool-only"
+      }
+    },
+    "SBS480CBV": {
+      "sku": "SBS480CBV",
+      "title": "Default Title",
+      "price": "79.95",
+      "compareAtPrice": null,
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15833927025013",
+        "title": "Spectrum SBS480CBV 40V Cordless Leaf Blower Vacuum \u2014 Bare Tool (Battery & Charger Sold Separately)",
+        "handle": "spectrum-sbs480cbv-40v-cordless-leaf-blower-vacuum-tool-only",
+        "status": "ACTIVE",
+        "productType": "Cordless Leaf Blowers",
+        "vendor": "Spectrum",
+        "tags": [
+          "Hand Held Garden Blower-Vac Deals"
+        ],
+        "descriptionHtml": "<h2>Spectrum SBS480CBV \u2014 Blow, Vac, Mulch. Garden tidy in minutes.</h2><p>Autumn leaves, post-mow clippings, damp debris in hard-to-reach corners \u2014 the <strong>Spectrum SBS480CBV Cordless Blower Vac</strong> takes care of it all. One tool, three functions: blower, vacuum, and mulcher. No cables. No compromise.</p><p>In <strong>blower mode</strong>, the SBS480CBV generates an air speed of up to <strong>52m/s</strong> with an air volume of <strong>264m\u00b3/h</strong> \u2014 enough to shift stubborn wet leaves from paths, patios, and lawn edges in quick, efficient passes.</p><p>Switch to <strong>vacuum mode</strong> and the air volume jumps to <strong>588m\u00b3/h</strong>, pulling debris into the <strong>12-litre collection bag</strong> while the built-in <strong>3-blade mulching system</strong> shreds it at a 30:1 ratio. That means a full bag's worth of leaves compresses down to a fraction of its original volume \u2014 fewer trips to the compost heap, more time getting on with the job.</p><p>Weighing just <strong>4.26kg</strong> with an adjustable handle, the SBS480CBV stays comfortable during longer sessions. A reliable brush motor delivers the consistent airflow you need without the noise and exhaust of a petrol equivalent.</p><p><em>Tool-only model. Compatible with Spectrum 2.0Ah and 4.0Ah batteries and all Spectrum 40V chargers, all available separately.</em></p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbs480cbv-40v-cordless-leaf-blower-vacuum-tool-only"
+      }
+    },
+    "SBS560CHT": {
+      "sku": "SBS560CHT",
+      "title": "Default Title",
+      "price": "74.95",
+      "compareAtPrice": null,
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15837473407349",
+        "title": "Spectrum SBS560CHT 40V Cordless Hedge Trimmer, 45cm Blade \u2014 Bare Tool (Battery & Charger Sold Separately)",
+        "handle": "spectrum-sbs560cht-40v-cordless-hedge-trimmer-45cm-blade-bare-tool",
+        "status": "ACTIVE",
+        "productType": "Cordless Hedgetrimmers",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>Spectrum <meta charset=\"utf-8\">SBS560CHT \u2014 Sharp Results, Less Effort</h2>\n<p>Neat hedges don't have to mean hard work. The <strong>Spectrum <meta charset=\"utf-8\">SBS560CHT Cordless Hedge Trimmer</strong> combines a powerful brushless motor with a precision laser-cut blade to deliver clean, professional-looking results with minimal fatigue.</p>\n<p>The <strong>brushless motor</strong> is a meaningful upgrade over brush-motor alternatives \u2014 it runs more efficiently, generates less heat, lasts longer between services, and extracts more runtime from each battery charge. At <strong>2,600 cuts per minute</strong>, the 45cm cutting blade moves through foliage quickly, keeping trimming sessions short and results consistent.</p>\n<p>With an <strong>18mm cutting capacity</strong>, the SBS560CHT handles the thicker, woodier growth found in established hedges without stalling or snagging. The <strong>90\u00b0 rotating handle</strong> is a genuine practical feature \u2014 it lets you switch between horizontal top cuts and vertical face cuts without adjusting your stance or grip, reducing strain on wrists and shoulders during longer sessions.</p>\n<p>At just <strong>2.91kg</strong>, it's light enough to hold overhead comfortably for as long as the job demands, and the 40V Spectrum battery platform means it shares power with your other Spectrum cordless tools.</p>\n<p><em>Tool-only model. Compatible with Spectrum 2.0Ah and 4.0Ah batteries and all Spectrum 40V chargers, available separately.</em></p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbs560cht-40v-cordless-hedge-trimmer-45cm-blade-bare-tool"
+      }
+    },
+    "SBS240CPHT": {
+      "sku": "SBS240CPHT",
+      "title": "Default Title",
+      "price": "84.95",
+      "compareAtPrice": "129.95",
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15833927057781",
+        "title": "Spectrum SBS240CPHT 40V Cordless Pole Hedge Trimmer, 46cm Blade \u2014 Bare Tool (Battery & Charger Sold Separately)",
+        "handle": "spectrum-sbs240cpht-40v-cordless-pole-hedge-trimmer-46cm-blade-tool-only",
+        "status": "ACTIVE",
+        "productType": "Cordless Hedgetrimmers",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>Spectrum SBS240CPHT \u2014 Reach Further, Cut Cleaner</h2><p>Tall hedges and high-sided borders are no match for the <strong>Spectrum SBS240CPHT Cordless Pole Hedge Trimmer</strong>. With a total reach of <strong>2.4 metres</strong> and a <strong>180\u00b0 adjustable cutting head</strong>, it handles the angles that ladders and standard trimmers can't \u2014 safely, from the ground.</p><p>The <strong>46cm dual-action, laser-cut blade</strong> runs at <strong>2,600 strokes per minute</strong>, slicing through branches up to <strong>18mm thick</strong> with clean, precise cuts that promote healthy regrowth. Whether you're trimming horizontally along the top of a hedge or working vertically down the face, the rotating head gives you the position you need without awkward repositioning.</p><p>Power comes from Spectrum's 40V lithium-ion battery system. The reliable brush motor maintains consistent cutting speed throughout the charge, and at just <strong>3.62kg</strong> the tool stays well-balanced and fatigue-free even on longer hedgerows.</p><p>Backed by Spectrum's <strong>5-year manufacturer's warranty</strong>, the SBS240CPHT is built to earn its place in your tool shed for years to come.</p><p><em>Tool-only model. Compatible with Spectrum 2.0Ah and 4.0Ah batteries and all Spectrum 40V chargers, available separately.</em></p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbs240cpht-40v-cordless-pole-hedge-trimmer-46cm-blade-tool-only"
+      }
+    },
+    "SBS40CB": {
+      "sku": "SBS40CB",
+      "title": "Default Title",
+      "price": "59.95",
+      "compareAtPrice": "79.95",
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15833926795637",
+        "title": "Spectrum SBS40CB 40V 4.0Ah Lithium-Ion Battery Pack",
+        "handle": "spectrum-sbs40cb-40v-4-0ah-lithium-ion-battery-pack",
+        "status": "ACTIVE",
+        "productType": "Garden Tool Batteries",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>More Power, Longer Runs \u2014 Spectrum 40V 4.0Ah Battery</h2><p>Get the most from your Spectrum cordless tools with the <strong>SBS40CB 40V 4.0Ah Lithium-Ion Battery Pack</strong>. Built around high-grade <strong>21700 lithium-ion cells</strong>, this battery delivers steady, reliable voltage throughout the discharge cycle \u2014 no fade, no sudden drop-off, just consistent performance right to the end.</p><p>At 4.0Ah, it holds double the capacity of the 2.0Ah option, making it the better choice for larger gardens or longer sessions. Whether you're mowing, trimming, or clearing leaves, the SBS40CB keeps your tools running longer between charges.</p><p>The battery is compact and well-balanced at just <strong>900g</strong>, with a footprint of 8\u00d79\u00d715cm. It slots into any compatible Spectrum 40V tool without adapters or fuss, and charges with any Spectrum 40V charger \u2014 standard, fast, or dual.</p><p>Robust construction, thermal protection circuitry, and Spectrum's proven build quality mean this battery is engineered to last season after season.</p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbs40cb-40v-4-0ah-lithium-ion-battery-pack"
+      }
+    },
+    "SBS20CB": {
+      "sku": "SBS20CB",
+      "title": "Default Title",
+      "price": "34.95",
+      "compareAtPrice": null,
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15837473276277",
+        "title": "Spectrum SBS20CB 40V 2.0Ah Lithium-Ion Battery Pack",
+        "handle": "spectrum-sbs20cb-40v-2-0ah-lithium-ion-battery-pack",
+        "status": "ACTIVE",
+        "productType": "Garden Tool Batteries",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>Reliable 40V Power for Lighter Sessions \u2014 Spectrum 2.0Ah Battery</h2><p>The <strong>Spectrum SBS20CB 40V 2.0Ah Battery Pack</strong> is the compact, lightweight entry point to Spectrum's 40V cordless system. Built with high-quality <strong>18650 lithium-ion cells</strong>, it delivers consistent, stable voltage throughout the discharge cycle \u2014 no dropoff, no hesitation, just reliable power from start to finish.</p><p>At 2.0Ah it's ideally suited to lighter tools and shorter sessions: trimming, blowing, a quick tidy-up of a small lawn. At just <strong>710g</strong> and a pocket-sized <strong>9\u00d78\u00d715cm</strong>, it keeps your tool feeling nimble and easy to handle, with no unnecessary bulk.</p><p>As a spare to your 4.0Ah pack, or as a dedicated battery for your lighter Spectrum tools, the SBS20CB offers an affordable way to extend your cordless system without compromise. It fits and works with every Spectrum 40V tool and charges with any Spectrum 40V charger \u2014 standard, fast, or dual.</p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbs20cb-40v-2-0ah-lithium-ion-battery-pack"
+      }
+    },
+    "SBSCDC": {
+      "sku": "SBSCDC",
+      "title": "Default Title",
+      "price": "44.95",
+      "compareAtPrice": null,
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15837473243509",
+        "title": "Spectrum SBSCDC 40V Dual Battery Charger (2A Fast Charge)",
+        "handle": "spectrum-sbscdc-40v-dual-battery-charger-2a-fast-charge",
+        "status": "ACTIVE",
+        "productType": "Battery Chargers",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>Charge Two Batteries at Once \u2014 Spectrum 40V Dual Fast Charger</h2><p>When one battery isn't enough to get through the job, the <strong>Spectrum SBSCDC Dual Battery Charger</strong> keeps you moving. Charge two Spectrum 40V lithium-ion batteries simultaneously \u2014 both at a full <strong>2A output</strong> \u2014 so you're never waiting idle while your tools sit unused.</p><p>At 2A per port, it replenishes a 2.0Ah battery in roughly an hour and a 4.0Ah pack in around two. Run one tool continuously by rotating two batteries through the charger, or simply top up your full kit in a single charging session.</p><p>The unit is compact for a dual charger \u2014 <strong>20\u00d717\u00d79cm</strong> and just <strong>750g</strong> \u2014 and sits neatly on a workbench, shelf, or in a tool store. Built-in charge management monitors each port independently, cutting off automatically at full capacity to protect battery health regardless of which battery finishes first.</p><p>Compatible with all Spectrum 40V lithium-ion batteries (2.0Ah and 4.0Ah).</p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbscdc-40v-dual-battery-charger-2a-fast-charge"
+      }
+    },
+    "SBSCSC": {
+      "sku": "SBSCSC",
+      "title": "Default Title",
+      "price": "34.95",
+      "compareAtPrice": "99.95",
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15833926959477",
+        "title": "Spectrum SBSCSC 40V Fast Battery Charger (2A)",
+        "handle": "spectrum-sbscsc-40v-fast-battery-charger-2a",
+        "status": "ACTIVE",
+        "productType": "Battery Chargers",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>Back in Action in a Fraction of the Time \u2014 Spectrum 40V Fast Charger</h2><p>Don't let a flat battery interrupt your day. The <strong>Spectrum SBSCSC Fast Charger</strong> delivers a <strong>2A charge at 40V</strong>, replenishing your Spectrum lithium-ion battery four times faster than the standard 0.5A model. A 2.0Ah battery can be fully charged in around an hour; a 4.0Ah pack in roughly two.</p><p>Compatible with all Spectrum 40V batteries, the SBSCSC is the natural choice if your garden sessions are split across the day or you're running a single battery between multiple tools. Charge during a lunch break, and you're ready for the afternoon.</p><p>Despite the faster output, the charger remains compact and practical \u2014 just <strong>11\u00d79\u00d717cm</strong> and 470g. Built-in charge management circuitry monitors the battery throughout the charge cycle, cutting off automatically at full capacity to protect cell health and prevent overcharging.</p><p>For the heaviest users, the Spectrum Dual Charger lets you charge two batteries simultaneously \u2014 worth considering if your work demands continuous runtime.</p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbscsc-40v-fast-battery-charger-2a"
+      }
+    },
+    "SBSCBC": {
+      "sku": "SBSCBC",
+      "title": "Default Title",
+      "price": "34.95",
+      "compareAtPrice": "39.95",
+      "inventoryItem": {
+        "measurement": {
+          "weight": {
+            "value": 0.0,
+            "unit": "KILOGRAMS"
+          }
+        }
+      },
+      "product": {
+        "id": "gid://shopify/Product/15833926893941",
+        "title": "Spectrum SBSCBC 40V Standard Battery Charger (0.5A)",
+        "handle": "spectrum-sbscbc-40v-standard-battery-charger-0-5a",
+        "status": "ACTIVE",
+        "productType": "Battery Chargers",
+        "vendor": "Spectrum",
+        "tags": [],
+        "descriptionHtml": "<h2>Keep Your Spectrum Battery Ready \u2014 Standard 40V Charger</h2><p>The <strong>Spectrum SBSCBC</strong> is the no-fuss standard charger for all compatible Spectrum 40V lithium-ion batteries. Plug in after a session, leave it overnight, and your battery will be fully replenished and ready to go again by morning.</p><p>With a steady <strong>0.5A output at 40V</strong>, the SBSCBC charges at a gentle, battery-friendly rate \u2014 ideal if your toolkit runs on a single battery that you want to look after for the long term. Slow overnight charging is widely regarded as the kindest charge cycle for lithium-ion longevity.</p><p>The charger is compact at just <strong>8\u00d79\u00d712cm</strong> and weighs under 200g, so it tucks away neatly in a drawer, shed shelf, or toolbox. Simple LED indication lets you know when charging is underway and when it's complete.</p><p>If faster charging is a priority, consider upgrading to the <strong>Spectrum SBSCSC Fast Charger (2A)</strong>, which cuts charge time to a quarter of the standard rate.</p>",
+        "onlineStoreUrl": "https://www.mowdirect.co.uk/products/spectrum-sbscbc-40v-standard-battery-charger-0-5a"
+      }
+    }
+  },
+  "amazon": {
+    "SBS460CLM": {
+      "asin": "B0GF9NGZSN",
+      "attributes": {
+        "color": [
+          {
+            "language_tag": "en_GB",
+            "value": "Green, Black",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 29.2,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "power_plug_type": [
+          {
+            "value": "no_plug",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_boxes": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 25.7,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450634",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SBS460CLM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "900813031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "CORDLESS DESIGN: Battery-powered lawn mower offering convenient, cable-free operation for unrestricted movement whilst maintaining your garden.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT STORAGE: Dimensions of 84x55x52 cm make it ideal for storage in garden sheds or garages when not in use.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "LIGHTWEIGHT BUILD: With a net weight of 25.70 kg, this mower combines durability with manageable handling for effective lawn maintenance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "MODEL SPECIFICATIONS: Features the SBS460CLM build specification, ensuring reliable performance for residential lawn care needs.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "PROFESSIONAL GRADE: SPECTRUM model SBS460CLM designed for precise cutting and consistent results across various grass types.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 55.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 84.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 52.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_number": [
+          {
+            "value": "SBS460CLM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Experience effortless lawn maintenance with this SPECTRUM cordless lawn mower, model SBS460CLM. This powerful garden tool combines convenience and performance for your mowing needs. The cordless design provides unrestricted movement across your garden whilst eliminating the hassle of managing power cables. With its robust construction and practical features, this mower is designed to deliver reliable cutting performance. The compact dimensions of 84x55x52 centimetres make it easy to manoeuvre around garden obstacles and store when not in use. Whether you're maintaining a small garden or tackling larger areas, this lawn mower offers the flexibility and functionality needed for a well-maintained lawn. The thoughtful design ensures comfortable operation, allowing you to focus on achieving that perfect lawn finish. Suitable for regular garden maintenance throughout the mowing season.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "is_fragile": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "operation_mode": [
+          {
+            "language_tag": "en_GB",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM SBS460CLM Cordless Lawn Mower, Self Propelled Drive System, 46cm Cutting Width",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 299.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "power_source_type": [
+          {
+            "language_tag": "en_GB",
+            "value": "Battery Powered",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_depth_width_height": [
+          {
+            "depth": {
+              "unit": "centimeters",
+              "value": 84.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 55.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 52.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 84.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 55.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 52.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "is_assembly_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "SBS460CLM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "unit_count": [
+          {
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": []
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 20.472440924
+            },
+            "length": {
+              "unit": "inches",
+              "value": 33.070866108
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 56.658801334
+            },
+            "width": {
+              "unit": "inches",
+              "value": 21.653543285
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 20.472440924
+            },
+            "length": {
+              "unit": "inches",
+              "value": 33.070866108
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 64.374980504
+            },
+            "width": {
+              "unit": "inches",
+              "value": 21.653543285
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31ZlBU5H-LL.jpg",
+              "height": 375,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31ZlBU5H-LL._SL75_.jpg",
+              "height": 56,
+              "width": 75
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/71qlgAZXCbL.jpg",
+              "height": 1920,
+              "width": 2560
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/312JNPSK6TL.jpg",
+              "height": 375,
+              "width": 500
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/312JNPSK6TL._SL75_.jpg",
+              "height": 56,
+              "width": 75
+            },
+            {
+              "variant": "PT01",
+              "link": "https://m.media-amazon.com/images/I/61rE4Oyk2pL.jpg",
+              "height": 1920,
+              "width": 2560
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "LAWN_MOWER"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "color": "Green, Black",
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM SBS460CLM Cordless Lawn Mower, Self Propelled Drive System, 46cm Cutting Width",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "modelNumber": "SBS460CLM",
+          "partNumber": "SBS460CLM",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "lawn_and_garden_display_on_website",
+          "websiteDisplayGroupName": "Lawn & Patio"
+        }
+      ]
+    },
+    "SBS480CBV": {
+      "asin": "B0GF9N7QB9",
+      "attributes": {
+        "color": [
+          {
+            "language_tag": "en_GB",
+            "value": "Green, Black",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 5.2,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_length_width_height": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 90.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 29.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 33.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "power_plug_type": [
+          {
+            "value": "no_plug",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450641",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SBS480CBV",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "114627031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "CORDLESS DESIGN: Versatile leaf blower vacuum offering complete freedom of movement without the hassle of power cords, perfect for garden maintenance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT DIMENSIONS: Measures 51 x 32.5 x 29 centimetres, making it easy to store and manoeuvre around your outdoor space.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "LIGHTWEIGHT BUILD: With a net weight of 4.3 kg, this blower vacuum reduces user fatigue during extended garden cleaning sessions.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "DUAL FUNCTIONALITY: Features both blower and vacuum capabilities, allowing you to efficiently clear and collect garden debris.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "MODEL SPECIFICATIONS: SPECTRUM SBS480CBV, designed for reliable performance in garden maintenance tasks.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 29.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 90.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 33.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_number": [
+          {
+            "value": "SBS480CBV",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Experience the convenience of cordless yard maintenance with the SPECTRUM SBS480CBV Cordless Blower Vacuum. This versatile garden tool combines the functionality of both a blower and vacuum in one efficient package. The compact design, measuring 51x32.5x29cm, makes it easy to store and manoeuvre around your outdoor space. At just 4.3kg net weight, this blower vacuum is lightweight enough for extended use whilst maintaining robust performance. The cordless operation gives you the freedom to move anywhere in your garden without being tethered to a power source. Perfect for clearing leaves, debris, and garden waste, this tool helps maintain your outdoor spaces with minimal effort. The thoughtfully engineered design ensures comfortable handling and efficient operation, making yard maintenance tasks more manageable. Ideal for both residential and professional use, this blower vacuum offers the versatility and convenience needed for regular garden maintenance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "unspsc_code": [
+          {
+            "value": "27112700",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "special_feature": [
+          {
+            "language_tag": "en_GB",
+            "value": "Cordless",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "Vacuum",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "is_fragile": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM SBS480CBV Cordless Leaf Blower Vacuum, Battery Powered, Handheld, 48V, Portable, 5.2kg",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 69.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "power_source_type": [
+          {
+            "language_tag": "en_GB",
+            "value": "Battery Powered",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_uses_for_product": [
+          {
+            "language_tag": "en_GB",
+            "value": "Leaf Blowing",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 51.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 32.5
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 29.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "is_assembly_required": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "SBS480CBV",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "unit_count": [
+          {
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": []
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 12.992125971
+            },
+            "length": {
+              "unit": "inches",
+              "value": 35.43307083
+            },
+            "width": {
+              "unit": "inches",
+              "value": 11.417322823
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 11.417322823
+            },
+            "length": {
+              "unit": "inches",
+              "value": 20.078740137
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 11.464037624
+            },
+            "width": {
+              "unit": "inches",
+              "value": 12.7952755775
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31FL9kxOI4L.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31FL9kxOI4L._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41zI4EQqQrL.jpg",
+              "height": 1000,
+              "width": 1000
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "LEAF_BLOWER"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "color": "Green, Black",
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM SBS480CBV Cordless Leaf Blower Vacuum, Battery Powered, Handheld, 48V, Portable, 5.2kg",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "modelNumber": "SBS480CBV",
+          "partNumber": "SBS480CBV",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "lawn_and_garden_display_on_website",
+          "websiteDisplayGroupName": "Lawn & Patio"
+        }
+      ]
+    },
+    "SBS560CHT": {
+      "asin": "B0GF9J4JVQ",
+      "attributes": {
+        "color": [
+          {
+            "language_tag": "en_GB",
+            "value": "Green, Black",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 4.1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_length_width_height": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 21.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 114.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 25.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_boxes": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 2.9,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450658",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "Cordless Hedge Trimmer",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "114631031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "CORDLESS DESIGN: Convenient and portable hedge trimmer that provides unrestricted movement whilst trimming hedges and bushes.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT SIZE: Measures 114 cm in length with a sleek design weighing only 2.9 kg for easy manoeuvrability and reduced user fatigue.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "RECIPROCATING BLADES: Features efficient reciprocating cutting mechanism for precise and clean trimming of hedges and shrubs.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "MODEL SPECIFICATIONS: SPECTRUM SBS560CHT configuration for reliable performance and durability.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "STORAGE SOLUTION: Compact dimensions of 114x25x21 cm make it convenient to store in garden sheds or garages when not in use.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 114.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 21.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 25.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_number": [
+          {
+            "value": "SBS560CHT",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Transform your garden maintenance with this cordless hedge trimmer from SPECTRUM. The SBS560CHT model features a reciprocating blade system that makes light work of trimming and shaping hedges and bushes. With its cordless design, you'll enjoy unrestricted movement and reach whilst tackling your garden tasks, free from the constraints of power cables. The trimmer's lightweight construction, at just 2.90 kg net weight, helps reduce fatigue during extended use. Its compact dimensions make it easy to store when not in use, whilst the robust build quality ensures reliable performance for your gardening needs. Perfect for both precise detailed work and larger trimming tasks, this hedge trimmer combines convenience with practical functionality for maintaining your outdoor space.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM Cordless Hedge Trimmer, Model SBS560CHT, 114 cm x 25 cm x 21 cm, 2.9 kg",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 119.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "power_source_type": [
+          {
+            "language_tag": "en_GB",
+            "value": "Battery Powered",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 114.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 25.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 21.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "SBS560CHT",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "unit_count": [
+          {
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": []
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 9.842519675
+            },
+            "length": {
+              "unit": "inches",
+              "value": 8.267716527
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 6.393405598
+            },
+            "width": {
+              "unit": "inches",
+              "value": 44.881889718
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 8.267716527
+            },
+            "length": {
+              "unit": "inches",
+              "value": 44.881889718
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 9.038952742
+            },
+            "width": {
+              "unit": "inches",
+              "value": 9.842519675
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/21NbkhXn29L.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/21NbkhXn29L._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41wItEWa+PL.jpg",
+              "height": 1000,
+              "width": 1000
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "RECIPROCATING_HEDGE_TRIMMER"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "color": "Green, Black",
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM Cordless Hedge Trimmer, Model SBS560CHT, 114 cm x 25 cm x 21 cm, 2.9 kg",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "modelNumber": "SBS560CHT",
+          "partNumber": "SBS560CHT",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "lawn_and_garden_display_on_website",
+          "websiteDisplayGroupName": "Lawn & Patio"
+        }
+      ]
+    },
+    "SBS240CPHT": {
+      "asin": "B0GF883MG2",
+      "attributes": {
+        "color": [
+          {
+            "language_tag": "en_GB",
+            "value": "Green",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 4.9,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_length_width_height": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 81.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 33.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 12.5
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_boxes": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 3.6,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450665",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "Cordless Pole Hedge Trimmer",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "114631031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "CORDLESS DESIGN: Professional-grade pole hedge trimmer offering complete mobility and freedom of movement without the constraints of power cords.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT DIMENSIONS: Neatly sized at 81 cm length with 33 cm width, making it ideal for storage and transport whilst maintaining robust cutting capability.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "LIGHTWEIGHT BUILD: Weighing only 3.6 kg net, this trimmer reduces operator fatigue during extended use whilst maintaining professional performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "VERSATILE APPLICATION: Perfect for reaching tall hedges and awkward angles with its pole design, enabling precise trimming in hard-to-reach areas.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "RECIPROCATING BLADE: Features a reliable reciprocating cutting mechanism that delivers clean, precise cuts for professional-looking results.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "hazmat": [
+          {
+            "aspect": "transportation_regulatory_class",
+            "value": "3",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 33.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 81.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 12.5
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_number": [
+          {
+            "value": "SBS240CPHT",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Transform your garden maintenance with this versatile cordless pole hedge trimmer from SPECTRUM (Model SBS240CPHT). This reciprocating trimmer combines reach and precision, making it perfect for tackling tall hedges and hard-to-reach areas without the need for ladders. The cordless design offers unrestricted movement and convenience whilst maintaining powerful cutting performance. At just 3.6 kg net weight, this lightweight tool reduces fatigue during extended use. The trimmer's thoughtful design allows for comfortable operation whether you're shaping low bushes or trimming high branches. Compact enough for easy storage with dimensions of 81 cm length, yet robust enough for regular garden maintenance. The cordless operation eliminates the hassle of managing power cords, letting you focus on achieving perfectly manicured hedges. Ideal for both domestic gardens and larger outdoor spaces where mobility and efficiency are essential.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM Cordless Pole Hedge Trimmer, Model SBS240CPHT, 81cm Length, 4.9kg",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 149.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "power_source_type": [
+          {
+            "language_tag": "en_GB",
+            "value": "Battery Powered",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 81.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 33.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 12.5
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "SBS240CPHT",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "unit_count": [
+          {
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": []
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 4.9212598375
+            },
+            "length": {
+              "unit": "inches",
+              "value": 31.889763747
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 7.936641432
+            },
+            "width": {
+              "unit": "inches",
+              "value": 12.992125971
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 4.9212598375
+            },
+            "length": {
+              "unit": "inches",
+              "value": 31.889763747
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 10.802650838
+            },
+            "width": {
+              "unit": "inches",
+              "value": 12.992125971
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/21lP4UGsTrL.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/21lP4UGsTrL._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41QtjMdEc-L.jpg",
+              "height": 1000,
+              "width": 1000
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "RECIPROCATING_HEDGE_TRIMMER"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "color": "Green",
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM Cordless Pole Hedge Trimmer, Model SBS240CPHT, 81cm Length, 4.9kg",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "modelNumber": "SBS240CPHT",
+          "partNumber": "SBS240CPHT",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "lawn_and_garden_display_on_website",
+          "websiteDisplayGroupName": "Lawn & Patio"
+        }
+      ]
+    },
+    "SBS40CB": {
+      "asin": "B0GF9Q2CWZ",
+      "attributes": {
+        "has_multiple_battery_powered_components": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SBS40CB",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "POWERFUL BATTERY: 40V 4.0Ah lithium battery pack providing reliable power for cordless garden tools and equipment.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT DESIGN: Measures 8x9x15 centimetres, making it easy to handle and store whilst maintaining high performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "DURABLE CONSTRUCTION: Robust build quality with net weight of 900 grams, engineered for long-lasting performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPATIBILITY: Designed for use with SPECTRUM SBS40CB series tools and equipment.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "PROFESSIONAL GRADE: Part of the professional 40V battery system, perfect for demanding garden maintenance tasks.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "hazmat": [
+          {
+            "aspect": "proper_shipping_name",
+            "value": "LITHIUM ION BATTERIES *MEDIUM*",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "united_nations_regulatory_id",
+            "value": "UN3480",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "transportation_regulatory_class",
+            "value": "9",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "US_MediumLithiumIonBattery",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "JP_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "IN_GroundOnly",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "CA_MediumLithiumIonBattery",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_quantity": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 8.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 15.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Power up your outdoor equipment with the SPECTRUM SBS40CB 40V 4.0Ah battery pack. This robust lithium-ion battery delivers consistent, reliable power for your 40V garden tools and equipment. Designed with convenience in mind, the compact battery measures just 8x9x15 centimetres, making it easy to handle and store. Despite its modest size, it packs substantial power capacity at 4.0Ah. The battery features a durable construction to withstand regular use in various outdoor conditions. Each unit weighs approximately 900 grams, striking an excellent balance between power output and portability. Compatible with the SPECTRUM SBS40CB system, this battery pack is an essential component for maintaining your garden equipment's optimal performance. The thoughtful design includes protective features to maintain battery longevity and ensure consistent operation throughout its service life.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 41.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 21.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 28.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "warranty_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "2 Year Warranty",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_lithium_ion_cells": [
+          {
+            "value": 10,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "reusability": [
+          {
+            "language_tag": "en_GB",
+            "value": "Rechargeable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "battery": [
+          {
+            "cell_composition": [
+              {
+                "value": "lithium_ion"
+              }
+            ],
+            "weight": [
+              {
+                "unit": "kilograms",
+                "value": 1.0
+              }
+            ],
+            "capacity": [
+              {
+                "unit": "amp_hours",
+                "value": 4.0
+              }
+            ],
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "amperage": [
+          {
+            "unit": "amps",
+            "value": 4.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450689",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "1939173031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "lithium_battery": [
+          {
+            "energy_content": [
+              {
+                "unit": "watt_hours",
+                "value": 160.0
+              }
+            ],
+            "packaging": [
+              {
+                "value": "batteries_only"
+              }
+            ],
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_number": [
+          {
+            "value": "SBS40CB",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "contains_battery_or_cell": [
+          {
+            "value": "battery",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "transportation",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "num_batteries": [
+          {
+            "quantity": 1,
+            "type": "nonstandard_battery",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "special_feature": [
+          {
+            "language_tag": "en_GB",
+            "value": "Rechargeable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "gdpr_risk": [
+          {
+            "value": "no_electronic_information_stored",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM SBS40CB 40V Battery Pack, 4.0Ah Lithium-Ion",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 129.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "voltage": [
+          {
+            "unit": "volts",
+            "value": 40.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_site_launch_date": [
+          {
+            "value": "2026-01-06T15:06:11.402Z",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "battery_s_count": [
+          {
+            "language_tag": "en_GB",
+            "value": "1",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "unit_count": [
+          {
+            "type": {
+              "language_tag": "en_GB",
+              "value": "count"
+            },
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": [
+            {
+              "displayName": "Battery Packs",
+              "classificationId": "1939173031",
+              "parent": {
+                "displayName": "Cordless Tool Accessories",
+                "classificationId": "1939172031",
+                "parent": {
+                  "displayName": "Power Tool Accessories",
+                  "classificationId": "1939128031",
+                  "parent": {
+                    "displayName": "Power, Garden & Hand Tools",
+                    "classificationId": "1938841031",
+                    "parent": {
+                      "displayName": "Categories",
+                      "classificationId": "79904031",
+                      "parent": {
+                        "displayName": "DIY & Tools",
+                        "classificationId": "79903031"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 5.905511805
+            },
+            "length": {
+              "unit": "inches",
+              "value": 3.543307083
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 2.20462262
+            },
+            "width": {
+              "unit": "inches",
+              "value": 3.149606296
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 8.267716527
+            },
+            "length": {
+              "unit": "inches",
+              "value": 16.141732267
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 2.20462262
+            },
+            "width": {
+              "unit": "inches",
+              "value": 11.023622036
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41YBpwvrrNL.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41YBpwvrrNL._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/51sIDL52iWL.jpg",
+              "height": 1000,
+              "width": 1000
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "BATTERY"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "browseClassification": {
+            "displayName": "Battery Packs",
+            "classificationId": "1939173031"
+          },
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM SBS40CB 40V Battery Pack, 4.0Ah Lithium-Ion",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "modelNumber": "SBS40CB",
+          "packageQuantity": 1,
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "ce_display_on_website",
+          "websiteDisplayGroupName": "CE"
+        }
+      ]
+    },
+    "SBS20CB": {
+      "asin": "B0GF9XCHX5",
+      "attributes": {
+        "has_multiple_battery_powered_components": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 0.75,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "Spectrum SBS20CB 2.0Ah Battery",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "POWERFUL BATTERY: 40V 2.0Ah lithium battery pack providing reliable power for cordless garden tools and equipment.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT DESIGN: Measures 8x9x15 centimetres, offering a space-efficient solution whilst maintaining optimal performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "LIGHTWEIGHT BUILD: Individual battery pack weighs only 710 grams net weight, making it easy to handle and replace.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPATIBILITY: Model SBS20CB designed to work seamlessly with compatible 40V cordless tools and charging systems.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "DURABILITY: Robust construction and protective housing ensure long-lasting performance in various outdoor conditions.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "hazmat": [
+          {
+            "aspect": "proper_shipping_name",
+            "value": "LITHIUM ION BATTERIES",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "united_nations_regulatory_id",
+            "value": "UN3480",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "regulatory_packing_group",
+            "value": "II",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "transportation_regulatory_class",
+            "value": "9",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "US_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "GB_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "DE_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "FR_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "JP_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "CA_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "CN_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "IT_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "ES_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "IN_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "MX_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "SG_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "AU_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "BR_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "TR_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "AE_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "SA_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "EG_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "NL_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "SE_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "PL_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "BE_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "ZA_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "IE_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "aspect": "exception",
+            "value": "TH_SmallLithiumIonBatteryStandalone",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_quantity": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 8.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 15.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Power up your outdoor tools with the SPECTRUM SBS20CB 40V 2.0Ah battery pack. This robust lithium-ion battery delivers consistent power for your 40-volt garden equipment and tools. Designed with convenience in mind, each battery pack weighs approximately 710 grams, making it lightweight yet powerful enough for various applications. The compact dimensions of 8x9x15 centimetres ensure it fits seamlessly into compatible devices whilst maintaining optimal performance. Perfect for both professional and home use, this battery pack comes in secure packaging to maintain its quality during storage and transport. The SBS20CB model features reliable cell technology that provides steady power output throughout its discharge cycle. Keep your outdoor power tools running efficiently with this dependable battery solution from SPECTRUM's comprehensive range of power products.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 46.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 32.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 19.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_uses_for_product": [
+          {
+            "language_tag": "en_GB",
+            "value": "Power Tool",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "warranty_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "2 Year Warranty",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_lithium_ion_cells": [
+          {
+            "value": 10,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "reusability": [
+          {
+            "language_tag": "en_GB",
+            "value": "Rechargeable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 15.6,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "battery": [
+          {
+            "cell_composition": [
+              {
+                "value": "lithium_ion"
+              }
+            ],
+            "weight": [
+              {
+                "unit": "kilograms",
+                "value": 0.75
+              }
+            ],
+            "capacity": [
+              {
+                "unit": "amp_hours",
+                "value": 2.0
+              }
+            ],
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "amperage": [
+          {
+            "unit": "amps",
+            "value": 2.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450672",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "1939173031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "lithium_battery": [
+          {
+            "energy_content": [
+              {
+                "unit": "watt_hours",
+                "value": 80.0
+              }
+            ],
+            "packaging": [
+              {
+                "value": "batteries_only"
+              }
+            ],
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "model_number": [
+          {
+            "value": "SBS20CB",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "contains_battery_or_cell": [
+          {
+            "value": "battery",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "transportation",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "num_batteries": [
+          {
+            "quantity": 1,
+            "type": "nonstandard_battery",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "special_feature": [
+          {
+            "language_tag": "en_GB",
+            "value": "Rechargeable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "gdpr_risk": [
+          {
+            "value": "no_electronic_information_stored",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM 40V Battery Pack, 2.0Ah Lithium-Ion, Model SBS20CB",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 99.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "voltage": [
+          {
+            "unit": "volts",
+            "value": 40.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_site_launch_date": [
+          {
+            "value": "2026-01-06T15:18:13.025Z",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "battery_s_count": [
+          {
+            "language_tag": "en_GB",
+            "value": "1",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "unit_count": [
+          {
+            "type": {
+              "language_tag": "en_GB",
+              "value": "count"
+            },
+            "value": 1.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": [
+            {
+              "displayName": "Battery Packs",
+              "classificationId": "1939173031",
+              "parent": {
+                "displayName": "Cordless Tool Accessories",
+                "classificationId": "1939172031",
+                "parent": {
+                  "displayName": "Power Tool Accessories",
+                  "classificationId": "1939128031",
+                  "parent": {
+                    "displayName": "Power, Garden & Hand Tools",
+                    "classificationId": "1938841031",
+                    "parent": {
+                      "displayName": "Categories",
+                      "classificationId": "79904031",
+                      "parent": {
+                        "displayName": "DIY & Tools",
+                        "classificationId": "79903031"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 5.905511805
+            },
+            "length": {
+              "unit": "inches",
+              "value": 3.543307083
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 1.653466965
+            },
+            "width": {
+              "unit": "inches",
+              "value": 3.149606296
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 7.480314953
+            },
+            "length": {
+              "unit": "inches",
+              "value": 18.110236202
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 34.392112872
+            },
+            "width": {
+              "unit": "inches",
+              "value": 12.598425184
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41ZTMJU+alL.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41ZTMJU+alL._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/51vTEn461aL.jpg",
+              "height": 1000,
+              "width": 1000
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "BATTERY"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "browseClassification": {
+            "displayName": "Battery Packs",
+            "classificationId": "1939173031"
+          },
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM 40V Battery Pack, 2.0Ah Lithium-Ion, Model SBS20CB",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "modelNumber": "SBS20CB",
+          "packageQuantity": 1,
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "ce_display_on_website",
+          "websiteDisplayGroupName": "CE"
+        }
+      ]
+    },
+    "SBSCDC": {
+      "asin": "B0GF9NF6FT",
+      "attributes": {
+        "color": [
+          {
+            "language_tag": "en_GB",
+            "value": "Black",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 18.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "output_voltage": [
+          {
+            "unit": "volts",
+            "value": 40.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 0.75,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450702",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "1939174031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "DUAL BATTERY COMPATIBILITY: 40V fast charger designed to charge two batteries simultaneously with 2.0 ampere output for efficient charging.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT DESIGN: Inner dimensions of 20x17x9 cm make this charger perfect for workshop or garage storage whilst maintaining full functionality.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "PROFESSIONAL GRADE: Model EBC42 features robust construction and reliable charging capabilities for consistent performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "CHARGING CAPACITY: Equipped with dual charging ports to maximise efficiency and reduce downtime when managing multiple batteries.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "PORTABLE SOLUTION: Lightweight construction at 750g net weight allows for easy transport between work locations.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 20.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 17.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Experience efficient charging with this SPECTRUM 40V 2A dual battery fast charger (Model SBSCDC ). This versatile charger is designed to power up two batteries simultaneously, optimising your workflow and reducing downtime. The compact unit, measuring 20x17x9cm, delivers reliable performance while maintaining a practical footprint. Built with durability in mind, this charger comes in a robust housing that's suitable for both professional and home use. The thoughtful design includes safety features to protect your batteries during the charging process. Each inner package includes the charger unit with complete setup instructions, whilst the outer carton configuration makes it ideal for bulk storage and transport. Perfect for users who rely on 40V battery-powered tools and need a dependable charging solution to keep their equipment ready for action.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "gdpr_risk": [
+          {
+            "value": "no_electronic_information_stored",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM SBSCDC Battery Charger, 40V 2A Fast Charger, Dual Battery, 20x17x9cm, 750g",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 79.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_site_launch_date": [
+          {
+            "value": "2026-01-06T15:01:33.417Z",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_depth_width_height": [
+          {
+            "depth": {
+              "unit": "centimeters",
+              "value": 17.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 20.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 20.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 17.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "warranty_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "2 Year Warranty",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "SBSCDC",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": [
+            {
+              "displayName": "Chargers",
+              "classificationId": "1939174031",
+              "parent": {
+                "displayName": "Cordless Tool Accessories",
+                "classificationId": "1939172031",
+                "parent": {
+                  "displayName": "Power Tool Accessories",
+                  "classificationId": "1939128031",
+                  "parent": {
+                    "displayName": "Power, Garden & Hand Tools",
+                    "classificationId": "1938841031",
+                    "parent": {
+                      "displayName": "Categories",
+                      "classificationId": "79904031",
+                      "parent": {
+                        "displayName": "DIY & Tools",
+                        "classificationId": "79903031"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 3.543307083
+            },
+            "length": {
+              "unit": "inches",
+              "value": 6.692913379
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 1.653466965
+            },
+            "width": {
+              "unit": "inches",
+              "value": 7.87401574
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 3.543307083
+            },
+            "length": {
+              "unit": "inches",
+              "value": 7.87401574
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 39.68320716
+            },
+            "width": {
+              "unit": "inches",
+              "value": 6.692913379
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/61bhC3zSFeL.jpg",
+              "height": 1000,
+              "width": 1000
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41Y4o2mtufL.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/41Y4o2mtufL._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "BATTERY_CHARGER"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "browseClassification": {
+            "displayName": "Chargers",
+            "classificationId": "1939174031"
+          },
+          "color": "Black",
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM SBSCDC Battery Charger, 40V 2A Fast Charger, Dual Battery, 20x17x9cm, 750g",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "partNumber": "SBSCDC",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "ce_display_on_website",
+          "websiteDisplayGroupName": "CE"
+        }
+      ]
+    },
+    "SBSCSC": {
+      "asin": "B0GF9MBG14",
+      "attributes": {
+        "color": [
+          {
+            "language_tag": "en_GB",
+            "value": "BLACK",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 0.52,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "output_voltage": [
+          {
+            "unit": "volts",
+            "value": 40.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 0.47,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450696",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "1939174031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "POWERFUL CHARGING: 40V 2A fast charger designed for efficient battery charging with advanced charging technology.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT DESIGN: Inner dimensions of 11x9x17cm make this charger conveniently sized for storage and transport.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "QUALITY CONSTRUCTION: Robust build quality with net weight of 470g ensures durability and reliable performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPATIBILITY: Model EBC20 charger engineered specifically for 40V battery systems with precise voltage control.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "PROFESSIONAL GRADE: Features integrated safety systems and reliable charging circuitry for consistent performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 11.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 17.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Experience efficient charging with this SPECTRUM 40V 2A Fast Charger (Model SBSCSC). This powerful battery charger delivers reliable performance for your 40V devices with a 2-amp charging capacity. Designed with practicality in mind, the compact unit measures just 11x9x17 centimetres, making it easy to store and transport. The charger comes in a sturdy packaging that ensures safe delivery and storage. Perfect for both professional and home use, this fast charger combines functionality with convenience. The robust construction and thoughtful design make it an essential accessory for your 40V battery-powered tools and equipment. Each charger undergoes thorough quality checks to ensure consistent performance and reliability. Whether you're a DIY enthusiast or a professional, this fast charger delivers the power you need to keep your tools ready for action.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "gdpr_risk": [
+          {
+            "value": "no_electronic_information_stored",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM SBSCSC Battery Charger, 40V 2A Fast Charger, 11x9x17cm, 470g",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 99.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": true,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_site_launch_date": [
+          {
+            "value": "2026-01-06T14:49:15.232Z",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_depth_width_height": [
+          {
+            "depth": {
+              "unit": "centimeters",
+              "value": 17.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 11.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 11.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 17.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "warranty_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "2 Year Warranty",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "SBSCSC",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_included": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": [
+            {
+              "displayName": "Chargers",
+              "classificationId": "1939174031",
+              "parent": {
+                "displayName": "Cordless Tool Accessories",
+                "classificationId": "1939172031",
+                "parent": {
+                  "displayName": "Power Tool Accessories",
+                  "classificationId": "1939128031",
+                  "parent": {
+                    "displayName": "Power, Garden & Hand Tools",
+                    "classificationId": "1938841031",
+                    "parent": {
+                      "displayName": "Categories",
+                      "classificationId": "79904031",
+                      "parent": {
+                        "displayName": "DIY & Tools",
+                        "classificationId": "79903031"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 3.543307083
+            },
+            "length": {
+              "unit": "inches",
+              "value": 6.692913379
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 1.0361726314
+            },
+            "width": {
+              "unit": "inches",
+              "value": 4.330708657
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 3.543307083
+            },
+            "length": {
+              "unit": "inches",
+              "value": 6.692913379
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 1.1464037624
+            },
+            "width": {
+              "unit": "inches",
+              "value": 4.330708657
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/515yf1X18vL.jpg",
+              "height": 1000,
+              "width": 1000
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31lU4IYjhgL.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31lU4IYjhgL._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "BATTERY_CHARGER"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "browseClassification": {
+            "displayName": "Chargers",
+            "classificationId": "1939174031"
+          },
+          "color": "BLACK",
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM SBSCSC Battery Charger, 40V 2A Fast Charger, 11x9x17cm, 470g",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "partNumber": "SBSCSC",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "ce_display_on_website",
+          "websiteDisplayGroupName": "CE"
+        }
+      ]
+    },
+    "SBSCBC": {
+      "asin": "B0GF9T4CVD",
+      "attributes": {
+        "item_package_weight": [
+          {
+            "unit": "kilograms",
+            "value": 4.9,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "skip_offer": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "output_voltage": [
+          {
+            "unit": "volts",
+            "value": 40.0,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "manufacturer": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_weight": [
+          {
+            "unit": "kilograms",
+            "value": 0.17,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "externally_assigned_product_identifier": [
+          {
+            "value": "5065022450719",
+            "type": "ean",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "recommended_browse_nodes": [
+          {
+            "value": "1939174031",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "bullet_point": [
+          {
+            "language_tag": "en_GB",
+            "value": "VOLTAGE RATING: Standard 40V battery charger with 0.5A output current for efficient and reliable charging performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "COMPACT DESIGN: Measures 8x9x12cm, making it convenient to store and transport while maintaining full functionality.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "PACKAGING DETAILS: Each inner box contains one charger unit, with 20 units per outer carton for efficient bulk storage and shipping.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "MODEL SPECIFICATIONS: Features the SBSCBC model number with universal compatibility for 40V battery systems.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          },
+          {
+            "language_tag": "en_GB",
+            "value": "DURABILITY: Robust construction with a net weight of 170g per unit, designed for long-term reliability and consistent performance.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_dimensions": [
+          {
+            "width": {
+              "unit": "centimeters",
+              "value": 8.0
+            },
+            "length": {
+              "unit": "centimeters",
+              "value": 12.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "Introducing the SPECTRUM SBSCBC 40V 0.5A standard battery charger, a reliable power solution for your charging needs. This compact charger, measuring just 8x9x12cm, is designed for efficient and steady charging performance. Each unit is thoughtfully packaged in a protective inner box, ensuring safe delivery and storage. The charger features a standard 0.5A output at 40V, making it suitable for compatible battery systems. Its space-efficient design allows for convenient storage and transport, while the robust construction ensures durability for regular use. The charger comes with clear identification through its unique model number SBSCBC and barcode for easy inventory management. Perfect for both professional and personal applications, this standard charger delivers consistent charging performance when you need it.",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "supplier_declared_dg_hz_regulation": [
+          {
+            "value": "not_applicable",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "brand": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "gdpr_risk": [
+          {
+            "value": "no_electronic_information_stored",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_name": [
+          {
+            "language_tag": "en_GB",
+            "value": "SPECTRUM Battery Charger, 40V 0.5A Standard Charger, Model SBSCBC, 8x9x12cm, 170g",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "list_price": [
+          {
+            "value_with_tax": 49.95,
+            "currency": "GBP",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "batteries_required": [
+          {
+            "value": false,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "product_site_launch_date": [
+          {
+            "value": "2026-01-06T15:11:11.754Z",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_depth_width_height": [
+          {
+            "depth": {
+              "unit": "centimeters",
+              "value": 12.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 8.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "number_of_items": [
+          {
+            "value": 1,
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "item_package_dimensions": [
+          {
+            "length": {
+              "unit": "centimeters",
+              "value": 9.0
+            },
+            "width": {
+              "unit": "centimeters",
+              "value": 8.0
+            },
+            "height": {
+              "unit": "centimeters",
+              "value": 12.0
+            },
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "warranty_description": [
+          {
+            "language_tag": "en_GB",
+            "value": "2 Year Warranty",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ],
+        "part_number": [
+          {
+            "value": "SBSCBC",
+            "marketplace_id": "A1F83G8C2ARO7P"
+          }
+        ]
+      },
+      "classifications": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classifications": [
+            {
+              "displayName": "Chargers",
+              "classificationId": "1939174031",
+              "parent": {
+                "displayName": "Cordless Tool Accessories",
+                "classificationId": "1939172031",
+                "parent": {
+                  "displayName": "Power Tool Accessories",
+                  "classificationId": "1939128031",
+                  "parent": {
+                    "displayName": "Power, Garden & Hand Tools",
+                    "classificationId": "1938841031",
+                    "parent": {
+                      "displayName": "Categories",
+                      "classificationId": "79904031",
+                      "parent": {
+                        "displayName": "DIY & Tools",
+                        "classificationId": "79903031"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "item": {
+            "height": {
+              "unit": "inches",
+              "value": 3.543307083
+            },
+            "length": {
+              "unit": "inches",
+              "value": 4.724409444
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 0.3747858454
+            },
+            "width": {
+              "unit": "inches",
+              "value": 3.149606296
+            }
+          },
+          "package": {
+            "height": {
+              "unit": "inches",
+              "value": 3.149606296
+            },
+            "length": {
+              "unit": "inches",
+              "value": 4.724409444
+            },
+            "weight": {
+              "unit": "pounds",
+              "value": 10.802650838
+            },
+            "width": {
+              "unit": "inches",
+              "value": 3.543307083
+            }
+          }
+        }
+      ],
+      "images": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "images": [
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/51IeYsvhyEL.jpg",
+              "height": 1000,
+              "width": 1000
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31BhutM1mML.jpg",
+              "height": 500,
+              "width": 500
+            },
+            {
+              "variant": "MAIN",
+              "link": "https://m.media-amazon.com/images/I/31BhutM1mML._SL75_.jpg",
+              "height": 75,
+              "width": 75
+            }
+          ]
+        }
+      ],
+      "productTypes": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "productType": "BATTERY_CHARGER"
+        }
+      ],
+      "salesRanks": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "classificationRanks": [],
+          "displayGroupRanks": []
+        }
+      ],
+      "summaries": [
+        {
+          "marketplaceId": "A1F83G8C2ARO7P",
+          "adultProduct": false,
+          "autographed": false,
+          "brand": "SPECTRUM",
+          "browseClassification": {
+            "displayName": "Chargers",
+            "classificationId": "1939174031"
+          },
+          "itemClassification": "BASE_PRODUCT",
+          "itemName": "SPECTRUM Battery Charger, 40V 0.5A Standard Charger, Model SBSCBC, 8x9x12cm, 170g",
+          "manufacturer": "SPECTRUM",
+          "memorabilia": false,
+          "partNumber": "SBSCBC",
+          "tradeInEligible": false,
+          "websiteDisplayGroup": "ce_display_on_website",
+          "websiteDisplayGroupName": "CE"
+        }
+      ]
+    }
+  }
+}

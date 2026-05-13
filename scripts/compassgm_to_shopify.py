@@ -40,6 +40,17 @@ query findBySku($sku: String!) {
 }
 """
 
+FIND_BY_PRODUCT_ID = """
+query findVariantByProduct($id: ID!) {
+  product(id: $id) {
+    id
+    variants(first: 1) {
+      edges { node { id } }
+    }
+  }
+}
+"""
+
 # ---------------------------------------------------------------------------
 # GraphQL — create
 # ---------------------------------------------------------------------------
@@ -171,6 +182,18 @@ def find_existing(client: ShopifyClient, sku: str) -> tuple[str | None, str | No
     return None, None
 
 
+def find_by_product_id(client: ShopifyClient, product_id: str) -> tuple[str | None, str | None]:
+    """Return (product_gid, variant_gid) for the given Shopify product ID (numeric or GID)."""
+    gid = product_id if product_id.startswith("gid://") else f"gid://shopify/Product/{product_id}"
+    data = client.execute(FIND_BY_PRODUCT_ID, {"id": gid})
+    product = data.get("product")
+    if not product:
+        return None, None
+    variant_edges = product.get("variants", {}).get("edges", [])
+    variant_id = variant_edges[0]["node"]["id"] if variant_edges else None
+    return product["id"], variant_id
+
+
 def _update_variant(client: ShopifyClient, product: dict, product_id: str, variant_id: str) -> None:
     variants = [{
         "id":            variant_id,
@@ -246,7 +269,7 @@ def update_product(client: ShopifyClient, product: dict, product_id: str,
 # Main
 # ---------------------------------------------------------------------------
 
-def process(products: list[dict], dry_run: bool = False) -> None:
+def process(products: list[dict], dry_run: bool = False, force_product_id: str | None = None) -> None:
     with ShopifyClient() as client:
         for product in products:
             sku = product.get("sku", "UNKNOWN")
@@ -257,7 +280,14 @@ def process(products: list[dict], dry_run: bool = False) -> None:
                 print(f"  SKIP — scrape error: {product['error']}", file=sys.stderr)
                 continue
 
-            product_id, variant_id = find_existing(client, sku)
+            if force_product_id:
+                product_id, variant_id = find_by_product_id(client, force_product_id)
+                if not product_id:
+                    print(f"  ERROR — product {force_product_id} not found", file=sys.stderr)
+                    continue
+                print(f"  FORCED  product={product_id}  variant={variant_id}")
+            else:
+                product_id, variant_id = find_existing(client, sku)
 
             if product_id:
                 update_product(client, product, product_id, variant_id, dry_run=dry_run)
@@ -272,6 +302,11 @@ def main():
     parser = argparse.ArgumentParser(description="Push scraped products to Shopify")
     parser.add_argument("input_file", help="JSON file from compassgm_scraper.py (after copy rewrite)")
     parser.add_argument("--dry-run", action="store_true", help="Preview without writing to Shopify")
+    parser.add_argument(
+        "--product-id",
+        help="Force update against this Shopify product ID (numeric or GID), bypassing SKU lookup. "
+             "Only valid for single-product input.",
+    )
     args = parser.parse_args()
 
     raw = Path(args.input_file).read_text(encoding="utf-8")
@@ -279,11 +314,16 @@ def main():
     # Handle both single product (dict) and batch (list)
     products = data if isinstance(data, list) else [data]
 
+    if args.product_id and len(products) != 1:
+        parser.error("--product-id can only be used with a single-product input file")
+
     print(f"Loaded {len(products)} product(s) from {args.input_file}")
     if args.dry_run:
         print("── DRY RUN MODE ─────────────────────────────────────────")
+    if args.product_id:
+        print(f"── FORCED PRODUCT ID: {args.product_id} ──")
 
-    process(products, dry_run=args.dry_run)
+    process(products, dry_run=args.dry_run, force_product_id=args.product_id)
 
 
 if __name__ == "__main__":

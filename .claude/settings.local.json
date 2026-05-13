@@ -59,7 +59,26 @@
       "Bash(sed -n '316,330p' scripts/report/data_sources.py)",
       "Bash(sed -n '366,380p' scripts/report/data_sources.py)",
       "Bash(pdftotext /Users/waynetheisinger/compass/marketingPlan/API.pdf -)",
-      "Bash(pip list:*)"
+      "Bash(pip list:*)",
+      "WebFetch(domain:compassgm.co.uk)",
+      "WebFetch(domain:fastbundle.io)",
+      "WebFetch(domain:fastbundleapp.com)",
+      "WebFetch(domain:apps.shopify.com)",
+      "WebFetch(domain:fastbundle.co)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/**)",
+      "mcp__claude_ai_Gmail__search_threads",
+      "mcp__claude_ai_Gmail__get_thread",
+      "Read(//private/tmp/**)",
+      "Bash(.venv/bin/python -c ' *)",
+      "Bash(/Users/waynetheisinger/compass/marketingPlan/.venv/bin/python -c \"import pandas; print\\(pandas.__version__\\)\")",
+      "Bash(/Users/waynetheisinger/compass/marketingPlan/.venv/bin/python -m pip list)",
+      "Bash(pyenv version *)",
+      "Bash(pyenv which *)",
+      "Bash(pyenv exec *)",
+      "Bash(PYTHONPATH=. pyenv exec python scripts/sku_matcher/shopify_updater.py --help)",
+      "Bash(PYTHONPATH=. pyenv exec python scripts/sku_matcher/matcher.py --help)",
+      "Bash(git add *)"
     ]
   }
 }

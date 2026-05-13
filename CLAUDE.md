@@ -236,7 +236,7 @@ NumaSuite holds the authoritative stock levels across all channels including the
 ### Priority 2 — Marketing data (customer & purchase history)
 NumaSuite is the richest source of consolidated customer and purchase data across all channels (13,600+ customer records synced from Shopify and all marketplaces). For marketing we pull:
 
-- **Customers** — consolidated contact records (name, email, address) for Klaviyo audiences and segments
+- **Customers** — consolidated contact records (name, email, address) for Salesfire audiences and segments
 - **Purchase history / Sales** — what each customer bought, when, and for how much. Enables RFM segmentation, lapsed customer campaigns, cross-sell targeting.
 - **Products** — catalogue for cross-referencing purchase history against hero product calendar
 
@@ -294,5 +294,5 @@ Read endpoints not yet documented — awaiting API details from Jonathon Macleod
 
 - **Hero product model:** Each month has designated hero SKUs (chosen on margin ≥35%, stock depth ≥50 units, competitive price position, seasonal fit, and content-readiness) that receive concentrated spend across all channels simultaneously — not equal budget across everything.
 - **Spectrum-first:** Own-label Spectrum products are prioritised due to higher margin. Honda and other brands are used as traffic drivers with on-site funnel logic (comparison modules, cross-sell) to convert visitors onto Spectrum.
-- **Channel coordination:** Hero products receive channel-specific treatment (dedicated PMax asset groups, influencer Spark Ads, Klaviyo segmented emails, affiliate commission boosts) — not just "listed everywhere."
+- **Channel coordination:** Hero products receive channel-specific treatment (dedicated PMax asset groups, influencer Spark Ads, Salesfire segmented emails + matched onsite personalisation, affiliate commission boosts) — not just "listed everywhere."
 - **Baseline vs. uplift discipline:** Never bake marketing uplift into the forecast. Measure all campaign impact as delta over the seasonal baseline.

@@ -159,7 +159,7 @@ Every hero product must pass these filters:
 | **Feb** | **Spectrum Self-Propelled Petrol Mower range** (TG40PD from £149.95, TG40SE from £249.95, TG46S from £199.95, TG46SE from £225, TG51PD from £229) + **Spectrum DC24-4 Ride-On** (£1,399.95) + **Spectrum DCT38H Tractor** + **Tractor deal inventory** | Self-propelled is the highest-volume mower category heading into spring; range covers £150–£250 price points for maximum market width; DC24-4 and DCT38H position the premium/ride-on segment early before competitor noise; tractor deal stock arriving needs channel velocity | Google Shopping (full range feed with custom labels by price tier), Meta retargeting, marketplace listings, email to past buyers | "The spring lineup is here" — showcase full self-propelled range with "from £149.95" entry point messaging; hero the 34–50% savings vs. RRP across the range; bundle: mower + blade set + oil; DC24-4/DCT38H get dedicated PMax asset group + YouTube buyer's guide; tractor deal inventory priced to clear through MowDirect + marketplaces simultaneously | Shift tractor deal volume above baseline; establish Spectrum self-propelled as the default spring mower range; seed premium/ride-on awareness before April peak; capture early "self-propelled mower" and "ride-on mower" search demand |
 | **Mar** | **Full range of all Spectrum Lawnmowers** (push, self-propelled, electric start, cordless) + **High-margin Ride-Ons and Tractors** (Spectrum DC24-4, DCT38H + selected premium brands) | March is the season ignition month (×5.75 shift from Feb); weather-dependent but search demand explodes; this is peak selling season — go wide on the full Spectrum mower range to capture every buyer from £149 to £1,400+; ride-ons and tractors carry highest margin and AOV — push hard while demand is building | **All channels at full intensity** — Google PMax (separate campaigns for walk-behind vs. ride-on/tractor), Meta video, TikTok, Pinterest, affiliates, marketplaces | "Spring has arrived" hero campaign; full Spectrum mower range showcased with "from £149.95" entry point; ride-on/tractor range gets dedicated PMax asset group, YouTube buyer's guide, and Klarna finance messaging ("from £X/mo"); influencer unboxing videos go live; Google Merchant Promotions with "Free Delivery" badge; Awin commission boost to 12% for Spectrum range | Target: beat £435K baseline by 10%+ through full range width and ride-on/tractor AOV uplift |
 | **Apr** | **Full range of all Spectrum Lawnmowers** (continued from March) + **High-margin Ride-Ons and Tractors** (continued — maximum push) | April is the highest-revenue month (£752K baseline) and the absolute peak of selling season; maintain full Spectrum mower range at maximum intensity; ride-ons and tractors are the margin engine — April is when large-garden buyers commit; every channel at full budget | **All channels at maximum budget** — Google PMax, YouTube buyer's guide, Meta carousel + video, TikTok, Pinterest, PR product placement, affiliates, all marketplaces | "Upgrade your mow" — full-range campaign continues; ride-on/tractor focus intensifies with finance option prominently displayed (Klarna "from £X/mo"); YouTube long-form comparison video ("Ride-On vs Tractor: Which Is Right For Your Garden?"); pitch to T3/Ideal Home for "Best Ride-On" and "Best Garden Tractor" features; Amazon Lightning Deals on top-selling Spectrum mower SKUs | Target: beat £752K baseline; maximise revenue through breadth of Spectrum range + high-AOV ride-on/tractor sales; this is the month that makes or breaks the year |
-| **May** | **Spectrum Lawnmowers** (full range — self-propelled, push, cordless) + **Spectrum Trimmers** + **Spectrum Hedge Trimmers** | Sustained peak demand; gardens now in full growth — mowing is weekly and hedges/edges need first serious cut of the year; customers who bought mowers in Mar/Apr now need trimmers and hedge trimmers; new buyers still entering market | Google Shopping (full catalogue push with mower + trimmer + hedge trimmer custom labels), email cross-sell to Mar/Apr mower buyers, Meta DPA retargeting, affiliates | "Complete your garden toolkit" — cross-sell trimmers and hedge trimmers to recent mower buyers with 10% bundle discount; post-purchase upsell flow in Klaviyo targeting Mar/Apr purchasers; mower range continues as anchor for new customers still entering market; hedge trimmer content push ("When and How to Trim Your Hedges") | Target: increase repeat purchase rate and multi-product baskets; AOV uplift through trimmer/hedge trimmer attach rate; beat £728K baseline through breadth of Spectrum range |
+| **May** | **Spectrum Lawnmowers** (full range — self-propelled, push, cordless) + **Spectrum Trimmers** + **Spectrum Hedge Trimmers** | Sustained peak demand; gardens now in full growth — mowing is weekly and hedges/edges need first serious cut of the year; customers who bought mowers in Mar/Apr now need trimmers and hedge trimmers; new buyers still entering market | Google Shopping (full catalogue push with mower + trimmer + hedge trimmer custom labels), email cross-sell to Mar/Apr mower buyers, Meta DPA retargeting, affiliates | "Complete your garden toolkit" — cross-sell trimmers and hedge trimmers to recent mower buyers with 10% bundle discount; post-purchase upsell flow in Salesfire targeting Mar/Apr purchasers; mower range continues as anchor for new customers still entering market; hedge trimmer content push ("When and How to Trim Your Hedges") | Target: increase repeat purchase rate and multi-product baskets; AOV uplift through trimmer/hedge trimmer attach rate; beat £728K baseline through breadth of Spectrum range |
 | **Jun** | **Spectrum Tractors with Trailer bundle deals** (DCT38H + trailer packages) | Late/sticky tractor stock needs shifting before summer demand tails off; bundling with trailers adds value, increases AOV, and differentiates from competitors selling tractor-only; June is the last strong month before seasonal decline — create urgency | Google Shopping (bundle listings with "includes free trailer" messaging), Meta video (lifestyle: large garden owner using tractor + trailer), eBay Promoted Listings, marketplace push | "Tractor + Trailer" bundle deals — price the trailer at cost or free-with-tractor to move sticky stock; "Summer clearance — bundle and save £X" urgency messaging; email to all 2026 ride-on/tractor page visitors; dedicated landing page for tractor bundles; consider 0% finance via Klarna to reduce barrier on high-AOV items | Target: clear late tractor stock before Jul–Aug demand drop; protect margin through bundle pricing rather than straight discounting; beat £455K baseline through high-AOV tractor bundle sales |
 | **Jul** | **Honda range** (mowers, strimmers, hedge trimmers) — traffic driver at lower margin | Honda is the most searched brand in garden machinery — it drives traffic that we currently don't capture; accept lower margin on Honda as a deliberate acquisition play; the goal is not Honda profit but Honda footfall that converts onto higher-margin Spectrum products via on-site funnel control | Google Shopping (Honda brand + generic keywords — "Honda lawn mower" has high search volume), Google Search (brand terms), Meta DPA, marketplace listings | "Honda available at MowDirect" — use Honda as the shop window; on-site, every Honda PDP carries prominent "Compare with Spectrum" module showing Spectrum alternative at better value + 5-year warranty; cart page shows "Customers also considered" Spectrum cross-sell; post-purchase email to Honda buyers introduces Spectrum accessories range; retarget Honda page visitors with Spectrum ads | Target: drive significant new traffic via Honda brand searches; accept lower margin on Honda units sold; convert 15–20% of Honda traffic onto Spectrum products through comparison modules, cross-sell, and retargeting; build email list from Honda buyers for future Spectrum campaigns; beat £339K baseline through volume |
 | **Aug** | Scarifiers + Aerators (Spectrum range) | Autumn lawn care prep begins; "lawn renovation" search volume starts climbing | SEO (publish "How to Scarify Your Lawn" guide), Google Shopping, email seasonal re-engagement | "August is scarifying month" — educational content-led approach; email to full customer base with lawn care tips + product links | Target: own the "scarifier" SERP; drive category awareness before competitors push |
@@ -177,7 +177,7 @@ This is what happens to each month's hero product — it is not just "listed eve
 | **Google Shopping / PMax** | Dedicated asset group with custom labels; highest bid priority; Google Merchant Promotion annotation | Concentrates budget on the product most likely to convert; promotion badge increases CTR by 8–15% |
 | **Meta Ads** | Hero creative: video demo + carousel comparison; targeted to in-market audiences + lookalikes from past buyers of that category | Specific product story beats generic catalogue browsing; video demonstrates the product in use |
 | **TikTok** | Spark Ad from influencer unboxing/demo; organic post series ("watch me try the new X") | Authentic creator content outperforms brand ads 3:1 on TikTok; hero focus gives creators a clear brief |
-| **Email (Klaviyo)** | Dedicated campaign email to relevant segment (e.g. past mower buyers for upgrade; all subscribers for new launches) | Segmented product emails drive 3× revenue per email vs. generic newsletters |
+| **Email & onsite (Salesfire)** | Dedicated campaign email to relevant segment (e.g. past mower buyers for upgrade; all subscribers for new launches) plus matched onsite personalisation for the same audience | Segmented product emails drive 3× revenue per email vs. generic newsletters; onsite personalisation lifts repeat-visit conversion |
 | **Affiliates** | Temporary commission boost (+2%) for the hero SKU; exclusive discount code for top 10 publishers | Incentivises affiliates to prioritise the hero in their content; exclusive code creates urgency |
 | **Marketplaces** | Optimised listing with enhanced images/A+ content; Promoted Listings/Lightning Deals | Hero gets premium listing treatment; marketplace algorithm rewards conversion velocity |
 | **SEO / Content** | Blog post or buying guide published to support the hero (e.g. "Best Cordless Mower 2026" for the January cordless push) | Captures informational searches; drives organic traffic to product page via internal links |
@@ -191,7 +191,7 @@ This is what happens to each month's hero product — it is not just "listed eve
 | Influencer content drives 2–3× engagement vs. brand-produced content | TikTok and Instagram data consistently show UGC/creator content outperforming polished brand ads on both engagement and conversion |
 | Google Merchant Promotions increase Shopping CTR by 8–15% | Google's own data shows promotion annotations lift click-through rate; we are applying these only to hero products for maximum impact |
 | Affiliate commission boosts on hero products increase publisher promotion by 30–50% | Awin network data shows temporary commission uplifts are the single most effective lever for driving affiliate activity |
-| Cross-sell emails to recent buyers convert at 3–5× the rate of broadcast emails | Klaviyo benchmarks show segmented, product-relevant emails significantly outperform generic sends |
+| Cross-sell emails to recent buyers convert at 3–5× the rate of broadcast emails | Industry benchmarks show segmented, product-relevant emails significantly outperform generic sends |
 
 **This is fundamentally different from past practice.** Instead of marketing all products equally across all channels (which dilutes budget and message), we are selecting specific high-margin, high-demand products each month, giving them concentrated treatment across every channel simultaneously, and measuring the results product by product.
 
@@ -712,7 +712,7 @@ If online-only, still optimise for "buy lawn mower online UK" transactional quer
 | **Win-back** | No purchase in 12 months | 2 emails | E1: "We miss you" + what's new. E2: Exclusive returning customer offer |
 | **Seasonal re-engagement** | Approaching spring (Feb) | 1–2 emails | "Is your mower ready for spring?" + service tips + new arrivals |
 
-**Recommended platform:** Klaviyo (best-in-class Shopify integration; supports all flows above; predictive analytics for churn risk).
+**Platform:** Salesfire — combined lifecycle email/SMS, onsite personalisation, and CRO behaviour layer in a single platform. Selected for tighter coupling between the email flows above and the onsite touchpoints in §10.1–10.2 (PDP and cart) than a standalone email tool would provide. Klaviyo was the original recommendation but was not progressed to contract.
 
 ### 10.4 Live Chat & Chatbot
 
@@ -728,7 +728,7 @@ If online-only, still optimise for "buy lawn mower online UK" transactional quer
 
 1. **Week 1:** Install Hotjar or Microsoft Clarity for heatmap + session recording on top 10 PDPs
 2. **Week 2:** Implement trust badges and "why choose this" blocks on all PDPs
-3. **Week 3–4:** Set up Klaviyo; build welcome series and cart abandonment flows
+3. **Week 3–4:** Configure Salesfire; build welcome series and cart abandonment flows; activate onsite personalisation on top 10 PDPs
 4. **Month 2:** Integrate Klarna/Clearpay; add Apple Pay and Google Pay
 5. **Month 2:** Launch chatbot with "help me choose" flow
 6. **Month 3:** Run first A/B test — test PDP layout with video vs. without; measure add-to-cart rate
@@ -751,7 +751,7 @@ If online-only, still optimise for "buy lawn mower online UK" transactional quer
 
 | Element | Detail |
 |---|---|
-| **Platform** | Klaviyo SMS (integrated with email) or Attentive |
+| **Platform** | Salesfire SMS (if included in signed package) or Attentive as standalone |
 | **Opt-in mechanism** | Offer additional 5% off for SMS subscribers at checkout; post-purchase opt-in for shipping updates |
 | **Campaigns** | Flash sale alerts (24hr notice); back-in-stock notifications; seasonal reminders ("Time to service your mower!") |
 | **WhatsApp Business** | Set up WhatsApp Business profile; use for order updates and customer support; explore WhatsApp broadcast for VIP customers |
@@ -929,7 +929,7 @@ The 10% of gross turnover allocation is a starting position, not a fixed rule. H
 | **SEO & AI** | 12% | £48,853 | Writer/agency costs, Ahrefs, Screaming Frog, outreach, AI tooling |
 | **Affiliate programme** | 8% | £32,569 | Network fees + commissions (variable, performance-based) |
 | **PR & influencer** | 10% | £40,711 | Agency retainer, influencer fees, sponsorships, event costs |
-| **CRO & email** | 6% | £24,426 | Klaviyo, Hotjar, A/B testing, Klarna integration |
+| **CRO & email** | 6% | £24,426 | Salesfire (email + onsite + CRO), Hotjar, A/B testing, Klarna integration |
 | **Social media** | 5% | £20,355 | Tool costs (scheduling, analytics), freelance content creation |
 | **Miscellaneous** | 2% | £8,142 | SMS, direct mail, referral programme, contingency |
 | **Total** | **100%** | **£407,108** | |
@@ -1105,7 +1105,7 @@ Week 4 (22nd–end):
 | **Monthly deep-dive** | First week of month | Full leadership team |
 | **Quarterly review** | End of quarter | Board / stakeholders |
 
-**Recommended tools:** GA4 + Looker Studio dashboards; Shopify Analytics; Klaviyo reporting; **SimilarWeb** (competitor traffic benchmarking); **Ahrefs** (keyword rank tracking, backlink velocity, content performance); individual channel dashboards (Google Ads, Meta Ads Manager, etc.)
+**Recommended tools:** GA4 + Looker Studio dashboards; Shopify Analytics; Salesfire reporting; **SimilarWeb** (competitor traffic benchmarking); **Ahrefs** (keyword rank tracking, backlink velocity, content performance); individual channel dashboards (Google Ads, Meta Ads Manager, etc.)
 
 ---
 
@@ -1116,7 +1116,7 @@ Week 4 (22nd–end):
 | Week | Actions |
 |---|---|
 | 1 | Technical SEO audit; set up Hotjar/Clarity; audit social accounts |
-| 2 | Fix critical technical issues; install Klaviyo; add trust badges to PDPs |
+| 2 | Fix critical technical issues; configure Salesfire; add trust badges to PDPs |
 | 3 | Register on ManoMano + OnBuy; set up BaseLinker/Linnworks; apply to Awin |
 | 4 | Set up Google Merchant Centre (if not done); optimise product feed; integrate Klarna |
 | 5 | Upload top 50 SKUs to marketplaces; launch welcome + cart abandonment email flows |
@@ -1170,7 +1170,7 @@ Week 4 (22nd–end):
 |---|---|
 | **Marketplace management** | BaseLinker or Linnworks |
 | **Repricing** | RepricerExpress (Amazon/eBay) |
-| **Email & SMS** | Klaviyo |
+| **Email, SMS & onsite personalisation** | Salesfire (signed; replaces originally-proposed Klaviyo) |
 | **Affiliate network** | Awin |
 | **SEO & keyword research** | Ahrefs (keyword tracking, content gap, backlink analysis, site audit) + Screaming Frog + Google Search Console |
 | **Competitive intelligence** | SimilarWeb (traffic benchmarking, competitor traffic sources, audience overlap, industry trends) |
@@ -1204,7 +1204,7 @@ This section estimates the internal man-hours required to execute the plan, **ex
 | **Paid ads setup** | Feed optimisation, Merchant Centre, pixel installs, campaign briefs to agency | 40–60 |
 | **Affiliate setup** | Awin application, commission structure, recruitment outreach, landing page | 40–60 |
 | **SEO technical audit & fixes** | Screaming Frog / Ahrefs audit, fix broken links, add schema, page speed | 40–60 |
-| **CRO setup** | Klaviyo flows (welcome, cart abandonment, post-purchase), trust badges, Klarna integration, chatbot | 60–80 |
+| **CRO setup** | Salesfire setup (email flows: welcome, cart abandonment, post-purchase; onsite personalisation rules; visitor identification), trust badges, Klarna integration, chatbot | 60–80 |
 | **Social setup** | Audit accounts, connect Instagram Shop + Pinterest catalogue, film initial content batch | 50–70 |
 | **PR & influencer setup** | Press page, influencer shortlist, outreach templates | 25–35 |
 | **Research tools setup** | SimilarWeb + Ahrefs projects, baseline reports | 10–15 |
