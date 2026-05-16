@@ -78,7 +78,23 @@
       "Bash(pyenv exec *)",
       "Bash(PYTHONPATH=. pyenv exec python scripts/sku_matcher/shopify_updater.py --help)",
       "Bash(PYTHONPATH=. pyenv exec python scripts/sku_matcher/matcher.py --help)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git reset *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)",
+      "Bash(grep -E \"\\\\.DS_Store$|\\\\.~lock\")",
+      "Bash(git rm *)",
+      "Skill(update-config)",
+      "Bash(command -v terminal-notifier)",
+      "Bash(brew --prefix terminal-notifier)",
+      "Read(//usr/local/opt/terminal-notifier/**)",
+      "Read(//usr/local/Cellar/**)",
+      "Bash(brew list *)",
+      "Bash(ps2ascii \"Battery 1 1.pdf\")",
+      "Bash(ps2ascii \"Battery 3.pdf\")",
+      "Bash(ps2ascii \"Comp 3.pdf\")",
+      "Bash(ps2ascii \"Comp 5.pdf\")",
+      "Bash(ps2ascii \"Comp 6.pdf\")"
     ]
   }
 }

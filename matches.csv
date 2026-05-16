@@ -1,0 +1,95 @@
+sku_a,title_a,sku_b,title_b,score,method
+2T2010483/M25,MOUNTFIELD 1330M REAR-COLLECT LAWN TRACTOR WITH MANUAL DRIVE,2T2010483/M25,Mountfield 1330M Gear Drive 2-in-1 Lawn Tractor,86.56,tfidf+rapidfuzz
+2T0052483/CAS,MOUNTFIELD 827M RIDE-ON LAWNMOWER,MF-827M,Mountfield 827M Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive,80.73,tfidf+rapidfuzz
+2T0980473/C22,CASTEL GARDEN PTX 210 HD LAWN TRACTOR,2T0980473/C22,Castel Garden PTX 210 HD Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive,89.79,tfidf+rapidfuzz
+DC24-4,SPECTRUM DC24-4 RIDE ON MOWER,DC24-4,Spectrum DC24-4 Ultra-Compact Rear-Collect/Side-Discharge Ride-On Mower with Manual Drive,93.27,tfidf+rapidfuzz
+SBS40CB,SPECTRUM BY SWIFT SBS40CB 4.0AH BATTERY,SBS40CB,Spectrum SBS40CB 40V 4.0Ah Lithium-Ion Battery Pack,87.76,tfidf+rapidfuzz
+TG561-SWT,SPECTRUM TG561-SWT SELF PROPELLED WHEELED TRIMMER,TG561-SWT,Spectrum TG561-SWT Self Propelled Wheeled Trimmer,100.00,tfidf+rapidfuzz
+TG56-PRO,SPECTRUM TG56-PRO LAWNMOWER,TG56-PRO,"Spectrum TG56-Pro Variable Speed, Honda Engine, Petrol Lawnmower - 4 Blade",93.98,tfidf+rapidfuzz
+TG48-PRO,SPECTRUM TG48-PRO VARIABLE SPEED PETROL LAWNMOWER,TG48-PRO,Spectrum TG48-PRO Honda Powered Petrol Self Propelled Lawnmower - 4 blade,0.00,manual
+TG51SE,SPECTRUM TG51SE KEY START LAWNMOWER,TG51SE,Spectrum TG51SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start,88.68,tfidf+rapidfuzz
+TG56SE,SPECTRUM TG56SE KEY START LAWNMOWER,TG56SE,Spectrum TG56SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start,88.68,tfidf+rapidfuzz
+DCT38M-SDM,SPECTRUM DCT38M-SDM 2-IN-1 SIDE DISCHARGE GARDEN TRACTOR WITH GEAR DRIVE,DCT38M-SDM,"Spectrum DCT38M-SD  38"" Side Discharge and Mulch Lawn Tractor with Manual Drive PRE SEASON SPECIAL PRICE!",79.82,tfidf+rapidfuzz
+SW420-EXPERT,SPECTRUM SW420 EXPERT 2 IN 1 PETROL SCARIFIER,SW420-EXPERT,Spectrum SW420-Expert 2-in-1 Petrol Lawn Scarifier/Aerator,97.33,tfidf+rapidfuzz
+DM26PBV,SPECTRUM DM26PBV PETROL BLOWER-VAC,DM26PBV,Spectrum DM26PBV Petrol Blower-Vac,100.00,tfidf+rapidfuzz
+2T2630447/AT2,ATCO GT 38H REAR-COLLECT V-TWIN GARDEN TRACTOR,AT-2T2630447/AT2,Atco GT 38H Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive,98.50,tfidf+rapidfuzz
+CS-621SX/50,"ECHO CS-621SX/50 PETROL CHAINSAW 20"" GUIDE BAR",ECH-CS-621SX,Echo CS-621SX Petrol Chainsaw (50cm Guide Bar),93.36,tfidf+rapidfuzz
+LPW2200,SPECTRUM LPW2200 ELECTRIC PRESSURE WASHER,LPW2200,"Spectrum LPW2200 Electric Pressure Washer — 2200W, 170 Bar, Cleaning Kit Included",97.00,tfidf+rapidfuzz
+HRX476QY,HONDA HRX 476 QY ROLLER LAWNMOWER,HRX476QY,Honda HRX 476 QY Self-Propelled Rear Roller Petrol Lawn Mower,82.21,tfidf+rapidfuzz
+2T1315481/ST1,Stiga Estate 7122 W REAR COLLECT V-TWIN GARDEN TRACTOR WITH HYDROSTATIC DRIVE ,2T1315481/ST1,Stiga Estate 7122 W Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive,100.00,tfidf+rapidfuzz
+2T1425473/C22,Castel Garden XHT 240 4WD Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive,XHT-240,Castel Garden XHT 240 4 Wheel-Drive Rear-Collect V-Twin Garden Tractor with Hydrostatic Drive,95.17,tfidf+rapidfuzz
+T92H,"HARRY T92H TRACTOR 36"" DECK 432CC ENGINE""",C-T92H,Harry T92H Rear-Collect Lawn Tractor with Hydrostatic Transmission,69.26,tfidf+rapidfuzz
+HF2417K5HT,HONDA HF 2417 HTE PREMIUM GARDEN TRACTOR,HF-2417-HTE,Honda HF 2417 HTE Premium Garden Tractor,100.00,tfidf+rapidfuzz
+T84H,"HARRY T84H TRACTOR 33"" DECK 432CC ENGINE""",T84H,Harry T84H Rear-Collect Lawn Tractor with Hydrostatic Drive,61.61,tfidf+rapidfuzz
+HF2417KFHM,HONDA HF 2417 HME PREMIUM GARDEN TRACTOR,C-HF2417HME,HF 2417 HME Premium Lawn Tractor with Versamow® Mulching,79.66,tfidf+rapidfuzz
+2T1950381/ST1,STIGA TORNADO 9121 W SIDE DISCHARGE TRACTOR - HONDA GXV 690 (688CC ENGINE),2T1950381/ST1,Stiga Tornado 9121 W Side-Discharge V-Twin Garden Tractor with Hydrostatic Drive,74.50,tfidf+rapidfuzz
+2T2100481/ST1,STIGA ESTATE 384 LAWN TRACTOR HYDROSTATIC,STIG-2T2100481/ST1,Stiga Estate 384 Rear-Collect Lawn Tractor with Hydrostatic Drive,95.70,tfidf+rapidfuzz
+TG60FTTR,SPECTRUM TG60FTTR PETROL CULTIVATOR,TG60FTTR,Spectrum TG60FTTR Petrol Cultivator,100.00,tfidf+rapidfuzz
+2691689,"SIMPLICITY SYT410 TRACTOR 48"" CUT""",SIMP-SYT410,Simplicity Broadmoor SYT410 Side-Discharge V-Twin Garden Tractor with Hydrostatic Drive & Lawn-Striping Rollers,84.35,tfidf+rapidfuzz
+LPW1600,SPECTRUM LPW1600 ELECTRIC PRESSURE WASHER,LPW1600,"Spectrum LPW1600 Electric Pressure Washer — 1600W, 130 Bar",98.50,tfidf+rapidfuzz
+HRTF220,FEIDER HRTF220 REAR TINE CULTIVATOR (BLUE) 272403,C-HRTF220,Feider HRTF220 Pro Two-Wheel Rear-Tine Rotary Cultivator,81.79,tfidf+rapidfuzz
+2691696,SIMPLICITY SZT350 ZERO TURN TRACTOR,C-2691696,Simplicity Courier™ SZT350 Zero-Turn Ride-On Mower,84.79,tfidf+rapidfuzz
+TG40SE,SPECTRUM TG40SE LAWNMOWER WITH ELECTRIC START,TG40SE,Spectrum TG40SE Self-Propelled Petrol Lawnmower with Electric Start,93.82,tfidf+rapidfuzz
+HRM1500BC,HONDA HRM1500 LIVE MIIMO ROBOTIC MOWER,HRM-1500BC,HONDA HRM 1500BC Live Miimo Robotic Lawnmower,86.99,tfidf+rapidfuzz
+TG40SE-AMZ,SPECTRUM TG40SE KEY START  LAWNMOWER - AMAZON FULFILLED,C-TG40SE-AMZ,Spectrum TG40SE Self-Propelled Petrol Lawnmower with Electric Start (Amazon),81.14,tfidf+rapidfuzz
+RAC139PTIL,RACING RAC139PTIL PETROL FRONT-TINE TILLER,RAC139PTIL,Racing 139PTIL63 Petrol Front-Tine Tiller,93.85,tfidf+rapidfuzz
+TY8000V,SPECTRUM TY8000V 8-TONNE VERTICAL ELECTRIC LOG SPLITTER,TY8000V,Spectrum TY8000V Electric Upright 8-Tonne log Splitter,88.27,tfidf+rapidfuzz
+SP31105,SPECTRUM SP31105 97CM TOWED LAWN & LEAF SWEEPER,C-SP31105,Spectrum 97cm Towed Lawn & Leaf Sweeper | SP31105,97.52,tfidf+rapidfuzz
+2T0515403/CAS,MOUNTFIELD MTF 98M SD SIDE-DISCHARGE LAWN TRACTOR,MF-2T0515403/CAS,Mountfield MTF 98M SD Side-Discharge Lawn Tractor with Manual Drive,98.50,tfidf+rapidfuzz
+TG561-SWT-AMZ,"SPECTRUM TG561-SWT WHEELED TRIMMER - AMAZON FULFILLED
+",TG561-SWT-AMZ,Spectrum TG561-SWT Self Propelled Wheeled Trimmer (Amazon),85.94,tfidf+rapidfuzz
+HRM2500 LIVE,HONDA MIIMO HRM2500 LIVE ROBOTIC MOWER,HRM-2500BC,HONDA Miimo HRM 2500BC Live Robot Lawnmower,84.17,tfidf+rapidfuzz
+HRG416C1SK,HONDA IZY HRG 416 SK PETROL LAWN MOWER,HRG416SK,Honda Izy HRG 416 SK Self Propelled Petrol Lawn Mower,96.08,tfidf+rapidfuzz
+2T0510404/A22,ALPINA AT3 98 A SIDE DISCHARGE RIDE ON MOWER,C-2T0510404/A22,Alpina AT3 98AST Side Discharge Lawn Tractor,78.18,tfidf+rapidfuzz
+TY7000H,SPECTRUM TY7000H 7 TONNE LOG SPLITTER,C-TY7000H,Spectrum TY7000H 7 Tonne Log Splitter,100.00,tfidf+rapidfuzz
+WH20XT,"HONDA WH20XT 2"" WATER PUMP",WH20XT,HONDA WH20 Self Priming Water Pump,75.87,tfidf+rapidfuzz
+TG50-UTILITY-AMZ,SPECTRUM TG50-UTILITY - AMAZON FULFILLED,C-TG50-UTILITY-AMZ,Spectrum TG50-Utility Lawnmower (Amazon),83.58,tfidf+rapidfuzz
+TG50-UTILITY,SPECTRUM TG50-UTILITY LAWNMOWER,TG50-UTILITY,Spectrum TG50-Utility Lawnmower,100.00,tfidf+rapidfuzz
+2T0210481/ST2,STIGA COMBI 372 RIDE-ON MOWER,STIG-2T0210481/ST2,Stiga Combi 372 Compact Rear-Collect Ride-On Mower with Hydrostatic Drive,93.38,tfidf+rapidfuzz
+2T0210483/M22,MOUNTFIELD 1328H COMPACT REAR-COLLECT RIDE-ON MOWER WITH HYDROSTATIC DRIVE,MF-2T0210483/M22,Mountfield 1328H Compact Rear-Collect Ride-On Mower with Hydrostatic Drive,100.00,tfidf+rapidfuzz
+TS40,HARRY PETROL AERATOR SCARIFIER,HAR-TS40S,Harry TS40-S 2-in-1 Petrol Lawn Scarifier/Aerator,91.98,tfidf+rapidfuzz
+QG20P,SPECTRUM QG20P HAND PROPELLED LAWNMOWER - 196CC ENGINE,QG20P,Spectrum 'Qingain' QG20P Push Petrol Lawnmower – WITH FREE BLADE WORTH £39.95!,0.00,manual
+294519043/M22,MOUNTFIELD SP505R V VARIABLE SPEED PETROL REAR-ROLLER LAWNMOWER,MF-SP505R-V,Mountfield SP505R-V Variable-Speed Petrol Rear-Roller Lawnmower (with Honda Engine),98.50,tfidf+rapidfuzz
+HRD536K4QX,HONDA HRD 536 QX SELF-PROPELLED REAR ROLLER PETROL LAWN MOWER,HRD536QY,Honda HRD 536 QX Self-Propelled Rear Roller Petrol Lawn Mower,100.00,tfidf+rapidfuzz
+CS-310ES/35,"ECHO CS-310ES/35 PEROL CHAINSAW 14"" 30CC""",ECH-CS310ES-35,Echo CS-310ES Petrol Chainsaw (35cm Guide Bar),77.29,tfidf+rapidfuzz
+297411043/M21,MOUNTFIELD HP41 HAND PROPELLED PETROL LAWNMOWER,MF-HP41,Mountfield HP41 Hand-Propelled Petrol Lawnmower,100.00,tfidf+rapidfuzz
+TY5-7STAND,SPECTRUM LOG SPLITTER STAND FOR 5T AND 7T LOG SPLITTERS,C-TY5-7STAND,Spectrum TY5-7 Log Splitter Stand,88.65,tfidf+rapidfuzz
+HRG466C1PK,HONDA IZY HRG 466 PK PETROL LAWN MOWER,HRG-466-PK,Honda Izy HRG 466 PK Petrol Lawn Mower,100.00,tfidf+rapidfuzz
+DM26L,SPECTRUM DM26L PETROL BRUSHCUTTER,DM26L,Spectrum DM26L Petrol Brushcutter and Strimmer,98.50,tfidf+rapidfuzz
+FBT420,FEIDER FBT420 PETROL CHIPPER SHREDDER,FBT420,Feider FBT420 Petrol Chipper,98.50,tfidf+rapidfuzz
+DM26PBV-AMZ,SPECTRUM DM26PBV BLOWER VAC - AMAZON FULFILLED,C-DM26PBV-AMZ,Spectrum DM26PBV Petrol Blower-Vac (Amazon),89.31,tfidf+rapidfuzz
+2T2110447/AT2,ATCO GT 30H REAR-COLLECT LAWN TRACTOR WITH HYDROSTATIC DRIVE,AT-2T2110447/AT2,Atco GT 30H Rear-Collect Lawn Tractor with Hydrostatic Drive,100.00,tfidf+rapidfuzz
+TY7000SW,SPECTRUM TY7000SW PETROL SWEEPER,TY7000SW,"Spectrum TY7000SW Self-Propelled Powered broom, Leaf Sweeper, Debris and Snow Sweeper",86.35,tfidf+rapidfuzz
+TY5000H,SPECTRUM TY5000H 5 TONNE LOG SPLITTER,C-TY5000H,Spectrum TY5000H 5 Tonne Log Splitter,100.00,tfidf+rapidfuzz
+HRD536K4HX,HONDA HRD 536 HX PRO SELF-PROPRELLED PETRO LAWN MOWER,HRD-536-HX,Honda HRD 536 HX Self-Propelled Petrol Lawn Mower,93.69,tfidf+rapidfuzz
+DM26C,SPECTRUM DM26C CURVED-SHALF PETROLGRASS-TRIMMER,DM26C,Spectrum DM26C Curved-Shaft Petrol Grass and weed Strimmer,84.93,tfidf+rapidfuzz
+GNP560-WT,SPECTRUM GNP560-WT WHEELED TRIMMER,GNP560-WT,Spectrum GNP560-WT Wheeled Trimmer,100.00,tfidf+rapidfuzz
+HRN536C2VY,HONDA HRN536VY LAWNMOWER - BBC,HRN-536-VY,Honda HRN 536 VY Self-Propelled Petrol Lawn Mower,63.63,tfidf+rapidfuzz
+HCA-265ES-HD,ECHO HCA-265ES-HD LONG REACH ARTICULATING HEDGETRIMMER,ECH-HCA-265ES-HD,Echo HCA-265ES-HD Long-Reach Petrol Hedgetrimmer,89.46,tfidf+rapidfuzz
+SP45103,"Spectrum SP45103 36"" Towed Steel Lawn Roller""",SPEC-SP45103,Spectrum 91cm Towed Steel Lawn-Roller | SP45103,93.80,tfidf+rapidfuzz
+2T0053404/A22,ALPINA AT2 66 QA PETROL GARDEN TRACTOR,C-2T0053404/A22,Alpina AT2 66 QA Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive,0.00,manual
+SP22111-4,SPECTRUM SP22111-4 181KG POLY TIPPING CART,C-SP22111-4,Spectrum 181kg-Capacity Poly Tipping Cart | SP22111-4,96.21,tfidf+rapidfuzz
+SP22124,SPECTRUM SP22124 227kg CAPACITY STEEL TRAILER,SP22124,Spectrum 227kg-Capacity Steel Tipping Trailer | SP22124,96.81,tfidf+rapidfuzz
+CS-4310SX,ECHO CS4310SX PETROL CHAINSAW (33cm BAR),ECH-CS-4310SX,Echo CS-4310SX Petrol Chainsaw (40cm Guide Bar),84.10,tfidf+rapidfuzz
+HC-2320,ECHO HC-2320 EXTRA-LONG DOUBLE BLADE HEDGETRIMMER,ECH-HC-2320,Echo HC-2320 Petrol Hedgetrimmer,84.95,tfidf+rapidfuzz
+SP22125,SPECTRUM SP22125 408KG HIGH-SIDED STEEL TIPPING TRAILER,C-SP22125,Spectrum 408kg-Capacity High-Sided Steel Tipping Trailer | SP22125,96.86,tfidf+rapidfuzz
+UMS 425 LN,HONDA UMS 425 LN CURVED SHAFT STRIMMER - 4 STROKE,UMS-425-LN,UMS 425 LN 4-stroke Bent Shaft Petrol Brushcutter,68.47,tfidf+rapidfuzz
+HRN536C2VK,HONDA HRN 536 VK SELF-PROPELLED PETROL LAWN MOWER,HRN536VK,Honda HRN 536 VK Self-Propelled Petrol Lawn Mower,100.00,tfidf+rapidfuzz
+CS-2511TES/25,ECHO CS-2511TES/25 CHAINSAW,ECH-CS-2511TESC,Echo CS-2511TESC Top-Handle Petrol Arborist's Chainsaw (25cm Guide Bar),78.14,tfidf+rapidfuzz
+DM26H,SPECTRUM DM26H PETROL BRUSHCUTTER,DM26H,Spectrum DM26H Petrol Brushcutter and Strimmer,98.50,tfidf+rapidfuzz
+ES-250ES,ECHO ES-250ES SHRED 'N' VAC LEAF BLOWER & VACCUM,ECH-ES-250ES,Echo ES-250ES Shred N' Vac® Handheld Petrol Blower-Vacuum,82.87,tfidf+rapidfuzz
+CS-501SX/45,"ECHO CS-501SX CHAINSAW 18""""",CS-501SX/45,Echo CS-501SX Petrol Chainsaw (45cm Guide Bar),89.02,tfidf+rapidfuzz
+HRG466C1SK,HONDA IZY HRG 466 SK SELF-PROPELLED PETROL LAWN MOWER,HRG466SK,Honda Izy HRG 466 SK Self-Propelled Petrol Lawn Mower,100.00,tfidf+rapidfuzz
+HHH25S75ET,HONDA HHH25S 75ET PETROL HEDGETRIMMER,HHH25S75ET,Honda HHH 25S 75E Hedge Trimmer,0.00,manual
+WBVAC,WEBB WBVAC  58CM WALK-BEHIND VACUUM & BLOWER,WEBB-WBV,Webb Walk-Behind Vacuum,93.91,tfidf+rapidfuzz
+FHT22,FEIDER FHT22 PETROL HEDGETRIMMER (60CM BLADES),FHT22,Feider FHT22 Petrol Hedgetrimmer (60cm Blades),100.00,tfidf+rapidfuzz
+HCR-165ES,"ECHO HCR-165ES DOUBLE SIDED PETROL HEDGE TRIMMER 25"" / 64CM",ECH-HCR-165ES,Echo HCR-165ES Petrol Hedgetrimmer,78.44,tfidf+rapidfuzz
+FTRTPRO40,FEIDER FTRTPRO40 CHAINSAW,FTRTPRO40,Feider PRO 40 Petrol Chainsaw  Kit (40cm Guide Bar),77.45,tfidf+rapidfuzz
+UMK425E2LE,HONDA UMK 425 LE 4-STROKE BRUSHCUTTER,UMK-425-LE,Honda UMK 425 LE 4-Stroke Brush Cutter,98.53,tfidf+rapidfuzz
+HCR-185ES,ECHO HCR-185ES TWIN BLADE HEDGECUTTER,ECH-HCR-185ES,Echo HCR-185ES Petrol Hedgetrimmer,71.30,tfidf+rapidfuzz
+SRM-2621TESU,ECHO SRM-2621TESU 25.4CC HORN HANDLE BRUSHCUTTER,ECH-SRM-2621TESU,Echo SRM-2621TESU High-Torque Petrol Brushcutter,74.36,tfidf+rapidfuzz
+PB-2520,ECHO PB-2520 2-STROKE HANDHELD BLOWER,ECH-PB-2520,Echo PB-2520 Handheld Petrol Leaf-Blower,83.87,tfidf+rapidfuzz
+SRM-237TESU,ECHO SRM-237TESU HORN HANDLE BRUSHCUTTER 21.2CC,ECH-SRM-237TESU,Echo SRM-237TESU High-Torque Petrol Brushcutter,74.32,tfidf+rapidfuzz
+WEPS400,"WEBB WEPS400 16"" PETROL SCARIFIER & RAKE",WEPS400,Webb WEPS400 40cm (16″) Petrol Lawn Scarifier & Raker,89.76,tfidf+rapidfuzz
+RAC52BPB,RACING 52BPB-2 PETROL BACKPACK BLOWER,RAC52BPB-2,Racing 52BPB-2 Petrol Backpack Blower,100.00,tfidf+rapidfuzz
+DM26PB,SPECTRUM DM26PB PETROL LEAF BLOWER,DM26PB,Spectrum DM26PB Petrol Leaf Blower,100.00,tfidf+rapidfuzz

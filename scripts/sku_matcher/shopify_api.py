@@ -19,12 +19,23 @@ from scripts.shopify_client import ShopifyClient
 
 @dataclass
 class ShopifyVariant:
-    """A Shopify product variant (IDs are GraphQL GIDs)."""
+    """A Shopify product variant (IDs are GraphQL GIDs).
+
+    `price` / `compare_at_price` / `inventory_quantity` were added for the
+    price_stock_sync tool; they default to safe empty values so callers that
+    don't query them (e.g. the SKU updater) keep working unchanged.
+    """
     id: str           # gid://shopify/ProductVariant/...
     product_id: str   # gid://shopify/Product/...
     title: str
     sku: str
     position: int
+    # Optional fields populated when the query asks for them.
+    price: str = ""                           # Shopify returns this as a string decimal.
+    compare_at_price: str = ""                # RRP / strike-through. Empty when unset.
+    # inventoryQuantity sums across locations; if MowDirect ever has >1
+    # location, switch to inventoryItem.inventoryLevels.
+    inventory_quantity: Optional[int] = None
 
     def __repr__(self):
         return f"Variant(id={self.id}, title='{self.title}', sku='{self.sku}')"
@@ -59,6 +70,9 @@ query findVariantsBySku($q: String!) {
         sku
         title
         position
+        price
+        compareAtPrice
+        inventoryQuantity
         product {
           id
           title
@@ -70,6 +84,9 @@ query findVariantsBySku($q: String!) {
                 sku
                 title
                 position
+                price
+                compareAtPrice
+                inventoryQuantity
               }
             }
           }
@@ -178,6 +195,9 @@ class ShopifyAPI:
                     title=v["node"].get("title") or "Default Title",
                     sku=v["node"].get("sku") or "",
                     position=v["node"].get("position") or 0,
+                    price=v["node"].get("price") or "",
+                    compare_at_price=v["node"].get("compareAtPrice") or "",
+                    inventory_quantity=v["node"].get("inventoryQuantity"),
                 )
                 for v in variant_edges
             ]
@@ -244,6 +264,31 @@ class ShopifyAPI:
         # per-variant userErrors, but if any fail none are written. Propagate
         # the same error to every row so the caller's logging is consistent.
         return [(vid, False, error) for vid, _ in updates]
+
+    def update_variant_fields(
+        self,
+        product_id: str,
+        variant_id: str,
+        fields: dict,
+    ) -> Tuple[bool, Optional[str]]:
+        """Update arbitrary fields on a single variant.
+
+        `fields` is merged into the variant payload alongside `id`. Use this
+        for anything that isn't the SKU rewrite (price, compareAtPrice,
+        taxable, …). Example:
+
+            api.update_variant_fields(prod_gid, var_gid, {"price": "199.99"})
+
+        Accepts both root-level fields (`price`, `compareAtPrice`, `barcode`)
+        and the nested `inventoryItem` block, exactly as
+        `productVariantsBulkUpdate` expects.
+        """
+        if "id" in fields:
+            # Refuse silently overriding the variant_id — would route the
+            # mutation to the wrong row.
+            raise ValueError("Pass variant_id as a positional arg, not in fields")
+        payload = {"id": variant_id, **fields}
+        return self._update_one_product(product_id, [payload])[0]
 
     # ------------------------------------------------------------------
     # Internals

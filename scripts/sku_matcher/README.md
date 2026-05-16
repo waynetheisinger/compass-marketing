@@ -16,6 +16,24 @@ canonical_skus.csv ──╯
 
 Project Python is **pyenv 3.12.0** (`.python-version`). Every dep is already installed there. Never use bare `python3.11` — that resolves to `/usr/local/opt/python@3.11`, which has nothing.
 
+### Claude-as-TUI mode (preferred for the Andrew workbook flow)
+
+`matcher.py` is an interactive curses-ish TUI that's awkward to drive from inside a Claude session. The drop-in alternative is `matcher_step.py` plus the convenience wrapper `andrew_match.sh`. Same state files as the real TUI; you can switch back and forth.
+
+```bash
+bash scripts/sku_matcher/andrew_match.sh status                          # progress
+bash scripts/sku_matcher/andrew_match.sh next --top 5                    # next row's candidates
+bash scripts/sku_matcher/andrew_match.sh decide --sku TG48-PRO --pick 1  # record rank-1 hit
+bash scripts/sku_matcher/andrew_match.sh decide --sku TG48-PRO --pick SBS-TG48-PRO  # or by sku
+bash scripts/sku_matcher/andrew_match.sh skip --sku 2T2010483/M25        # defer (writes _skipped.jsonl)
+bash scripts/sku_matcher/andrew_match.sh unmatch --sku F220              # log as no-match
+bash scripts/sku_matcher/andrew_match.sh peek --sku SBS40CB              # look without advancing
+```
+
+Output is a single JSON object per call (errors print `{"error": "..."}` to stdout and exit non-zero). Add `--force` on `decide` to overwrite a prior match for the same `sku_a`. The matcher rebuilds its TF-IDF index per call — sub-second on the current 117/1883 catalogue.
+
+### Stage commands (original)
+
 ```bash
 # Stage 1
 PYTHONPATH=. pyenv exec python scripts/sku_matcher/matcher.py \
