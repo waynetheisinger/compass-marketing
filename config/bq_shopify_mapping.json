@@ -1,0 +1,1067 @@
+{
+  "schema_version": 1,
+  "shopify_core_fields": {
+    "PRODUCT": {
+      "title": {
+        "type": "string",
+        "name": "Product title",
+        "shop_owner_added": false,
+        "example_value": "Spectrum SBS460CLM 46cm Self-Propelled Cordless Lawn Mower — Bare Tool (Batteries & Charger Sold Separately)",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "name"
+        ],
+        "hint": "Truncate to <=130 chars. Apply BQ_QUIRKS rules: no em-dash (use ' - '), no en-dash, no smart quotes, no ° or ×.",
+        "skip_reason": null,
+        "note": null
+      },
+      "descriptionHtml": {
+        "type": "html",
+        "name": "Product description (HTML)",
+        "shop_owner_added": false,
+        "example_value": "<h2>Spectrum SBS460CLM — The Cordless Mower Built for Real Lawns</h2><p>If your lawn demands more than a basic push-along can deliver, the Spectrum SBS460CLM is where performance meets practicality. Engineered for medium to large gardens, this self-propelled cordless mower takes the hard work out of lawn care — you guide it, and the transmission does the rest.</p><p>At the heart of the SBS460CLM is a high-efficiency <strong>brushless motor</strong> drawing power from a dual-battery configuration...",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "Body Copy"
+        ],
+        "hint": "Strip HTML. Rewrite in MowDirect voice per BRAND_VOICE.md. Distinct from compassgm.co.uk AND the MowDirect Shopify PDP itself. Apply BQ_QUIRKS rules. Different lead sentence, different paragraph structure, different verbs.",
+        "skip_reason": null,
+        "note": null
+      },
+      "vendor": {
+        "type": "string",
+        "name": "Vendor / brand",
+        "shop_owner_added": false,
+        "example_value": "Spectrum",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "Acquisition brand"
+        ],
+        "hint": "Match against B&Q value-list. Spectrum is approved on B&Q (confirmed via SBS push 2026-05-07).",
+        "skip_reason": null,
+        "note": null
+      },
+      "featuredImage.url": {
+        "type": "url",
+        "name": "Featured image URL",
+        "shop_owner_added": false,
+        "example_value": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/SBS460CLM.webp?v=1774280713",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "image_main_1"
+        ],
+        "hint": "Pass through Shopify CDN URL verbatim. B&Q image rules (white background, >=1000px, no watermark) are assumed met by the source.",
+        "skip_reason": null,
+        "note": null
+      },
+      "images": {
+        "type": "url_list",
+        "name": "Secondary image URLs (excluding featured)",
+        "shop_owner_added": false,
+        "example_value": [
+          "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/SBS460CLM.webp?v=1774280713",
+          "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/Spectrum-SBS460CLM-Lawnmower-scaled-e1773826074832.webp?v=1774280713"
+        ],
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "image_secondary_1",
+          "image_secondary_2",
+          "image_secondary_3",
+          "image_secondary_4",
+          "image_secondary_5",
+          "image_secondary_6",
+          "image_secondary_7",
+          "image_secondary_8"
+        ],
+        "hint": "Skip the featured image (already in image_main_1). Map remaining images to image_secondary_1..8 in order. Pad with empty if fewer than 8.",
+        "skip_reason": null,
+        "note": null
+      }
+    },
+    "PRODUCTVARIANT": {
+      "sku": {
+        "type": "string",
+        "name": "Variant SKU",
+        "shop_owner_added": false,
+        "example_value": "SBS460CLM",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "shop_sku"
+        ],
+        "hint": "Verbatim.",
+        "skip_reason": null,
+        "note": null
+      },
+      "barcode": {
+        "type": "string",
+        "name": "Variant barcode (EAN)",
+        "shop_owner_added": false,
+        "example_value": "5065022450634",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "ean"
+        ],
+        "hint": "Verbatim. EAN is canonical identifier per identifier invariant.",
+        "skip_reason": null,
+        "note": null
+      },
+      "inventoryItem.measurement.weight": {
+        "type": "weight",
+        "name": "Variant weight",
+        "shop_owner_added": false,
+        "example_value": {
+          "value": 0.0,
+          "unit": "KILOGRAMS"
+        },
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [
+          "Product_weight"
+        ],
+        "hint": "Extract numeric value in kg. Reject if unit is not KILOGRAMS or if value is 0.0 (not yet set on Shopify).",
+        "skip_reason": null,
+        "note": null
+      }
+    }
+  },
+  "shopify_metafields": {
+    "PRODUCT": {
+      "custom.display_attributes": {
+        "type": "json",
+        "name": "Display Attributes",
+        "shop_owner_added": false,
+        "example_value": [
+          {
+            "code": "manufacturer",
+            "label": "Manufacturer",
+            "value": "Spectrum"
+          },
+          {
+            "code": "motor",
+            "label": "Motor",
+            "value": "900W Brushless"
+          },
+          {
+            "code": "cutting_deck_size_cm",
+            "label": "Cutting Deck",
+            "value": "46cm (18\")"
+          },
+          {
+            "code": "cutting_heights",
+            "label": "Cutting Heights",
+            "value": "25–75mm (7 Positions)"
+          },
+          {
+            "code": "mulching",
+            "label": "Mulching",
+            "value": "Yes"
+          },
+          {
+            "code": "cord_battery_included",
+            "label": "Battery Included",
+            "value": "No – Optional"
+          },
+          {
+            "code": "attribute_charger",
+            "label": "Charger Included",
+            "value": "No – Optional"
+          },
+          {
+            "code": "drive",
+            "label": "Drive",
+            "value": "Self-Propelled"
+          },
+          {
+            "code": "product_weight",
+            "label": "Product Weight",
+            "value": "25.6kg"
+          },
+          {
+            "code": "warranty",
+            "label": "Warranty",
+            "value": "5 Years (T&Cs Apply)"
+          }
+        ],
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.bullet_two": {
+        "type": "single_line_text_field",
+        "name": "Bullet One",
+        "shop_owner_added": false,
+        "example_value": "Dual-battery brushless motor for sustained power across large lawns",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.bullet_three": {
+        "type": "single_line_text_field",
+        "name": "Bullet Two",
+        "shop_owner_added": false,
+        "example_value": "4-in-1 grass disposal: collect, mulch, rear or side discharge",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.supplier_sku": {
+        "type": "single_line_text_field",
+        "name": "Supplier Sku",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.feature_bullets": {
+        "type": "multi_line_text_field",
+        "name": "Feature Bullets",
+        "shop_owner_added": false,
+        "example_value": "<ul>\n<li>Self-propelled drive — covers more ground with less effort</li>\n<li>Dual-battery brushless motor for sustained power on large lawns</li>\n<li>46cm metal cutting deck for a professional-quality finish</li>\n<li>7-stage central height adjustment from 25–75mm</li>\n<li>4-in-1: collect, mulch, rear discharge, or side discharge</li>\n<li>60-litre grass bag with bag-full indicator</li>\n<li>Ball-bearing wheels (7\" front / 10\" rear) for smooth, turf-friendly movement</li>\n<li>5-year Spectrum manufacturer's warranty (T&Cs apply)</li>\n</ul>",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.product_badge": {
+        "type": "metaobject_reference",
+        "name": "Product Badge",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "reviews.rating": {
+        "type": "rating",
+        "name": "Product rating",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Average rating from customers",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "reviews.rating_count": {
+        "type": "number_integer",
+        "name": "Product rating count",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Total number of ratings from customers",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.builder_product": {
+        "type": "boolean",
+        "name": "Builder Product",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify--discovery--product_search_boost.queries": {
+        "type": "list.single_line_text_field",
+        "name": "Search product boosts",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "List of search queries for which a product gets higher rank in search results",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify--discovery--product_recommendation.related_products": {
+        "type": "list.product_reference",
+        "name": "Related products",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "List of related products",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify--discovery--product_recommendation.related_products_display": {
+        "type": "single_line_text_field",
+        "name": "Related products settings",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Determines how related products are displayed along with algorithmic product recommendations",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify--discovery--product_recommendation.complementary_products": {
+        "type": "list.product_reference",
+        "name": "Complementary products",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "List of complementary products",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "mm-google-shopping.custom_product": {
+        "type": "boolean",
+        "name": "Google: Custom Product",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.color-pattern": {
+        "type": "list.metaobject_reference",
+        "name": "Color",
+        "shop_owner_added": false,
+        "example_value": [
+          "Green"
+        ],
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Defines the primary color or pattern, such as blue or striped",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.power-source": {
+        "type": "list.metaobject_reference",
+        "name": "Power source",
+        "shop_owner_added": false,
+        "example_value": [
+          "Battery-powered"
+        ],
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the power source a product uses to operate, such as solar or batteries",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.material": {
+        "type": "list.metaobject_reference",
+        "name": "Material",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Defines a product's primary material, such as cotton or wool",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.drive-type": {
+        "type": "list.metaobject_reference",
+        "name": "Drive type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the type of drive system in vehicles or heavy machinery, like 2WD or 4WD",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.item-condition": {
+        "type": "list.metaobject_reference",
+        "name": "Item condition",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Indicates the quality of an item, typically vehicles or vehicle parts; e.g. certified pre-owned, refurbished",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.trailer-type": {
+        "type": "list.metaobject_reference",
+        "name": "Trailer type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the design or style of a motor vehicle trailer, such as open or enclosed",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.fuel-container-features": {
+        "type": "list.metaobject_reference",
+        "name": "Fuel container features",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Describes specific features of fuel tanks, such as spill-proof spout or fuel gauge",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.recommended-use": {
+        "type": "list.metaobject_reference",
+        "name": "Recommended use",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the primary use or domain a hardware product has been designed for, e.g. industrial, residential",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "market.depth": {
+        "type": "dimension",
+        "name": "Depth (or Length)",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Depth to be used in Marketplaces",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "market.height": {
+        "type": "dimension",
+        "name": "Height",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Height for Marketplace",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "marketplace.width": {
+        "type": "dimension",
+        "name": "Width",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Width for Marketplaces",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.battery-technology": {
+        "type": "list.metaobject_reference",
+        "name": "Battery technology",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the type of battery used in electronics, such as alkaline or lithium-ion",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.engine-type": {
+        "type": "list.metaobject_reference",
+        "name": "Engine type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the kind of engine in a vehicle or part, such as electric or diesel",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.tractor-accessories-included": {
+        "type": "list.metaobject_reference",
+        "name": "Tractor accessories included",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies extra features provided with the tractor, such as a mulching kit or snow blade",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.lawnmower_type": {
+        "type": "list.single_line_text_field",
+        "name": "Lawnmower Type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Filter for Type of Lawnmower",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.brand": {
+        "type": "single_line_text_field",
+        "name": "Brand",
+        "shop_owner_added": false,
+        "example_value": "Spectrum",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Brand for the filters",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.fuel_group": {
+        "type": "list.single_line_text_field",
+        "name": "Fuel Group",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "The fuel group for the filters",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.corded_cordless": {
+        "type": "list.single_line_text_field",
+        "name": "Corded / Cordless",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Corded or Cordless for Filters",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.propulsion_type": {
+        "type": "single_line_text_field",
+        "name": "Propulsion Type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Propulsion Type for filters",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.collection_capacity_l": {
+        "type": "volume",
+        "name": "Collection Capacity (L)",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Collection Capacity (L) for filters",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.condition": {
+        "type": "single_line_text_field",
+        "name": "Condition",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Condition for filters",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "filter.cutting_width": {
+        "type": "dimension",
+        "name": "Cutting Width",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Cutting Width for Filter",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.starting_system": {
+        "type": "list.single_line_text_field",
+        "name": "Starting System",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Startup Type for filters",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.aerator_or_scarifier": {
+        "type": "list.single_line_text_field",
+        "name": "Aerator or Scarifier",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "custom.delivery_time": {
+        "type": "single_line_text_field",
+        "name": "Delivery Time",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Used in the shipping box",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.suitable-for-power-equipment-type": {
+        "type": "list.metaobject_reference",
+        "name": "Suitable for power equipment type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the type of outdoor power equipment the product is designed for, like a lawn mower or leaf blower",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.propulsion-type": {
+        "type": "list.metaobject_reference",
+        "name": "Propulsion type",
+        "shop_owner_added": false,
+        "example_value": [
+          "Self-propelled"
+        ],
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the movement method for outdoor equipment, e.g. push, tow",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.connection-type": {
+        "type": "list.metaobject_reference",
+        "name": "Connection type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the type of connection used by electronics, such as wired or Bluetooth",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.compatible-battery-technology": {
+        "type": "list.metaobject_reference",
+        "name": "Compatible battery technology",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the type of battery technology a product is compatible with, like lithium-ion or alkaline",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.hardware-material": {
+        "type": "list.metaobject_reference",
+        "name": "Hardware material",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the composition of hardware items, such as metal or stainless steel",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.suitable-for-water-feature-type": {
+        "type": "list.metaobject_reference",
+        "name": "Suitable for water feature type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the type of water feature the product is suitable for, such as a pond or fountain",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.ignition-system": {
+        "type": "list.metaobject_reference",
+        "name": "Ignition system",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the type of ignition system in generators, such as manual or electronic",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.phase-type": {
+        "type": "list.metaobject_reference",
+        "name": "Phase type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the phase type of motor controllers, such as single-phase or two-phase",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.engine-design": {
+        "type": "list.metaobject_reference",
+        "name": "Engine design",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Describes the configuration of a vehicle's engine, e.g. 2-stroke",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.fuel-supply": {
+        "type": "list.metaobject_reference",
+        "name": "Fuel supply",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the fuel source for vehicles or engines, such as diesel or hybrid",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.shaft-orientation": {
+        "type": "list.metaobject_reference",
+        "name": "Shaft orientation",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the direction of the shaft in small engines, for example, horizontal or vertical",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.start-type": {
+        "type": "list.metaobject_reference",
+        "name": "Start type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Identifies the method used to start small engines, like electric or pull",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.battery-type": {
+        "type": "list.metaobject_reference",
+        "name": "Battery type",
+        "shop_owner_added": false,
+        "example_value": [
+          "Standalone (not-included)"
+        ],
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Distinguishes between types of batteries, such as disposable or rechargeable ",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "shopify.grass-discharge-type": {
+        "type": "list.metaobject_reference",
+        "name": "Grass discharge type",
+        "shop_owner_added": false,
+        "example_value": [
+          "Bagging",
+          "Mulching",
+          "Rear discharge",
+          "Side discharge"
+        ],
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies how the mower expels grass clippings (e.g., side discharge, rear bagging).",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:20Z"
+      },
+      "judgeme.badge": {
+        "type": "string",
+        "name": "judgeme.badge",
+        "shop_owner_added": true,
+        "example_value": "<div style='display:none' class='jdgm-prev-badge' data-average-rating='0.00' data-number-of-reviews='0' data-number-of-questions='0'> <span class='jdgm-prev-badge__stars' data-score='0.00' tabindex='0' aria-label='0.00 stars' role='button'> <span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span> </span> <span class='jdgm-prev-badge__text'> No reviews </span> </div>",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": "Review widget HTML, not a product attribute",
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:13Z",
+        "last_seen_at": "2026-05-20T07:40:13Z"
+      },
+      "judgeme.widget": {
+        "type": "string",
+        "name": "judgeme.widget",
+        "shop_owner_added": true,
+        "example_value": "<div class='jdgm-rev-widg' data-updated-at='2026-03-25T15:52:23Z' data-average-rating='0.00' data-number-of-reviews='0' data-number-of-questions='0' data-image-url='https://cdn.shopify.com/s/files/1/0654/0004/5735/files/SBS460CLM.webp?v=1774280713'> <style class='jdgm-temp-hiding-style'>.jdgm-rev-widg{ display: none }</style> <div class='jdgm-rev-widg__header'> <h2 class='jdgm-rev-widg__title'>Customer Reviews</h2>  <div class='jdgm-rev-widg__summary'> <div class='jdgm-rev-widg__summary-stars' aria-label='Average rating is 0.00 stars' role='img'> <span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span> </div> <div class='jdgm-rev-widg__summary-text'>Be the first to write a review</div> </div> <a style='display: none' href='#' class='jdgm-write-rev-link' role='button'>Write a review</a> <div class='jdgm-histogram jdgm-temp-hidden'>  <div class='jdgm-histogram__row' data-rating='5' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 5 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='4' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 4 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='3' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 3 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='2' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 2 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='1' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 1 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row jdgm-histogram__clear-filter' data-rating=null tabindex='0'></div> </div>     <div class='jdgm-rev-widg__sort-wrapper'></div> </div> <div class='jdgm-rev-widg__body'>  <div class='jdgm-rev-widg__reviews'></div> <div class='jdgm-paginate' data-per-page='5' data-url='https://api.judge.me/reviews/reviews_for_widget' style=\"display: none;\"></div>  </div> <div class='jdgm-rev-widg__paginate-spinner-wrapper'> <div class='jdgm-spinner'></div> </div> </div>",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": "Review widget HTML, not a product attribute",
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:13Z",
+        "last_seen_at": "2026-05-20T07:40:13Z"
+      },
+      "mm-google-shopping.google_product_category": {
+        "type": "string",
+        "name": "mm-google-shopping.google_product_category",
+        "shop_owner_added": true,
+        "example_value": "694",
+        "example_from_sku": "SBS460CLM",
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": null,
+        "discovered_at": "2026-05-20T07:40:13Z",
+        "last_seen_at": "2026-05-20T07:40:13Z"
+      }
+    },
+    "PRODUCTVARIANT": {
+      "mm-google-shopping.custom_label_4": {
+        "type": "single_line_text_field",
+        "name": "Google: Custom Label 4",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.custom_label_3": {
+        "type": "single_line_text_field",
+        "name": "Google: Custom Label 3",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.custom_label_2": {
+        "type": "single_line_text_field",
+        "name": "Google: Custom Label 2",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.custom_label_1": {
+        "type": "single_line_text_field",
+        "name": "Google: Custom Label 1",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.custom_label_0": {
+        "type": "single_line_text_field",
+        "name": "Google: Custom Label 0",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.size_system": {
+        "type": "single_line_text_field",
+        "name": "Google: Size System",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "The country of the size system used by your product.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.size_type": {
+        "type": "single_line_text_field",
+        "name": "Google: Size Type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Your apparel product’s cut.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.mpn": {
+        "type": "single_line_text_field",
+        "name": "Google: MPN",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Your product’s Manufacturer Part Number (MPN).",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.gender": {
+        "type": "single_line_text_field",
+        "name": "Google: Gender",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "The gender for which your product is intended.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.condition": {
+        "type": "single_line_text_field",
+        "name": "Google: Condition",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "The condition of your product at time of sale.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      },
+      "mm-google-shopping.age_group": {
+        "type": "single_line_text_field",
+        "name": "Google: Age Group",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "The demographic for which your product is intended.",
+        "discovered_at": "2026-05-20T07:40:03Z",
+        "last_seen_at": "2026-05-20T08:14:21Z"
+      }
+    }
+  }
+}

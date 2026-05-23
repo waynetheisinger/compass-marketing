@@ -26,6 +26,8 @@ Usage:
 """
 from __future__ import annotations
 
+import json
+import os
 from typing import Any, Callable
 from dataclasses import dataclass
 
@@ -77,7 +79,9 @@ _K_FIVE_YEAR_GTEE     = "81"     # Spec_Guarantee value list — code 81 = "5 ye
 _K_CHEMISTRY_TOOL     = "17"     # Battery_chemistry in tool categories
 _K_CHEMISTRY_BATTERY  = "9"      # Battery_chemistry in PIM_11486 battery category — different domain
 _K_PACK_QTY           = "1"      # Core_Pack quantity = single unit
-_K_PACK_TYPE          = "3"      # Core_Pack type — 3 maps to "Box" or similar (verbatim from known templates)
+_K_PACK_TYPE          = "3"      # Core_Pack type — 3 = "Each" (verified by reading the
+                                  # SBS460CLM details page back from the portal 2026-05-19).
+                                  # Earlier code comment said "Box"; that was wrong.
 _K_FSC_PEFC_CERT      = "No"
 _K_CONTAINS_WOOD      = "2"      # 2 = No
 _K_REACH_VERIFIED     = "Yes"
@@ -189,6 +193,18 @@ KINGFISHER = OperatorConfig(
             },
         },
 
+        # ---- Pressure washers, corded electric (Core_Product type: TBD —
+        #      discover via dry-run; Cordless code for "No" also TBD) ----
+        "PRESSURE_WASHER_CORDED": {
+            "category": "PIM_12754",
+            "core_product_type": None,        # TBD — discover via dry-run
+            "fixed_attributes": {
+                "WEEE_regulated":      _K_WEEE_REGULATED,
+                "Power_voltage_supply": "16",  # 240V (same code as charger)
+                # Cordless = "No" code TBD; Battery_* attributes N/A for corded.
+            },
+        },
+
         # ---- Chargers (Core_Product type: 27202 = Battery charger) ----
         "CHARGER_BARE": {
             "category": "PIM_13946",
@@ -257,6 +273,206 @@ OPERATORS: dict[str, OperatorConfig] = {
     "TESCO":      TESCO,
     "THERANGE":   THERANGE,
 }
+
+
+# ---------------------------------------------------------------------------
+# Portal display label → CSV column (API) name map
+#
+# Kingfisher's seller portal shows human-readable labels; the /products/imports
+# CSV uses different column names. The mapping is NOT a derivable transform
+# — some labels gain a Spec_/Tech_/Core_/BQ_ prefix, some get renamed entirely,
+# some get truncated. This dict is hand-curated from observed mappings and
+# grows as new labels are encountered during /enrich-bq runs.
+#
+# Conventions:
+#   - key = exact label as it appears in the portal (trim trailing space and
+#     trailing "*" before looking up)
+#   - value = exact CSV column header Mirakl accepts
+#   - value of None = no API mapping known; field can only be entered manually
+#     via the portal (clipboard fallback in /enrich-bq)
+#
+# To add a new mapping: drop it in here keyed by the exact portal label.
+# ---------------------------------------------------------------------------
+
+KINGFISHER_DISPLAY_TO_API: dict[str, str | None] = {
+    # ----- Identity / structural -----
+    "Name":                                "name",
+    "Shop SKU":                            "shop_sku",
+    "EAN":                                 "ean",
+    "Category":                            "category",
+    "Variant Group Code":                  "variant_group_code",
+    "Main Image 1":                        "image_main_1",
+    "Body Copy":                           "Body Copy",
+
+    # ----- Brand / packaging -----
+    "Acquisition brand":                   "Acquisition brand",
+    "Pack quantity":                       "Core_Pack quantity",
+    "Pack type":                           "Core_Pack type",
+    "Manufacturer guarantee":              "Guarantee",
+    "Manufacturer Name":                   None,        # API name not yet confirmed
+    "MultiSKU Product Group ID":           None,
+
+    # ----- Compliance / certifications -----
+    "REACh Verified":                      "reach_verified",
+    "Contains wood and/or paper":          "contains_wood",
+    "FSC or PEFC certified":               "fsc_pecl_certified",   # historical typo preserved
+    "WEEE regulated":                      "WEEE_regulated",
+    "GPSR Exempt":                         None,
+    "Made from 100% recycled wood and/or paper": None,
+    "Legal information":                   None,
+
+    # ----- Product taxonomy -----
+    "Product type":                        "Core_Product type",
+    "Lawnmower type":                      None,
+    "Propulsion type":                     None,
+
+    # ----- Tool attributes -----
+    "Corded/cordless":                     "Cordless",
+    "Battery chemistry":                   "Battery_chemistry",
+    "Batteries included":                  "Batteries_supplied",
+    "Battery voltage":                     None,
+    "Cutting width":                       None,
+    "Bare unit (without batteries)":       None,
+    "Collection capacity":                 None,
+    "Function(s)":                         None,
+    "Model name/number":                   None,
+    "Noise level":                         None,
+    "Power source":                        "Tech_Power_source",
+    "Power type":                          None,
+    "Navigation type":                     "BQ_Nav_type",
+    "Grass collector type":                None,
+    "Handle type":                         "Spec_Handle_type",
+    "Included":                            None,
+
+    # ----- Dimensions -----
+    "Product weight":                      "Product_weight",
+    "Product length":                      "Product_length",
+    "Product width":                       "Product_width",
+    "Product height":                      "Product_height",
+
+    # ----- Marketing prose (API names TBD — all may need a one-time
+    #       dry-run probe via /products/imports to learn the accepted
+    #       column names) -----
+    "Selling Copy":                        None,
+    "Key Feature":                         None,
+    "Unique Selling Point 1":              None,
+    "Unique Selling Point 2":              None,
+    "Unique Selling Point 3":              None,
+    "Unique Selling Point 4":              None,
+    "Unique Selling Point 5":              None,
+    "Unique Selling Point 6":              None,
+    "Unique Selling Point 7":              None,
+    "Unique Selling Point 8":              None,
+
+    # ----- Image slots -----
+    "Secondary Image 1":                   "image_secondary_1",    # guess; verify on first submit
+    "Secondary Image 2":                   "image_secondary_2",
+    "Secondary Image 3":                   "image_secondary_3",
+    "Secondary Image 4":                   "image_secondary_4",
+    "Secondary Image 5":                   "image_secondary_5",
+    "Secondary Image 6":                   "image_secondary_6",
+    "Secondary Image 7":                   "image_secondary_7",
+    "Secondary Image 8":                   "image_secondary_8",
+    "Product Identification 1":            None,
+    "Product Identification 2":            None,
+    "Product Identification 3":            None,
+
+    # ----- Documents / videos (not API-fillable; clipboard / portal upload) -----
+    "Product Guide":                       None,
+    "Product Instruction Manual":          None,
+    "Safety Manual":                       None,
+    "Video":                               None,
+    "Declaration of Conformity":           None,
+    "Declaration of Identity":             None,
+    "EU Warning_Safety Information":       None,
+    "Safety Test Report 1":                None,
+    "Safety Test Report 2":                None,
+    "Safety Test Report 3":                None,
+    "International Compliance Documents Details": None,
+    "International Compliance Status":     None,
+
+    # ----- Safety information (10 slots) -----
+    "Warnings and Safety Information 01":  None,
+    "Warnings and Safety Information 02":  None,
+    "Warnings and Safety Information 03":  None,
+    "Warnings and Safety Information 04":  None,
+    "Warnings and Safety Information 05":  None,
+    "Warnings and Safety Information 06":  None,
+    "Warnings and Safety Information 07":  None,
+    "Warnings and Safety Information 08":  None,
+    "Warnings and Safety Information 09":  None,
+    "Warnings and Safety Information 10":  None,
+    "Safety Information Asset 1 - Digital Assets 01W": None,
+    "Safety Information Asset 2 - Digital Assets 02W": None,
+    "Safety Information Asset 3 - Digital Assets 03W": None,
+    "Safety Information Asset 4 - Digital Assets 04W": None,
+    "Safety Information Asset 5 - Digital Assets 05W": None,
+}
+
+
+# Per-field length caps that Kingfisher enforces (over-cap values are
+# rejected by the portal/Mirakl). Keyed by portal display label.
+# See .claude/skills/enrich-bq/BQ_QUIRKS.md for documentation.
+KINGFISHER_FIELD_LENGTH_CAPS: dict[str, int] = {
+    "Name":        130,   # also runs through clean_name() for char-replacement
+    "Key Feature": 30,
+}
+
+
+# Section headers that appear in portal text dumps — used by the parser to
+# detect group boundaries, not as fields themselves.
+KINGFISHER_PORTAL_SECTIONS = frozenset([
+    "Images", "Videos", "Documents", "Specifications",
+])
+
+# Inline unit markers — when a line is exactly one of these, it's the unit
+# annotation for the previous numeric field (not a field or value of its own).
+KINGFISHER_INLINE_UNITS = frozenset([
+    "mm", "cm", "m", "kg", "g", "V", "W", "kW", "A", "Ah", "l", "L", "ml", "Hz",
+    "dB", "rpm", "min", "h", "°C", "%",
+])
+
+
+# ---------------------------------------------------------------------------
+# Extensions loader — merges hierarchies discovered after the May 2026 SBS
+# push (written by /enrich-bq's gate-0.5 mapping flow) into the operator
+# config. New hierarchies are data-not-code so they're trivial to review
+# in PRs and to roll back without touching this file.
+# ---------------------------------------------------------------------------
+
+def _load_extensions() -> None:
+    """Merge runtime additions from config/bq_operator_extensions.json.
+
+    Currently merges only the operator-level display-label-to-API-name
+    overrides into the in-memory KINGFISHER_DISPLAY_TO_API dict (these are
+    learned at runtime via /enrich-bq and don't warrant a code edit).
+
+    The per-hierarchy `labels` block is read directly by scripts/bq_enrich.py
+    on demand — it doesn't mutate OperatorConfig.
+
+    Silent no-op if the file is missing or malformed.
+    """
+    here = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.dirname(here)
+    ext_path = os.path.join(repo_root, "config", "bq_operator_extensions.json")
+    if not os.path.exists(ext_path):
+        return
+    try:
+        with open(ext_path) as fh:
+            ext = json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        return
+    kf = ext.get("KINGFISHER", {})
+    if not isinstance(kf, dict):
+        return
+    overrides = kf.get("display_label_to_api_name_overrides", {})
+    if isinstance(overrides, dict):
+        for label, api in overrides.items():
+            # Overrides take precedence over in-code defaults
+            KINGFISHER_DISPLAY_TO_API[label] = api
+
+
+_load_extensions()
 
 
 # ---------------------------------------------------------------------------

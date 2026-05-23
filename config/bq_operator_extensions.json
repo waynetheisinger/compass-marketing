@@ -1,0 +1,1647 @@
+{
+  "_description": "Per-hierarchy data discovered via /enrich-bq's portal text-dump parser. Written by 'parse-form-dump --pim ...' during hierarchy bootstrap; read by 'discover-fields' on every run. Hierarchies not present here have not been bootstrapped yet \u2014 /enrich-bq will prompt for a value-free editable-form paste on first encounter.",
+  "_schema": {
+    "KINGFISHER": {
+      "hierarchies": {
+        "<PIM_code>": {
+          "product_type": "ALL_CAPS_WITH_UNDERSCORES (matches mirakl_operators.KINGFISHER.by_product_type if known)",
+          "labels": [
+            {
+              "label": "Display label (verbatim from portal)",
+              "required": true,
+              "section": "Images | Videos | Documents | Specifications | top",
+              "unit": "mm | kg | V | l | null",
+              "api_name": "CSV column name, or null if unknown"
+            }
+          ],
+          "bootstrapped_at": "ISO 8601 timestamp",
+          "bootstrap_source": "path to .bootstrap_<pim>.txt"
+        }
+      },
+      "display_label_to_api_name_overrides": {
+        "(Optional) Per-operator overrides on KINGFISHER_DISPLAY_TO_API in mirakl_operators.py. Use this when an API name is learned at runtime and you want to persist it without editing code.": "..."
+      }
+    }
+  },
+  "KINGFISHER": {
+    "hierarchies": {
+      "PIM_13202": {
+        "product_type": "LAWN_MOWER_BARE",
+        "labels": [
+          {
+            "label": "Name",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "name"
+          },
+          {
+            "label": "Shop SKU",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "shop_sku"
+          },
+          {
+            "label": "Acquisition brand",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Acquisition brand"
+          },
+          {
+            "label": "MultiSKU Product Group ID",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Body Copy",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Body Copy"
+          },
+          {
+            "label": "Unique Selling Point 1",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Unique Selling Point 2",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Unique Selling Point 3",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Unique Selling Point 4",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Unique Selling Point 5",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Unique Selling Point 6",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Unique Selling Point 7",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Unique Selling Point 8",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Pack quantity",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Pack quantity"
+          },
+          {
+            "label": "Pack type",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Pack type"
+          },
+          {
+            "label": "Selling Copy",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Key Feature",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Manufacturer guarantee",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Guarantee"
+          },
+          {
+            "label": "REACh Verified",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "reach_verified"
+          },
+          {
+            "label": "Contains wood and/or paper",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "contains_wood"
+          },
+          {
+            "label": "FSC or PEFC certified",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "fsc_pecl_certified"
+          },
+          {
+            "label": "Legal information",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Manufacturer Name",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "GPSR Exempt",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 01",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 02",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 03",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 04",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 05",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 06",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 07",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 08",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 09",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Warnings and Safety Information 10",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Made from 100% recycled wood and/or paper",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Product type",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Product type"
+          },
+          {
+            "label": "Lawnmower type",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Propulsion type",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Cutting width",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Bare unit (without batteries)",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Battery voltage",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Collection capacity",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Corded/cordless",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Cordless"
+          },
+          {
+            "label": "Function(s)",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Model name/number",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Noise level",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Product weight",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_weight"
+          },
+          {
+            "label": "Handle type",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Spec_Handle_type"
+          },
+          {
+            "label": "Power source",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Tech_Power_source"
+          },
+          {
+            "label": "Navigation type",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "BQ_Nav_type"
+          },
+          {
+            "label": "Grass collector type",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "WEEE regulated",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "WEEE_regulated"
+          },
+          {
+            "label": "Batteries included",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Batteries_supplied"
+          },
+          {
+            "label": "Battery chemistry",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Battery_chemistry"
+          },
+          {
+            "label": "Power type",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "International Compliance Documents Details",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "International Compliance Status",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Product height",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_height"
+          },
+          {
+            "label": "Product length",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_length"
+          },
+          {
+            "label": "Product width",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_width"
+          }
+        ],
+        "bootstrapped_at": "2026-05-19T14:15:01",
+        "bootstrap_source": "bq/enriched/.bootstrap_PIM_13202.txt"
+      },
+      "PIM_12754": {
+        "product_type": "PRESSURE_WASHER_CORDED",
+        "labels": [
+          {
+            "label": "Name",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "name"
+          },
+          {
+            "label": "Shop SKU",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "shop_sku"
+          },
+          {
+            "label": "Acquisition brand",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Acquisition brand"
+          },
+          {
+            "label": "MultiSKU Product Group ID",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "MultiSKU_Product_Group_ID"
+          },
+          {
+            "label": "Body Copy",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Body Copy"
+          },
+          {
+            "label": "Unique Selling Point 1",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_1"
+          },
+          {
+            "label": "Unique Selling Point 2",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_2"
+          },
+          {
+            "label": "Unique Selling Point 3",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_3"
+          },
+          {
+            "label": "Unique Selling Point 4",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_4"
+          },
+          {
+            "label": "Unique Selling Point 5",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_5"
+          },
+          {
+            "label": "Unique Selling Point 6",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_6"
+          },
+          {
+            "label": "Unique Selling Point 7",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_7"
+          },
+          {
+            "label": "Unique Selling Point 8",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_8"
+          },
+          {
+            "label": "Pack quantity",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Pack quantity"
+          },
+          {
+            "label": "Pack type",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Pack type"
+          },
+          {
+            "label": "Selling Copy",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Selling_Copy"
+          },
+          {
+            "label": "Key Feature",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Key_Feature"
+          },
+          {
+            "label": "Manufacturer guarantee",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Guarantee"
+          },
+          {
+            "label": "REACh Verified",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "reach_verified"
+          },
+          {
+            "label": "Contains wood and/or paper",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "contains_wood"
+          },
+          {
+            "label": "FSC or PEFC certified",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "fsc_pecl_certified"
+          },
+          {
+            "label": "Legal information",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Legal_information"
+          },
+          {
+            "label": "Manufacturer Name",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Manufacturer_Name"
+          },
+          {
+            "label": "GPSR Exempt",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "GPSR_Exempt"
+          },
+          {
+            "label": "Warnings and Safety Information 01",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_01"
+          },
+          {
+            "label": "Warnings and Safety Information 02",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_02"
+          },
+          {
+            "label": "Warnings and Safety Information 03",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_03"
+          },
+          {
+            "label": "Warnings and Safety Information 04",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_04"
+          },
+          {
+            "label": "Warnings and Safety Information 05",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_05"
+          },
+          {
+            "label": "Warnings and Safety Information 06",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_06"
+          },
+          {
+            "label": "Warnings and Safety Information 07",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_07"
+          },
+          {
+            "label": "Warnings and Safety Information 08",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_08"
+          },
+          {
+            "label": "Warnings and Safety Information 09",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_09"
+          },
+          {
+            "label": "Warnings and Safety Information 10",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_10"
+          },
+          {
+            "label": "Made from 100% recycled wood and/or paper",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Made_from_100_recycled_wood_and_or_paper"
+          },
+          {
+            "label": "Product type",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Product type"
+          },
+          {
+            "label": "Connection type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Spec_Connection_type"
+          },
+          {
+            "label": "Filter type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Spec_Filter_type"
+          },
+          {
+            "label": "Handle type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Spec_Handle_type"
+          },
+          {
+            "label": "Motor type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Spec_Motor_type"
+          },
+          {
+            "label": "Nozzle type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Spec_Nozzle_type"
+          },
+          {
+            "label": "Range",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Range"
+          },
+          {
+            "label": "Cable length",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Cable_length"
+          },
+          {
+            "label": "Hose length",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Hose_length"
+          },
+          {
+            "label": "Accessories available",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Accessories_available"
+          },
+          {
+            "label": "Corded/cordless",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Cordless"
+          },
+          {
+            "label": "Function(s)",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Functions"
+          },
+          {
+            "label": "Hose description",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Hose_description"
+          },
+          {
+            "label": "Included",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Included"
+          },
+          {
+            "label": "Maximum flow rate",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Maximum_flow_rate"
+          },
+          {
+            "label": "Maximum operating pressure",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Maximum_operating_pressure"
+          },
+          {
+            "label": "Maximum operating temperature",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Maximum_operating_temperature"
+          },
+          {
+            "label": "Model name/number",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Model_name_number"
+          },
+          {
+            "label": "Noise level",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Noise_level"
+          },
+          {
+            "label": "Power output",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Power_output"
+          },
+          {
+            "label": "Power voltage supply",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Power_voltage_supply"
+          },
+          {
+            "label": "Product weight",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_weight"
+          },
+          {
+            "label": "Start facility",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Start_facility"
+          },
+          {
+            "label": "Guarantee exclusion specifications",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Guarantee_exclusion_specifications"
+          },
+          {
+            "label": "Power type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Power_type"
+          },
+          {
+            "label": "Power source",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Tech_Power_source"
+          },
+          {
+            "label": "WEEE regulated",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "WEEE_regulated"
+          },
+          {
+            "label": "Product depth",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_depth"
+          },
+          {
+            "label": "Product height",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_height"
+          },
+          {
+            "label": "Product width",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Product_width"
+          },
+          {
+            "label": "International Compliance Documents Details",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "International_Compliance_Documents_Details"
+          },
+          {
+            "label": "International Compliance Status",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "International_Compliance_Status"
+          }
+        ],
+        "bootstrapped_at": "2026-05-19T15:54:56",
+        "bootstrap_source": "bq/enriched/.bootstrap_PIM_12754.txt"
+      },
+      "PIM_13201": {
+        "product_type": null,
+        "labels": [
+          {
+            "label": "Name",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "name"
+          },
+          {
+            "label": "Shop SKU",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "shop_sku"
+          },
+          {
+            "label": "Acquisition brand",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Acquisition brand"
+          },
+          {
+            "label": "MultiSKU Product Group ID",
+            "required": false,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "MultiSKU_Product_Group_ID"
+          },
+          {
+            "label": "Body Copy",
+            "required": true,
+            "section": "top",
+            "unit": null,
+            "value": null,
+            "api_name": "Body Copy"
+          },
+          {
+            "label": "Unique Selling Point 1",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_1"
+          },
+          {
+            "label": "Unique Selling Point 2",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_2"
+          },
+          {
+            "label": "Unique Selling Point 3",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_3"
+          },
+          {
+            "label": "Unique Selling Point 4",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_4"
+          },
+          {
+            "label": "Unique Selling Point 5",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_5"
+          },
+          {
+            "label": "Unique Selling Point 6",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_6"
+          },
+          {
+            "label": "Unique Selling Point 7",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_7"
+          },
+          {
+            "label": "Unique Selling Point 8",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Unique_Selling_Point_8"
+          },
+          {
+            "label": "Pack quantity",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Pack quantity"
+          },
+          {
+            "label": "Pack type",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Pack type"
+          },
+          {
+            "label": "Selling Copy",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Selling_Copy"
+          },
+          {
+            "label": "Key Feature",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Key_Feature"
+          },
+          {
+            "label": "Manufacturer guarantee",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Guarantee"
+          },
+          {
+            "label": "REACh Verified",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "reach_verified"
+          },
+          {
+            "label": "Contains wood and/or paper",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "contains_wood"
+          },
+          {
+            "label": "FSC or PEFC certified",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "fsc_pecl_certified"
+          },
+          {
+            "label": "Legal information",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Legal_information"
+          },
+          {
+            "label": "Manufacturer Name",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Manufacturer_Name"
+          },
+          {
+            "label": "GPSR Exempt",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "GPSR_Exempt"
+          },
+          {
+            "label": "Warnings and Safety Information 01",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_01"
+          },
+          {
+            "label": "Warnings and Safety Information 02",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_02"
+          },
+          {
+            "label": "Warnings and Safety Information 03",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_03"
+          },
+          {
+            "label": "Warnings and Safety Information 04",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_04"
+          },
+          {
+            "label": "Warnings and Safety Information 05",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_05"
+          },
+          {
+            "label": "Warnings and Safety Information 06",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_06"
+          },
+          {
+            "label": "Warnings and Safety Information 07",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_07"
+          },
+          {
+            "label": "Warnings and Safety Information 08",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_08"
+          },
+          {
+            "label": "Warnings and Safety Information 09",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_09"
+          },
+          {
+            "label": "Warnings and Safety Information 10",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Warnings_and_Safety_Information_10"
+          },
+          {
+            "label": "Made from 100% recycled wood and/or paper",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Made_from_100_recycled_wood_and_or_paper"
+          },
+          {
+            "label": "Product type",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Core_Product type"
+          },
+          {
+            "label": "Blade type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Handle type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Spec_Handle_type"
+          },
+          {
+            "label": "Cutting height",
+            "required": false,
+            "section": "Specifications",
+            "unit": "mm",
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Cutting width",
+            "required": false,
+            "section": "Specifications",
+            "unit": "mm",
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Battery charge time",
+            "required": false,
+            "section": "Specifications",
+            "unit": "h",
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Battery power",
+            "required": false,
+            "section": "Specifications",
+            "unit": "Ah",
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Battery voltage",
+            "required": false,
+            "section": "Specifications",
+            "unit": "V",
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Collection capacity",
+            "required": false,
+            "section": "Specifications",
+            "unit": "l",
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Corded/cordless",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Cordless"
+          },
+          {
+            "label": "Included",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Included"
+          },
+          {
+            "label": "Model name/number",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Model_name_number"
+          },
+          {
+            "label": "Mulching",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Number of batteries included",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Power voltage supply",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Power_voltage_supply"
+          },
+          {
+            "label": "Product weight",
+            "required": true,
+            "section": "Specifications",
+            "unit": "kg",
+            "value": null,
+            "api_name": "Product_weight"
+          },
+          {
+            "label": "Self-propelled",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Instructions for storage",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Purpose",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Propulsion type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Safety cut out type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "Power source",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Tech_Power_source"
+          },
+          {
+            "label": "WEEE regulated",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "WEEE_regulated"
+          },
+          {
+            "label": "Batteries included",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Batteries_supplied"
+          },
+          {
+            "label": "Battery chemistry",
+            "required": true,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Battery_chemistry"
+          },
+          {
+            "label": "Power type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Power_type"
+          },
+          {
+            "label": "Navigation type",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "BQ_Nav_type"
+          },
+          {
+            "label": "Guarantee exclusion specifications",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "Guarantee_exclusion_specifications"
+          },
+          {
+            "label": "Battery technology",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": null
+          },
+          {
+            "label": "International Compliance Documents Details",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "International_Compliance_Documents_Details"
+          },
+          {
+            "label": "International Compliance Status",
+            "required": false,
+            "section": "Specifications",
+            "unit": null,
+            "value": null,
+            "api_name": "International_Compliance_Status"
+          }
+        ],
+        "bootstrapped_at": "2026-05-19T18:02:37",
+        "bootstrap_source": "bq/enriched/.bootstrap_PIM_13201.txt"
+      }
+    },
+    "display_label_to_api_name_overrides": {
+      "MultiSKU Product Group ID": "MultiSKU_Product_Group_ID",
+      "Unique Selling Point 1": "Unique_Selling_Point_1",
+      "Unique Selling Point 2": "Unique_Selling_Point_2",
+      "Unique Selling Point 3": "Unique_Selling_Point_3",
+      "Unique Selling Point 4": "Unique_Selling_Point_4",
+      "Unique Selling Point 5": "Unique_Selling_Point_5",
+      "Unique Selling Point 6": "Unique_Selling_Point_6",
+      "Unique Selling Point 7": "Unique_Selling_Point_7",
+      "Unique Selling Point 8": "Unique_Selling_Point_8",
+      "Selling Copy": "Selling_Copy",
+      "Key Feature": "Key_Feature",
+      "Legal information": "Legal_information",
+      "Manufacturer Name": "Manufacturer_Name",
+      "GPSR Exempt": "GPSR_Exempt",
+      "Warnings and Safety Information 01": "Warnings_and_Safety_Information_01",
+      "Warnings and Safety Information 02": "Warnings_and_Safety_Information_02",
+      "Warnings and Safety Information 03": "Warnings_and_Safety_Information_03",
+      "Warnings and Safety Information 04": "Warnings_and_Safety_Information_04",
+      "Warnings and Safety Information 05": "Warnings_and_Safety_Information_05",
+      "Warnings and Safety Information 06": "Warnings_and_Safety_Information_06",
+      "Warnings and Safety Information 07": "Warnings_and_Safety_Information_07",
+      "Warnings and Safety Information 08": "Warnings_and_Safety_Information_08",
+      "Warnings and Safety Information 09": "Warnings_and_Safety_Information_09",
+      "Warnings and Safety Information 10": "Warnings_and_Safety_Information_10",
+      "Made from 100% recycled wood and/or paper": "Made_from_100_recycled_wood_and_or_paper",
+      "Connection type": "Spec_Connection_type",
+      "Filter type": "Spec_Filter_type",
+      "Motor type": "Spec_Motor_type",
+      "Nozzle type": "Spec_Nozzle_type",
+      "Range": "Range",
+      "Cable length": "Cable_length",
+      "Hose length": "Hose_length",
+      "Accessories available": "Accessories_available",
+      "Function(s)": "Functions",
+      "Hose description": "Hose_description",
+      "Included": "Included",
+      "Maximum flow rate": "Maximum_flow_rate",
+      "Maximum operating pressure": "Maximum_operating_pressure",
+      "Maximum operating temperature": "Maximum_operating_temperature",
+      "Model name/number": "Model_name_number",
+      "Noise level": "Noise_level",
+      "Power output": "Power_output",
+      "Power voltage supply": "Power_voltage_supply",
+      "Start facility": "Start_facility",
+      "Guarantee exclusion specifications": "Guarantee_exclusion_specifications",
+      "Power type": "Power_type",
+      "Product depth": "Product_depth",
+      "International Compliance Documents Details": "International_Compliance_Documents_Details",
+      "International Compliance Status": "International_Compliance_Status",
+      "Product weight (kg)": "Product_weight"
+    }
+  }
+}
