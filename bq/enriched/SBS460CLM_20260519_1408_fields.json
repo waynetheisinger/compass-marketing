@@ -1,0 +1,533 @@
+{
+  "sku": "SBS460CLM",
+  "pim": "PIM_13202",
+  "fields": [
+    {
+      "label": "Name",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "SPECTRUM SBS460CLM 40V Cordless Self-Propelled Lawn Mower, 46cm Cut, Brushless Motor, 7 Cutting Heights (25-75mm), 60L Grass Bag",
+      "api_name": "name"
+    },
+    {
+      "label": "Shop SKU",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "SBS460CLM",
+      "api_name": "shop_sku"
+    },
+    {
+      "label": "Acquisition brand",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Spectrum",
+      "api_name": "Acquisition brand"
+    },
+    {
+      "label": "MultiSKU Product Group ID",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Body Copy",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "The Spectrum SBS460CLM is a cordless self-propelled lawn mower built for medium-to-large gardens that demand more than a basic push-along. A high-efficiency brushless motor, powered by a dual 40V battery configuration, keeps cutting speed consistent from the first strip to the last \u2014 even in thicker grass.  The 46cm (18\") steel cutting deck covers ground quickly without compromising finish. Seven cutting heights from 25mm to 75mm adjust in seconds via a single central lever \u2014 scalp-close in early spring, a lush longer cut through summer heat.  Grass disposal, four ways: rear collection into the 60-litre bag (with a bag-full indicator so there's no guesswork), mulching back into the lawn, rear discharge, or side discharge. Large ball-bearing wheels \u2014 7\" front, 10\" rear \u2014 roll smoothly over uneven ground and resist turf damage.  This is a bare-tool model. The mower takes two Spectrum 40V lithium-ion batteries, sold separately: SBS20CB (2.0Ah, lighter sessions) or SBS40CB (4.0Ah, longer runtime and consistent voltage under load). Compatible chargers are also sold separately: SBSCBC (standard 0.5A overnight), SBSCSC (fast 2A single bay), or SBSCDC (dual-bay 2A for rotating two batteries through one charger).  Part of the Spectrum 40V cordless garden system \u2014 share batteries across our hedge trimmers, pole trimmers, and leaf blower vacs. Backed by a 5-year warranty.",
+      "api_name": "Body Copy"
+    },
+    {
+      "label": "Unique Selling Point 1",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Unique Selling Point 2",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Unique Selling Point 3",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Unique Selling Point 4",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Unique Selling Point 5",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Unique Selling Point 6",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Unique Selling Point 7",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Unique Selling Point 8",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Pack quantity",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "1",
+      "api_name": "Core_Pack quantity"
+    },
+    {
+      "label": "Pack type",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Each",
+      "api_name": "Core_Pack type"
+    },
+    {
+      "label": "Selling Copy",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Key Feature",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Manufacturer guarantee",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "5 years",
+      "api_name": "Guarantee"
+    },
+    {
+      "label": "REACh Verified",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Yes",
+      "api_name": "reach_verified"
+    },
+    {
+      "label": "Contains wood and/or paper",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "No",
+      "api_name": "contains_wood"
+    },
+    {
+      "label": "FSC or PEFC certified",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "No",
+      "api_name": "fsc_pecl_certified"
+    },
+    {
+      "label": "Legal information",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Manufacturer Name",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "GPSR Exempt",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 01",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 02",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 03",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 04",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 05",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 06",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 07",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 08",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 09",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Warnings and Safety Information 10",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Made from 100% recycled wood and/or paper",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Product type",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Lawnmower",
+      "api_name": "Core_Product type"
+    },
+    {
+      "label": "Lawnmower type",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Propulsion type",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Cutting width",
+      "required": false,
+      "section": "top",
+      "unit": "mm",
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Bare unit (without batteries)",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Battery voltage",
+      "required": false,
+      "section": "top",
+      "unit": "V",
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Collection capacity",
+      "required": false,
+      "section": "top",
+      "unit": "l",
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Corded/cordless",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Cordless",
+      "api_name": "Cordless"
+    },
+    {
+      "label": "Function(s)",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Model name/number",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Noise level",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Product weight",
+      "required": true,
+      "section": "top",
+      "unit": "kg",
+      "value": "25.60",
+      "api_name": "Product_weight"
+    },
+    {
+      "label": "Handle type",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": "Spec_Handle_type",
+      "value_list_codes": [
+        {
+          "code": "168",
+          "label": "Foldable"
+        },
+        {
+          "code": "352",
+          "label": "Ergoflex handle"
+        },
+        {
+          "code": "323",
+          "label": "Telescopic"
+        },
+        {
+          "code": "39",
+          "label": "Ergonomic"
+        }
+      ]
+    },
+    {
+      "label": "Power source",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": "Tech_Power_source",
+      "value_list_codes": [
+        {
+          "code": "138",
+          "label": "Battery-powered"
+        }
+      ]
+    },
+    {
+      "label": "Navigation type",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": "BQ_Nav_type",
+      "value_list_codes": [
+        {
+          "code": "689",
+          "label": "Cylinder"
+        },
+        {
+          "code": "685",
+          "label": "Hover"
+        },
+        {
+          "code": "217",
+          "label": "Robotic"
+        },
+        {
+          "code": "48",
+          "label": "Roller"
+        },
+        {
+          "code": "216",
+          "label": "Rotary"
+        }
+      ]
+    },
+    {
+      "label": "Grass collector type",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "WEEE regulated",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": "WEEE_regulated"
+    },
+    {
+      "label": "Batteries included",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Batteries sold separately",
+      "api_name": "Batteries_supplied"
+    },
+    {
+      "label": "Battery chemistry",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Li-ion",
+      "api_name": "Battery_chemistry"
+    },
+    {
+      "label": "Power type",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "International Compliance Documents Details",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "International Compliance Status",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Product height",
+      "required": false,
+      "section": "top",
+      "unit": "mm",
+      "value": "520.00",
+      "api_name": "Product_height"
+    },
+    {
+      "label": "Product length",
+      "required": false,
+      "section": "top",
+      "unit": "mm",
+      "value": "840.00",
+      "api_name": "Product_length"
+    },
+    {
+      "label": "Product width",
+      "required": false,
+      "section": "top",
+      "unit": "mm",
+      "value": "550.00",
+      "api_name": "Product_width"
+    }
+  ],
+  "parsed_at": "2026-05-19T14:15:52"
+}

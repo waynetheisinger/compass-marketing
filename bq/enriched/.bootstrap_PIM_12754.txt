@@ -1,0 +1,70 @@
+Name *
+Shop SKU *
+Acquisition brand *
+MultiSKU Product Group ID
+Body Copy *
+
+Specifications
+Unique Selling Point 1
+Unique Selling Point 2
+Unique Selling Point 3
+Unique Selling Point 4
+Unique Selling Point 5
+Unique Selling Point 6
+Unique Selling Point 7
+Unique Selling Point 8
+Pack quantity *
+Pack type *
+Selling Copy
+Key Feature
+Manufacturer guarantee *
+REACh Verified *
+Contains wood and/or paper
+FSC or PEFC certified *
+Legal information
+Manufacturer Name
+GPSR Exempt
+Warnings and Safety Information 01
+Warnings and Safety Information 02
+Warnings and Safety Information 03
+Warnings and Safety Information 04
+Warnings and Safety Information 05
+Warnings and Safety Information 06
+Warnings and Safety Information 07
+Warnings and Safety Information 08
+Warnings and Safety Information 09
+Warnings and Safety Information 10
+Made from 100% recycled wood and/or paper
+Product type *
+Connection type
+Filter type
+Handle type
+Motor type
+Nozzle type
+Range
+Cable length
+Hose length *
+Accessories available
+Corded/cordless *
+Function(s)
+Hose description
+Included
+Maximum flow rate
+Maximum operating pressure
+Maximum operating temperature
+Model name/number
+Noise level
+Power output
+Power voltage supply
+Product weight *
+Start facility
+Guarantee exclusion specifications
+Power type
+Power source
+WEEE regulated *
+Product depth
+Product height
+Product width
+The value must be greater than or equal to 0.01.
+International Compliance Documents Details
+International Compliance Status

@@ -1,0 +1,99 @@
+{
+  "sku": "LPW2200",
+  "ean": "5065022450733",
+  "compass_url": "https://compassgm.co.uk/product/spectrum-lpw2200-electric-pressure-washer-170-bar-2200w-cleaning-kit-included/",
+  "compass_sku": "LPW2200",
+  "compass_ean": "5065022450733",
+  "compass_scrape": {
+    "title": "Spectrum LPW2200 Electric Pressure-Washer, 170 Bar/ 2200w (Cleaning Kit Included)",
+    "description_html": "<h2>Spectrum LPW2200 Electric Pressure-Washer 2200w/170 Bar (Cleaning Kit Included)</h2><p>The Spectrum LPW2200 Electric Pressure-Washer operates at up to 170 bar and produces a substantial maximum water flow rate of 450 litres per hour.</p><p><iframe title=\"YouTube video player\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\" class=\"perfmatters-lazy\" data-src=\"https://www.youtube.com/embed/CFMN4XhfvrY?si=wRM2SbH2BpecmkY0\"></iframe></p><p>Equipped with a high-powered 2200w electric motor, this model will clean large areas fast and is capable of handling the toughest dirt- and grime-removal jobs around the house and garden.</p><p>The maximum water supply temperature is 50\u00b0C; and, as with all Spectrum Compact-Class units, the LPW2200 is fitted with convenient storage retainers for the hose, spray lance and accessories, thereby ensuring everything can be left neat and tidy and ready for the next session.</p><p>The Spectrum LPW2200 Mains-Electric Pressure Washer is suitable for a variety of uses \u2013 a quick clean of the car, a wash-down of the patio after a barbecue, or blasting dirt from the driveway \u2013 and with the \u2018sheer pleasure\u2019 that comes from using these power tools, we\u2019re sure you\u2019ll discover many more!</p><p>Flat, fixed, and rotary brushes are all included as standard, along with a built-in detergent tank\u2014allowing you to use cleaning solutions for enhanced performance and more effective results.</p><p>&nbsp;</p>",
+    "vendor": "Spectrum",
+    "product_type": "Garden Essentials",
+    "status": "active",
+    "sku": "LPW2200",
+    "barcode": "5065022450733",
+    "price": "139.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "manufacturer",
+          "label": "Manufacturer",
+          "value": "Spectrum"
+        },
+        {
+          "code": "motor",
+          "label": "Motor",
+          "value": "220-240v \u2013 50Hz"
+        },
+        {
+          "code": "power",
+          "label": "Power",
+          "value": "2200w"
+        },
+        {
+          "code": "attribute_maximum_water_pressure",
+          "label": "Maximum Water Pressure",
+          "value": "170bar"
+        },
+        {
+          "code": "attribute_maximum_flow_rate",
+          "label": "Maximum Flow Rate",
+          "value": "450L/hr"
+        },
+        {
+          "code": "cable_length",
+          "label": "Cable Length",
+          "value": "5m"
+        },
+        {
+          "code": "hose_length",
+          "label": "Hose Length",
+          "value": "5m"
+        },
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "9kg"
+        },
+        {
+          "code": "warranty",
+          "label": "Warranty",
+          "value": "5 Years (T&C's Apply)"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>A top-quality pressure washer offering premium features at an affordable price</li><li>Brass pump head and ceramic-coated pistons for superior longevity</li><li>Integrated wheels and transport handle for easy machine movement</li><li>Rotating power cord holder \u2013 no need for tedious unwinding</li><li>Pressure/flow-rate control lets you adapt to the particular task in hand</li><li>Heavy-duty steel-braided hose</li><li>Detergent tank \u2013 add some soap into the mix when it\u2019s needed</li><li>Lengthy mains cable</li>\n</ul>",
+      "custom.bullet_two": "Brass pump head and ceramic-coated pistons for superior longevity",
+      "custom.bullet_three": "Integrated wheels and transport handle for easy machine movement",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/lpw2200-1.jpg",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW2200-Hose-Connector.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW2200-Detergent-Reservoir.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW2200-Gun.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW2200-Cable-Tidy.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW-Pressure-Washers.png"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-lpw2200-electric-pressure-washer-170-bar-2200w-cleaning-kit-included/"
+  },
+  "shopify": {
+    "shopify_id": "gid://shopify/Product/15860557447541",
+    "sku": "LPW2200",
+    "title": "Spectrum LPW2200 Electric Pressure Washer \u2014 2200W, 170 Bar, Cleaning Kit Included",
+    "ean": "5065022450733",
+    "vendor": "Spectrum",
+    "product_type": "Pressure Washers",
+    "shopify_url": "https://www.mowdirect.co.uk/products/spectrum-lpw2200-electric-pressure-washer-2200w-170-bar-cleaning-kit-included",
+    "drift": []
+  },
+  "drift": [],
+  "stamp": "20260519_1550",
+  "mirakl": {
+    "found": true,
+    "product_id": "5065022450733",
+    "category_code": "PIM_12754",
+    "category_label": "Pressure Washers (Corded)",
+    "product_title": "Spectrum LPW2200 Electric Pressure Washer - 2200W, 170 Bar, Cleaning Kit Included"
+  }
+}

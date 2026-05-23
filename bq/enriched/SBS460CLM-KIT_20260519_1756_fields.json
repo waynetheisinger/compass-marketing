@@ -1,0 +1,585 @@
+{
+  "sku": "SBS460CLM-KIT",
+  "pim": "PIM_13201",
+  "fields": [
+    {
+      "label": "Name",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "SPECTRUM SBS460CLM 40V Cordless Self-Propelled Lawn Mower 46cm Brushless 60L Bag (2x 4.0Ah Batteries + Dual Fast Charger)",
+      "api_name": "name"
+    },
+    {
+      "label": "Shop SKU",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "SBS460CLM-KIT",
+      "api_name": "shop_sku"
+    },
+    {
+      "label": "Acquisition brand",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Spectrum",
+      "api_name": "Acquisition brand"
+    },
+    {
+      "label": "MultiSKU Product Group ID",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": "MultiSKU_Product_Group_ID"
+    },
+    {
+      "label": "Body Copy",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "The Spectrum SBS460CLM Complete Kit is everything you need to mow medium-to-large gardens straight out of the box  -  mower, two 40V 4.0Ah batteries, and a dual-bay fast charger.  The SBS460CLM is a cordless self-propelled lawn mower built for medium-to-large gardens that demand more than a basic push-along. A high-efficiency brushless motor, powered by a dual 40V battery configuration, keeps cutting speed consistent from the first strip to the last  -  even in thicker grass.  The 46cm (18\") steel cutting deck covers ground quickly without compromising finish. Seven cutting heights from 25mm to 75mm adjust in seconds via a single central lever  -  scalp-close in early spring, a lush longer cut through summer heat.  Grass disposal, four ways: rear collection into the 60-litre bag (with a bag-full indicator so there's no guesswork), mulching back into the lawn, rear discharge, or side discharge. Large ball-bearing wheels  -  7\" front, 10\" rear  -  roll smoothly over uneven ground and resist turf damage.  This kit pairs the mower with 2x SBS40CB 40V 4.0Ah lithium-ion batteries (high-grade 21700 cells, steady voltage through full discharge) and 1x SBSCDC dual-bay fast charger  -  both ports at 2A, charges a 4.0Ah pack in roughly two hours. Rotate batteries through the charger for continuous work.  Part of the Spectrum 40V cordless garden system  -  share batteries across our hedge trimmers, pole trimmers, and leaf blower vacs. Backed by Spectrum's 5-year warranty.",
+      "api_name": "Body Copy"
+    },
+    {
+      "label": "Unique Selling Point 1",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Mows up to 800m\u00b2 on a charge with two 40V batteries",
+      "api_name": "Unique_Selling_Point_1"
+    },
+    {
+      "label": "Unique Selling Point 2",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "46cm steel deck handles long grass and damp mornings",
+      "api_name": "Unique_Selling_Point_2"
+    },
+    {
+      "label": "Unique Selling Point 3",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Seven cutting heights from 25mm scalp to 75mm long finish",
+      "api_name": "Unique_Selling_Point_3"
+    },
+    {
+      "label": "Unique Selling Point 4",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "60-litre bag with a fill indicator means fewer empty stops",
+      "api_name": "Unique_Selling_Point_4"
+    },
+    {
+      "label": "Unique Selling Point 5",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Self-propelled transmission saves shoulders on longer sessions",
+      "api_name": "Unique_Selling_Point_5"
+    },
+    {
+      "label": "Unique Selling Point 6",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Five-year warranty as standard",
+      "api_name": "Unique_Selling_Point_6"
+    },
+    {
+      "label": "Unique Selling Point 7",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Shares 40V batteries with hedge trimmers and pole trimmers",
+      "api_name": "Unique_Selling_Point_7"
+    },
+    {
+      "label": "Unique Selling Point 8",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Ball-bearing 7-inch and 10-inch wheels resist turf damage",
+      "api_name": "Unique_Selling_Point_8"
+    },
+    {
+      "label": "Pack quantity",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "1",
+      "api_name": "Core_Pack quantity"
+    },
+    {
+      "label": "Pack type",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Each",
+      "api_name": "Core_Pack type"
+    },
+    {
+      "label": "Selling Copy",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Big-lawn cordless cutting. The Spectrum SBS460CLM mows up to 800m\u00b2 between charges on the 40V Spectrum platform, with a five-year warranty as standard.",
+      "api_name": "Selling_Copy"
+    },
+    {
+      "label": "Key Feature",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Self-propelled cordless mower",
+      "api_name": "Key_Feature"
+    },
+    {
+      "label": "Manufacturer guarantee",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "5 years",
+      "api_name": "Guarantee"
+    },
+    {
+      "label": "REACh Verified",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Yes",
+      "api_name": "reach_verified"
+    },
+    {
+      "label": "Contains wood and/or paper",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "No",
+      "api_name": "contains_wood"
+    },
+    {
+      "label": "FSC or PEFC certified",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "No",
+      "api_name": "fsc_pecl_certified"
+    },
+    {
+      "label": "Legal information",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Legal_information"
+    },
+    {
+      "label": "Manufacturer Name",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Spectrum",
+      "api_name": "Manufacturer_Name"
+    },
+    {
+      "label": "GPSR Exempt",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "GPSR_Exempt"
+    },
+    {
+      "label": "Warnings and Safety Information 01",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_01"
+    },
+    {
+      "label": "Warnings and Safety Information 02",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_02"
+    },
+    {
+      "label": "Warnings and Safety Information 03",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_03"
+    },
+    {
+      "label": "Warnings and Safety Information 04",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_04"
+    },
+    {
+      "label": "Warnings and Safety Information 05",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_05"
+    },
+    {
+      "label": "Warnings and Safety Information 06",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_06"
+    },
+    {
+      "label": "Warnings and Safety Information 07",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_07"
+    },
+    {
+      "label": "Warnings and Safety Information 08",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_08"
+    },
+    {
+      "label": "Warnings and Safety Information 09",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_09"
+    },
+    {
+      "label": "Warnings and Safety Information 10",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_10"
+    },
+    {
+      "label": "Made from 100% recycled wood and/or paper",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Made_from_100_recycled_wood_and_or_paper"
+    },
+    {
+      "label": "Product type",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Lawnmower",
+      "api_name": "Core_Product type"
+    },
+    {
+      "label": "Blade type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Rotary",
+      "api_name": null
+    },
+    {
+      "label": "Handle type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Foldable handle",
+      "api_name": "Spec_Handle_type",
+      "value_list_codes": [
+        {
+          "code": "352",
+          "label": "Ergoflex handle"
+        },
+        {
+          "code": "331",
+          "label": "Fixed"
+        },
+        {
+          "code": "87",
+          "label": "Foldable handle"
+        },
+        {
+          "code": "186",
+          "label": "Twin lever"
+        },
+        {
+          "code": "400",
+          "label": "Fulcrum"
+        },
+        {
+          "code": "323",
+          "label": "Telescopic"
+        },
+        {
+          "code": "39",
+          "label": "Ergonomic"
+        }
+      ]
+    },
+    {
+      "label": "Cutting height",
+      "required": false,
+      "section": "Specifications",
+      "unit": "mm",
+      "value": "75",
+      "api_name": null
+    },
+    {
+      "label": "Cutting width",
+      "required": false,
+      "section": "Specifications",
+      "unit": "mm",
+      "value": "460",
+      "api_name": null
+    },
+    {
+      "label": "Battery charge time",
+      "required": false,
+      "section": "Specifications",
+      "unit": "h",
+      "value": "2",
+      "api_name": null
+    },
+    {
+      "label": "Battery power",
+      "required": false,
+      "section": "Specifications",
+      "unit": "Ah",
+      "value": "4",
+      "api_name": null
+    },
+    {
+      "label": "Battery voltage",
+      "required": false,
+      "section": "Specifications",
+      "unit": "V",
+      "value": "40",
+      "api_name": null
+    },
+    {
+      "label": "Collection capacity",
+      "required": false,
+      "section": "Specifications",
+      "unit": "l",
+      "value": "60",
+      "api_name": null
+    },
+    {
+      "label": "Corded/cordless",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Cordless",
+      "api_name": "Cordless"
+    },
+    {
+      "label": "Included",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Battery & Charger",
+      "api_name": "Included"
+    },
+    {
+      "label": "Model name/number",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "SPECTRUM SBS460CLM",
+      "api_name": "Model_name_number"
+    },
+    {
+      "label": "Mulching",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "With mulching function",
+      "api_name": null
+    },
+    {
+      "label": "Number of batteries included",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "2",
+      "api_name": null
+    },
+    {
+      "label": "Power voltage supply",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Power_voltage_supply"
+    },
+    {
+      "label": "Product weight",
+      "required": true,
+      "section": "Specifications",
+      "unit": "kg",
+      "value": "28.30",
+      "api_name": "Product_weight"
+    },
+    {
+      "label": "Self-propelled",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Yes",
+      "api_name": null
+    },
+    {
+      "label": "Instructions for storage",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Purpose",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Propulsion type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Self-Propelled",
+      "api_name": null
+    },
+    {
+      "label": "Safety cut out type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": null
+    },
+    {
+      "label": "Power source",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Battery-powered",
+      "api_name": "Tech_Power_source",
+      "value_list_codes": [
+        {
+          "code": "138",
+          "label": "Battery-powered"
+        }
+      ]
+    },
+    {
+      "label": "WEEE regulated",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "WEEE regulated",
+      "api_name": "WEEE_regulated"
+    },
+    {
+      "label": "Batteries included",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Battery included",
+      "api_name": "Batteries_supplied"
+    },
+    {
+      "label": "Battery chemistry",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Li-ion",
+      "api_name": "Battery_chemistry"
+    },
+    {
+      "label": "Power type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Power_type"
+    },
+    {
+      "label": "Navigation type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Rotary",
+      "api_name": "BQ_Nav_type",
+      "value_list_codes": [
+        {
+          "code": "689",
+          "label": "Cylinder"
+        },
+        {
+          "code": "685",
+          "label": "Hover"
+        },
+        {
+          "code": "216",
+          "label": "Rotary"
+        }
+      ]
+    },
+    {
+      "label": "Guarantee exclusion specifications",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Guarantee_exclusion_specifications"
+    },
+    {
+      "label": "Battery technology",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Li-ion",
+      "api_name": null
+    },
+    {
+      "label": "International Compliance Documents Details",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "International_Compliance_Documents_Details"
+    },
+    {
+      "label": "International Compliance Status",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "International_Compliance_Status"
+    }
+  ],
+  "parsed_at": "2026-05-19T18:13:57"
+}
