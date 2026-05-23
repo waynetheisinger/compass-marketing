@@ -1,0 +1,14 @@
+{
+  "shop_non_pos_to_untrack": [
+    {
+      "shopify_sku": "C-SP22125",
+      "andrew_code": "SP22125",
+      "andrew_qty": 5,
+      "shopify_inv_qty": 0,
+      "tracked": true,
+      "product_title": "Spectrum 408kg-Capacity High-Sided Steel Tipping Trailer | SP22125",
+      "variant_id": "gid://shopify/ProductVariant/54887535804789",
+      "inventory_item_id": "gid://shopify/InventoryItem/53338916192629"
+    }
+  ]
+}
