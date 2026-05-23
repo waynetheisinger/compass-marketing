@@ -1,0 +1,111 @@
+{
+  "sku": "SBS460CLM-KIT",
+  "ean": "5061122340134",
+  "compass_url": "https://compassgm.co.uk/product/spectrum-sbs460clm-self-propelled-cordless-lawn-mower-bundle",
+  "compass_sku": "SBS460CLM-BC",
+  "compass_ean": null,
+  "compass_scrape": {
+    "title": "SPECTRUM SBS460CLM-BC Self Propelled Cordless Lawn Mower - INC Battery &amp; Charger",
+    "description_html": "<p><strong>SPECTRUM SBS460CLM Self-Propelled Cordless Lawn Mower</strong></p><p>Built for power, performance and convenience, the Spectrum SBS460CLM is a robust cordless lawn mower designed to handle medium to larger lawns with ease. Featuring a self-propelled drive system, this mower takes the effort out of cutting, allowing you to cover more ground comfortably and efficiently.</p><p>At its core is a high-performance brushless motor combined with a double battery drive system, delivering consistent power with approximately <strong>41 minutes of runtime</strong> on two 4-amp batteries (included).</p><p>The wide 42cm (18\u2033) cutting deck, constructed from durable metal, ensures excellent coverage and a professional-quality finish with every pass.</p><p>The SBS460CLM offers outstanding versatility with its 4-in-1 functionality\u2014choose between collecting, mulching, rear discharge or side discharge depending on your lawn conditions. The large 60L rear grass catcher (half plastic design) reduces the need for frequent emptying, helping you work more efficiently.</p><div class=\"custom-video-wrap\"><p><iframe title=\"YouTube video player\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\" class=\"perfmatters-lazy\" data-src=\"https://www.youtube.com/embed/lBMgLGt1554?si=bt_lVUXZPlPEPPO5\"></iframe></p></div><p>With a <strong>7-stage central height adjustment</strong> ranging from <strong>25mm to 75mm</strong>, you can easily adapt to different grass lengths and seasonal requirements. Large wheels (7\u2033 front / 10\u2033 rear) fitted with ball bearings provide smooth movement and improved traction across a variety of terrains.</p><p>Despite its powerful build, the mower remains well-balanced and easy to control, making it a reliable choice for demanding garden maintenance.</p>",
+    "vendor": "Spectrum",
+    "product_type": "Lawnmowers",
+    "status": "active",
+    "sku": "SBS460CLM-BC",
+    "barcode": "",
+    "price": "299.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "manufacturer",
+          "label": "Manufacturer",
+          "value": "Spectrum"
+        },
+        {
+          "code": "motor",
+          "label": "Motor",
+          "value": "900w"
+        },
+        {
+          "code": "cutting_deck_size_cm",
+          "label": "Cutting deck size (cm)",
+          "value": "46cm"
+        },
+        {
+          "code": "cutting_heights",
+          "label": "Cutting Heights",
+          "value": "25 \u2013 75mm (7 Positions)"
+        },
+        {
+          "code": "mulching",
+          "label": "Mulching",
+          "value": "Yes"
+        },
+        {
+          "code": "cord_battery_included",
+          "label": "Battery Included",
+          "value": "Yes"
+        },
+        {
+          "code": "attribute_charger",
+          "label": "Charger",
+          "value": "yes"
+        },
+        {
+          "code": "drive",
+          "label": "Drive",
+          "value": "Self Propelled"
+        },
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "25.6 kg"
+        },
+        {
+          "code": "warranty",
+          "label": "Warranty",
+          "value": "5 Years (T&C's Apply)"
+        },
+        {
+          "code": "cutting_width",
+          "label": "Cutting Width",
+          "value": "42cm"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>SEE OFFER IN BUNDLE BELOW</li><li>Collects or mulches the grass</li><li>Cordless Battery Lawnmower</li><li>Self-drive via a powerful transmission</li><li>Steel cutter deck confers strength and impact resistance</li><li>\u2018Bag full\u2019 indicator means you won\u2019t overfill and block the exit chute</li><li>Extended five-year manufacturer\u2019s warranty</li><li>Includes 2 x 4-amp Batteries</li><li>Includes Duel Fast Charger</li>\n</ul>",
+      "custom.bullet_two": "Collects or mulches the grass",
+      "custom.bullet_three": "Cordless Battery Lawnmower",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-Battery-Lawn-Mower-Bundle.jpg",
+      "https://compassgm.co.uk/wp-content/uploads/2026/03/Spectrum-SBS460CLM-Lawnmower-scaled-e1773826074832.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-sbs460clm-self-propelled-cordless-lawn-mower-bundle"
+  },
+  "shopify": {
+    "shopify_id": "gid://shopify/Product/15859855950197",
+    "sku": "SBS460CLM-KIT",
+    "title": "Spectrum SBS460CLM 46cm Self-Propelled Cordless Lawn Mower \u2014 Complete Kit (2\u00d7 4.0Ah Battery + Charger)",
+    "ean": "5061122340134",
+    "vendor": "Spectrum",
+    "product_type": "Cordless Garden Tool Kits",
+    "shopify_url": "https://www.mowdirect.co.uk/products/spectrum-sbs460clm-46cm-self-propelled-cordless-lawn-mower-complete-kit-2-4-0ah-battery-charger",
+    "drift": [
+      "compass_sku='SBS460CLM-BC' but canonical (Shopify) sku='SBS460CLM-KIT'",
+      "compass page has no EAN; canonical EAN from Shopify=5061122340134"
+    ]
+  },
+  "drift": [
+    "compass_sku='SBS460CLM-BC' but canonical (Shopify) sku='SBS460CLM-KIT'",
+    "compass page has no EAN; canonical EAN from Shopify=5061122340134"
+  ],
+  "stamp": "20260519_1756",
+  "mirakl": {
+    "found": true,
+    "product_id": "5061122340134",
+    "category_code": "PIM_13201",
+    "category_label": "Lawnmowers with Batteries (Cordless)",
+    "product_title": "SPECTRUM SBS460CLM 40V Cordless Self-Propelled Lawn Mower 46cm Brushless 60L Bag (2x 4.0Ah Batteries + Dual Fast Charger)"
+  }
+}

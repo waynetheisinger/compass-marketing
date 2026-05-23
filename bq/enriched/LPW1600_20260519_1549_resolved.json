@@ -1,0 +1,92 @@
+{
+  "sku": "LPW1600",
+  "ean": "5065022450726",
+  "compass_url": "https://compassgm.co.uk/product/spectrum-lpw1600-electric-pressure-washer-1600w-130-bar/",
+  "compass_sku": "LPW1600",
+  "compass_ean": "5065022450726",
+  "compass_scrape": {
+    "title": "Spectrum LPW1600 Electric Pressure Washer - 1600w/ 130 Bar",
+    "description_html": "<h2>Spectrum LPW1600 Electric Pressure Washer \u2013 1600w/ 130 Bar</h2><p>The Spectrum LPW1600 Electric Pressure Washer operates at up to 130bar and produces a substantial maximum water flow-rate of 420L/hr. Equipped with a high-powered, 1600w mains-electric motor, this model will clean large areas fast and is capable of shifting the toughest dirt and grime around the house and garden.</p><p>The maximum water supply temperature is 50\u00b0C; and, as with all Compact Class units, the Spectrum LPW1600 Electric Pressure Washer is fitted with convenient storage retainers for the hose, spray lance and accessories, thereby ensuring everything is left neat and tidy and ready for the next session.</p><p><iframe title=\"YouTube video player\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\" class=\"perfmatters-lazy\" data-src=\"https://www.youtube.com/embed/D4njJ0NFnMU?si=5nmJN9sBe-WiRgRT\"></iframe></p><p>The Spectrum LPW1600 Electric Pressure Washer is suitable for an array of uses \u2013 a quick clean of the car, a wash-down of the patio after a barbecue, or blasting dirt from the driveway \u2013 and with the \u2018sheer pleasure\u2019 that comes from using these power tools, we\u2019re sure you\u2019ll discover many more!</p>",
+    "vendor": "",
+    "product_type": "Garden Essentials",
+    "status": "active",
+    "sku": "LPW1600",
+    "barcode": "5065022450726",
+    "price": "69.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "motor",
+          "label": "Motor",
+          "value": "220-240v \u2013 50Hz"
+        },
+        {
+          "code": "power",
+          "label": "Power",
+          "value": "1600w"
+        },
+        {
+          "code": "attribute_maximum_water_pressure",
+          "label": "Maximum Water Pressure",
+          "value": "130bar"
+        },
+        {
+          "code": "attribute_maximum_flow_rate",
+          "label": "Maximum Flow Rate",
+          "value": "420L/hr"
+        },
+        {
+          "code": "cable_length",
+          "label": "Cable Length",
+          "value": "5m"
+        },
+        {
+          "code": "hose_length",
+          "label": "Hose Length",
+          "value": "5m"
+        },
+        {
+          "code": "product_weight",
+          "label": "Product Weight",
+          "value": "5.8kg"
+        },
+        {
+          "code": "warranty",
+          "label": "Warranty",
+          "value": "5 Years (T&C's Apply)"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>A top-quality pressure washer offering premium features at an affordable price</li><li>Brass pump head and ceramic-coated pistons for superior longevity</li><li>Integrated wheels and transport handle for easy machine movement</li><li>Rotating power cord holder \u2013 no need for tedious unwinding</li><li>Pressure/flow-rate control lets you adapt to the particular task in hand</li><li>Heavy-duty steel-braided hose</li><li>Detergent tank \u2013 add some soap into the mix when it\u2019s needed</li><li>Lengthy mains cable</li><li>Looking for more power? Try our LPW2200</li>\n</ul>",
+      "custom.bullet_two": "Brass pump head and ceramic-coated pistons for superior longevity",
+      "custom.bullet_three": "Integrated wheels and transport handle for easy machine movement",
+      "filter.brand": "",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW1600-Main.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW1600-Hose-Connector.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW2200-Gun.png",
+      "https://compassgm.co.uk/wp-content/uploads/2026/04/Spectrum-LPW-Pressure-Washers.png"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-lpw1600-electric-pressure-washer-1600w-130-bar/"
+  },
+  "shopify": {
+    "shopify_id": "gid://shopify/Product/15860557480309",
+    "sku": "LPW1600",
+    "title": "Spectrum LPW1600 Electric Pressure Washer \u2014 1600W, 130 Bar",
+    "ean": "5065022450726",
+    "vendor": "Spectrum",
+    "product_type": "Pressure Washers",
+    "shopify_url": "https://www.mowdirect.co.uk/products/spectrum-lpw1600-electric-pressure-washer-1600w-130-bar",
+    "drift": []
+  },
+  "drift": [],
+  "stamp": "20260519_1549",
+  "mirakl": {
+    "found": true,
+    "product_id": "5065022450726",
+    "category_code": "PIM_12754",
+    "category_label": "Pressure Washers (Corded)",
+    "product_title": "Spectrum LPW1600 Electric Pressure Washer - 1600W, 130 Bar"
+  }
+}

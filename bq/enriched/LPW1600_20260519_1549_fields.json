@@ -1,0 +1,711 @@
+{
+  "sku": "LPW1600",
+  "pim": "PIM_12754",
+  "fields": [
+    {
+      "label": "Name",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Spectrum LPW1600 Electric Pressure Washer - 1600W, 130 Bar",
+      "api_name": "name"
+    },
+    {
+      "label": "Shop SKU",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "LPW1600",
+      "api_name": "shop_sku"
+    },
+    {
+      "label": "Acquisition brand",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "Spectrum",
+      "api_name": "Acquisition brand"
+    },
+    {
+      "label": "MultiSKU Product Group ID",
+      "required": false,
+      "section": "top",
+      "unit": null,
+      "value": "",
+      "api_name": "MultiSKU_Product_Group_ID"
+    },
+    {
+      "label": "Body Copy",
+      "required": true,
+      "section": "top",
+      "unit": null,
+      "value": "The Spectrum LPW1600 is a compact, mains-electric pressure washer designed for the jobs most homes need to tackle two or three times a year \u2014 patios after winter, garden furniture in spring, the car at the weekend, the bins when they need it. 1600W of motor power, up to 130 bar of working pressure and a 420 L/hr flow rate give you proper cleaning performance without committing to a semi-professional machine.\nBuilt around quality components\nUnlike most washers in this price bracket, the LPW1600 uses a brass pump head and ceramic-coated pistons \u2014 engineering normally reserved for far pricier units. That's why we can stand behind it with a 5-year warranty (T&C's apply) where the supermarket alternatives offer one or two.\nEasy to move, easy to put away\nIntegrated wheels and a transport handle make it simple to wheel from shed to driveway. A rotating cord holder takes the frustration out of packing the cable away, and on-board storage keeps the lance, hose and connections tidy between jobs. At just 5.8kg the LPW1600 is genuinely portable \u2014 no two-person lifts, no hauling it up garage steps.\nVariable pressure across every job\nA pressure and flow-rate control lets you ease back for paintwork and rinsing, then crank up for moss-stripping and patio prep. The 5m steel-braided high-pressure hose and 5m mains cable give you a 10m working radius without extension leads. Maximum water inlet temperature is 50\u00b0C.\nWhy buy from MowDirect\n5-year Spectrum warranty (T&C's apply) \u2014 supported directly by us, not by a generic distributor\nUK stock, UK dispatch, UK after-sales\nSpare parts and service support available throughout the warranty period\nMain Image 1 *\n['UNSAFE_STRING_PREFIX_image_main_1']\nSecondary Image 1\nSecondary Image 2\nSecondary Image 3\nSecondary Image 4\nSecondary Image 5\nSecondary Image 6\nSecondary Image 7\nSecondary Image 8\nSafety Information Asset 1 - Digital Assets 01W\nSafety Information Asset 2 - Digital Assets 02W\nSafety Information Asset 3 - Digital Assets 03W\nSafety Information Asset 4 - Digital Assets 04W\nSafety Information Asset 5 - Digital Assets 05W\nProduct Identification 1\nProduct Identification 2\nProduct Identification 3\nVideo\nProduct Guide\nProduct Instruction Manual\nSafety Manual\nEU Warning_Safety Information\nDeclaration of Conformity\nSafety Test Report 1\nDeclaration of Identity\nSafety Test Report 2\nSafety Test Report 3",
+      "api_name": "Body Copy"
+    },
+    {
+      "label": "Unique Selling Point 1",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_1"
+    },
+    {
+      "label": "Unique Selling Point 2",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_2"
+    },
+    {
+      "label": "Unique Selling Point 3",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_3"
+    },
+    {
+      "label": "Unique Selling Point 4",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_4"
+    },
+    {
+      "label": "Unique Selling Point 5",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_5"
+    },
+    {
+      "label": "Unique Selling Point 6",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_6"
+    },
+    {
+      "label": "Unique Selling Point 7",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_7"
+    },
+    {
+      "label": "Unique Selling Point 8",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Unique_Selling_Point_8"
+    },
+    {
+      "label": "Pack quantity",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "1",
+      "api_name": "Core_Pack quantity"
+    },
+    {
+      "label": "Pack type",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Each",
+      "api_name": "Core_Pack type"
+    },
+    {
+      "label": "Selling Copy",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Selling_Copy"
+    },
+    {
+      "label": "Key Feature",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Key_Feature"
+    },
+    {
+      "label": "Manufacturer guarantee",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "2 years",
+      "api_name": "Guarantee"
+    },
+    {
+      "label": "REACh Verified",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Yes",
+      "api_name": "reach_verified"
+    },
+    {
+      "label": "Contains wood and/or paper",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "No",
+      "api_name": "contains_wood"
+    },
+    {
+      "label": "FSC or PEFC certified",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "No",
+      "api_name": "fsc_pecl_certified"
+    },
+    {
+      "label": "Legal information",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Legal_information"
+    },
+    {
+      "label": "Manufacturer Name",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Manufacturer_Name"
+    },
+    {
+      "label": "GPSR Exempt",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "GPSR_Exempt"
+    },
+    {
+      "label": "Warnings and Safety Information 01",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_01"
+    },
+    {
+      "label": "Warnings and Safety Information 02",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_02"
+    },
+    {
+      "label": "Warnings and Safety Information 03",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_03"
+    },
+    {
+      "label": "Warnings and Safety Information 04",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_04"
+    },
+    {
+      "label": "Warnings and Safety Information 05",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_05"
+    },
+    {
+      "label": "Warnings and Safety Information 06",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_06"
+    },
+    {
+      "label": "Warnings and Safety Information 07",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_07"
+    },
+    {
+      "label": "Warnings and Safety Information 08",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_08"
+    },
+    {
+      "label": "Warnings and Safety Information 09",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_09"
+    },
+    {
+      "label": "Warnings and Safety Information 10",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Warnings_and_Safety_Information_10"
+    },
+    {
+      "label": "Made from 100% recycled wood and/or paper",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Made_from_100_recycled_wood_and_or_paper"
+    },
+    {
+      "label": "Product type",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Pressure washer",
+      "api_name": "Core_Product type"
+    },
+    {
+      "label": "Connection type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Spec_Connection_type"
+    },
+    {
+      "label": "Filter type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Spec_Filter_type"
+    },
+    {
+      "label": "Handle type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Spec_Handle_type",
+      "value_list_codes": [
+        {
+          "code": "39",
+          "label": "Ergonomic"
+        },
+        {
+          "code": "168",
+          "label": "Foldable"
+        },
+        {
+          "code": "35",
+          "label": "Loop"
+        },
+        {
+          "code": "83",
+          "label": "Straight"
+        },
+        {
+          "code": "296",
+          "label": "Telescopic handle bar"
+        }
+      ]
+    },
+    {
+      "label": "Motor type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Spec_Motor_type",
+      "value_list_codes": [
+        {
+          "code": "22",
+          "label": "Air-cooled"
+        },
+        {
+          "code": "20",
+          "label": "Air-cooled brushless induction"
+        },
+        {
+          "code": "21",
+          "label": "Air-cooled induction"
+        },
+        {
+          "code": "23",
+          "label": "Air-cooled universal brush"
+        },
+        {
+          "code": "5",
+          "label": "Brushed"
+        },
+        {
+          "code": "24",
+          "label": "Brushless induction"
+        },
+        {
+          "code": "7",
+          "label": "Electric"
+        },
+        {
+          "code": "2",
+          "label": "Induction"
+        },
+        {
+          "code": "35",
+          "label": "Series"
+        },
+        {
+          "code": "25",
+          "label": "Universal brush"
+        },
+        {
+          "code": "28",
+          "label": "Water-cooled"
+        },
+        {
+          "code": "27",
+          "label": "Water-cooled induction"
+        }
+      ]
+    },
+    {
+      "label": "Nozzle type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Spec_Nozzle_type",
+      "value_list_codes": [
+        {
+          "code": "1",
+          "label": "3-in-1"
+        },
+        {
+          "code": "2",
+          "label": "4-in-1"
+        },
+        {
+          "code": "3",
+          "label": "Adjustable jet"
+        },
+        {
+          "code": "4",
+          "label": "Adjustable spray"
+        },
+        {
+          "code": "5",
+          "label": "Dirt blaster"
+        },
+        {
+          "code": "6",
+          "label": "Fan jet & dirt blaster"
+        },
+        {
+          "code": "7",
+          "label": "Fan jet & roto-power"
+        },
+        {
+          "code": "8",
+          "label": "Fan jet, rotating pencil jet & dirt blaster"
+        },
+        {
+          "code": "9",
+          "label": "Full control"
+        },
+        {
+          "code": "10",
+          "label": "High pressure"
+        },
+        {
+          "code": "12",
+          "label": "Rotary"
+        },
+        {
+          "code": "13",
+          "label": "Screw-type"
+        },
+        {
+          "code": "14",
+          "label": "Straight & dirt blaster"
+        },
+        {
+          "code": "15",
+          "label": "Thumb-lock"
+        },
+        {
+          "code": "17",
+          "label": "Variable spray"
+        },
+        {
+          "code": "21",
+          "label": "Vario"
+        },
+        {
+          "code": "18",
+          "label": "Vario & dirt blaster"
+        },
+        {
+          "code": "19",
+          "label": "Vario & powerspeed"
+        },
+        {
+          "code": "20",
+          "label": "Vario fan & roto"
+        }
+      ]
+    },
+    {
+      "label": "Range",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Range"
+    },
+    {
+      "label": "Cable length",
+      "required": false,
+      "section": "Specifications",
+      "unit": "m",
+      "value": "",
+      "api_name": "Cable_length"
+    },
+    {
+      "label": "Hose length",
+      "required": true,
+      "section": "Specifications",
+      "unit": "m",
+      "value": "5000.00",
+      "api_name": "Hose_length"
+    },
+    {
+      "label": "Accessories available",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Accessories_available"
+    },
+    {
+      "label": "Corded/cordless",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Corded",
+      "api_name": "Cordless"
+    },
+    {
+      "label": "Function(s)",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Functions"
+    },
+    {
+      "label": "Hose description",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Hose_description"
+    },
+    {
+      "label": "Included",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Included"
+    },
+    {
+      "label": "Maximum flow rate",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "l/h",
+      "api_name": "Maximum_flow_rate"
+    },
+    {
+      "label": "Maximum operating pressure",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "Bar",
+      "api_name": "Maximum_operating_pressure"
+    },
+    {
+      "label": "Maximum operating temperature",
+      "required": false,
+      "section": "Specifications",
+      "unit": "\u00b0C",
+      "value": "",
+      "api_name": "Maximum_operating_temperature"
+    },
+    {
+      "label": "Model name/number",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Model_name_number"
+    },
+    {
+      "label": "Noise level",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Noise_level"
+    },
+    {
+      "label": "Power output",
+      "required": false,
+      "section": "Specifications",
+      "unit": "kW",
+      "value": "",
+      "api_name": "Power_output"
+    },
+    {
+      "label": "Power voltage supply",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Power_voltage_supply"
+    },
+    {
+      "label": "Product weight",
+      "required": true,
+      "section": "Specifications",
+      "unit": "kg",
+      "value": "5.80",
+      "api_name": "Product_weight"
+    },
+    {
+      "label": "Start facility",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Start_facility"
+    },
+    {
+      "label": "Guarantee exclusion specifications",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Guarantee_exclusion_specifications"
+    },
+    {
+      "label": "Power type",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Power_type"
+    },
+    {
+      "label": "Power source",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "Tech_Power_source",
+      "value_list_codes": [
+        {
+          "code": "102",
+          "label": "Mains-powered"
+        },
+        {
+          "code": "8",
+          "label": "Petrol-powered"
+        }
+      ]
+    },
+    {
+      "label": "WEEE regulated",
+      "required": true,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "WEEE_regulated"
+    },
+    {
+      "label": "WEEE regulated",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "WEEE_regulated"
+    },
+    {
+      "label": "Product depth",
+      "required": false,
+      "section": "Specifications",
+      "unit": "mm",
+      "value": "",
+      "api_name": "Product_depth"
+    },
+    {
+      "label": "Product height",
+      "required": false,
+      "section": "Specifications",
+      "unit": "mm",
+      "value": "0.00 The value must be greater than or equal to 0.01.",
+      "api_name": "Product_height"
+    },
+    {
+      "label": "Product width",
+      "required": false,
+      "section": "Specifications",
+      "unit": "mm",
+      "value": "0.00 The value must be greater than or equal to 0.01.",
+      "api_name": "Product_width"
+    },
+    {
+      "label": "International Compliance Documents Details",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "International_Compliance_Documents_Details"
+    },
+    {
+      "label": "International Compliance Status",
+      "required": false,
+      "section": "Specifications",
+      "unit": null,
+      "value": "",
+      "api_name": "International_Compliance_Status"
+    }
+  ],
+  "parsed_at": "2026-05-19T16:01:28"
+}
