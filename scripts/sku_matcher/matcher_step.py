@@ -5,7 +5,7 @@ Each invocation does one action and prints a single JSON object to stdout.
 Progress/info messages go to stderr. Errors print `{"error": "..."}` to
 stdout and exit non-zero.
 
-State (`state.json`) and output (`matches.csv` / `*_skipped.jsonl` /
+State (`workdir/sku-matcher/state.json`) and output (`lookups/matches.csv` / `*_skipped.jsonl` /
 `*_unmatched.jsonl`) are read/written in the same shape the interactive
 `matcher.py` uses, so you can swap between the two drivers freely.
 
@@ -67,7 +67,7 @@ def _die(msg: str, **detail) -> None:
 
 
 def _matched_set(args) -> set:
-    """Union of state.json's matched_skus and what's already in matches.csv.
+    """Union of workdir/sku-matcher/state.json's matched_skus and what's already in lookups/matches.csv.
 
     Returned values are upper-cased for case-insensitive lookup.
     """
@@ -78,11 +78,11 @@ def _matched_set(args) -> set:
 
 
 def _save_matched_state(args, matched_upper: set) -> None:
-    """Persist matched_skus in state.json. Index is set to total so the
+    """Persist matched_skus in workdir/sku-matcher/state.json. Index is set to total so the
     interactive matcher resumes past the matched rows."""
     state = load_state(args.state_file)
     df_a = load_csv(args.file_a, args.col_a_sku, args.col_a_title)
-    # Reuse original case from df_a where possible — state.json originally
+    # Reuse original case from df_a where possible — workdir/sku-matcher/state.json originally
     # held original case.
     matched_orig = [s for s in df_a["sku"].astype(str)
                     if s.upper() in matched_upper]
@@ -249,7 +249,7 @@ def cmd_decide(args) -> None:
                 "method": "manual",
             }
 
-    # If already matched and --force, rewrite matches.csv with the old row replaced.
+    # If already matched and --force, rewrite lookups/matches.csv with the old row replaced.
     if already:
         _rewrite_match(args.out, row["sku"], row["title"], chosen)
     else:
@@ -336,7 +336,7 @@ def _read_jsonl_sku_set(path: str) -> set:
 
 
 def _rewrite_match(out_path: str, sku_a: str, title_a: str, chosen: dict) -> None:
-    """Replace the existing row for sku_a in matches.csv. Used when --force
+    """Replace the existing row for sku_a in lookups/matches.csv. Used when --force
     overrides a previous decision."""
     import csv as _csv
     p = Path(out_path)
@@ -382,8 +382,8 @@ def _add_common_args(p) -> None:
     p.add_argument("--col-a-title", default="title")
     p.add_argument("--col-b-sku", default="sku")
     p.add_argument("--col-b-title", default="title")
-    p.add_argument("--out", default="matches.csv")
-    p.add_argument("--state-file", default="state.json")
+    p.add_argument("--out", default="lookups/matches.csv")
+    p.add_argument("--state-file", default="workdir/sku-matcher/state.json")
     p.add_argument("--stopwords", default=None)
 
 

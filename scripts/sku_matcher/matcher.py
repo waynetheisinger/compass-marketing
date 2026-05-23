@@ -23,7 +23,7 @@ def parse_args():
 
     parser.add_argument('file_a', help='CSV file A (to match)')
     parser.add_argument('file_b', help='CSV file B (catalog)')
-    parser.add_argument('--out', default='matches.csv', help='Output file (default: matches.csv)')
+    parser.add_argument('--out', default='lookups/matches.csv', help='Output file (default: lookups/matches.csv)')
 
     parser.add_argument('--col-a-sku', default='sku', help='SKU column name in file A')
     parser.add_argument('--col-a-title', default='title', help='Title column name in file A')
@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument('--max-claude', type=int, default=10, help='Max Claude calls per query (default: 10)')
 
     parser.add_argument('--redo', action='store_true', help='Redo already matched items')
-    parser.add_argument('--state-file', default='state.json', help='State file for resume (default: state.json)')
+    parser.add_argument('--state-file', default='workdir/sku-matcher/state.json', help='State file for resume (default: workdir/sku-matcher/state.json)')
 
     return parser.parse_args()
 

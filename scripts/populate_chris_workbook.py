@@ -23,7 +23,7 @@ from scripts.google_ads_client import GoogleAdsClient
 from scripts.shopify_client import ShopifyClient
 from scripts.amazon_client import AmazonClient
 
-WB_PATH = Path("/Users/waynetheisinger/compass/marketingPlan/Marketing Spend v Return.xlsx")
+WB_PATH = Path("/Users/waynetheisinger/compass/marketingPlan/data/finance/Marketing Spend v Return.xlsx")
 BACKUP  = WB_PATH.with_suffix(".backup-2026-05-11.xlsx")
 
 # Month windows (May is partial — month-to-date through 11 May)

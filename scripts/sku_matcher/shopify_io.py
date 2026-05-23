@@ -16,7 +16,7 @@ def load_matches_csv(
     Load matches CSV and validate required columns.
 
     Args:
-        filepath: Path to matches.csv
+        filepath: Path to lookups/matches.csv
         shopify_sku_col: Column name for current Shopify SKU
         target_sku_col: Column name for target/new SKU
 
@@ -107,7 +107,7 @@ def save_state(
 
     Args:
         state_file: Path to state JSON file
-        current_index: Current row index in matches.csv
+        current_index: Current row index in lookups/matches.csv
         updated_skus: List of successfully updated Shopify SKUs
         skipped_skus: List of user-skipped Shopify SKUs
         failed_skus: List of failed updates with error info
@@ -162,7 +162,7 @@ def log_update_success(
 
     Args:
         log_file: Path to log file
-        index: Row index in matches.csv
+        index: Row index in lookups/matches.csv
         shopify_sku: Original Shopify SKU
         target_sku: New target SKU
         product_id: Shopify product ID
@@ -208,7 +208,7 @@ def log_update_failure(
 
     Args:
         log_file: Path to log file
-        index: Row index in matches.csv
+        index: Row index in lookups/matches.csv
         shopify_sku: Original Shopify SKU
         target_sku: Target SKU
         error: Error message
@@ -249,7 +249,7 @@ def log_update_skipped(
 
     Args:
         log_file: Path to log file
-        index: Row index in matches.csv
+        index: Row index in lookups/matches.csv
         shopify_sku: Original Shopify SKU
         target_sku: Target SKU
         reason: Reason for skipping

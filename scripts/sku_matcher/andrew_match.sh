@@ -13,7 +13,7 @@
 #   bash scripts/sku_matcher/andrew_match.sh skip --sku HRM2500\ LIVE
 #   bash scripts/sku_matcher/andrew_match.sh unmatch --sku F220
 #
-# To start fresh: rm matches.csv state.json matches_skipped.jsonl matches_unmatched.jsonl
+# To start fresh: rm lookups/matches.csv workdir/sku-matcher/state.json workdir/sku-matcher/matches_skipped.jsonl workdir/sku-matcher/matches_unmatched.jsonl
 set -euo pipefail
 
 # Resolve repo root from this script's location so the wrapper works regardless
@@ -30,8 +30,8 @@ fi
 SUBCMD="$1"; shift
 
 PYTHONPATH=. pyenv exec python scripts/sku_matcher/matcher_step.py "${SUBCMD}" \
-    stockPricesAndSkus.csv shopify_catalogue.csv \
+    workdir/sku-matcher/stockPricesAndSkus.csv lookups/shopify_catalogue.csv \
     --col-a-sku "Product Code" --col-a-title "Product Description" \
     --col-b-sku sku --col-b-title title \
-    --out matches.csv --state-file state.json \
+    --out lookups/matches.csv --state-file workdir/sku-matcher/state.json \
     "$@"

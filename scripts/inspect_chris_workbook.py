@@ -5,7 +5,7 @@ to fill in before Monday.
 """
 from openpyxl import load_workbook
 
-PATH = "/Users/waynetheisinger/compass/marketingPlan/Marketing Spend v Return.xlsx"
+PATH = "/Users/waynetheisinger/compass/marketingPlan/data/finance/Marketing Spend v Return.xlsx"
 
 wb = load_workbook(PATH, data_only=False)
 print(f"Sheets: {wb.sheetnames}\n")

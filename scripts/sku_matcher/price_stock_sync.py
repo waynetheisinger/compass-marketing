@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Apply Andrew's workbook prices + check Shopify stock against expected.
 
-For each row of Andrew's `stockPricesAndSkus.csv`, find the matched Shopify
-variant (via the matches.csv produced by `matcher.py`) and:
+For each row of Andrew's `workdir/sku-matcher/stockPricesAndSkus.csv`, find the matched Shopify
+variant (via the lookups/matches.csv produced by `matcher.py`) and:
 
   1. **Price** — raise the Shopify variant's price to the workbook's
      `Sell Price inc VAT`, **strictly upward only**. Never lowers.
@@ -11,12 +11,12 @@ variant (via the matches.csv produced by `matcher.py`) and:
      mismatch. **Never writes inventory.**
 
 Dry-run by default. Pass `--apply` to actually write prices. All decisions
-land in a JSONL audit log and a flat CSV report under `reports/`.
+land in a JSONL audit log and a flat CSV report under `workdir/shopify-ops/`.
 
 Run from the repo root — credentials come from `.env`:
 
     PYTHONPATH=. pyenv exec python scripts/sku_matcher/price_stock_sync.py \\
-        matches.csv stockPricesAndSkus.csv [--apply]
+        lookups/matches.csv workdir/sku-matcher/stockPricesAndSkus.csv [--apply]
 
 Re-running `--apply` immediately is a safe no-op: the upward-only check is
 self-idempotent.
@@ -56,11 +56,12 @@ class WorkbookRow:
     description: str
     price_inc_vat: Optional[float]
     qty_in_stock: Optional[int]
+    rrp_inc_vat: Optional[float] = None   # only populated when --rrp-col is set
 
 
 @dataclass
 class MatchRow:
-    sku_a: str                 # original case from matches.csv
+    sku_a: str                 # original case from lookups/matches.csv
     title_a: str
     sku_b: str                 # Shopify SKU
     title_b: str
@@ -85,11 +86,20 @@ def decide_price(
     current_compare_at: Optional[float],
     max_multiplier: float,
     absolute_floor: float = 1.0,
+    allow_downward: bool = False,
+    workbook_rrp: Optional[float] = None,
 ) -> Decision:
-    """Decide whether to raise the variant's price to `workbook_inc_vat`.
+    """Decide whether to change the variant's price (and optionally compareAtPrice).
 
-    Strictly upward only; refuses suspicious moves; respects compareAtPrice
-    so we never make the storefront show "was £X / now £Y" with Y > X.
+    Default behaviour is upward-only (Andrew's workflow); pass
+    ``allow_downward=True`` for supplier promo updates that may also drop
+    prices. The ``max_multiplier`` guard is enforced in both directions to
+    catch decimal-place mistakes either way.
+
+    ``workbook_rrp``: when provided, ``compareAtPrice`` is overwritten with it
+    (the workbook is treated as authoritative for RRP). When omitted, falls
+    back to bump-up-if-below-new-price behaviour so the storefront never shows
+    "was £X / now £Y" with Y > X.
     """
     if workbook_inc_vat is None or workbook_inc_vat <= 0:
         return Decision("skip", "workbook_price_invalid",
@@ -101,17 +111,39 @@ def decide_price(
         return Decision("skip", "shopify_price_missing",
                         {"current": current_shopify_price,
                          "workbook": workbook_inc_vat})
-    if workbook_inc_vat <= current_shopify_price:
+
+    # No-op short-circuit: nothing on price AND nothing on RRP.
+    price_unchanged = abs(workbook_inc_vat - current_shopify_price) < 0.005
+    rrp_unchanged = (
+        workbook_rrp is None
+        or (current_compare_at is not None
+            and abs(workbook_rrp - current_compare_at) < 0.005)
+    )
+    if price_unchanged and rrp_unchanged:
+        return Decision("skip", "no_change",
+                        {"current": current_shopify_price,
+                         "workbook": workbook_inc_vat,
+                         "workbook_rrp": workbook_rrp,
+                         "current_compare_at": current_compare_at})
+
+    if not allow_downward and workbook_inc_vat < current_shopify_price:
         return Decision("skip", "not_upward",
                         {"current": current_shopify_price,
                          "workbook": workbook_inc_vat})
-    if workbook_inc_vat > current_shopify_price * max_multiplier:
+
+    ratio = workbook_inc_vat / current_shopify_price
+    if ratio > max_multiplier:
         return Decision("skip", "suspicious_large_increase",
                         {"current": current_shopify_price,
                          "workbook": workbook_inc_vat,
                          "multiplier_cap": max_multiplier,
-                         "actual_multiplier":
-                             round(workbook_inc_vat / current_shopify_price, 3)})
+                         "actual_multiplier": round(ratio, 3)})
+    if ratio < 1 / max_multiplier:
+        return Decision("skip", "suspicious_large_decrease",
+                        {"current": current_shopify_price,
+                         "workbook": workbook_inc_vat,
+                         "multiplier_cap": max_multiplier,
+                         "actual_multiplier": round(ratio, 3)})
 
     delta = workbook_inc_vat - current_shopify_price
     detail = {
@@ -120,10 +152,17 @@ def decide_price(
         "delta": round(delta, 2),
         "delta_pct": round(delta / current_shopify_price * 100, 1),
     }
-    # If the new price would exceed the strike-through "was" price, bump
-    # compareAtPrice to match so the storefront treats the new price as the
-    # current RRP (no "was £X / now £Y" badge with Y > X).
-    if current_compare_at and workbook_inc_vat > current_compare_at:
+
+    if workbook_rrp is not None:
+        # Workbook is authoritative for RRP — overwrite compareAtPrice when it
+        # disagrees with what's currently on the variant.
+        if current_compare_at is None or abs(workbook_rrp - current_compare_at) >= 0.005:
+            detail["set_compare_at"] = True
+            detail["old_compare_at"] = current_compare_at
+            detail["new_compare_at"] = workbook_rrp
+    elif current_compare_at and workbook_inc_vat > current_compare_at:
+        # Legacy bump-up-only: keep the strike-through coherent when the new
+        # price has overtaken the existing "was" price.
         detail["bump_compare_at"] = True
         detail["old_compare_at"] = current_compare_at
         detail["new_compare_at"] = workbook_inc_vat
@@ -188,14 +227,19 @@ def load_workbook_csv(
     desc_col: str,
     price_col: str,
     qty_col: str,
+    rrp_col: Optional[str] = None,
 ) -> Dict[str, WorkbookRow]:
-    """Load Andrew's CSV. Returns dict keyed by **upper-case** product code.
+    """Load a workbook CSV (Andrew's or a supplier's). Keyed by upper-case code.
 
     Strips whitespace, forces SKU to string, drops rows with empty SKU,
-    detects duplicate codes and marks them all unusable.
+    detects duplicate codes and marks them all unusable. When ``rrp_col`` is
+    given, that column is parsed into ``WorkbookRow.rrp_inc_vat``.
     """
     df = pd.read_csv(path, dtype=str, keep_default_na=False, na_values=[""])
-    for col in [code_col, desc_col, price_col, qty_col]:
+    required = [code_col, desc_col, price_col, qty_col]
+    if rrp_col:
+        required.append(rrp_col)
+    for col in required:
         if col not in df.columns:
             raise ValueError(
                 f"Workbook CSV is missing column {col!r}. "
@@ -229,12 +273,13 @@ def load_workbook_csv(
             description=row[desc_col] or "",
             price_inc_vat=_to_float(row[price_col]),
             qty_in_stock=_to_int(row[qty_col]),
+            rrp_inc_vat=_to_float(row[rrp_col]) if rrp_col else None,
         )
     return out
 
 
 def load_matches(path: str, min_score: float) -> Dict[str, MatchRow]:
-    """Load matches.csv keyed by **upper-case** `sku_a` (Andrew's code).
+    """Load lookups/matches.csv keyed by **upper-case** `sku_a` (Andrew's code).
 
     Bails hard if the same `sku_a` maps to multiple `sku_b` values — that's
     impossible from a clean matcher run and signals a corrupted file.
@@ -243,7 +288,7 @@ def load_matches(path: str, min_score: float) -> Dict[str, MatchRow]:
     needed = {"sku_a", "title_a", "sku_b", "title_b", "score", "method"}
     missing = needed - set(df.columns)
     if missing:
-        raise ValueError(f"matches.csv is missing columns: {missing}")
+        raise ValueError(f"lookups/matches.csv is missing columns: {missing}")
 
     for c in df.select_dtypes(include="object").columns:
         df[c] = df[c].str.strip()
@@ -256,7 +301,7 @@ def load_matches(path: str, min_score: float) -> Dict[str, MatchRow]:
     inconsistent = grouped[grouped > 1]
     if not inconsistent.empty:
         raise RuntimeError(
-            "matches.csv contains inconsistent mappings (same sku_a → multiple sku_b): "
+            "lookups/matches.csv contains inconsistent mappings (same sku_a → multiple sku_b): "
             f"{list(inconsistent.index)[:10]}"
         )
 
@@ -364,6 +409,8 @@ def process_row(
         current_shopify_price=_to_float(variant.price),
         current_compare_at=_to_float(variant.compare_at_price),
         max_multiplier=args.max_price_multiplier,
+        allow_downward=args.allow_downward,
+        workbook_rrp=wb_row.rrp_inc_vat,
     )
     stock_decision = decide_stock(
         expected_qty=wb_row.qty_in_stock,
@@ -378,10 +425,11 @@ def process_row(
     if price_decision.action == "apply" and args.apply:
         new_price = price_decision.detail["workbook"]
         fields = {"price": fmt_price(new_price)}
-        # When the new price exceeds the existing strike-through "was" price,
-        # raise compareAtPrice alongside so it acts as the new RRP rather
-        # than a broken sale badge.
-        if price_decision.detail.get("bump_compare_at"):
+        # `set_compare_at` (RRP supplied by workbook) takes precedence over the
+        # legacy `bump_compare_at` (raise existing strike-through when overtaken).
+        if price_decision.detail.get("set_compare_at"):
+            fields["compareAtPrice"] = fmt_price(price_decision.detail["new_compare_at"])
+        elif price_decision.detail.get("bump_compare_at"):
             fields["compareAtPrice"] = fmt_price(new_price)
         try:
             ok, err = api.update_variant_fields(product.id, variant.id, fields)
@@ -453,13 +501,13 @@ def parse_args():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Workflow:\n"
-            "  1. resave stockPricesAndSkus.xls → stockPricesAndSkus.csv\n"
+            "  1. resave workdir/sku-matcher/stockPricesAndSkus.xls → workdir/sku-matcher/stockPricesAndSkus.csv\n"
             "  2. PYTHONPATH=. pyenv exec python scripts/sku_matcher/export_shopify_catalogue.py\n"
-            "  3. PYTHONPATH=. pyenv exec python scripts/sku_matcher/matcher.py ... → matches.csv\n"
+            "  3. PYTHONPATH=. pyenv exec python scripts/sku_matcher/matcher.py ... → lookups/matches.csv\n"
             "  4. (this script)  dry-run first, --apply once you're happy with the report\n"
         ),
     )
-    p.add_argument("matches_file", help="Path to matches.csv (from matcher.py)")
+    p.add_argument("matches_file", help="Path to lookups/matches.csv (from matcher.py)")
     p.add_argument("workbook_csv", help="Path to Andrew's resaved CSV")
     p.add_argument("--apply", action="store_true",
                    help="Write price changes (default: dry-run)")
@@ -477,12 +525,18 @@ def parse_args():
     p.add_argument("--qty-col", default="Quantity in Stock")
     p.add_argument("--code-col", default="Product Code")
     p.add_argument("--desc-col", default="Product Description")
+    p.add_argument("--rrp-col", default=None,
+                   help="Workbook column holding the RRP. When set, "
+                        "compareAtPrice is overwritten with this value.")
+    p.add_argument("--allow-downward", action="store_true",
+                   help="Allow new price < current Shopify price. "
+                        "Default off (upward-only, Andrew's workflow).")
     p.add_argument("--log-file",
-                   default=f"reports/price_stock_sync_{today}.jsonl")
+                   default=f"workdir/shopify-ops/price_stock_sync_{today}.jsonl")
     p.add_argument("--out",
-                   default=f"reports/price_stock_sync_{today}.csv")
+                   default=f"workdir/shopify-ops/price_stock_sync_{today}.csv")
     p.add_argument("--state-file",
-                   default="price_stock_sync_state.json")
+                   default="price_stock_sync_workdir/sku-matcher/state.json")
     return p.parse_args()
 
 
@@ -490,10 +544,12 @@ def _print_banner(args, log_file: str):
     print("=" * 80)
     print("Price + Stock Sync from Andrew's Workbook")
     print("=" * 80)
-    print(f"matches.csv:        {args.matches_file}")
+    print(f"lookups/matches.csv:        {args.matches_file}")
     print(f"workbook CSV:       {args.workbook_csv}")
     print(f"price column:       {args.price_col!r}")
     print(f"qty column:         {args.qty_col!r}")
+    print(f"rrp column:         {args.rrp_col!r}" if args.rrp_col else "rrp column:         (none — legacy bump-up-only)")
+    print(f"direction:          {'BIDIRECTIONAL (--allow-downward)' if args.allow_downward else 'upward-only'}")
     print(f"min match score:    {args.min_score}")
     print(f"stock tolerance:    ±max({args.stock_tolerance_floor} units, {args.stock_tolerance_pct}%)")
     print(f"max price ×:        {args.max_price_multiplier}")
@@ -507,13 +563,13 @@ def main():
     args = parse_args()
 
     if not Path(args.matches_file).exists():
-        print(f"❌ matches.csv not found: {args.matches_file}", file=sys.stderr)
+        print(f"❌ lookups/matches.csv not found: {args.matches_file}", file=sys.stderr)
         sys.exit(1)
     if not Path(args.workbook_csv).exists():
         print(f"❌ workbook CSV not found: {args.workbook_csv}", file=sys.stderr)
         sys.exit(1)
 
-    # Ensure reports/ exists.
+    # Ensure output parent dirs exist.
     Path(args.log_file).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
 
@@ -525,6 +581,7 @@ def main():
         args.workbook_csv,
         code_col=args.code_col, desc_col=args.desc_col,
         price_col=args.price_col, qty_col=args.qty_col,
+        rrp_col=args.rrp_col,
     )
     print(f"  workbook rows: {len(workbook)}")
     matches = load_matches(args.matches_file, min_score=args.min_score)
@@ -569,6 +626,8 @@ def main():
         "stock_tolerance_pct": args.stock_tolerance_pct,
         "stock_tolerance_floor": args.stock_tolerance_floor,
         "max_price_multiplier": args.max_price_multiplier,
+        "allow_downward": args.allow_downward,
+        "rrp_col": args.rrp_col,
         "apply": args.apply,
     }
 
@@ -635,7 +694,8 @@ def main():
                 elif pa in ("skip", "apply_failed"):
                     reason = entry["price_decision"].get("reason") or pa
                     n_price_skipped[reason] = n_price_skipped.get(reason, 0) + 1
-                if (entry.get("price_decision", {}).get("detail", {}) or {}).get("bump_compare_at"):
+                _pd_detail = entry.get("price_decision", {}).get("detail", {}) or {}
+                if _pd_detail.get("bump_compare_at") or _pd_detail.get("set_compare_at"):
                     n_compare_at_bumps += 1
 
                 sa = entry["stock_decision"]["action"]
@@ -663,7 +723,7 @@ def main():
     print("Summary")
     print(f"{'=' * 80}")
     print(f"Workbook rows processed:   {len(keys)}")
-    print(f"Unmatched (no row in matches.csv at score ≥ {args.min_score}):  {n_unmatched}")
+    print(f"Unmatched (no row in lookups/matches.csv at score ≥ {args.min_score}):  {n_unmatched}")
     print()
     print("Price:")
     if args.apply:
