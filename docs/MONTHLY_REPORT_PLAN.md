@@ -21,7 +21,7 @@ Amazon referral fees are treated as a commission (marketing cost), not FBA cost 
 A prototype spreadsheet was built before implementing the live script to validate the format with funders.
 
 - **Script:** `scripts/mock_report.py` — generates the mock using hardcoded illustrative figures
-- **Output:** `reports/marketing_spend_mock_2026-03.xlsx`
+- **Output:** `workdir/raw-pulls/marketing_spend_mock_2026-03.xlsx`
 - **Run:** `python scripts/mock_report.py`
 
 The live `monthly_report.py` must produce the same 5-tab structure as the mock.
@@ -133,7 +133,7 @@ Settlement Reports give a complete reconciliation of all Amazon deductions in on
 
 ## Spreadsheet Schema (5 tabs)
 
-Matches the structure validated in `reports/marketing_spend_mock_2026-03.xlsx`.
+Matches the structure validated in `workdir/raw-pulls/marketing_spend_mock_2026-03.xlsx`.
 
 **Tab 1 — Summary**
 Three buckets with key metrics and % of gross revenue: marketplace commissions & fees, Amazon FBA cost of sales, paid ad spend. Per-channel commission table and per-platform ad spend table.
@@ -289,7 +289,7 @@ python scripts/monthly_report.py --month 2026-03 --output reports/
 3. Confirm "NOT CONNECTED" rows appear for Amazon SP-API, Amazon Ads, Google Ads — no errors thrown
 4. After Phase 2 credentials added: cross-check Amazon fees against a March Seller Central settlement statement
 5. Cross-check Google Ads spend against the Google Ads UI March total
-6. Open `.xlsx` and verify all 5 tabs match the structure in `reports/marketing_spend_mock_2026-03.xlsx`
+6. Open `.xlsx` and verify all 5 tabs match the structure in `workdir/raw-pulls/marketing_spend_mock_2026-03.xlsx`
 
 ---
 

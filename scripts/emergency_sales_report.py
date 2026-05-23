@@ -3,7 +3,7 @@ Emergency sales analysis: March vs April 2026.
 
 Pulls aggregate sales data from Shopify via ShopifyQL (read_reports scope),
 classifies products as petrol/cordless/other, and generates:
-  1. JSON summary  → reports/emergency_sales_data.json
+  1. JSON summary  → workdir/raw-pulls/emergency_sales_data.json
   2. Word document  → reports/Emergency_Marketing_Response.docx
   3. PowerPoint     → reports/Emergency_Marketing_Response.pptx
 
@@ -23,7 +23,9 @@ from dotenv import load_dotenv
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 load_dotenv()
 
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "reports")
+_REPO_ROOT = os.path.dirname(os.path.dirname(__file__))
+OUTPUT_DIR = os.path.join(_REPO_ROOT, "reports")
+RAW_PULLS_DIR = os.path.join(_REPO_ROOT, "workdir", "raw-pulls")
 
 # ---------------------------------------------------------------------------
 # Classification
@@ -820,6 +822,7 @@ def build_pptx(analysis: dict, output_path: str):
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(RAW_PULLS_DIR, exist_ok=True)
 
     print("\n=== MowDirect Emergency Sales Report ===")
     print(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
@@ -837,7 +840,7 @@ def main():
     april = analysis["april"]
 
     # --- Save JSON ---
-    json_path = os.path.join(OUTPUT_DIR, "emergency_sales_data.json")
+    json_path = os.path.join(RAW_PULLS_DIR, "emergency_sales_data.json")
     with open(json_path, "w") as f:
         json.dump({
             "generated": datetime.now().isoformat(),

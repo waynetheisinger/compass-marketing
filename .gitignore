@@ -17,3 +17,27 @@ logs/
 
 # macOS Finder metadata.
 .DS_Store
+
+# Per-batch scratch from /bq-csv-batch. State, context, and row JSON files
+# are working artefacts for one batch run. The CSV + log.md are kept (they
+# are the deliverable).
+bq/csv-output/.state_*.json
+bq/csv-output/*_context.json
+bq/csv-output/*_row.json
+
+# Stiga price-match scratch from scripts/sku_matcher (intermediates, not deliverables).
+workdir/sku-matcher/stiga_prices_normalized.csv
+workdir/sku-matcher/stiga_needs_review.csv
+workdir/sku-matcher/stiga_state.json
+workdir/sku-matcher/matches_stiga_skipped.jsonl
+workdir/sku-matcher/matches_stiga_unmatched.jsonl
+lookups/matches_stiga.csv
+
+# Dated Shopify/Mirakl portal exports — regenerate, don't commit.
+export-products-*.xlsx
+products-en_GB-*.xlsx
+
+# Ad-hoc screenshots and dated workbook backups.
+marketplace.kingfisher.com_*
+Marketing Spend v Return.backup-*.xlsx
+data/finance/Marketing Spend v Return.backup-*.xlsx

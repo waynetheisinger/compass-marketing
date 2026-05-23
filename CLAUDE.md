@@ -8,8 +8,40 @@ This is a **marketing planning and automation workspace** for **MowDirect** — 
 
 Primary artefacts:
 
-- `MARKETING_PLAN_2026.md` — The full 2026 marketing plan (sections 1–17)
-- `marketing budget forecast 2026.ods` — Budget and financial forecasting spreadsheet
+- `docs/MARKETING_PLAN_2026.md` — The full 2026 marketing plan (sections 1–17)
+- `data/finance/marketing budget forecast 2026.ods` — Budget and financial forecasting spreadsheet
+
+## Repository Layout
+
+The tree is organised by **what a human cares about** vs **what scripts produce while working**. The split:
+
+| Path | What lives there |
+|---|---|
+| `docs/` | Strategy docs, planning markdown, reference PDFs (e.g. `MARKETING_PLAN_2026.md`). Wayne reads these. |
+| `reports/` | **Human deliverables only** — decks, monthly spend workbooks, briefings, content drafts, audit summaries. Anything a person would open. |
+| `data/finance/` | Source-of-truth finance workbooks (budget forecast, Marketing Spend v Return, statements, billing CSVs). |
+| `lookups/` | Cached snapshots used as **lookup tables to avoid hitting APIs** — `shopify_catalogue.csv` (Shopify product/variant export), `matches.csv` (Andrew SKU → Shopify SKU), `matches_stiga.csv` (Stiga SKU → Shopify SKU). Regenerate when freshness matters. |
+| `bq/` | B&Q (Kingfisher Mirakl) workspace — per-batch CSVs, downloaded templates, the gate-2 portal-fill docs that the `/enrich-bq` skill writes. SKILL.md files at `.claude/skills/{bq-csv-batch,enrich-bq}/` are the entry point. |
+| `compliance/` | Battery test summaries, regulatory documents. |
+| `config/` | Long-lived project config JSON (`bq_shopify_mapping.json`, `bq_subcategory_pim_map.json`, `bq_operator_extensions.json`). |
+| `scripts/` | All Python and shell tooling. `scripts/sku_matcher/` is the matcher pipeline. `scripts/report/` is the monthly-report rendering library. |
+| `emails/`, `scraped_products/`, `compliance/` | Self-explanatory. |
+| `workdir/` | **Working state — ignore unless debugging a running pipeline.** Anything a script writes for itself, not for a person. Subdivided: `workdir/sku-matcher/` (matcher state, leftover JSONLs, supplier-input drops like `stockPricesAndSkus.xlsx` and `Stiga-Pricesheet-Sheet1.csv`), `workdir/shopify-ops/` (dated audit trails from every Shopify mutation — `price_stock_sync_*`, `spring_sale_*`, `stiga_*_apply`), `workdir/raw-pulls/` (raw API dumps, mocks). Files here are routinely regenerated or stale once a job is done. |
+| `logs/` | Script stdout/stderr (gitignored). |
+
+### Convention for new scripts
+
+When a new script writes a file, decide its destination by asking *who reads it*:
+
+- **A person will open it** (deck, workbook, briefing, signed-off draft, marketing data, ad-hoc audit summary) → `reports/`.
+- **A script writes it so a later step / re-run can read it** (state, dry-run preview, mutation receipt, raw API dump for processing) → `workdir/<subdir>/`. Pick `workdir/shopify-ops/` for Shopify-mutation receipts, `workdir/raw-pulls/` for raw API dumps and mocks, or create a new `workdir/<tool-name>/` for a new tool's pipeline state.
+- **It's a lookup table that future scripts will read** (cached export, SKU↔SKU map) → `lookups/`.
+
+Never write working artefacts (state files, dry-run previews, mutation receipts) into `reports/` — that's the rule that motivates this layout.
+
+### Running scripts
+
+All scripts assume the **repo root** as the working directory. Path defaults are anchored (`workdir/sku-matcher/state.json`, `lookups/matches.csv`, etc.), so a script run from any other CWD will fail. The `scripts/sku_matcher/andrew_match.sh` wrapper enforces this with `cd "${REPO_ROOT}"` at the top — model new wrappers on it.
 
 ## APIs and Integrations in Use
 

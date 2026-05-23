@@ -8,7 +8,7 @@ Two-stage pipeline:
 
 ```
 shopify_export.csv ──╮
-                     ├─► matcher.py (TUI) ──► matches.csv ──► shopify_updater.py ──► Shopify writes
+                     ├─► matcher.py (TUI) ──► lookups/matches.csv ──► shopify_updater.py ──► Shopify writes
 canonical_skus.csv ──╯
 ```
 
@@ -40,10 +40,10 @@ PYTHONPATH=. pyenv exec python scripts/sku_matcher/matcher.py \
     A.csv B.csv \
     --col-a-sku sku --col-a-title title \
     --col-b-sku sku --col-b-title title \
-    --out matches.csv [--claude] [--min-score 70] [--k 50] [--redo]
+    --out lookups/matches.csv [--claude] [--min-score 70] [--k 50] [--redo]
 
 # Stage 2 — credentials come from .env via scripts/shopify_client.py.
-PYTHONPATH=. pyenv exec python scripts/sku_matcher/shopify_updater.py matches.csv \
+PYTHONPATH=. pyenv exec python scripts/sku_matcher/shopify_updater.py lookups/matches.csv \
     --shopify-sku-col sku_b --target-sku-col sku_a [--dry-run] [--min-score 85]
 
 # Utility — drop Shopify-export rows that only have a Handle column populated.
@@ -69,7 +69,7 @@ PYTHONPATH=. pyenv exec python scripts/sku_matcher/filter_handle_only.py in.csv 
 
 ## CSV / state / log schemas
 
-`matches.csv` (output of stage 1, input of stage 2):
+`lookups/matches.csv` (output of stage 1, input of stage 2):
 ```
 sku_a,title_a,sku_b,title_b,score,method
 SBS20CB,SPECTRUM 40V Cordless Drill,SBS-20-CB,Spectrum 40V Drill Driver,93.20,tfidf+rapidfuzz
@@ -78,14 +78,14 @@ SBS20CB,SPECTRUM 40V Cordless Drill,SBS-20-CB,Spectrum 40V Drill Driver,93.20,tf
 
 Side files:
 - `matches_skipped.jsonl` — `{"sku_a", "title_a"}` for items the operator pressed `s` on (revisit later)
-- `matches_unmatched.jsonl` — same shape, items confirmed as having no counterpart
+- `workdir/sku-matcher/matches_unmatched.jsonl` — same shape, items confirmed as having no counterpart
 
-`state.json` (matcher resume cursor):
+`workdir/sku-matcher/state.json` (matcher resume cursor):
 ```json
 {"current_index": 42, "matched_skus": ["SBS20CB", ...]}
 ```
 
-`shopify_update_state.json` (updater resume cursor):
+`shopify_update_workdir/sku-matcher/state.json` (updater resume cursor):
 ```json
 {
   "current_index": 42,
@@ -134,7 +134,7 @@ jq -r 'select(.status=="success") | .shopify_sku'               matches_shopify_
 
 Both stages save state after every committed action.
 
-- **Matcher**: `matches.csv` is append-only; matched SKUs go into `state.json["matched_skus"]`. On restart it skips both anything in the state file *and* anything already in `matches.csv` (`get_matched_skus()` re-reads the output file). `--redo` ignores both.
+- **Matcher**: `lookups/matches.csv` is append-only; matched SKUs go into `workdir/sku-matcher/state.json["matched_skus"]`. On restart it skips both anything in the state file *and* anything already in `lookups/matches.csv` (`get_matched_skus()` re-reads the output file). `--redo` ignores both.
 - **Updater**: writes state after every row decision (success, skipped, failed). `KeyboardInterrupt` is caught and saved cleanly. Already-processed SKUs (updated + skipped — *not* failed) are auto-skipped on resume. Failed rows are retried; clean them out of `failed_skus` if you want to permanently skip them.
 - Both quit cleanly on the in-prompt `q` action *and* on `Ctrl+C`.
 

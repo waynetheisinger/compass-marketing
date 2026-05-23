@@ -12,7 +12,7 @@ import io
 from collections import defaultdict
 from datetime import datetime
 
-CSV_PATH = "/Users/waynetheisinger/compass/marketingPlan/Billing activity report.csv"
+CSV_PATH = "/Users/waynetheisinger/compass/marketingPlan/data/finance/Billing activity report.csv"
 
 
 def load_rows() -> list[dict]:

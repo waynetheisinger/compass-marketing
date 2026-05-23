@@ -11,7 +11,7 @@ Run from the repo root — credentials come from `.env` via
 `scripts.shopify_client.ShopifyClient`:
 
     PYTHONPATH=. pyenv exec python scripts/sku_matcher/export_shopify_catalogue.py \\
-        --out shopify_catalogue.csv
+        --out lookups/shopify_catalogue.csv
 
 Pagination follows the pattern in scripts/find_products_without_sku.py.
 """
@@ -47,8 +47,8 @@ def parse_args():
     )
     p.add_argument(
         "--out",
-        default="shopify_catalogue.csv",
-        help="Output CSV path (default: shopify_catalogue.csv)",
+        default="lookups/shopify_catalogue.csv",
+        help="Output CSV path (default: lookups/shopify_catalogue.csv)",
     )
     p.add_argument(
         "--query",

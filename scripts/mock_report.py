@@ -2,7 +2,7 @@
 Generate a mock monthly spend report spreadsheet for funder review.
 Uses realistic figures derived from the MowDirect 2026 marketing plan.
 Run: python scripts/mock_report.py
-Output: reports/marketing_spend_mock_2026-03.xlsx
+Output: workdir/raw-pulls/marketing_spend_mock_2026-03.xlsx
 """
 import os
 from openpyxl import Workbook
@@ -535,8 +535,8 @@ def build_raw(wb):
 # ---------------------------------------------------------------------------
 
 def main():
-    os.makedirs("reports", exist_ok=True)
-    out = "reports/marketing_spend_mock_2026-03.xlsx"
+    os.makedirs("workdir/raw-pulls", exist_ok=True)
+    out = "workdir/raw-pulls/marketing_spend_mock_2026-03.xlsx"
 
     wb = Workbook()
     wb.remove(wb.active)

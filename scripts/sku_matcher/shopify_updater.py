@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shopify SKU Updater — apply a matches.csv to MowDirect's Shopify store.
+"""Shopify SKU Updater — apply a lookups/matches.csv to MowDirect's Shopify store.
 
 Reads the output of `matcher.py` and rewrites Shopify variant SKUs via the
 GraphQL `productVariantsBulkUpdate` mutation. Auth flows through the project
@@ -8,7 +8,7 @@ standard `scripts/shopify_client.py` (client-credentials grant from `.env`)
 
 Run from the repo root:
 
-    PYTHONPATH=. python scripts/sku_matcher/shopify_updater.py matches.csv \\
+    PYTHONPATH=. python scripts/sku_matcher/shopify_updater.py lookups/matches.csv \\
         --shopify-sku-col sku_b --target-sku-col sku_a --dry-run
 """
 
@@ -38,16 +38,16 @@ from scripts.sku_matcher.shopify_io import (
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Rewrite Shopify variant SKUs from a matches.csv (output of matcher.py).",
+        description="Rewrite Shopify variant SKUs from a lookups/matches.csv (output of matcher.py).",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   # Dry-run (always do this first):
-  PYTHONPATH=. python scripts/sku_matcher/shopify_updater.py matches.csv \\
+  PYTHONPATH=. python scripts/sku_matcher/shopify_updater.py lookups/matches.csv \\
     --shopify-sku-col sku_b --target-sku-col sku_a --dry-run
 
   # Live run, only matches scoring 85+:
-  PYTHONPATH=. python scripts/sku_matcher/shopify_updater.py matches.csv \\
+  PYTHONPATH=. python scripts/sku_matcher/shopify_updater.py lookups/matches.csv \\
     --shopify-sku-col sku_b --target-sku-col sku_a --min-score 85
 
 Credentials come from .env via scripts/shopify_client.py:
@@ -55,16 +55,16 @@ Credentials come from .env via scripts/shopify_client.py:
 """,
     )
 
-    parser.add_argument("matches_file", help="Path to matches.csv (output of matcher.py)")
+    parser.add_argument("matches_file", help="Path to lookups/matches.csv (output of matcher.py)")
     parser.add_argument(
         "--shopify-sku-col",
         required=True,
-        help="Column in matches.csv holding the CURRENT Shopify SKU",
+        help="Column in lookups/matches.csv holding the CURRENT Shopify SKU",
     )
     parser.add_argument(
         "--target-sku-col",
         required=True,
-        help="Column in matches.csv holding the NEW (canonical) SKU to write",
+        help="Column in lookups/matches.csv holding the NEW (canonical) SKU to write",
     )
     parser.add_argument(
         "--min-score",
@@ -74,8 +74,8 @@ Credentials come from .env via scripts/shopify_client.py:
     )
     parser.add_argument(
         "--state-file",
-        default="shopify_update_state.json",
-        help="Resume state file (default: shopify_update_state.json)",
+        default="shopify_update_workdir/sku-matcher/state.json",
+        help="Resume state file (default: shopify_update_workdir/sku-matcher/state.json)",
     )
     parser.add_argument(
         "--log-file",
@@ -233,7 +233,7 @@ def process_match(
     index: int,
     dry_run: bool,
 ) -> Tuple[str, Optional[str]]:
-    """Handle one matches.csv row end-to-end.
+    """Handle one lookups/matches.csv row end-to-end.
 
     Returns `(status, error)` where status is one of:
       success / skipped / failed / quit
