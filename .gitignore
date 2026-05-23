@@ -11,6 +11,10 @@ logs/
 # harness; never source.
 .claude/worktrees/
 
+# Per-user local Claude Code settings (permission allowlist, machine-specific
+# paths). settings.json is the shared file; this one stays local.
+.claude/settings.local.json
+
 # LibreOffice writes a hidden lock file next to any open workbook
 # (.~lock.<name>.xls#). They vanish when the file is closed.
 .~lock.*#
