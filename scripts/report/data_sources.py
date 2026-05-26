@@ -124,7 +124,14 @@ def fetch_mirakl_orders(
     end: datetime,
     instance: str = "KINGFISHER",
 ) -> tuple[list[dict] | None, str | None]:
-    """Fetch B&Q orders from Mirakl with commission amounts."""
+    """
+    Fetch B&Q orders from Mirakl with commission amounts.
+
+    Filters on order **creation** date (start_date/end_date), not last-update
+    date. Using update date over-counts a short reporting window: an order
+    created weeks earlier but merely re-touched (shipped, status change) inside
+    the window would otherwise be billed as window revenue.
+    """
     prefix = f"MIRAKL_{instance.upper()}"
     required = [f"{prefix}_BASE_URL", f"{prefix}_API_KEY"]
     if missing := [v for v in required if not os.environ.get(v)]:
@@ -142,9 +149,9 @@ def fetch_mirakl_orders(
 
         while True:
             params: dict = {
-                "start_update_date": start_str,
-                "end_update_date":   end_str,
-                "max":               100,
+                "start_date": start_str,
+                "end_date":   end_str,
+                "max":        100,
             }
             if page_token:
                 params["page_token"] = page_token
