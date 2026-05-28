@@ -187,7 +187,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
       },
       "custom.bullet_two": {
         "type": "single_line_text_field",
@@ -200,7 +200,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
       },
       "custom.bullet_three": {
         "type": "single_line_text_field",
@@ -213,7 +213,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
       },
       "custom.supplier_sku": {
         "type": "single_line_text_field",
@@ -226,7 +226,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "custom.feature_bullets": {
         "type": "multi_line_text_field",
@@ -239,7 +239,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
       },
       "custom.product_badge": {
         "type": "metaobject_reference",
@@ -252,7 +252,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "reviews.rating": {
         "type": "rating",
@@ -265,7 +265,7 @@
         "skip_reason": null,
         "note": "Average rating from customers",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "reviews.rating_count": {
         "type": "number_integer",
@@ -278,7 +278,7 @@
         "skip_reason": null,
         "note": "Total number of ratings from customers",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "custom.builder_product": {
         "type": "boolean",
@@ -291,7 +291,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify--discovery--product_search_boost.queries": {
         "type": "list.single_line_text_field",
@@ -304,7 +304,7 @@
         "skip_reason": null,
         "note": "List of search queries for which a product gets higher rank in search results",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify--discovery--product_recommendation.related_products": {
         "type": "list.product_reference",
@@ -317,7 +317,7 @@
         "skip_reason": null,
         "note": "List of related products",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify--discovery--product_recommendation.related_products_display": {
         "type": "single_line_text_field",
@@ -330,7 +330,7 @@
         "skip_reason": null,
         "note": "Determines how related products are displayed along with algorithmic product recommendations",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify--discovery--product_recommendation.complementary_products": {
         "type": "list.product_reference",
@@ -343,7 +343,7 @@
         "skip_reason": null,
         "note": "List of complementary products",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "mm-google-shopping.custom_product": {
         "type": "boolean",
@@ -356,7 +356,7 @@
         "skip_reason": null,
         "note": "Use to indicate whether or not the unique product identifiers (UPIs) GTIN, MPN, and brand are available for your product.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.color-pattern": {
         "type": "list.metaobject_reference",
@@ -371,7 +371,7 @@
         "skip_reason": null,
         "note": "Defines the primary color or pattern, such as blue or striped",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:41Z"
       },
       "shopify.power-source": {
         "type": "list.metaobject_reference",
@@ -386,20 +386,22 @@
         "skip_reason": null,
         "note": "Specifies the power source a product uses to operate, such as solar or batteries",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:41Z"
       },
       "shopify.material": {
         "type": "list.metaobject_reference",
         "name": "Material",
         "shop_owner_added": false,
-        "example_value": null,
-        "example_from_sku": null,
+        "example_value": [
+          "Metal"
+        ],
+        "example_from_sku": "TG45SC-E",
         "bq_targets": [],
         "hint": null,
         "skip_reason": null,
         "note": "Defines a product's primary material, such as cotton or wool",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:41Z"
       },
       "shopify.drive-type": {
         "type": "list.metaobject_reference",
@@ -412,7 +414,7 @@
         "skip_reason": null,
         "note": "Identifies the type of drive system in vehicles or heavy machinery, like 2WD or 4WD",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.item-condition": {
         "type": "list.metaobject_reference",
@@ -425,7 +427,7 @@
         "skip_reason": null,
         "note": "Indicates the quality of an item, typically vehicles or vehicle parts; e.g. certified pre-owned, refurbished",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.trailer-type": {
         "type": "list.metaobject_reference",
@@ -438,7 +440,7 @@
         "skip_reason": null,
         "note": "Identifies the design or style of a motor vehicle trailer, such as open or enclosed",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.fuel-container-features": {
         "type": "list.metaobject_reference",
@@ -451,7 +453,7 @@
         "skip_reason": null,
         "note": "Describes specific features of fuel tanks, such as spill-proof spout or fuel gauge",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.recommended-use": {
         "type": "list.metaobject_reference",
@@ -464,7 +466,7 @@
         "skip_reason": null,
         "note": "Identifies the primary use or domain a hardware product has been designed for, e.g. industrial, residential",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "market.depth": {
         "type": "dimension",
@@ -477,7 +479,7 @@
         "skip_reason": null,
         "note": "Depth to be used in Marketplaces",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "market.height": {
         "type": "dimension",
@@ -490,7 +492,7 @@
         "skip_reason": null,
         "note": "Height for Marketplace",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "marketplace.width": {
         "type": "dimension",
@@ -503,7 +505,7 @@
         "skip_reason": null,
         "note": "Width for Marketplaces",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.battery-technology": {
         "type": "list.metaobject_reference",
@@ -516,20 +518,22 @@
         "skip_reason": null,
         "note": "Specifies the type of battery used in electronics, such as alkaline or lithium-ion",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.engine-type": {
         "type": "list.metaobject_reference",
         "name": "Engine type",
         "shop_owner_added": false,
-        "example_value": null,
-        "example_from_sku": null,
+        "example_value": [
+          "Petrol"
+        ],
+        "example_from_sku": "TG45SC-E",
         "bq_targets": [],
         "hint": null,
         "skip_reason": null,
         "note": "Identifies the kind of engine in a vehicle or part, such as electric or diesel",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:41Z"
       },
       "shopify.tractor-accessories-included": {
         "type": "list.metaobject_reference",
@@ -542,7 +546,7 @@
         "skip_reason": null,
         "note": "Specifies extra features provided with the tractor, such as a mulching kit or snow blade",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "filter.lawnmower_type": {
         "type": "list.single_line_text_field",
@@ -555,7 +559,7 @@
         "skip_reason": null,
         "note": "Filter for Type of Lawnmower",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "filter.brand": {
         "type": "single_line_text_field",
@@ -568,7 +572,7 @@
         "skip_reason": null,
         "note": "Brand for the filters",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
       },
       "filter.fuel_group": {
         "type": "list.single_line_text_field",
@@ -581,7 +585,7 @@
         "skip_reason": null,
         "note": "The fuel group for the filters",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "filter.corded_cordless": {
         "type": "list.single_line_text_field",
@@ -594,7 +598,7 @@
         "skip_reason": null,
         "note": "Corded or Cordless for Filters",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "filter.propulsion_type": {
         "type": "single_line_text_field",
@@ -607,7 +611,7 @@
         "skip_reason": null,
         "note": "Propulsion Type for filters",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "filter.collection_capacity_l": {
         "type": "volume",
@@ -620,7 +624,7 @@
         "skip_reason": null,
         "note": "Collection Capacity (L) for filters",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "filter.condition": {
         "type": "single_line_text_field",
@@ -633,7 +637,7 @@
         "skip_reason": null,
         "note": "Condition for filters",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "filter.cutting_width": {
         "type": "dimension",
@@ -646,7 +650,7 @@
         "skip_reason": null,
         "note": "Cutting Width for Filter",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "custom.starting_system": {
         "type": "list.single_line_text_field",
@@ -659,7 +663,7 @@
         "skip_reason": null,
         "note": "Startup Type for filters",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "custom.aerator_or_scarifier": {
         "type": "list.single_line_text_field",
@@ -672,7 +676,7 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "custom.delivery_time": {
         "type": "single_line_text_field",
@@ -685,7 +689,7 @@
         "skip_reason": null,
         "note": "Used in the shipping box",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.suitable-for-power-equipment-type": {
         "type": "list.metaobject_reference",
@@ -698,7 +702,7 @@
         "skip_reason": null,
         "note": "Identifies the type of outdoor power equipment the product is designed for, like a lawn mower or leaf blower",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.propulsion-type": {
         "type": "list.metaobject_reference",
@@ -713,7 +717,7 @@
         "skip_reason": null,
         "note": "Specifies the movement method for outdoor equipment, e.g. push, tow",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.connection-type": {
         "type": "list.metaobject_reference",
@@ -726,7 +730,7 @@
         "skip_reason": null,
         "note": "Specifies the type of connection used by electronics, such as wired or Bluetooth",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.compatible-battery-technology": {
         "type": "list.metaobject_reference",
@@ -739,7 +743,7 @@
         "skip_reason": null,
         "note": "Specifies the type of battery technology a product is compatible with, like lithium-ion or alkaline",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.hardware-material": {
         "type": "list.metaobject_reference",
@@ -752,7 +756,7 @@
         "skip_reason": null,
         "note": "Specifies the composition of hardware items, such as metal or stainless steel",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.suitable-for-water-feature-type": {
         "type": "list.metaobject_reference",
@@ -765,7 +769,7 @@
         "skip_reason": null,
         "note": "Identifies the type of water feature the product is suitable for, such as a pond or fountain",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.ignition-system": {
         "type": "list.metaobject_reference",
@@ -778,7 +782,7 @@
         "skip_reason": null,
         "note": "Identifies the type of ignition system in generators, such as manual or electronic",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.phase-type": {
         "type": "list.metaobject_reference",
@@ -791,20 +795,22 @@
         "skip_reason": null,
         "note": "Identifies the phase type of motor controllers, such as single-phase or two-phase",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.engine-design": {
         "type": "list.metaobject_reference",
         "name": "Engine design",
         "shop_owner_added": false,
-        "example_value": null,
-        "example_from_sku": null,
+        "example_value": [
+          "4-stroke"
+        ],
+        "example_from_sku": "TG45SC-E",
         "bq_targets": [],
         "hint": null,
         "skip_reason": null,
         "note": "Describes the configuration of a vehicle's engine, e.g. 2-stroke",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:41Z"
       },
       "shopify.fuel-supply": {
         "type": "list.metaobject_reference",
@@ -817,7 +823,7 @@
         "skip_reason": null,
         "note": "Specifies the fuel source for vehicles or engines, such as diesel or hybrid",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.shaft-orientation": {
         "type": "list.metaobject_reference",
@@ -830,20 +836,23 @@
         "skip_reason": null,
         "note": "Identifies the direction of the shaft in small engines, for example, horizontal or vertical",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.start-type": {
         "type": "list.metaobject_reference",
         "name": "Start type",
         "shop_owner_added": false,
-        "example_value": null,
-        "example_from_sku": null,
+        "example_value": [
+          "Electric",
+          "Pull"
+        ],
+        "example_from_sku": "TG45SC-E",
         "bq_targets": [],
         "hint": null,
         "skip_reason": null,
         "note": "Identifies the method used to start small engines, like electric or pull",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:41Z"
       },
       "shopify.battery-type": {
         "type": "list.metaobject_reference",
@@ -858,7 +867,7 @@
         "skip_reason": null,
         "note": "Distinguishes between types of batteries, such as disposable or rechargeable ",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "shopify.grass-discharge-type": {
         "type": "list.metaobject_reference",
@@ -876,7 +885,7 @@
         "skip_reason": null,
         "note": "Specifies how the mower expels grass clippings (e.g., side discharge, rear bagging).",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:20Z"
+        "last_seen_at": "2026-05-26T13:33:32Z"
       },
       "judgeme.badge": {
         "type": "string",
@@ -889,7 +898,7 @@
         "skip_reason": "Review widget HTML, not a product attribute",
         "note": null,
         "discovered_at": "2026-05-20T07:40:13Z",
-        "last_seen_at": "2026-05-20T07:40:13Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
       },
       "judgeme.widget": {
         "type": "string",
@@ -902,7 +911,7 @@
         "skip_reason": "Review widget HTML, not a product attribute",
         "note": null,
         "discovered_at": "2026-05-20T07:40:13Z",
-        "last_seen_at": "2026-05-20T07:40:13Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
       },
       "mm-google-shopping.google_product_category": {
         "type": "string",
@@ -915,7 +924,76 @@
         "skip_reason": null,
         "note": null,
         "discovered_at": "2026-05-20T07:40:13Z",
-        "last_seen_at": "2026-05-20T07:40:13Z"
+        "last_seen_at": "2026-05-26T13:33:42Z"
+      },
+      "shopify.lawn-aerator-type": {
+        "type": "list.metaobject_reference",
+        "name": "Lawn aerator type",
+        "shop_owner_added": false,
+        "example_value": [
+          "Core/Plug"
+        ],
+        "example_from_sku": "TG45SC-E",
+        "bq_targets": [
+          "Navigation type"
+        ],
+        "hint": "Shopify 'Lawn aerator type' (e.g. 'Core/Plug') maps to B&Q facet 'Navigation type'. Value list is only {Rolling drum, Spike shoes, Tine}; translate hollow-tine/core/plug aerators to 'Tine'. If the Shopify value clearly indicates a spike/shoe or rolling-drum mechanism instead, pick that. If it doesn't map to one of the three, mark UNKNOWN rather than guessing.",
+        "skip_reason": null,
+        "note": "Classifies lawn aerators by their core operating design or form factor.",
+        "discovered_at": "2026-05-26T13:33:32Z",
+        "last_seen_at": "2026-05-26T13:33:41Z"
+      },
+      "shopify.suitable-space": {
+        "type": "list.metaobject_reference",
+        "name": "Suitable space",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Defines the ideal location for product use, e.g. indoors, above ground",
+        "discovered_at": "2026-05-26T13:33:32Z",
+        "last_seen_at": "2026-05-26T13:33:32Z"
+      },
+      "shopify.handle-material": {
+        "type": "list.metaobject_reference",
+        "name": "Handle material",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the material used in the product's handle, like bamboo or plastic",
+        "discovered_at": "2026-05-26T13:33:32Z",
+        "last_seen_at": "2026-05-26T13:33:32Z"
+      },
+      "shopify.handle-type": {
+        "type": "list.metaobject_reference",
+        "name": "Handle type",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Specifies the length or presence of a handle on a product, e.g. short, no handle",
+        "discovered_at": "2026-05-26T13:33:32Z",
+        "last_seen_at": "2026-05-26T13:33:32Z"
+      },
+      "shopify.handle-design": {
+        "type": "list.metaobject_reference",
+        "name": "Handle design",
+        "shop_owner_added": false,
+        "example_value": null,
+        "example_from_sku": null,
+        "bq_targets": [],
+        "hint": null,
+        "skip_reason": null,
+        "note": "Describes the style of a tool's handle, such as straight or pistol",
+        "discovered_at": "2026-05-26T13:33:32Z",
+        "last_seen_at": "2026-05-26T13:33:32Z"
       }
     },
     "PRODUCTVARIANT": {
@@ -930,7 +1008,7 @@
         "skip_reason": null,
         "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.custom_label_3": {
         "type": "single_line_text_field",
@@ -943,7 +1021,7 @@
         "skip_reason": null,
         "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.custom_label_2": {
         "type": "single_line_text_field",
@@ -956,7 +1034,7 @@
         "skip_reason": null,
         "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.custom_label_1": {
         "type": "single_line_text_field",
@@ -969,7 +1047,7 @@
         "skip_reason": null,
         "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.custom_label_0": {
         "type": "single_line_text_field",
@@ -982,7 +1060,7 @@
         "skip_reason": null,
         "note": "Label that you assign to a product to help organize bidding and reporting in Shopping campaigns.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.size_system": {
         "type": "single_line_text_field",
@@ -995,7 +1073,7 @@
         "skip_reason": null,
         "note": "The country of the size system used by your product.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.size_type": {
         "type": "single_line_text_field",
@@ -1008,7 +1086,7 @@
         "skip_reason": null,
         "note": "Your apparel product’s cut.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.mpn": {
         "type": "single_line_text_field",
@@ -1021,7 +1099,7 @@
         "skip_reason": null,
         "note": "Your product’s Manufacturer Part Number (MPN).",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.gender": {
         "type": "single_line_text_field",
@@ -1034,7 +1112,7 @@
         "skip_reason": null,
         "note": "The gender for which your product is intended.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.condition": {
         "type": "single_line_text_field",
@@ -1047,7 +1125,7 @@
         "skip_reason": null,
         "note": "The condition of your product at time of sale.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       },
       "mm-google-shopping.age_group": {
         "type": "single_line_text_field",
@@ -1060,7 +1138,7 @@
         "skip_reason": null,
         "note": "The demographic for which your product is intended.",
         "discovered_at": "2026-05-20T07:40:03Z",
-        "last_seen_at": "2026-05-20T08:14:21Z"
+        "last_seen_at": "2026-05-26T13:33:33Z"
       }
     }
   }
