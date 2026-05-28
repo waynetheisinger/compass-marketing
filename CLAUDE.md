@@ -287,6 +287,25 @@ NUMASUITE_ORG_ID=6
 ### Status
 Read endpoints not yet documented — awaiting API details from Jonathon Macleod.
 
+## Image Generation (Gemini)
+
+The `/blog-post` skill generates blog hero images via Google's Gemini image
+models ("Nano Banana"). The API loop is the default; a manual handoff mode (write
+a prompt, generate in an external UI, drop the file back) needs no key.
+
+### Env vars convention
+```
+GEMINI_API_KEY=...                          # required for the API image loop
+BLOG_IMAGE_MODEL=gemini-3-pro-image-preview # optional; default is Nano Banana Pro
+BLOG_DEFAULT_AUTHOR=Wayne Theisinger         # optional; article author default
+```
+
+- `BLOG_IMAGE_MODEL` selects the model: `gemini-3-pro-image-preview` (Nano Banana
+  Pro — best fidelity, product likeness, legible text) or `gemini-2.5-flash-image`
+  (Nano Banana — faster/cheaper). Model IDs are preview-tier and may change.
+- SDK: `.venv/bin/pip install google-genai` (lazy-imported; only needed for the
+  API loop). Never commit `.env`; never hardcode the key.
+
 ## Business Context
 
 **Company:** MowDirect (operated by Wayne Theisinger / Compass)
