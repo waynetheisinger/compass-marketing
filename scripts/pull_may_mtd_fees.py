@@ -55,7 +55,7 @@ def main() -> None:
     print("Amazon — marketplace fees + FBA cost of sales")
     print("=" * 60)
     print("  (SP-API Finances paginates with 2.5s gap; this leg can take a minute)")
-    amazon_rows, amazon_note = ds.fetch_amazon_fees(START, END)
+    amazon_rows, _amazon_revenue, amazon_note = ds.fetch_amazon_fees(START, END)
     if amazon_note:
         print(f"  Note: {amazon_note}")
 

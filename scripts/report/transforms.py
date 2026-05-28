@@ -9,10 +9,18 @@ VAT handling
 The funder report is presented **net of VAT** (ex-VAT). MowDirect's catalogue
 is entirely standard-rated UK garden machinery (20% VAT). Revenue figures
 fetched from the source APIs are inc-VAT by platform convention, so the
-aggregators back out 20% via `_to_net()` before returning. Marketplace
-fees and ad spend are NOT converted — those costs are charged ex-VAT to the
-seller (input VAT is recoverable), so their raw values are already the right
-cost basis for an ex-VAT P&L.
+aggregators back out 20% via `_to_net()` before returning.
+
+VAT on marketplace fees
+-----------------------
+Earlier code assumed marketplace fees were billed ex-VAT. That is WRONG for
+the UK marketplaces: Amazon, eBay and B&Q (Mirakl) all charge 20% UK VAT on
+their seller fees, baked into the amounts their APIs report (verified —
+Amazon: referral 15%×1.2; eBay: 0.35% reg fee bills at 0.42%; Mirakl:
+total_commission = commission_fee + commission_taxes@20%). That VAT is
+reclaimable input VAT, so it is stripped (÷1.20) in `monthly_report.py` to put
+fees on the same ex-VAT basis as net revenue. Shopify payment fees are the
+exception — they carry no VAT (taxAmount = 0). Ad spend is NOT yet stripped.
 """
 from __future__ import annotations
 

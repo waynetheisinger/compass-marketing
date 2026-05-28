@@ -31,7 +31,7 @@ import gzip
 import io
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import requests
 from dotenv import load_dotenv
 
@@ -312,37 +312,69 @@ class AmazonClient:
         return rows
 
     def get_settlement_fees(self, start: datetime, end: datetime) -> list[dict]:
-        """
-        List Amazon Finances events posted between start and end and return
-        flat fee rows for the monthly report.
+        """Backward-compatible wrapper — return just the fee rows."""
+        fee_rows, _revenue = self.get_settlement_fees_and_revenue(start, end)
+        return fee_rows
 
-        Each row: {fee_type, amount, order_id, posted_at, source}.
-        Amounts are signed as Amazon reports them (fees are typically negative);
-        the downstream aggregator takes abs().
+    def get_settlement_fees_and_revenue(
+        self, start: datetime, end: datetime,
+    ) -> tuple[list[dict], float]:
+        """
+        List Amazon Finances events posted between start and end. The endpoint
+        is paged ONCE and the same response yields both:
+
+          - fee rows: {fee_type, amount, order_id, posted_at, source}.
+            Amounts are signed as Amazon reports them (fees typically negative);
+            the downstream aggregator takes abs().
+          - revenue: the sum of "Principal" item charges across shipments, net
+            of refunded principal. Amazon's Principal is the EX-VAT item price
+            (VAT is reported separately as a "Tax" charge), so this is already
+            the net (ex-VAT) sales figure — the caller must NOT divide by 1.20.
+            It is on a *settlement (posted)* basis, the same basis as the fees,
+            so the two reconcile (referral commission lands at the expected % of
+            this figure rather than against a partial BaseLinker estimate).
 
         Pages through Finances API NextToken with a 2.5s sleep — the
         ListFinancialEvents endpoint is rate-limited to ~0.5 req/s.
         """
         path = "/finances/v0/financialEvents"
+
+        # Clamp PostedBefore to ~now. The Finances API rejects a date more than
+        # ~2 minutes in the future, and for an interim (current-month) report the
+        # period end is the month-end. Clamping lets us still pull everything
+        # settled so far; the data naturally ends at Amazon's last posted
+        # settlement, which the caller surfaces as a "correct to …" note. The
+        # 10-minute margin also absorbs host/Amazon clock skew (observed >3 min).
+        # A completed past month is unaffected (its end is already in the past).
+        def _utc(dt: datetime) -> datetime:
+            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+
+        cutoff = datetime.now(timezone.utc) - timedelta(minutes=10)
+        start_utc, end_utc = _utc(start), min(_utc(end), cutoff)
+        if start_utc >= end_utc:
+            return [], 0.0
+
         params: dict = {
-            "PostedAfter":        start.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "PostedBefore":       end.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "PostedAfter":        start_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "PostedBefore":       end_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
             "MaxResultsPerPage":  100,
         }
-        rows: list[dict] = []
+        fee_rows: list[dict] = []
+        revenue = 0.0
         next_token: str | None = None
 
         while True:
             page = self.get(path, params={"NextToken": next_token} if next_token else params)
             payload = page.get("payload", {}) or {}
             events  = payload.get("FinancialEvents", {}) or {}
-            rows.extend(_flatten_finance_events(events))
+            fee_rows.extend(_flatten_finance_events(events))
+            revenue += _sum_principal_revenue(events)
             next_token = payload.get("NextToken")
             if not next_token:
                 break
             time.sleep(2.5)
 
-        return rows
+        return fee_rows, round(revenue, 2)
 
 
 def _money(amount_obj: dict | None) -> float:
@@ -352,6 +384,32 @@ def _money(amount_obj: dict | None) -> float:
         return float(amount_obj.get("CurrencyAmount", 0) or 0)
     except (TypeError, ValueError):
         return 0.0
+
+
+def _sum_principal_revenue(events: dict) -> float:
+    """
+    Sum the "Principal" item charges (the ex-VAT item price) across a page of
+    Finances events, net of refunded principal. Amazon reports VAT separately
+    as a "Tax" charge, so this total is already net of VAT.
+
+    Shipment principals are positive; refund-event principal adjustments are
+    negative, so adding both yields revenue net of returns.
+    """
+    total = 0.0
+
+    for ev in events.get("ShipmentEventList", []) or []:
+        for item in ev.get("ShipmentItemList", []) or []:
+            for charge in item.get("ItemChargeList", []) or []:
+                if charge.get("ChargeType") == "Principal":
+                    total += _money(charge.get("ChargeAmount"))
+
+    for ev in events.get("RefundEventList", []) or []:
+        for item in ev.get("ShipmentItemAdjustmentList", []) or []:
+            for charge in item.get("ItemChargeAdjustmentList", []) or []:
+                if charge.get("ChargeType") == "Principal":
+                    total += _money(charge.get("ChargeAmount"))
+
+    return total
 
 
 def _flatten_finance_events(events: dict) -> list[dict]:

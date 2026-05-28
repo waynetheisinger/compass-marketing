@@ -124,7 +124,14 @@ def fetch_mirakl_orders(
     end: datetime,
     instance: str = "KINGFISHER",
 ) -> tuple[list[dict] | None, str | None]:
-    """Fetch B&Q orders from Mirakl with commission amounts."""
+    """
+    Fetch B&Q orders from Mirakl with commission amounts.
+
+    Filters on order **creation** date (start_date/end_date), not last-update
+    date. Using update date over-counts a short reporting window: an order
+    created weeks earlier but merely re-touched (shipped, status change) inside
+    the window would otherwise be billed as window revenue.
+    """
     prefix = f"MIRAKL_{instance.upper()}"
     required = [f"{prefix}_BASE_URL", f"{prefix}_API_KEY"]
     if missing := [v for v in required if not os.environ.get(v)]:
@@ -142,9 +149,9 @@ def fetch_mirakl_orders(
 
         while True:
             params: dict = {
-                "start_update_date": start_str,
-                "end_update_date":   end_str,
-                "max":               100,
+                "start_date": start_str,
+                "end_date":   end_str,
+                "max":        100,
             }
             if page_token:
                 params["page_token"] = page_token
@@ -317,12 +324,18 @@ def fetch_google_ads_spend(
 def fetch_amazon_fees(
     start: datetime,
     end: datetime,
-) -> tuple[list[dict] | None, str | None]:
+) -> tuple[list[dict] | None, float | None, str | None]:
     """
     Fetch Amazon settlement fee line items via SP-API.
 
     Falls back to BaseLinker commission data if SP-API credentials are absent.
-    Returns (rows, note) where note is None on success or a coverage warning.
+    Returns (rows, revenue, note):
+      - rows:    settlement fee line items (or BaseLinker estimate rows)
+      - revenue: gross sales (inc-VAT) summed from SP-API "Principal" charges,
+                 net of refunds, on the same settlement basis as the fees;
+                 None when only the BaseLinker fallback is available (no
+                 authoritative revenue) — the caller then estimates net itself.
+      - note:    None on success, or a coverage warning.
     """
     sp_required = [
         "AMAZON_LWA_CLIENT_ID",
@@ -336,7 +349,7 @@ def fetch_amazon_fees(
         # Try BaseLinker fallback for referral fees only
         bl_data, bl_note = fetch_baselinker_orders(start, end, sources=["amazon"])
         if bl_note:
-            return None, (
+            return None, None, (
                 f"NOT CONNECTED — SP-API missing: {', '.join(missing)}. "
                 f"BaseLinker fallback also failed: {bl_note}"
             )
@@ -356,15 +369,15 @@ def fetch_amazon_fees(
             f"Connect SP-API for FBA storage, fulfilment, and inbound costs: "
             f"add {', '.join(missing)} to .env"
         )
-        return rows, note
+        return rows, None, note
 
     try:
         from scripts.amazon_client import AmazonClient
         client = AmazonClient()
-        rows = client.get_settlement_fees(start, end)
-        return rows, None
+        rows, revenue = client.get_settlement_fees_and_revenue(start, end)
+        return rows, revenue, None
     except Exception as exc:
-        return None, f"ERROR — {exc}"
+        return None, None, f"ERROR — {exc}"
 
 
 # ---------------------------------------------------------------------------

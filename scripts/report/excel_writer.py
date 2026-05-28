@@ -16,6 +16,31 @@ A placeholder "Commission paid to Wayne Theisinger" line (£0 default) now
 occupies that slot on the Summary tab; set via `wayne_commission` on
 `transforms.build_summary`.
 
+Live formulas ("real spreadsheet")
+----------------------------------
+Derived cells (subtotals, grand totals, every percentage / ratio, and the
+Summary tab's restated channel & ad-spend figures) are written as **Excel
+formulas**, not pre-computed values — so an auditor can click any total and
+see the calculation, and changing a detail-tab figure recalculates the
+Summary. Leaf cells (per-fee amounts, unit counts, per-campaign spend) stay
+as plain values because they come straight from the source APIs and have
+nothing to derive from.
+
+Single source of truth: the detail tabs are built first and register the
+coordinates of their key cells in an `anchors` dict; the Summary tab is
+built last and cross-references those cells (e.g.
+``='Marketplace Fees & Commissions'!C25``). The sheets are then reordered so
+Summary appears first.
+
+openpyxl writes the formula text but does not compute it, so the workbook is
+flagged ``fullCalcOnLoad`` — Excel / Google Sheets / LibreOffice recalculate
+every formula the moment the file is opened. (Anything that reads the *cached*
+value without opening in a spreadsheet app — e.g. macOS Quick Look — would
+see blanks; the agreed consumer is humans opening in Excel/Sheets.)
+
+All division formulas are wrapped in ``IFERROR(…, 0)`` so a zero denominator
+(e.g. a NOT CONNECTED channel with £0 net) renders 0 rather than #DIV/0!.
+
 Usage:
     from scripts.report.excel_writer import build_workbook
     wb = build_workbook(report_data, month_label="March 2026")
@@ -26,6 +51,20 @@ from __future__ import annotations
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
+
+# ---------------------------------------------------------------------------
+# Sheet titles (used for cross-sheet references — keep in one place)
+# ---------------------------------------------------------------------------
+SHEET_SUMMARY     = "Summary"
+SHEET_MARKETPLACE = "Marketplace Fees & Commissions"
+SHEET_FBA         = "FBA Returns & Removals"
+SHEET_CANCEL      = "Cancellations"
+SHEET_ADSPEND     = "Ad Spend"
+SHEET_RAW         = "Raw Data"
+
+# Fallback commission rate if report_data["summary"] doesn't carry one
+# (mirrors WAYNE_COMMISSION_RATE in monthly_report.py).
+_DEFAULT_COMMISSION_RATE = 0.04
 
 # ---------------------------------------------------------------------------
 # Colour palette (matches mock_report.py)
@@ -46,6 +85,33 @@ MUTED_TEXT  = "757575"
 GBP = "£#,##0.00"
 PCT = "0.0%"
 INT = "#,##0"
+
+
+# ---------------------------------------------------------------------------
+# Cell-reference helpers (for building formulas)
+# ---------------------------------------------------------------------------
+
+def _a1(col: int, row: int) -> str:
+    """Return an A1-style reference for a (column, row) pair, e.g. (3, 4) -> C4."""
+    return f"{get_column_letter(col)}{row}"
+
+
+def _xref(sheet_title: str, col: int, row: int) -> str:
+    """
+    Cross-sheet cell reference as a standalone formula, sheet name quoted
+    (handles spaces / '&'), e.g. ``='Ad Spend'!C40``.
+    """
+    return f"='{sheet_title}'!{_a1(col, row)}"
+
+
+def _sum(col: int, row_start: int, row_end: int) -> str:
+    """=SUM over a contiguous single-column range."""
+    return f"=SUM({_a1(col, row_start)}:{_a1(col, row_end)})"
+
+
+def _ratio(num_col: int, num_row: int, den_col: int, den_row: int) -> str:
+    """=IFERROR(num/den, 0) — safe ratio that renders 0 on a zero denominator."""
+    return f"=IFERROR({_a1(num_col, num_row)}/{_a1(den_col, den_row)},0)"
 
 
 # ---------------------------------------------------------------------------
@@ -135,13 +201,13 @@ def _grand_total_row(ws, row: int, ncols: int, label: str,
 
 
 def _note_row(ws, row: int, ncols: int, text: str,
-              bg=PALE_BLUE, fg=DARK_BLUE) -> None:
+              bg=PALE_BLUE, fg=DARK_BLUE, height: float = 20, wrap: bool = False) -> None:
     ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=ncols)
-    ws.row_dimensions[row].height = 20
+    ws.row_dimensions[row].height = height
     c = ws.cell(row=row, column=1, value=text)
     c.fill = _fill(bg)
     c.font = Font(size=9, color=fg, italic=True)
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
+    c.alignment = Alignment(horizontal="left", vertical="center", indent=1, wrap_text=wrap)
 
 
 def _coverage_cell(ws, row: int, col: int, note: str | None) -> None:
@@ -169,117 +235,11 @@ def _mock_banner(ws, row: int, ncols: int) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Tab 1 — Summary
+# Tab 2 — Marketplace Fees & Commissions  (built first; source of truth)
 # ---------------------------------------------------------------------------
 
-def _build_summary(wb: Workbook, data: dict, month_label: str) -> None:
-    ws = wb.create_sheet("Summary")
-    ws.sheet_view.showGridLines = False
-    _set_col_widths(ws, [38, 18, 16, 44])
-    _title(ws, f"MowDirect — Monthly Cost Report  |  {month_label}", 4)
-
-    ws.row_dimensions[2].height = 4
-    _header_row(ws, 3, ["Metric", "Amount (£)", "% of Net Revenue", "Notes"])
-
-    summary   = data["summary"]
-    net       = summary["net"]
-
-    metric_rows = [
-        ("Net Revenue (all channels, ex-VAT)", net, 1.0,
-         "Shopify Direct + eBay + Amazon + ManoMano + OnBuy + B&Q"),
-        None,
-        ("Marketplace commissions & fees", summary["total_fees"],
-         summary["total_fees"] / net if net else 0,
-         "Referral fees, subscriptions, listing charges — see Marketplace Fees tab"),
-        # When the commission is invoiced (overridden), suppress the % column
-        # with an em-dash so funders don't see e.g. 2.9% and ask why it isn't 4%.
-        ("Commission paid to Wayne Theisinger", summary["wayne_commission"],
-         "—" if summary.get("wayne_commission_overridden")
-              else (summary["wayne_commission"] / net if net else 0),
-         summary.get("wayne_commission_note")
-            or "4% of Net Revenue across all channels."),
-        ("Total paid ad spend", summary["total_ads"],
-         summary["total_ads"] / net if net else 0,
-         "Google Ads + eBay Promoted Listings + Amazon Sponsored Products"),
-        None,
-        ("Total deductions (fees + commission + ads)", summary["combined"],
-         summary["combined"] / net if net else 0,
-         "All costs combined"),
-        ("Contribution after deductions", summary["contribution"],
-         summary["contribution"] / net if net else 0,
-         "Net revenue minus all marketplace costs."),
-    ]
-
-    r = 4
-    shade = [PALE_GREEN, WHITE]
-    si = 0
-    for m in metric_rows:
-        if m is None:
-            ws.row_dimensions[r].height = 8
-            r += 1
-            continue
-        label, amount, pct, note = m
-        is_key = label.startswith("Total deductions") or label.startswith("Contribution")
-        bg = LIGHT_GREEN if is_key else shade[si % 2]
-        si += 1
-        ws.row_dimensions[r].height = 18
-        _cell(ws, r, 1, label, align="left", bg=bg, bold=is_key)
-        _cell(ws, r, 2, amount, fmt=GBP,  bg=bg, bold=is_key)
-        _cell(ws, r, 3, pct,   fmt=PCT,   bg=bg, bold=is_key)
-        _cell(ws, r, 4, note,  align="left", bg=bg, fg=MUTED_TEXT, italic=True)
-        r += 1
-
-    r += 1
-
-    # Commission by channel
-    _section_heading(ws, r, "  Commissions & Fees by Channel", 4)
-    r += 1
-    _header_row(ws, r, ["Channel", "Net Revenue (£)", "Commissions & Fees (£)", "Fee %"])
-    r += 1
-    for ch in data["channels"]:
-        bg = PALE_GREEN if r % 2 == 0 else WHITE
-        _cell(ws, r, 1, ch["name"], align="left", bg=bg, bold=True)
-        _cell(ws, r, 2, ch["net"],        fmt=GBP, bg=bg)
-        _cell(ws, r, 3, ch["total_fees"], fmt=GBP, bg=bg)
-        pct_val = ch["total_fees"] / ch["net"] if ch["net"] else 0
-        _cell(ws, r, 4, pct_val, fmt=PCT, bg=bg)
-        r += 1
-    _subtotal_row(ws, r, 4, "TOTAL", {
-        2: (net, GBP),
-        3: (summary["total_fees"], GBP),
-        4: (summary["total_fees"] / net if net else 0, PCT),
-    })
-    r += 2
-
-    # Ad spend summary
-    _section_heading(ws, r, "  Ad Spend by Platform", 4)
-    r += 1
-    _header_row(ws, r, ["Platform", "Spend (£)", "% of Net Revenue", "Note / Coverage"])
-    r += 1
-    for row_data in data.get("ad_spend_platform_summary", []):
-        bg = PALE_GREEN if r % 2 == 0 else WHITE
-        _cell(ws, r, 1, row_data["platform"], align="left", bg=bg, bold=True)
-        _cell(ws, r, 2, row_data["spend"], fmt=GBP, bg=bg)
-        pct_val = row_data["spend"] / net if net else 0
-        _cell(ws, r, 3, pct_val, fmt=PCT, bg=bg)
-        _coverage_cell(ws, r, 4, row_data.get("note"))
-        r += 1
-    _subtotal_row(ws, r, 4, "TOTAL", {
-        2: (summary["total_ads"], GBP),
-        3: (summary["total_ads"] / net if net else 0, PCT),
-    })
-    r += 2
-
-    if data.get("is_mock"):
-        _mock_banner(ws, r, 4)
-
-
-# ---------------------------------------------------------------------------
-# Tab 2 — Marketplace Fees & Commissions
-# ---------------------------------------------------------------------------
-
-def _build_marketplace(wb: Workbook, data: dict, month_label: str) -> None:
-    ws = wb.create_sheet("Marketplace Fees & Commissions")
+def _build_marketplace(wb: Workbook, data: dict, month_label: str, anchors: dict) -> None:
+    ws = wb.create_sheet(SHEET_MARKETPLACE)
     ws.sheet_view.showGridLines = False
     _set_col_widths(ws, [24, 36, 14, 16, 14, 26, 16])
     _title(ws, f"Marketplace Commissions & Fees  |  {month_label}", 7)
@@ -294,6 +254,8 @@ def _build_marketplace(wb: Workbook, data: dict, month_label: str) -> None:
     net     = summary["net"]
     r = 4
 
+    channel_subtotal_rows: list[int] = []   # one per channel (for grand total)
+
     for ch in data["channels"]:
         ch_fees = ch["total_fees"]
         # Suppress zero-amount fee types (e.g. Amazon's FixedClosingFee,
@@ -302,17 +264,25 @@ def _build_marketplace(wb: Workbook, data: dict, month_label: str) -> None:
         # keep the first row so the channel header + coverage cell still
         # appear on the tab.
         nonzero_fees = [r for r in ch["fee_rows"] if float(r.get("amount", 0) or 0) != 0]
-        fee_rows = nonzero_fees or ch["fee_rows"][:1]
+        # Always render at least one row per channel: a channel with no fees at
+        # all this period (e.g. Amazon before settlements post mid-month) still
+        # needs a row so its net cell is written and flows into the grand total,
+        # and so the subtotal's SUM range is valid rather than backwards.
+        fee_rows = (nonzero_fees or ch["fee_rows"][:1]
+                    or [{"label": "No fees this period", "amount": 0.0}])
+
+        first_fee_row = r
+        net_cell_row  = r            # net is written on the channel's first row
         for j, row_data in enumerate(fee_rows):
             bg = PALE_GREEN if r % 2 == 0 else WHITE
             _cell(ws, r, 1, ch["name"] if j == 0 else "",
                   align="left", bg=bg, bold=(j == 0))
             _cell(ws, r, 2, row_data["label"], align="left", bg=bg)
-            _cell(ws, r, 3, row_data["amount"], fmt=GBP, bg=bg)
-            _cell(ws, r, 4, ch["net"] if j == 0 else None,
+            _cell(ws, r, 3, row_data["amount"], fmt=GBP, bg=bg)        # leaf data
+            _cell(ws, r, 4, ch["net"] if j == 0 else None,            # leaf data
                   fmt=GBP if j == 0 else "@", bg=bg)
-            pct_val = row_data["amount"] / ch["net"] if ch["net"] else 0
-            _cell(ws, r, 5, pct_val, fmt=PCT, bg=bg)
+            # Fee % = this fee amount / channel net  (formula)
+            _cell(ws, r, 5, _ratio(3, r, 4, net_cell_row), fmt=PCT, bg=bg)
             _cell(ws, r, 6, ch["source"] if j == 0 else "",
                   align="left", bg=bg, fg=MUTED_TEXT, italic=True)
             if j == 0:
@@ -320,19 +290,42 @@ def _build_marketplace(wb: Workbook, data: dict, month_label: str) -> None:
             else:
                 _cell(ws, r, 7, "", bg=bg)
             r += 1
+        last_fee_row = r - 1
 
+        # Channel subtotal — fees SUM the rows above; net references the
+        # channel's single net cell; fee % divides the two.
         _subtotal_row(ws, r, 7, f"{ch['name']} subtotal", {
-            3: (ch_fees, GBP),
-            4: (ch["net"], GBP),
-            5: (ch_fees / ch["net"] if ch["net"] else 0, PCT),
+            3: (_sum(3, first_fee_row, last_fee_row), GBP),
+            4: (f"={_a1(4, net_cell_row)}", GBP),
+            5: (_ratio(3, r, 4, r), PCT),
         })
+        anchors["mp"][ch["name"]] = {"fees_row": r, "net_row": r}
+        channel_subtotal_rows.append(r)
         r += 1
 
-    _grand_total_row(ws, r, 7, "GRAND TOTAL — MARKETPLACE FEES", {
-        3: (summary["total_fees"], GBP),
-        4: (net, GBP),
-        5: (summary["total_fees"] / net if net else 0, PCT),
+    # Grand total — sum the per-channel subtotal cells (matches the visual
+    # structure: "the total is the sum of the subtotals").
+    gt_row = r
+    fees_gt = "=" + "+".join(_a1(3, rr) for rr in channel_subtotal_rows) if channel_subtotal_rows else 0
+    net_gt  = "=" + "+".join(_a1(4, rr) for rr in channel_subtotal_rows) if channel_subtotal_rows else 0
+    _grand_total_row(ws, gt_row, 7, "GRAND TOTAL — MARKETPLACE FEES", {
+        3: (fees_gt, GBP),
+        4: (net_gt, GBP),
+        5: (_ratio(3, gt_row, 4, gt_row), PCT),
     })
+    anchors["mp_grand_fees_row"] = gt_row
+    anchors["mp_grand_net_row"]  = gt_row
+    r += 2
+
+    # Deliberate margin note — a real finding, not to be massaged out of the data.
+    _note_row(ws, r, 7,
+              "ℹ  Margin note — Amazon's referral fee is ~15% of GROSS (inc-VAT) sales, "
+              "which works out to a HIGHER share of NET (ex-VAT) revenue — ~18-19%, as "
+              "shown above. This is a real effect to be aware of: Amazon's effective cost "
+              "against net revenue genuinely exceeds the 15% headline rate. It is surfaced "
+              "here deliberately rather than masked. (Fees are already shown ex-VAT — the "
+              "reclaimable 20% VAT Amazon charges on its fees has been removed.)",
+              bg=AMBER, fg="E65100", height=58, wrap=True)
     r += 2
 
     if data.get("is_mock"):
@@ -341,16 +334,15 @@ def _build_marketplace(wb: Workbook, data: dict, month_label: str) -> None:
 
 # ---------------------------------------------------------------------------
 # Tab 3 — FBA Returns & Removals
-# (FBA Cost of Sales tab removed — funder report no longer surfaces it.)
 # ---------------------------------------------------------------------------
 
-def _build_fba_returns(wb: Workbook, data: dict, month_label: str) -> None:
+def _build_fba_returns(wb: Workbook, data: dict, month_label: str, anchors: dict) -> None:
     """
-    New tab covering customer returns by disposition, removal shipments
-    (return-to-seller vs disposal vs liquidation), unfulfillable inventory
-    snapshot, and the £ cost of removal/disposal activity.
+    Customer returns by disposition, removal shipments (return-to-seller vs
+    disposal vs liquidation), unfulfillable inventory snapshot, and the £ cost
+    of removal/disposal activity. Totals and percentages are formulas.
     """
-    ws = wb.create_sheet("FBA Returns & Removals")
+    ws = wb.create_sheet(SHEET_FBA)
     ws.sheet_view.showGridLines = False
     _set_col_widths(ws, [40, 14, 14, 16, 38])
     _title(ws, f"Amazon FBA — Returns, Removals & Stranded Stock  |  {month_label}",
@@ -385,45 +377,50 @@ def _build_fba_returns(wb: Workbook, data: dict, month_label: str) -> None:
     r += 1
 
     by_disposition = cust.get("by_disposition", [])
-    total_units    = cust.get("total_units", 0)
     if not by_disposition:
         _cell(ws, r, 1, "No customer returns received this month.",
               align="left", bg=PALE_BLUE, italic=True, fg=MUTED_TEXT)
         ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=5)
         r += 1
     else:
+        first_disp_row = r
+        # The TOTAL row lands directly after the disposition rows; % cells
+        # reference its Units cell (col 2). Forward reference — fine in Excel.
+        total_row = first_disp_row + len(by_disposition)
         for row_data in by_disposition:
             bg = PALE_BLUE if r % 2 == 0 else WHITE
             _cell(ws, r, 1, row_data["label"], align="left", bg=bg)
-            _cell(ws, r, 2, row_data["units"], fmt=INT, bg=bg)
-            _cell(ws, r, 3, row_data["lines"], fmt=INT, bg=bg)
-            pct = row_data["units"] / total_units if total_units else 0
-            _cell(ws, r, 4, pct, fmt=PCT, bg=bg)
+            _cell(ws, r, 2, row_data["units"], fmt=INT, bg=bg)        # leaf
+            _cell(ws, r, 3, row_data["lines"], fmt=INT, bg=bg)        # leaf
+            _cell(ws, r, 4, _ratio(2, r, 2, total_row), fmt=PCT, bg=bg)
             _cell(ws, r, 5, "", bg=bg)
             r += 1
+        last_disp_row = r - 1
 
         _subtotal_row(ws, r, 5, "TOTAL CUSTOMER RETURNS", {
-            2: (total_units, INT),
-            3: (cust.get("total_lines", 0), INT),
-            4: (1.0 if total_units else 0, PCT),
+            2: (_sum(2, first_disp_row, last_disp_row), INT),
+            3: (_sum(3, first_disp_row, last_disp_row), INT),
+            4: (_ratio(2, r, 2, r), PCT),
         }, bg=LIGHT_BLUE, fg=DARK_BLUE)
+        assert r == total_row, "customer-returns total row drifted"
         r += 1
 
-        # Sellable vs unsellable highlight
+        # Sellable vs unsellable highlight (units are aggregates → leaf data;
+        # % references the total-units cell).
         sellable   = cust.get("sellable_units", 0)
         unsellable = cust.get("unsellable_units", 0)
         bg = PALE_BLUE
         _cell(ws, r, 1, "↳ Returned to active inventory", align="left", bg=bg, italic=True)
         _cell(ws, r, 2, sellable, fmt=INT, bg=bg)
         _cell(ws, r, 3, "", bg=bg)
-        _cell(ws, r, 4, sellable / total_units if total_units else 0, fmt=PCT, bg=bg)
+        _cell(ws, r, 4, _ratio(2, r, 2, total_row), fmt=PCT, bg=bg)
         _cell(ws, r, 5, "Available for re-sale immediately.",
               align="left", bg=bg, fg=MUTED_TEXT, italic=True)
         r += 1
         _cell(ws, r, 1, "↳ Stranded as unfulfillable", align="left", bg=bg, italic=True)
         _cell(ws, r, 2, unsellable, fmt=INT, bg=bg)
         _cell(ws, r, 3, "", bg=bg)
-        _cell(ws, r, 4, unsellable / total_units if total_units else 0, fmt=PCT, bg=bg)
+        _cell(ws, r, 4, _ratio(2, r, 2, total_row), fmt=PCT, bg=bg)
         _cell(ws, r, 5, "Sit at Amazon until removed, disposed of, or aged out.",
               align="left", bg=bg, fg=MUTED_TEXT, italic=True)
         r += 2
@@ -449,17 +446,18 @@ def _build_fba_returns(wb: Workbook, data: dict, month_label: str) -> None:
         ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=5)
         r += 1
     else:
+        first_type_row = r
         for row_data in by_type:
             bg = PALE_BLUE if r % 2 == 0 else WHITE
             _cell(ws, r, 1, row_data["order_type"], align="left", bg=bg, bold=True)
-            _cell(ws, r, 2, row_data["units"], fmt=INT, bg=bg)
-            _cell(ws, r, 3, row_data["lines"], fmt=INT, bg=bg)
+            _cell(ws, r, 2, row_data["units"], fmt=INT, bg=bg)        # leaf
+            _cell(ws, r, 3, row_data["lines"], fmt=INT, bg=bg)        # leaf
             _cell(ws, r, 4, "", bg=bg)
             _cell(ws, r, 5, type_meaning.get(row_data["order_type"], ""),
                   align="left", bg=bg, fg=MUTED_TEXT, italic=True)
             r += 1
         _subtotal_row(ws, r, 5, "TOTAL REMOVAL UNITS", {
-            2: (removal.get("total_units", 0), INT),
+            2: (_sum(2, first_type_row, r - 1), INT),
         }, bg=LIGHT_BLUE, fg=DARK_BLUE)
         r += 1
 
@@ -485,19 +483,18 @@ def _build_fba_returns(wb: Workbook, data: dict, month_label: str) -> None:
         ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=5)
         r += 1
     else:
-        total_cost = 0.0
+        first_fee_row = r
         for label, amount in sorted(fees.items(), key=lambda x: -x[1]):
             bg = PALE_BLUE if r % 2 == 0 else WHITE
             _cell(ws, r, 1, label, align="left", bg=bg)
-            _cell(ws, r, 2, amount, fmt=GBP, bg=bg)
+            _cell(ws, r, 2, amount, fmt=GBP, bg=bg)                   # leaf
             _cell(ws, r, 3, "", bg=bg)
             _cell(ws, r, 4, "", bg=bg)
             _cell(ws, r, 5, fee_notes.get(label, ""),
                   align="left", bg=bg, fg=MUTED_TEXT, italic=True)
-            total_cost += amount
             r += 1
         _subtotal_row(ws, r, 5, "TOTAL REMOVAL / DISPOSAL COST", {
-            2: (round(total_cost, 2), GBP),
+            2: (_sum(2, first_fee_row, r - 1), GBP),
         }, bg=LIGHT_BLUE, fg=DARK_BLUE)
         r += 1
 
@@ -525,18 +522,25 @@ def _build_fba_returns(wb: Workbook, data: dict, month_label: str) -> None:
         ("Inbound receiving",               snap.get("inbound_receiving", 0),
          "Arrived at FC, being checked in."),
     ]
+    unfulfillable_row = researching_row = None
     for label, units, meaning in snapshot_rows:
         bg = PALE_BLUE if r % 2 == 0 else WHITE
         is_pickup = label in {"Unfulfillable", "Researching"}
         _cell(ws, r, 1, label, align="left", bg=bg, bold=is_pickup)
-        _cell(ws, r, 2, units, fmt=INT, bg=bg, bold=is_pickup)
+        _cell(ws, r, 2, units, fmt=INT, bg=bg, bold=is_pickup)        # leaf
         _cell(ws, r, 3, "", bg=bg)
         _cell(ws, r, 4, "", bg=bg)
         _cell(ws, r, 5, meaning, align="left", bg=bg, fg=MUTED_TEXT, italic=True)
+        if label == "Unfulfillable":
+            unfulfillable_row = r
+        elif label == "Researching":
+            researching_row = r
         r += 1
 
+    # Available to be picked up / disposed = Unfulfillable + Researching
+    pickup_formula = f"={_a1(2, unfulfillable_row)}+{_a1(2, researching_row)}"
     _subtotal_row(ws, r, 5, "AVAILABLE TO BE PICKED UP / DISPOSED", {
-        2: (snap.get("available_to_pickup", 0), INT),
+        2: (pickup_formula, INT),
     }, bg=LIGHT_BLUE, fg=DARK_BLUE)
     r += 2
 
@@ -552,16 +556,17 @@ def _build_fba_returns(wb: Workbook, data: dict, month_label: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Tab 3c — Cancellations
+# Tab 4 — Cancellations
 # ---------------------------------------------------------------------------
 
-def _build_cancellations(wb: Workbook, data: dict, month_label: str) -> None:
+def _build_cancellations(wb: Workbook, data: dict, month_label: str, anchors: dict) -> None:
     """
     Cancelled orders by channel, broken out by attribution where the
     platform exposes it (customer / seller). Direct channel APIs only —
     BaseLinker excluded to avoid double-counting against Amazon SP-API.
+    Subtotals and the grand total are formulas.
     """
-    ws = wb.create_sheet("Cancellations")
+    ws = wb.create_sheet(SHEET_CANCEL)
     ws.sheet_view.showGridLines = False
     _set_col_widths(ws, [22, 36, 12, 16, 38])
     _title(ws, f"Order Cancellations  |  {month_label}", 5)
@@ -575,16 +580,14 @@ def _build_cancellations(wb: Workbook, data: dict, month_label: str) -> None:
                          "Orders", "Value (£)", "Notes / Coverage"])
     r += 1
 
-    grand_orders = 0
-    grand_value  = 0.0
+    subtotal_order_rows: list[int] = []   # channel subtotal rows (col 3)
+    subtotal_value_rows: list[int] = []   # channel subtotal rows (col 4)
 
     for channel_name, channel_summary in cancellations.items():
         if not channel_summary and channel_name not in notes:
             continue
 
-        channel_orders = (channel_summary or {}).get("total_orders", 0)
-        channel_value  = (channel_summary or {}).get("total_value", 0.0)
-        by_reason      = (channel_summary or {}).get("by_reason", [])
+        by_reason = (channel_summary or {}).get("by_reason", [])
 
         if not by_reason:
             bg = PALE_GREEN if r % 2 == 0 else WHITE
@@ -604,13 +607,14 @@ def _build_cancellations(wb: Workbook, data: dict, month_label: str) -> None:
             r += 1
             continue
 
+        first_reason_row = r
         for j, row_data in enumerate(by_reason):
             bg = PALE_GREEN if r % 2 == 0 else WHITE
             _cell(ws, r, 1, channel_name if j == 0 else "",
                   align="left", bg=bg, bold=(j == 0))
             _cell(ws, r, 2, row_data["label"], align="left", bg=bg)
-            _cell(ws, r, 3, row_data["orders"], fmt=INT, bg=bg)
-            _cell(ws, r, 4, row_data["value"],  fmt=GBP, bg=bg)
+            _cell(ws, r, 3, row_data["orders"], fmt=INT, bg=bg)       # leaf
+            _cell(ws, r, 4, row_data["value"],  fmt=GBP, bg=bg)       # leaf
             if j == 0:
                 _coverage_cell(ws, r, 5, notes.get(channel_name))
             else:
@@ -618,16 +622,20 @@ def _build_cancellations(wb: Workbook, data: dict, month_label: str) -> None:
             r += 1
 
         _subtotal_row(ws, r, 5, f"{channel_name} subtotal", {
-            3: (channel_orders, INT),
-            4: (channel_value,  GBP),
+            3: (_sum(3, first_reason_row, r - 1), INT),
+            4: (_sum(4, first_reason_row, r - 1), GBP),
         })
-        grand_orders += channel_orders
-        grand_value  += channel_value
+        subtotal_order_rows.append(r)
+        subtotal_value_rows.append(r)
         r += 1
 
+    orders_gt = ("=" + "+".join(_a1(3, rr) for rr in subtotal_order_rows)
+                 if subtotal_order_rows else 0)
+    value_gt  = ("=" + "+".join(_a1(4, rr) for rr in subtotal_value_rows)
+                 if subtotal_value_rows else 0)
     _grand_total_row(ws, r, 5, "TOTAL CANCELLATIONS", {
-        3: (grand_orders,        INT),
-        4: (round(grand_value, 2), GBP),
+        3: (orders_gt, INT),
+        4: (value_gt,  GBP),
     })
     r += 2
 
@@ -642,11 +650,11 @@ def _build_cancellations(wb: Workbook, data: dict, month_label: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Tab 4 — Ad Spend
+# Tab 5 — Ad Spend  (built before Summary; registers per-platform anchors)
 # ---------------------------------------------------------------------------
 
-def _build_ad_spend(wb: Workbook, data: dict, month_label: str) -> None:
-    ws = wb.create_sheet("Ad Spend")
+def _build_ad_spend(wb: Workbook, data: dict, month_label: str, anchors: dict) -> None:
+    ws = wb.create_sheet(SHEET_ADSPEND)
     ws.sheet_view.showGridLines = False
     # Platform | Campaign | Spend | Conversions | Conv Value | Cost/Conv | ROAS | Impr | Clicks | CTR | Coverage
     _set_col_widths(ws, [18, 38, 12, 12, 14, 14, 10, 12, 10, 10, 18])
@@ -659,9 +667,7 @@ def _build_ad_spend(wb: Workbook, data: dict, month_label: str) -> None:
         "Impressions", "Clicks", "CTR", "Coverage",
     ])
 
-    summary  = data["summary"]
     ad_rows  = data.get("ad_spend_rows", [])
-
     # Filter: campaigns with spend > 0 only (Google Ads has hundreds of zero-spend campaigns)
     ad_rows = [r_ for r_ in ad_rows if (r_.get("spend") or 0) > 0]
 
@@ -672,76 +678,82 @@ def _build_ad_spend(wb: Workbook, data: dict, month_label: str) -> None:
         p = row_data["platform"]
         platforms.setdefault(p, []).append(row_data)
 
-    grand_conversions = 0.0
-    grand_conv_value  = 0.0
+    # Per-platform "total" cells we can reference for the grand total and for
+    # the Summary cross-link. For a single-campaign platform this is the lone
+    # campaign row; for a multi-campaign platform it's the subtotal row.
+    platform_spend_rows: list[int] = []
+    platform_conv_rows:  list[int] = []   # only platforms that have conversions
+    platform_cval_rows:  list[int] = []
 
     for platform, rows in platforms.items():
         # Sort by spend desc within platform so the heavy hitters lead
         rows = sorted(rows, key=lambda x: -(x.get("spend") or 0))
-        platform_total_spend      = sum(r_["spend"] for r_ in rows)
-        platform_total_conv       = sum((r_.get("conversions") or 0) for r_ in rows)
-        platform_total_conv_value = sum((r_.get("conversions_value") or 0) for r_ in rows)
+        platform_total_conv = sum((r_.get("conversions") or 0) for r_ in rows)
 
-        for j, row_data in enumerate(rows):
+        first_row = r
+        for row_data in rows:
             bg = PALE_GREEN if r % 2 == 0 else WHITE
-            spend = row_data["spend"]
             conv  = row_data.get("conversions")
             conv_value = row_data.get("conversions_value")
             impr   = row_data.get("impressions")
             clicks = row_data.get("clicks")
 
-            _cell(ws, r, 1, platform if j == 0 else "",
-                  align="left", bg=bg, bold=(j == 0))
+            _cell(ws, r, 1, platform if r == first_row else "",
+                  align="left", bg=bg, bold=(r == first_row))
             _cell(ws, r, 2, row_data["campaign_name"], align="left", bg=bg)
-            _cell(ws, r, 3, spend, fmt=GBP, bg=bg)
+            _cell(ws, r, 3, row_data["spend"], fmt=GBP, bg=bg)        # leaf
 
             if conv is not None:
-                _cell(ws, r, 4, round(float(conv), 2), fmt="0.00", bg=bg)
+                _cell(ws, r, 4, round(float(conv), 2), fmt="0.00", bg=bg)   # leaf
             else:
                 _cell(ws, r, 4, "—", align="center", bg=bg, fg=MUTED_TEXT)
 
             if conv_value is not None:
-                _cell(ws, r, 5, round(float(conv_value), 2), fmt=GBP, bg=bg)
+                _cell(ws, r, 5, round(float(conv_value), 2), fmt=GBP, bg=bg)  # leaf
             else:
                 _cell(ws, r, 5, "—", align="center", bg=bg, fg=MUTED_TEXT)
 
+            # Cost / Conv = spend / conversions
             if conv and float(conv) > 0:
-                _cell(ws, r, 6, spend / float(conv), fmt=GBP, bg=bg)
+                _cell(ws, r, 6, _ratio(3, r, 4, r), fmt=GBP, bg=bg)
             else:
                 _cell(ws, r, 6, "—", align="center", bg=bg, fg=MUTED_TEXT)
 
-            if conv_value and spend > 0:
-                _cell(ws, r, 7, float(conv_value) / spend, fmt="0.00", bg=bg)
+            # ROAS = conv value / spend
+            if conv_value and row_data["spend"] > 0:
+                _cell(ws, r, 7, _ratio(5, r, 3, r), fmt="0.00", bg=bg)
             else:
                 _cell(ws, r, 7, "—", align="center", bg=bg, fg=MUTED_TEXT)
 
-            _cell(ws, r, 8, impr,   fmt=INT if impr   else "@", bg=bg)
-            _cell(ws, r, 9, clicks, fmt=INT if clicks else "@", bg=bg)
+            _cell(ws, r, 8, impr,   fmt=INT if impr   else "@", bg=bg)   # leaf
+            _cell(ws, r, 9, clicks, fmt=INT if clicks else "@", bg=bg)   # leaf
+            # CTR = clicks / impressions
             if impr and clicks:
-                _cell(ws, r, 10, clicks / impr, fmt=PCT, bg=bg)
+                _cell(ws, r, 10, _ratio(9, r, 8, r), fmt=PCT, bg=bg)
             else:
                 _cell(ws, r, 10, "—", align="center", bg=bg, fg=MUTED_TEXT)
             _coverage_cell(ws, r, 11, data.get("ad_spend_notes", {}).get(platform))
             r += 1
+        last_row = r - 1
 
         if len(rows) > 1:
-            subtotal_cells: dict = {3: (platform_total_spend, GBP)}
+            subtotal_cells: dict = {3: (_sum(3, first_row, last_row), GBP)}
             if platform_total_conv:
-                subtotal_cells[4] = (round(platform_total_conv, 2), "0.00")
-                subtotal_cells[5] = (round(platform_total_conv_value, 2), GBP)
-                subtotal_cells[6] = (
-                    platform_total_spend / platform_total_conv if platform_total_conv else 0,
-                    GBP,
-                )
-                subtotal_cells[7] = (
-                    platform_total_conv_value / platform_total_spend if platform_total_spend else 0,
-                    "0.00",
-                )
+                subtotal_cells[4] = (_sum(4, first_row, last_row), "0.00")
+                subtotal_cells[5] = (_sum(5, first_row, last_row), GBP)
+                subtotal_cells[6] = (_ratio(3, r, 4, r), GBP)
+                subtotal_cells[7] = (_ratio(5, r, 3, r), "0.00")
             _subtotal_row(ws, r, 11, f"{platform} subtotal", subtotal_cells)
+            spend_total_row = r
             r += 1
+        else:
+            spend_total_row = first_row   # single campaign row is the total
 
-        grand_conversions += platform_total_conv
-        grand_conv_value  += platform_total_conv_value
+        platform_spend_rows.append(spend_total_row)
+        if platform_total_conv:
+            platform_conv_rows.append(spend_total_row)
+            platform_cval_rows.append(spend_total_row)
+        anchors["ads_platform"][platform] = spend_total_row
 
     # Not-connected platforms
     for row_data in data.get("ad_spend_not_connected", []):
@@ -753,26 +765,24 @@ def _build_ad_spend(wb: Workbook, data: dict, month_label: str) -> None:
         r += 1
 
     r += 1
-    grand_cells: dict = {3: (summary["total_ads"], GBP)}
-    if grand_conversions:
-        grand_cells[4] = (round(grand_conversions, 2), "0.00")
-        grand_cells[5] = (round(grand_conv_value, 2), GBP)
-        grand_cells[6] = (
-            summary["total_ads"] / grand_conversions if grand_conversions else 0,
-            GBP,
-        )
-        grand_cells[7] = (
-            grand_conv_value / summary["total_ads"] if summary["total_ads"] else 0,
-            "0.00",
-        )
-    _grand_total_row(ws, r, 11, "TOTAL AD SPEND", grand_cells)
+    gt_row = r
+    grand_cells: dict = {
+        3: ("=" + "+".join(_a1(3, rr) for rr in platform_spend_rows) if platform_spend_rows else 0, GBP),
+    }
+    if platform_conv_rows:
+        grand_cells[4] = ("=" + "+".join(_a1(4, rr) for rr in platform_conv_rows), "0.00")
+        grand_cells[5] = ("=" + "+".join(_a1(5, rr) for rr in platform_cval_rows), GBP)
+        grand_cells[6] = (_ratio(3, gt_row, 4, gt_row), GBP)
+        grand_cells[7] = (_ratio(5, gt_row, 3, gt_row), "0.00")
+    _grand_total_row(ws, gt_row, 11, "TOTAL AD SPEND", grand_cells)
+    anchors["ads_grand_row"] = gt_row
     r += 2
 
     _note_row(ws, r, 11,
               "ℹ  Showing campaigns with spend only. Conversions / Conv. Value / "
               "Cost-per-Conv / ROAS reflect Google Ads conversion tracking; "
-              "eBay Promoted Listings and Amazon Sponsored Products do not yet "
-              "feed conversion data into this report.")
+              "eBay Promoted Listings does not yet feed conversion data "
+              "into this report.")
     r += 2
 
     if data.get("is_mock"):
@@ -780,11 +790,166 @@ def _build_ad_spend(wb: Workbook, data: dict, month_label: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Tab 5 — Raw Data
+# Tab 1 — Summary  (built last; cross-references the detail tabs)
+# ---------------------------------------------------------------------------
+
+def _build_summary(wb: Workbook, data: dict, month_label: str, anchors: dict) -> None:
+    ws = wb.create_sheet(SHEET_SUMMARY)
+    ws.sheet_view.showGridLines = False
+    _set_col_widths(ws, [38, 18, 16, 44])
+    _title(ws, f"MowDirect — Monthly Cost Report  |  {month_label}", 4)
+
+    ws.row_dimensions[2].height = 4
+    _header_row(ws, 3, ["Metric", "Amount (£)", "% of Net Revenue", "Notes"])
+
+    summary = data["summary"]
+    rate    = summary.get("commission_rate", _DEFAULT_COMMISSION_RATE)
+
+    # Cross-sheet references into the detail tabs (the single source of truth)
+    ref_mp_net   = _xref(SHEET_MARKETPLACE, 4, anchors["mp_grand_net_row"])
+    ref_mp_fees  = _xref(SHEET_MARKETPLACE, 3, anchors["mp_grand_fees_row"])
+    ref_ads      = _xref(SHEET_ADSPEND,     3, anchors["ads_grand_row"])
+
+    def _metric(r, label, amount, pct, note, is_key=False, bg=WHITE):
+        ws.row_dimensions[r].height = 18
+        _cell(ws, r, 1, label, align="left", bg=bg, bold=is_key)
+        _cell(ws, r, 2, amount, fmt=GBP, bg=bg, bold=is_key)
+        _cell(ws, r, 3, pct,    fmt=PCT, bg=bg, bold=is_key)
+        _cell(ws, r, 4, note,   align="left", bg=bg, fg=MUTED_TEXT, italic=True)
+
+    def _spacer(r):
+        ws.row_dimensions[r].height = 8
+
+    # ── Headline deduction block ───────────────────────────────────────
+    r = 4
+    net_row = r
+    _metric(r, "Net Revenue (all channels, ex-VAT)",
+            ref_mp_net,                                           # cross-ref
+            _ratio(2, net_row, 2, net_row),                       # = 100%
+            "Shopify Direct + eBay + Amazon + ManoMano + OnBuy + B&Q")
+    r += 1
+    _spacer(r); r += 1
+
+    fees_row = r
+    _metric(r, "Marketplace commissions & fees",
+            ref_mp_fees,
+            _ratio(2, fees_row, 2, net_row),
+            "Referral fees, subscriptions, listing charges — see Marketplace Fees tab")
+    r += 1
+
+    comm_row = r
+    if summary.get("wayne_commission_overridden"):
+        # Audited £ figure — keep as a hard value; suppress the % (em-dash) so
+        # funders don't see e.g. 2.9% and ask why it isn't the headline 4%.
+        _metric(r, "Commission paid to Wayne Theisinger",
+                summary["wayne_commission"], "—",
+                summary.get("wayne_commission_note") or "Invoiced Value.")
+    else:
+        # Auto estimate — show it as a live formula on Net Revenue so the
+        # rate is auditable on the face of the sheet.
+        _metric(r, "Commission paid to Wayne Theisinger",
+                f"={_a1(2, net_row)}*{rate}",
+                _ratio(2, comm_row, 2, net_row),
+                summary.get("wayne_commission_note")
+                    or f"{rate:.0%} of Net Revenue across all channels.")
+    r += 1
+
+    ads_row = r
+    _metric(r, "Total paid ad spend",
+            ref_ads,
+            _ratio(2, ads_row, 2, net_row),
+            "Google Ads + eBay Promoted Listings")
+    r += 1
+    _spacer(r); r += 1
+
+    ded_row = r
+    _metric(r, "Total deductions (fees + commission + ads)",
+            f"={_a1(2, fees_row)}+{_a1(2, comm_row)}+{_a1(2, ads_row)}",
+            _ratio(2, ded_row, 2, net_row),
+            "All costs combined", is_key=True, bg=LIGHT_GREEN)
+    r += 1
+
+    con_row = r
+    _metric(r, "Contribution after deductions",
+            f"={_a1(2, net_row)}-{_a1(2, ded_row)}",
+            _ratio(2, con_row, 2, net_row),
+            "Net revenue minus all marketplace costs.", is_key=True, bg=LIGHT_GREEN)
+    r += 2
+
+    # Expose headline anchors for the regression test / oracle comparison.
+    anchors["summary"] = {
+        "net_row": net_row, "fees_row": fees_row, "commission_row": comm_row,
+        "ads_row": ads_row, "deductions_row": ded_row, "contribution_row": con_row,
+    }
+
+    # ── Commissions & Fees by Channel ──────────────────────────────────
+    _section_heading(ws, r, "  Commissions & Fees by Channel", 4)
+    r += 1
+    _header_row(ws, r, ["Channel", "Net Revenue (£)", "Commissions & Fees (£)", "Fee %"])
+    r += 1
+    first_ch_row = r
+    for ch in data["channels"]:
+        bg = PALE_GREEN if r % 2 == 0 else WHITE
+        mp = anchors["mp"][ch["name"]]
+        _cell(ws, r, 1, ch["name"], align="left", bg=bg, bold=True)
+        _cell(ws, r, 2, _xref(SHEET_MARKETPLACE, 4, mp["net_row"]),  fmt=GBP, bg=bg)
+        _cell(ws, r, 3, _xref(SHEET_MARKETPLACE, 3, mp["fees_row"]), fmt=GBP, bg=bg)
+        _cell(ws, r, 4, _ratio(3, r, 2, r), fmt=PCT, bg=bg)
+        r += 1
+    last_ch_row = r - 1
+    _subtotal_row(ws, r, 4, "TOTAL", {
+        2: (_sum(2, first_ch_row, last_ch_row), GBP),
+        3: (_sum(3, first_ch_row, last_ch_row), GBP),
+        4: (_ratio(3, r, 2, r), PCT),
+    })
+    r += 2
+
+    # ── Ad Spend by Platform ───────────────────────────────────────────
+    # Maps the Summary platform labels onto the Ad Spend tab's platform names
+    # so each spend cell can cross-reference the detail tab where possible.
+    ad_name_map = {
+        "Google Ads":                "Google Ads",
+        "eBay Promoted Listings":    "eBay",
+        "Amazon Sponsored Products": "Amazon",
+    }
+    _section_heading(ws, r, "  Ad Spend by Platform", 4)
+    r += 1
+    _header_row(ws, r, ["Platform", "Spend (£)", "% of Net Revenue", "Note / Coverage"])
+    r += 1
+    first_ad_row = r
+    any_ad_row = False
+    for row_data in data.get("ad_spend_platform_summary", []):
+        bg = PALE_GREEN if r % 2 == 0 else WHITE
+        platform = row_data["platform"]
+        ad_tab_name = ad_name_map.get(platform)
+        anchor_row  = anchors["ads_platform"].get(ad_tab_name)
+        _cell(ws, r, 1, platform, align="left", bg=bg, bold=True)
+        if anchor_row is not None:
+            _cell(ws, r, 2, _xref(SHEET_ADSPEND, 3, anchor_row), fmt=GBP, bg=bg)
+        else:
+            # No matching detail-tab cell (e.g. NOT CONNECTED) — fall back to value.
+            _cell(ws, r, 2, row_data["spend"], fmt=GBP, bg=bg)
+        _cell(ws, r, 3, _ratio(2, r, 2, net_row), fmt=PCT, bg=bg)
+        _coverage_cell(ws, r, 4, row_data.get("note"))
+        any_ad_row = True
+        r += 1
+    if any_ad_row:
+        _subtotal_row(ws, r, 4, "TOTAL", {
+            2: (_sum(2, first_ad_row, r - 1), GBP),
+            3: (_ratio(2, r, 2, net_row), PCT),
+        })
+        r += 2
+
+    if data.get("is_mock"):
+        _mock_banner(ws, r, 4)
+
+
+# ---------------------------------------------------------------------------
+# Tab 6 — Raw Data  (pure transaction dump — no derived cells, no formulas)
 # ---------------------------------------------------------------------------
 
 def _build_raw(wb: Workbook, data: dict, month_label: str) -> None:
-    ws = wb.create_sheet("Raw Data")
+    ws = wb.create_sheet(SHEET_RAW)
     ws.sheet_view.showGridLines = False
     _set_col_widths(ws, [20, 14, 36, 14, 22, 22])
     _title(ws, f"Raw Data — Transactions  |  {month_label}", 6)
@@ -912,12 +1077,23 @@ def _build_raw(wb: Workbook, data: dict, month_label: str) -> None:
 # Public entry point
 # ---------------------------------------------------------------------------
 
-def build_workbook(report_data: dict, month_label: str) -> Workbook:
+def build_workbook(report_data: dict, month_label: str,
+                   collect_anchors: dict | None = None) -> Workbook:
     """
-    Build the complete 5-tab workbook from assembled report_data.
+    Build the complete 6-tab workbook from assembled report_data.
+
+    Derived cells are written as live Excel formulas; the Summary tab
+    cross-references the detail tabs. The detail tabs are built first so their
+    cell coordinates are known when the Summary references them, then the
+    sheets are reordered so Summary appears first.
+
+    `collect_anchors`: if a dict is provided, it is populated with the key cell
+    coordinates the builders register (used by the regression test to locate
+    headline cells). Production callers can ignore it.
 
     report_data keys (all optional — missing data renders as NOT CONNECTED):
-        summary              — from transforms.build_summary()
+        summary              — from transforms.build_summary(); may carry
+                               `commission_rate` for the auto-commission formula
         channels             — list of channel dicts with fee_rows
         fba_returns          — payload for the FBA Returns & Removals tab
         fba_returns_note     — coverage note for that tab
@@ -936,11 +1112,27 @@ def build_workbook(report_data: dict, month_label: str) -> Workbook:
     wb = Workbook()
     wb.remove(wb.active)
 
-    _build_summary(wb, report_data, month_label)
-    _build_marketplace(wb, report_data, month_label)
-    _build_fba_returns(wb, report_data, month_label)
-    _build_cancellations(wb, report_data, month_label)
-    _build_ad_spend(wb, report_data, month_label)
+    anchors: dict = {"mp": {}, "ads_platform": {}}
+
+    # Detail tabs first (they register the cells the Summary will reference).
+    _build_marketplace(wb, report_data, month_label, anchors)
+    _build_fba_returns(wb, report_data, month_label, anchors)
+    _build_cancellations(wb, report_data, month_label, anchors)
+    _build_ad_spend(wb, report_data, month_label, anchors)
+    # Summary last — cross-references the detail tabs.
+    _build_summary(wb, report_data, month_label, anchors)
     _build_raw(wb, report_data, month_label)
+
+    # Reorder so Summary is the first visible tab.
+    order = [SHEET_SUMMARY, SHEET_MARKETPLACE, SHEET_FBA,
+             SHEET_CANCEL, SHEET_ADSPEND, SHEET_RAW]
+    wb._sheets.sort(key=lambda s: order.index(s.title))
+
+    # Make Excel / Sheets / LibreOffice recalculate every formula on open
+    # (openpyxl writes the formula text but does not compute cached values).
+    wb.calculation.fullCalcOnLoad = True
+
+    if collect_anchors is not None:
+        collect_anchors.update(anchors)
 
     return wb
