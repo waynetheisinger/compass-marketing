@@ -1,0 +1,23 @@
+NumaSuite → Shopify dry-run reconciliation
+==================================================
+NumaSuite rows:                  2311
+  NumaSuite rows with EAN:       0
+Shopify variants:                1891
+  with barcode:                  1271
+
+SKU verbatim (no-op):            161
+EAN-matched (1:1, rewrite):      0
+  including no-op:               0
+EAN conflicts (review):          0
+Title-fallback rows:             2148
+
+Match method breakdown:
+  tfidf+rapidfuzz: 2148
+  sku-verbatim: 161
+
+Review queue size:               2148
+
+Proposed rewrites: reports/numasuite_dry_run/proposed_rewrites.csv
+Review queue:      reports/numasuite_dry_run/review_queue.csv
+
+No Shopify mutations were performed.

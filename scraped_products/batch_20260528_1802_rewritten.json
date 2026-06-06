@@ -1,0 +1,40 @@
+{
+  "title": "Chipperfield HCS870 Petrol Scythe-Bar Mower — 87cm, 196cc Loncin Engine",
+  "description_html": "<p><strong>Heavy-duty clearance for ground a brushcutter can&rsquo;t touch.</strong> The Chipperfield HCS870 is a self-propelled, walk-behind scythe-bar mower built for landowners, smallholders and grounds-care professionals who need to reclaim large areas of overgrown vegetation in a single pass.</p><p>Powered by a <strong>196cc Loncin OHV four-stroke petrol engine</strong>, the HCS870 delivers the torque needed to drive its 87cm reciprocating cutter bar through dense grass, nettles, brambles and woody weeds. Overhead-valve technology keeps fuel consumption and emissions down, while the easy-pull recoil start gets you working in seconds.</p><p>The <strong>scissor-action cutter bar</strong> slices cleanly rather than mulching, so cuttings lie flat for easy collection or rotting down &mdash; the same principle traditional hay-cutting machinery has used for decades, scaled into a one-person walk-behind format. The cutting height adjusts from <strong>30mm to 80mm</strong>, letting you tailor the finish from neat orchard floor to rough conservation clearance.</p><p><strong>330mm tractor-tread pneumatic tyres</strong> give the HCS870 the grip and ground clearance to work confidently on slopes, hummocky pasture and uneven terrain that would stop a conventional rotary mower. A single forward gear and direct drive layout keep operation straightforward &mdash; engage the bar, set your line, walk it through.</p><p><strong>Built for the work, backed for two years.</strong> Every Chipperfield machine ships with a <strong>2-year manufacturer warranty</strong> and full UK parts and service support through MowDirect.</p><h3>Delivery &amp; Assembly</h3><p>The HCS870 is supplied boxed for self-assembly. If you&rsquo;d prefer to take delivery of a machine that&rsquo;s ready to run, add our <strong>Pre-Delivery Inspection</strong> at checkout &mdash; we&rsquo;ll assemble, fuel, run-test and pallet the unit before dispatch. Where our own van route covers your postcode, we&rsquo;ll deliver in person and walk you through first-use setup.</p>",
+  "vendor": "Chipperfield",
+  "product_type": "Scythe Mowers",
+  "status": "active",
+  "sku": "HCS870",
+  "barcode": "5061122340295",
+  "price": "849.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {"code": "manufacturer", "label": "Manufacturer", "value": "Chipperfield"},
+      {"code": "engine_make", "label": "Engine Make", "value": "Loncin"},
+      {"code": "engine_type", "label": "Engine Type", "value": "Petrol 4-Stroke"},
+      {"code": "engine_capacity", "label": "Engine Capacity", "value": "196cc"},
+      {"code": "engine_power", "label": "Engine Power", "value": "4.8hp / 3.6kW @ 3600rpm"},
+      {"code": "engine_fuel_tank_capacity", "label": "Engine Fuel-Tank Capacity", "value": "1 Litre"},
+      {"code": "engine_starting_system", "label": "Engine Starting System", "value": "Recoil"},
+      {"code": "attribute_transmission", "label": "Transmission", "value": "Manual – 1 Forward"},
+      {"code": "differential", "label": "Differential", "value": "No"},
+      {"code": "cutting_width", "label": "Cutting Width", "value": "87cm"},
+      {"code": "attribute_wheels", "label": "Wheels", "value": "330mm with Pneumatic Tyres"},
+      {"code": "product_weight", "label": "Product Weight", "value": "61kg"},
+      {"code": "warranty", "label": "Warranty", "value": "2 Years"}
+    ],
+    "custom.feature_bullets": "<ul><li>87cm reciprocating scythe-bar cuts cleanly through dense grass, nettles, brambles and woody weeds</li><li>Reliable 196cc Loncin OHV four-stroke petrol engine — strong torque, low running costs, easy recoil start</li><li>Self-propelled single-forward drive keeps the operator in control without fatigue</li><li>330mm tractor-tread pneumatic tyres for grip on slopes and uneven ground</li><li>Adjustable cutting height 30–80mm to suit anything from orchard floors to rough conservation clearance</li><li>Protective cowling shields engine and drivetrain from thrown debris</li><li>Backed by a 2-year manufacturer warranty and full UK parts and service support</li><li>Supplied boxed for self-assembly — optional Pre-Delivery Inspection available for a ready-to-run machine</li></ul>",
+    "custom.bullet_two": "196cc Loncin OHV petrol engine delivers the torque to drive an 87cm scythe bar through vegetation a brushcutter can’t handle.",
+    "custom.bullet_three": "Scissor-action cutter bar slices cleanly rather than mulching, leaving cuttings flat for easy collection or rotting down.",
+    "filter.brand": "Chipperfield",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Scythe.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Scythe-Left.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Engine.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Tyre.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Handles.png"
+  ],
+  "source_url": "https://compassgm.co.uk/product/chipperfield-by-spectrum-hcs870-scythe-bar-mower/"
+}

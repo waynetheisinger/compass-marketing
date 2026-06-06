@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Dump every Shopify variant (SKU + product title) to a matcher-ready CSV.
+"""Dump every Shopify variant (SKU + product title + barcode) to a matcher-ready CSV.
 
-Output is feed-compatible with `matcher.py`'s default `file_b` shape:
+Output:
 
-    sku,title
-    SBS40CB,SPECTRUM BY SWIFT SBS40CB 4.0AH BATTERY
+    sku,title,barcode
+    SBS40CB,SPECTRUM BY SWIFT SBS40CB 4.0AH BATTERY,5060000000000
     ...
+
+`barcode` is empty when the variant has no GS1/EAN/UPC set. The title-only
+matcher consumes `sku,title` and ignores trailing columns, so this remains
+feed-compatible with `matcher.py`.
 
 Run from the repo root — credentials come from `.env` via
 `scripts.shopify_client.ShopifyClient`:
@@ -33,6 +37,7 @@ query catalogue($cursor: String, $q: String) {
       variants(first: 100) {
         nodes {
           sku
+          barcode
         }
       }
     }
@@ -74,7 +79,7 @@ def main():
 
     with ShopifyClient() as client, open(args.out, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["sku", "title"])
+        writer.writerow(["sku", "title", "barcode"])
 
         cursor = None
         page = 0
@@ -91,7 +96,8 @@ def main():
                     if not sku and not args.include_blank_sku:
                         blanks_dropped += 1
                         continue
-                    writer.writerow([sku, title])
+                    barcode = (variant.get("barcode") or "").strip()
+                    writer.writerow([sku, title, barcode])
                     rows_written += 1
 
             page_info = products["pageInfo"]

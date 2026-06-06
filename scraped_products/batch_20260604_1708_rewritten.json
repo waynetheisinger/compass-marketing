@@ -1,0 +1,103 @@
+{
+  "title": "Spectrum TG42PD Self-Propelled Petrol Lawnmower",
+  "description_html": "<p>The <strong>Spectrum TG42PD</strong> takes everything that made the TG40PD a favourite and adds more muscle. Its <strong>139cc petrol engine</strong> delivers extra power for thicker, longer grass, yet still fires up easily on a smooth recoil pull — no cables, no charging, just mow.</p><p>Self-propelled drive does the pushing for you, so a 40cm-wide pass over lawns of up to 400m² feels effortless rather than a workout. Large rear wheels and premium <strong>ball-bearing mounted wheels</strong> keep it rolling smoothly over uneven ground — a genuine step up from the bush-mounted wheels found on cheaper machines, and one that pays off in durability season after season.</p><p>Dial in the finish you want with a <strong>single-lever height adjustment</strong> offering seven positions from 25mm to 75mm — drop low for a neat summer striped look, or raise the cut to keep the lawn healthy through dry spells. Clippings collect in the generous <strong>40-litre grass box</strong>, so you spend less time emptying and more time mowing; or fit the included <strong>mulch plug</strong> and return fine clippings to the lawn as a natural feed.</p><p>The tough <strong>steel cutter deck</strong> shrugs off knocks and stone strikes, while soft-grip handles adjust to your height and fold flat for compact storage in the shed or garage. At just 29kg the TG42PD is light on its feet for a petrol mower, and an <strong>Operator Presence Control</strong> stops the blade and engine the moment you release the handle.</p><p>Like every Spectrum machine, the TG42PD is backed by our <strong>5-year domestic warranty</strong> — own-brand value with cover the big names rarely match.</p>",
+  "vendor": "Spectrum",
+  "product_type": "Lawnmowers",
+  "status": "active",
+  "sku": "TG42PD",
+  "barcode": "5065022450993",
+  "price": "199.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Spectrum"
+      },
+      {
+        "code": "engine_capacity",
+        "label": "Engine Capacity",
+        "value": "139cc"
+      },
+      {
+        "code": "engine_starting_system",
+        "label": "Engine Starting System",
+        "value": "Recoil"
+      },
+      {
+        "code": "drive",
+        "label": "Drive",
+        "value": "Self Propelled"
+      },
+      {
+        "code": "cutting_width",
+        "label": "Cutting Width",
+        "value": "40cm"
+      },
+      {
+        "code": "cutting_heights",
+        "label": "Cutting Heights",
+        "value": "25-75mm (7 Positions)"
+      },
+      {
+        "code": "height_adjustment",
+        "label": "Height Adjustment",
+        "value": "Single Lever"
+      },
+      {
+        "code": "grass_collector",
+        "label": "Grass Collector",
+        "value": "40 Litres"
+      },
+      {
+        "code": "mulching",
+        "label": "Mulching",
+        "value": "Yes – Mulching-Plug Included"
+      },
+      {
+        "code": "cutting_deck_material",
+        "label": "Cutting deck material",
+        "value": "Steel"
+      },
+      {
+        "code": "handles",
+        "label": "Handles",
+        "value": "Adjustable / Foldable with Soft Grip"
+      },
+      {
+        "code": "safety_features",
+        "label": "Safety Features",
+        "value": "Operator Presence Control"
+      },
+      {
+        "code": "lawn_size",
+        "label": "Lawn Size",
+        "value": "Up to 400m2"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "29kg"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>139cc petrol engine — more power than the TG40PD, with easy recoil starting</li><li>Self-propelled drive takes the effort out of mowing</li><li>40cm cutting width, ideal for lawns up to 400m²</li><li>Seven cutting heights from 25mm to 75mm on a single lever</li><li>Tough steel cutter deck built to last</li><li>40-litre grass collector with included mulch plug</li><li>Premium ball-bearing mounted wheels for smoother, longer-lasting running</li><li>Large rear wheels for grip and easy manoeuvring</li><li>Soft-grip handles — height-adjustable and fold flat for storage</li><li>Operator Presence Control stops blade and engine on release</li><li>Light and nimble at just 29kg</li><li>5-year Spectrum domestic warranty</li>\n</ul>",
+    "custom.bullet_two": "Self-propelled drive and ball-bearing mounted wheels make light work of lawns up to 400m².",
+    "custom.bullet_three": "Backed by Spectrum's 5-year domestic warranty for season-after-season peace of mind.",
+    "filter.brand": "Spectrum",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-TG42PD-Lawnmower-Main-700-x-700.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/intro3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/engine3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/wheels3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/mulch3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/handle3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/bars3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/pul3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/box3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/image4.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/image5.png"
+  ],
+  "source_url": "https://compassgm.co.uk/product/tg42pd/"
+}

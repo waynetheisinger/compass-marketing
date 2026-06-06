@@ -1,0 +1,92 @@
+{
+  "title": "Chipperfield by Spectrum HCS870 Scythe-Bar Mower",
+  "description_html": "<p><span style=\"font-size: 18pt;\"><strong>Chipperfield By Spectrum HCS870 Scythe-Bar Mower</strong></span></p><p>Take on dense, well-established vegetation that a handheld brushcutter couldn’t hope to handle with the <strong>Chipperfield HCS870</strong>&nbsp;– a powerful, self-propelled scythe-bar mower designed for fast, efficient clearance of large areas.</p><p>At its heart is a robust <strong>196cc four-stroke Loncin OHV petrol engine</strong>, built for reliability and low running costs. With <strong>easy-pull recoil start</strong> and fuel-saving, emission-cutting overhead-valve technology, it delivers dependable performance in tough conditions.</p><p>The <strong>87cm reciprocating cutter bar</strong> uses a sharp, scissor-style action to slice cleanly through thick grass, weeds, nettles, and brambles, achieving a work rate no conventional brushcutter can match. Meanwhile, <strong>330mm tractor-style pneumatic tyres</strong> provide outstanding traction, letting you power across uneven ground, slopes, and rough terrain with ease.</p><p>For maximum versatility, the Chipperfield HCS370 also features <strong>adjustable cutting heights (30–80mm)</strong>, so you can adapt the finish to suit the type of vegetation you’re tackling.</p><p><strong>Delivery &amp; Assembly</strong></p><p>The Chipperfield HCS870 scythe is supplied boxed for home assembly. For complete convenience, you can opt for our Pre-Delivery Inspection service, where the machine is fully assembled, run, and tested prior to dispatch. Delivery is made securely on a pallet, and where possible, we’ll deliver by van and provide a brief demonstration—so you’re ready to get to work straight away.</p>",
+  "vendor": "Chipperfield",
+  "product_type": "Brushcutters",
+  "status": "active",
+  "sku": "HCS870",
+  "barcode": "5061122340295",
+  "price": "849.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Chipperfield"
+      },
+      {
+        "code": "engine_make",
+        "label": "Engine Make",
+        "value": "Loncin"
+      },
+      {
+        "code": "engine_type",
+        "label": "Engine Type",
+        "value": "Petrol 4-Stroke"
+      },
+      {
+        "code": "engine_capacity",
+        "label": "Engine Capacity",
+        "value": "196cc"
+      },
+      {
+        "code": "engine_power",
+        "label": "Engine Power",
+        "value": "4.8hp / 3.6kW @ 3600rpm"
+      },
+      {
+        "code": "engine_fuel_tank_capacity",
+        "label": "Engine Fuel-Tank Capacity",
+        "value": "1 Litre"
+      },
+      {
+        "code": "engine_starting_system",
+        "label": "Engine Starting System",
+        "value": "Recoil"
+      },
+      {
+        "code": "attribute_transmission",
+        "label": "Transmission",
+        "value": "Manual – 1 Forward"
+      },
+      {
+        "code": "differential",
+        "label": "Differential",
+        "value": "No"
+      },
+      {
+        "code": "cutting_width",
+        "label": "Cutting Width",
+        "value": "87cm"
+      },
+      {
+        "code": "attribute_wheels",
+        "label": "Wheels",
+        "value": "330mm with Pneumatic Tyres"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "61kg"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "2 Years"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>Powerful and highly productive scythe mower designed for demanding heavy-duty landscaping tasks</li><li>Reliable, fuel-efficient 4-stroke OHV engine delivers clean and economical performance</li><li>Extra-wide cutting swathe enables fast, efficient coverage of large areas</li><li>Large agricultural-style pneumatic tyres provide excellent traction and smooth manoeuvrability in long grass</li><li>Single-speed forward drive system ensures simple and dependable operation</li><li>Protective cowling helps prevent damaging debris from entering vital components</li><li>Supplied boxed for self-assembly, or choose the Bundle option for a fully assembled, ready-to-use machine</li>\n</ul>",
+    "custom.bullet_two": "Reliable, fuel-efficient 4-stroke OHV engine delivers clean and economical performance",
+    "custom.bullet_three": "Extra-wide cutting swathe enables fast, efficient coverage of large areas",
+    "filter.brand": "Chipperfield",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Scythe.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Scythe-Left.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Engine.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Tyre.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/05/Chipperfield-HCS870-Handles.png"
+  ],
+  "source_url": "https://compassgm.co.uk/product/chipperfield-by-spectrum-hcs870-scythe-bar-mower/"
+}

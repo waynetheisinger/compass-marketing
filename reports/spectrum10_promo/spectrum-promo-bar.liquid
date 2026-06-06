@@ -1,0 +1,182 @@
+{%- comment -%}
+  Spectrum 10% OFF promo banner with live countdown.
+  Built for MowDirect (Empire theme). Self-hiding after the offer ends.
+  All copy/colours/dates are editable in the theme customiser.
+  Default accent #ff6600 / dark #121212 match the live theme palette.
+{%- endcomment -%}
+
+{%- assign sid = section.id -%}
+
+<div
+  class="spectrum-promo"
+  id="spectrum-promo-{{ sid }}"
+  data-deadline="{{ section.settings.deadline }}"
+  style="
+    --sp-bg: {{ section.settings.bg_color }};
+    --sp-accent: {{ section.settings.accent_color }};
+    --sp-text: {{ section.settings.text_color }};
+    display: none;
+  ">
+  <div class="spectrum-promo__inner">
+
+    <div class="spectrum-promo__copy">
+      <p class="spectrum-promo__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="spectrum-promo__heading">{{ section.settings.heading }}</h2>
+      <p class="spectrum-promo__sub">
+        {{ section.settings.subtext }}
+        {%- if section.settings.code != blank -%}
+          <span class="spectrum-promo__code" role="button" tabindex="0"
+                data-code="{{ section.settings.code }}"
+                title="Click to copy">{{ section.settings.code }}</span>
+        {%- endif -%}
+      </p>
+    </div>
+
+    <div class="spectrum-promo__countdown" aria-label="Time remaining">
+      <div class="spectrum-promo__unit"><span data-days>00</span><label>Days</label></div>
+      <div class="spectrum-promo__sep">:</div>
+      <div class="spectrum-promo__unit"><span data-hours>00</span><label>Hrs</label></div>
+      <div class="spectrum-promo__sep">:</div>
+      <div class="spectrum-promo__unit"><span data-mins>00</span><label>Min</label></div>
+      <div class="spectrum-promo__sep">:</div>
+      <div class="spectrum-promo__unit"><span data-secs>00</span><label>Sec</label></div>
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <a class="spectrum-promo__cta" href="{{ section.settings.button_link }}">
+        {{ section.settings.button_label }}
+      </a>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<style>
+  #spectrum-promo-{{ sid }} {
+    background: var(--sp-bg);
+    color: var(--sp-text);
+    padding: 22px 16px;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__copy { flex: 1 1 320px; min-width: 280px; }
+  #spectrum-promo-{{ sid }} .spectrum-promo__eyebrow {
+    margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--sp-accent);
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__heading {
+    margin: 0 0 6px; font-size: clamp(22px, 3vw, 32px); line-height: 1.1; font-weight: 800;
+    color: var(--sp-text);
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__sub {
+    margin: 0; font-size: 15px; opacity: .92;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__code {
+    display: inline-block; margin-left: 6px; padding: 2px 10px; border-radius: 6px;
+    font-weight: 800; letter-spacing: .06em; cursor: pointer;
+    background: var(--sp-accent); color: #fff; border: 2px dashed rgba(255,255,255,.55);
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__code:hover { filter: brightness(1.08); }
+  #spectrum-promo-{{ sid }} .spectrum-promo__countdown {
+    display: flex; align-items: center; gap: 6px; flex: 0 0 auto;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__unit {
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+    border-radius: 10px; padding: 8px 10px; min-width: 56px;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__unit span {
+    font-size: 26px; font-weight: 800; line-height: 1; color: var(--sp-text);
+    font-variant-numeric: tabular-nums;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__unit label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: .1em; opacity: .7; margin-top: 4px;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__sep { font-size: 22px; font-weight: 700; opacity: .4; }
+  #spectrum-promo-{{ sid }} .spectrum-promo__cta {
+    flex: 0 0 auto; background: var(--sp-accent); color: #fff; text-decoration: none;
+    font-weight: 800; padding: 14px 26px; border-radius: 8px; white-space: nowrap;
+    transition: filter .15s ease;
+  }
+  #spectrum-promo-{{ sid }} .spectrum-promo__cta:hover { filter: brightness(1.08); }
+  @media (max-width: 749px) {
+    #spectrum-promo-{{ sid }} .spectrum-promo__inner { justify-content: center; text-align: center; }
+    #spectrum-promo-{{ sid }} .spectrum-promo__copy { text-align: center; }
+    #spectrum-promo-{{ sid }} .spectrum-promo__cta { width: 100%; text-align: center; }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('spectrum-promo-{{ sid }}');
+    if (!root) return;
+    var deadline = new Date(root.getAttribute('data-deadline')).getTime();
+    if (isNaN(deadline)) { root.style.display = ''; return; } // show anyway if date bad
+
+    var dEl = root.querySelector('[data-days]'),
+        hEl = root.querySelector('[data-hours]'),
+        mEl = root.querySelector('[data-mins]'),
+        sEl = root.querySelector('[data-secs]');
+
+    function pad(n){ return (n < 10 ? '0' : '') + n; }
+
+    function tick() {
+      var diff = deadline - Date.now();
+      if (diff <= 0) { root.style.display = 'none'; clearInterval(timer); return; }
+      root.style.display = '';
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      dEl.textContent = pad(d); hEl.textContent = pad(h);
+      mEl.textContent = pad(m); sEl.textContent = pad(s);
+    }
+    tick();
+    var timer = setInterval(tick, 1000);
+
+    // Click-to-copy discount code
+    var code = root.querySelector('.spectrum-promo__code');
+    if (code) {
+      function copyCode() {
+        var val = code.getAttribute('data-code');
+        if (navigator.clipboard) { navigator.clipboard.writeText(val); }
+        var orig = code.textContent;
+        code.textContent = 'Copied!';
+        setTimeout(function(){ code.textContent = orig; }, 1200);
+      }
+      code.addEventListener('click', copyCode);
+      code.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); copyCode(); } });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Spectrum promo bar",
+  "tag": "section",
+  "class": "shopify-section-spectrum-promo",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "10% OFF" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Buy Any Spectrum Product — Save 10%" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Use code SPECTRUM10 at checkout on any Spectrum item. Offer ends midnight, 31st May 2026." },
+    { "type": "text", "id": "code", "label": "Discount code (click-to-copy chip)", "default": "SPECTRUM10" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Spectrum" },
+    { "type": "url", "id": "button_link", "label": "Button link", "default": "/collections/spectrum" },
+    { "type": "text", "id": "deadline", "label": "Countdown deadline (ISO 8601, UTC)", "info": "Midnight 31 May 2026 BST = 2026-05-31T22:59:59Z", "default": "2026-05-31T22:59:59Z" },
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#121212" },
+    { "type": "color", "id": "accent_color", "label": "Accent / button", "default": "#ff6600" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#ffffff" }
+  ],
+  "presets": [
+    { "name": "Spectrum promo bar" }
+  ]
+}
+{% endschema %}
