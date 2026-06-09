@@ -113,25 +113,13 @@ _COL_ORDER = [
 
 _TAG_RE = re.compile(r"<[^>]+>")
 
-
-def _pin_image_format(url: str) -> str:
-    """Pin a Shopify CDN image URL to a deterministic format for Tesco's fetcher.
-
-    By default Shopify content-negotiates on the Accept header (Vary: Accept):
-    a webp-capable client gets webp bytes from a `.png` URL. Tesco's image
-    fetcher's Accept header is outside our control, so the served format would
-    be non-deterministic and could be webp — which some marketplace ingesters
-    reject. `format=pjpg` is the only Shopify param that reliably forces a fixed
-    format (progressive JPEG, universally accepted) regardless of Accept.
-    `format=png` is ignored by Shopify (it doesn't transcode *to* png), and the
-    path extension can't be changed (the stored asset is .png). So pjpg it is.
-    """
-    if not url or "cdn.shopify.com" not in url:
-        return url
-    if "format=" in url:
-        return url
-    sep = "&" if "?" in url else "?"
-    return f"{url}{sep}format=pjpg"
+# NB on image formats: Shopify's CDN content-negotiates on the Accept header
+# (Vary: Accept). A *browser* (Accept: image/webp) gets webp bytes from a .png
+# URL — which is why these URLs look like they "download as webp". A *server*
+# fetcher (Accept: */*, which Mirakl/Tesco use) gets image/png, matching the
+# .png extension. So the bare .png URL is correct for the import; do NOT pin
+# format=pjpg — that would force jpeg for everyone and create a jpeg-bytes-from-
+# a-.png-URL mismatch for Tesco's fetcher. (Verified 2026-06-09.)
 
 
 def _strip_html(s: str) -> str:
@@ -177,13 +165,11 @@ def _shopify_lookup(client, ean, *skus):
             n = edges[0]["node"]
             imgs = []
             if n.get("featuredImage"):
-                imgs.append(_pin_image_format(n["featuredImage"]["url"]))
+                imgs.append(n["featuredImage"]["url"])
             for e in n.get("media", {}).get("edges", []):
                 url = (e.get("node") or {}).get("image", {}).get("url")
-                if url:
-                    url = _pin_image_format(url)
-                    if url not in imgs:
-                        imgs.append(url)
+                if url and url not in imgs:
+                    imgs.append(url)
             return {
                 "title": n.get("title"),
                 "marketingText": _strip_html(n.get("descriptionHtml")),
