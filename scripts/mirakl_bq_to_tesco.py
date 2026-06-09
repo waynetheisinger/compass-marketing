@@ -86,6 +86,87 @@ def _extras_for(sku: str) -> dict:
             out[attr] = by_sku["*"]
     return out
 
+
+# --- Shopify-source → Tesco-attribute mapping engine (rich optional fields) ---
+_ATTR_MAPPINGS = {k: v for k, v in _OV.get("attribute_mappings", {}).items()
+                  if not k.startswith("_") and isinstance(v, dict)}
+_LI_RE = re.compile(r"<li[^>]*>(.*?)</li>", re.IGNORECASE | re.DOTALL)
+
+
+def _as_json(v):
+    if isinstance(v, (dict, list)):
+        return v
+    try:
+        return json.loads(v)
+    except (TypeError, json.JSONDecodeError):
+        return None
+
+
+def _num(v):
+    """Format a number without a trailing .0 (Tesco spec fields are strings)."""
+    try:
+        f = float(v)
+    except (TypeError, ValueError):
+        return None
+    return str(int(f)) if f == int(f) else f"{f:g}"
+
+
+def _src_value(source: str, sources: dict):
+    kind, _, arg = (source or "").partition(":")
+    if kind == "const":
+        return arg
+    if kind == "field":
+        return sources.get(arg)
+    if kind == "weight":
+        return sources.get("weight")
+    if kind == "metafield":
+        m = sources.get("metafields", {}).get(arg)
+        return m["value"] if m else None
+    if kind == "display_attribute":
+        return sources.get("display_attributes", {}).get(arg)
+    return None
+
+
+def _apply_transform(val, t: str | None):
+    if val is None:
+        return None
+    if not t:
+        return val if isinstance(val, str) else str(val)
+    if t in ("dim_value", "weight_value"):
+        d = val if isinstance(val, dict) else _as_json(val)
+        return _num(d.get("value")) if isinstance(d, dict) else _num(val)
+    if t in ("dim_unit", "weight_unit"):
+        d = val if isinstance(val, dict) else _as_json(val)
+        return (d.get("unit") if isinstance(d, dict) else None)  # raw Shopify unit; value-list-backed on Tesco — verify
+    if t == "list_first":
+        lst = _as_json(val)
+        return str(lst[0]) if isinstance(lst, list) and lst else None
+    if t == "list_join":
+        lst = _as_json(val)
+        return ", ".join(map(str, lst)) if isinstance(lst, list) else None
+    if t == "strip_html":
+        return _strip_html(str(val))
+    if t.startswith("bullet:"):
+        items = [_strip_html(m) for m in _LI_RE.findall(str(val))]
+        i = int(t.split(":", 1)[1])
+        return items[i - 1] if 0 < i <= len(items) else None
+    return str(val)
+
+
+def _apply_mappings(cat_gid: str, sources: dict) -> dict:
+    """Resolve attribute_mappings for a product. '*' scope first, then the
+    product's category (category-scoped wins). Empty/None results are skipped."""
+    out = {}
+    for scope in ("*", cat_gid):
+        for attr, spec in _ATTR_MAPPINGS.get(scope, {}).items():
+            if attr.startswith("_") or not isinstance(spec, dict):
+                continue
+            val = _apply_transform(_src_value(spec.get("source"), sources),
+                                   spec.get("transform"))
+            if val not in (None, "", []):
+                out[attr] = val
+    return out
+
 # CSV column order — editable facets (baseColour) kept near the front.
 _COL_ORDER = [
     "shopifyHierarchyId", "sku", "barcode", "brand", "baseColour",
@@ -225,14 +306,50 @@ query($q:String!){
   products(first:1, query:$q){
     edges{ node{
       title
+      vendor
       descriptionHtml
       category { id fullName }
       featuredImage { url }
       media(first:10){ edges{ node{ ... on MediaImage { image{ url } } } } }
+      metafields(first:100){ edges{ node{ namespace key type value } } }
+      variants(first:1){ edges{ node{
+        inventoryItem{ measurement{ weight{ value unit } } }
+      } } }
     } }
   }
 }
 """
+
+
+def shopify_sources(node: dict) -> dict:
+    """Normalise a Shopify product node into a flat map of mappable sources the
+    attribute-mapping layer can read: metafields keyed 'ns.key', the parsed
+    custom.display_attributes (keyed by their code), variant weight, and the
+    title/vendor fields."""
+    mfs = {f"{e['node']['namespace']}.{e['node']['key']}":
+           {"type": e["node"]["type"], "value": e["node"]["value"]}
+           for e in node.get("metafields", {}).get("edges", [])}
+    disp = {}
+    da = mfs.get("custom.display_attributes")
+    if da and da.get("value"):
+        try:
+            for a in json.loads(da["value"]):
+                if a.get("code"):
+                    disp[a["code"]] = a.get("value")
+        except (json.JSONDecodeError, TypeError):
+            pass
+    weight = None
+    vedges = node.get("variants", {}).get("edges", [])
+    if vedges:
+        weight = (((vedges[0]["node"].get("inventoryItem") or {})
+                   .get("measurement") or {}).get("weight"))
+    return {
+        "metafields": mfs,
+        "display_attributes": disp,
+        "weight": weight,                  # {"value":..,"unit":..} or None
+        "title": node.get("title"),
+        "vendor": node.get("vendor"),
+    }
 
 
 def _shopify_lookup(client, ean, *skus):
@@ -257,6 +374,7 @@ def _shopify_lookup(client, ean, *skus):
                 "category_name": (n.get("category") or {}).get("fullName"),
                 "images": imgs,
                 "matched_by": q.split(":")[0],
+                "sources": shopify_sources(n),
             }
     return None
 
@@ -350,8 +468,9 @@ def build(only_skus: set[str] | None = None, only_eans: set[str] | None = None):
             }
             for col, url in zip(fs.extra_images, images[1:]):
                 row[col] = url
+            row.update(_apply_mappings(cat_gid, sh.get("sources") or {}))  # rich optional fields
             row.update(_DEFAULTS)
-            row.update(_extras_for(sku))   # category-specific attrs from config
+            row.update(_extras_for(sku))   # category-specific attrs / per-SKU overrides win
             rows.append(row)
             listable_recs.append({
                 "sku": sku, "brand": brand, "cat": cat_name,

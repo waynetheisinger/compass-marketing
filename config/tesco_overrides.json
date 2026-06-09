@@ -39,5 +39,49 @@
   ],
   "attribute_extras": {
     "_doc": "Extra Tesco attribute values to inject into rows. Shape: {attrCode: {SKU_or_'*': value}}. '*' applies to every product; a SKU key wins over '*'. Use for category-specific required attrs (e.g. batterySize) that aren't auto-filled."
+  },
+  "attribute_mappings": {
+    "_doc": "Shopify-source → Tesco-attribute mappings that auto-fill OPTIONAL spec fields (Cutting Width, Bulletpoints, dimensions, Power Source, etc.) so listings are rich, not bare. Scoped by Tesco category gid, or '*' for all. Shape: {<gid|'*'>: {<tescoAttrCode>: {source, transform}}}. Keys are Tesco attribute CODES (not portal labels) — get them from `tesco_shopify_shape.py list-attributes`. Sources: metafield:<ns.key>, display_attribute:<code>, field:<title|vendor>, weight, const:<value>. Transforms: dim_value | dim_unit | weight_value | weight_unit | list_first | list_join | strip_html | bullet:N | (omit for raw). Category-scoped mappings win over '*'. Managed by /tesco-shopify-shape.",
+    "gid://shopify/TaxonomyCategory/hg-12-3-5-1": {
+      "width": {
+        "source": "metafield:marketplace.width",
+        "transform": "dim_value"
+      },
+      "height": {
+        "source": "metafield:market.height",
+        "transform": "dim_value"
+      },
+      "depth": {
+        "source": "metafield:market.depth",
+        "transform": "dim_value"
+      },
+      "grossWeight": {
+        "source": "weight",
+        "transform": "weight_value"
+      },
+      "lawnMowerCuttingWidth": {
+        "source": "metafield:filter.cutting_width",
+        "transform": "dim_value"
+      },
+      "lawnMowerManufacturerWarrantyDescription": {
+        "source": "metafield:custom.bullet_three"
+      },
+      "lawnMowerPowerSource": {
+        "source": "metafield:filter.fuel_group",
+        "transform": "list_first"
+      },
+      "productFeatures1": {
+        "source": "metafield:custom.feature_bullets",
+        "transform": "bullet:1"
+      },
+      "productFeatures2": {
+        "source": "metafield:custom.feature_bullets",
+        "transform": "bullet:2"
+      },
+      "productFeatures3": {
+        "source": "metafield:custom.feature_bullets",
+        "transform": "bullet:3"
+      }
+    }
   }
 }

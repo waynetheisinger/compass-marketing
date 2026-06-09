@@ -12,8 +12,12 @@ generates the import CSV.
 
 Tesco is unlike B&Q ([[mirakl_kingfisher_attribute_quirks]] / `/bq-shopify-shape`):
 its category system **is** the Shopify product taxonomy and its attribute schema
-is **API-discoverable**, so most fields fill themselves. This skill only captures
-the things that genuinely need a human decision.
+is **API-discoverable**. The *required* fields auto-fill, but each category also
+exposes **dozens of optional spec fields** (Cutting Width, Grass Box Capacity,
+Voltage, dimensions, Bulletpoints, What's Included, Power Source, Warranty…) that
+make a listing rich and rank well. This skill's **main job** is mapping Shopify
+data onto those fields (`attribute_mappings`) — plus the per-product override
+knobs. Don't settle for required-only; that's a bare listing.
 
 The Python script `scripts/tesco_shopify_shape.py` is pure config I/O plus a
 couple of live Tesco reads (attribute schema, taxonomy search). **You** (Claude)
@@ -35,7 +39,8 @@ drive the conversation and call its subcommands.
 | `sku_category` | leaf-category gid override | Shopify tagged a product with a **non-leaf** taxonomy node → Tesco error 1005 |
 | `exclude_skus` | SKU → reason held back | product you don't want on Tesco, or one with no sellable Tesco category |
 | `unsellable_gids` | Shopify taxonomy nodes Tesco doesn't open to sellers | a new category 404s on `/products/attributes` |
-| `attribute_extras` | extra Tesco attribute values `{attrCode: {SKU_or_'*': value}}` | a category-specific required attr that isn't auto-filled (e.g. `batterySize`) |
+| **`attribute_mappings`** | **Shopify-source → Tesco optional-field mappings** `{<gid|'*'>: {attrCode: {source, transform}}}` | **the main job — fill spec fields (Cutting Width, dimensions, Bulletpoints, …) from Shopify metafields/specs/weight** |
+| `attribute_extras` | constant/per-SKU attribute values `{attrCode: {SKU_or_'*': value}}` | a value that isn't in Shopify (e.g. a hand-entered `batterySize`) |
 
 ## Identifier invariants
 
@@ -68,17 +73,22 @@ This skill is **targeted** — never auto-walk. Ask Wayne what to do:
 ```
 What do you want to set? Options:
 
-  colour <brand|SKU> <Colour>     — baseColour (e.g. "colour Mountfield Orange",
-                                     "colour C-XYZ Red"). Tesco colours: Black,
-                                     Blue, Bronze, Brown, Chrome, Clear, Copper,
-                                     Cream, Gold, Green, Grey, Multi, Orange,
-                                     Pink, Purple, Red, Silver, White, Yellow
-  category <SKU> <query|gid>      — set a leaf-category override (I'll search the
-                                     taxonomy if you give a word like "dethatcher")
+  attrs <category gid|query>      — show a category's attrs + coverage (start here:
+                                     it reveals which optional spec fields are
+                                     still UNCOVERED and worth mapping)
+  sources <SKU>                   — dump a product's mappable Shopify data
+                                     (metafields, display_attributes, weight)
+  map <attrCode> <source> [transform] [--cat <gid>]
+                                  — map a Shopify source onto a Tesco attribute
+                                     (the main job; see forms below)
+  colour <brand|SKU> <Colour>     — baseColour. Tesco colours: Black, Blue, Bronze,
+                                     Brown, Chrome, Clear, Copper, Cream, Gold,
+                                     Green, Grey, Multi, Orange, Pink, Purple, Red,
+                                     Silver, White, Yellow
+  category <SKU> <query|gid>      — leaf-category override (I'll search the taxonomy)
   exclude <SKU> [reason]          — hold a product back (or 'exclude <SKU> remove')
   default <key> <value>           — change a catalogue-wide constant
-  extra <attrCode> <SKU|*> <value>— set a category-specific attribute value
-  attrs <category gid|query>      — show a category's required attrs + coverage
+  extra <attrCode> <SKU|*> <value>— set a constant/per-SKU attribute value
   unsellable <gid> [remove]       — mark/unmark a Tesco-unsellable category
   quit                            — exit
 
@@ -86,6 +96,41 @@ What do you want to set? Options:
 ```
 
 Handle replies by calling the matching subcommand, then loop back.
+
+### The mapping workflow (do this for each category you list into)
+
+1. `attrs <gid>` → read `required_uncovered` AND scan the full list for optional
+   spec fields worth filling (Cutting Width, Grass Box Capacity, dimensions,
+   Bulletpoints, What's Included, Power Source, Warranty, Voltage, …). Each
+   shows `coverage: auto|default|mapped|extra|UNCOVERED` and its `code`.
+2. `sources <SKU>` (a representative product in that category) → see what Shopify
+   offers: `metafields` (e.g. `filter.cutting_width`, `custom.feature_bullets`),
+   `display_attributes` (e.g. `engine_capacity`), and `weight`.
+3. `map <tescoCode> <source> [transform] --cat <gid>` for each field you can
+   fill. **Map lawn-mower/category-specific codes (`lawnMower*`) under `--cat`,
+   never globally** — they'd be rejected on categories that don't have them.
+   Generic codes present on all your categories (e.g. `productFeatures1..3`,
+   `width`/`height`/`depth`/`grossWeight`) can go global (omit `--cat`).
+
+### map / sources
+```
+.venv/bin/python scripts/tesco_shopify_shape.py shopify-sources --sku <SKU>
+.venv/bin/python scripts/tesco_shopify_shape.py set-mapping --category <gid> \
+    --attr lawnMowerCuttingWidth --source metafield:filter.cutting_width --transform dim_value
+.venv/bin/python scripts/tesco_shopify_shape.py set-mapping \
+    --attr productFeatures1 --source metafield:custom.feature_bullets --transform bullet:1
+.venv/bin/python scripts/tesco_shopify_shape.py del-mapping --category <gid> --attr <code>
+```
+**Source forms:** `metafield:<ns.key>`, `display_attribute:<code>`,
+`field:title|vendor`, `weight`, `const:<value>`.
+**Transforms:** `dim_value` / `dim_unit` (for `{value,unit}` dimension metafields),
+`weight_value` / `weight_unit`, `list_first` / `list_join` (for JSON list
+metafields), `strip_html`, `bullet:N` (Nth `<li>` of a feature-bullets field),
+or omit for the raw value.
+**UOM fields** (Product Weight UOM, Dimensions UOM, Voltage UOM) are value-list
+backed — set them with `extra`/`map const:` to the exact Tesco code (check the
+value list via `attrs`); the `*_unit` transforms return Shopify's raw unit which
+may not match Tesco's value list.
 
 ### colour
 ```

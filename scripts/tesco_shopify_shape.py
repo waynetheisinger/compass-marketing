@@ -29,6 +29,8 @@ if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 
 from scripts.mirakl_client import MiraklClient  # noqa: E402
+from scripts.shopify_client import ShopifyClient  # noqa: E402
+from scripts.mirakl_bq_to_tesco import _SHOPIFY_Q, shopify_sources  # noqa: E402
 
 _CFG = os.path.join(_REPO_ROOT, "config", "tesco_overrides.json")
 _PRE = "gid://shopify/TaxonomyCategory/"
@@ -81,10 +83,14 @@ def cmd_list_attributes(args) -> None:
     c = _load()
     defaults = set(c.get("defaults", {}))
     extras = {k for k in c.get("attribute_extras", {}) if not k.startswith("_")}
+    maps = c.get("attribute_mappings", {})
+    mapped = set(maps.get("*", {})) | set(maps.get(gid, {}))
+    mapped.discard("_doc")
     out = []
     for a in attrs:
         code = a.get("code")
         covered = ("auto" if code in _AUTOFILLED else
+                   "mapped" if code in mapped else
                    "default" if code in defaults else
                    "extra" if code in extras else
                    "UNCOVERED")
@@ -185,6 +191,51 @@ def cmd_set_unsellable(args) -> None:
     _save(c)
 
 
+def cmd_shopify_sources(args) -> None:
+    """Dump the mappable Shopify data for a SKU so Wayne can pick sources."""
+    with ShopifyClient() as sc:
+        edges = sc.execute(_SHOPIFY_Q, {"q": f"sku:{args.sku}"})["products"]["edges"]
+        if not edges:
+            edges = sc.execute(_SHOPIFY_Q, {"q": f"barcode:{args.sku}"})["products"]["edges"]
+    if not edges:
+        _emit({"error": f"{args.sku} not found in Shopify"})
+        return
+    s = shopify_sources(edges[0]["node"])
+    mfs = {k: (v["value"][:80] if isinstance(v["value"], str) else v["value"])
+           for k, v in s["metafields"].items()}
+    _emit({
+        "sku": args.sku,
+        "title": s["title"], "vendor": s["vendor"], "weight": s["weight"],
+        "display_attributes": s["display_attributes"],
+        "metafields": mfs,
+        "hint": "source forms: metafield:<ns.key>, display_attribute:<code>, "
+                "field:title|vendor, weight, const:<v>. transforms: dim_value, "
+                "dim_unit, weight_value, weight_unit, list_first, list_join, "
+                "strip_html, bullet:N.",
+    })
+
+
+def cmd_set_mapping(args) -> None:
+    c = _load()
+    scope = "*" if args.category in (None, "*") else _gid(args.category)
+    maps = c.setdefault("attribute_mappings", {})
+    entry = {"source": args.source}
+    if args.transform:
+        entry["transform"] = args.transform
+    maps.setdefault(scope, {})[args.attr] = entry
+    _save(c)
+    _emit({"set_mapping": f"{scope} / {args.attr}", **entry})
+
+
+def cmd_del_mapping(args) -> None:
+    c = _load()
+    scope = "*" if args.category in (None, "*") else _gid(args.category)
+    maps = c.get("attribute_mappings", {})
+    removed = maps.get(scope, {}).pop(args.attr, None) is not None
+    _save(c)
+    _emit({"removed": f"{scope} / {args.attr}" if removed else None})
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Maintain config/tesco_overrides.json")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -225,6 +276,21 @@ def main(argv=None) -> int:
     p = sub.add_parser("set-unsellable")
     p.add_argument("--gid", required=True); p.add_argument("--remove", action="store_true")
     p.set_defaults(fn=cmd_set_unsellable)
+
+    p = sub.add_parser("shopify-sources"); p.add_argument("--sku", required=True)
+    p.set_defaults(fn=cmd_shopify_sources)
+
+    p = sub.add_parser("set-mapping")
+    p.add_argument("--attr", required=True)
+    p.add_argument("--source", required=True,
+                   help="metafield:<ns.key> | display_attribute:<code> | field:title|vendor | weight | const:<v>")
+    p.add_argument("--transform", help="dim_value|dim_unit|weight_value|weight_unit|list_first|list_join|strip_html|bullet:N")
+    p.add_argument("--category", help="Tesco category gid/code to scope to; omit for all ('*')")
+    p.set_defaults(fn=cmd_set_mapping)
+
+    p = sub.add_parser("del-mapping")
+    p.add_argument("--attr", required=True); p.add_argument("--category")
+    p.set_defaults(fn=cmd_del_mapping)
 
     args = ap.parse_args(argv)
     args.fn(args)

@@ -29,7 +29,11 @@ Does:
   fetched, converted (Pillow, white-flatten), uploaded to Shopify Files as real
   `.jpg`, and cached (`image_jpg_cache.json`). Storefront images untouched.
 - Applies `config/tesco_overrides.json` (baseColour, leaf-category remaps,
-  exclusions, defaults, attribute extras) — maintained by `/tesco-shopify-shape`.
+  exclusions, defaults) — maintained by `/tesco-shopify-shape`.
+- **Fills optional spec fields** (Cutting Width, Grass Box Capacity, dimensions,
+  Bulletpoints, Power Source, Warranty, …) from the `attribute_mappings` in that
+  config — Shopify metafields/specs/weight mapped onto Tesco attribute codes. A
+  listing is only as rich as the mappings; required-only = a bare listing.
 - **Holds back** products with no sellable Tesco category, no Shopify match, or
   an unregistered brand — listed in the report, never silently dropped.
 - Submits the CSV (`--no-offers`, products only) and prints Tesco's
@@ -101,6 +105,15 @@ Read `workdir/mirakl-tesco/bq_active_to_tesco_REPORT.md`. Surface to Wayne:
 
 After any override change, **re-run step 3** (cached images make it fast) so the
 CSV reflects the fixes. Hand the CSV to Wayne to eyeball before pushing.
+
+**Listing richness — don't ship bare.** Before pushing a category you haven't
+listed before, run `/tesco-shopify-shape` → `attrs <category gid>` and check the
+optional spec fields. Anything `UNCOVERED` that Shopify can supply (Cutting
+Width, dimensions, Bulletpoints, Power Source, Warranty, Voltage, Grass Box
+Capacity, What's Included, …) should be **mapped** there (`sources <SKU>` shows
+what's available). Required-only listings convert and rank poorly. Mappings are
+reusable across every product in that category, so it's a one-time setup per
+category.
 
 ## Step 5 — Push (products only) + read the transformation report
 
