@@ -183,6 +183,53 @@ class ComplianceProfile:
 
 
 # ---------------------------------------------------------------------------
+# Field schema — per-operator CSV column names for the core product fields
+# ---------------------------------------------------------------------------
+#
+# Mirakl operators do NOT share column names. Kingfisher's product import uses
+# `name` / `ean` / `Body Copy` / `image_main_1`; Tesco's uses `description` /
+# `barcode` / `marketingText` / `image1`. The row builder maps each logical
+# product field to the operator's actual column via this schema, so no column
+# name is hardcoded in build_product_row().
+
+@dataclass
+class FieldSchema:
+    """Logical product field → operator CSV column-name mapping.
+
+    A field set to None means the operator does not take that field as a core
+    column (e.g. Tesco's minimal tracer omits weight/dimensions — they are
+    optional, not required)."""
+    category: str          # column holding the category code
+    sku: str               # seller SKU
+    name: str              # product title
+    ean: str               # barcode / EAN
+    body: str              # marketing / long description
+    image_main: str        # primary image
+    extra_images: tuple[str, ...] = ()   # additional image slots, in order
+    weight: str | None = None
+    length: str | None = None
+    width: str | None = None
+    height: str | None = None
+    variant_group: str | None = None
+
+
+# Default schema reproduces Kingfisher's historical column names so any operator
+# without an explicit field_schema behaves exactly as before this change.
+_DEFAULT_FIELD_SCHEMA = FieldSchema(
+    category="category",
+    sku="shop_sku",
+    name="name",
+    ean="ean",
+    body="Body Copy",
+    image_main="image_main_1",
+    weight="Product_weight",
+    length="Product_length",
+    width="Product_width",
+    height="Product_height",
+)
+
+
+# ---------------------------------------------------------------------------
 # Operator config dataclass
 # ---------------------------------------------------------------------------
 
@@ -203,6 +250,7 @@ class OperatorConfig:
                                                     # SBS560CHT back from the seller portal: our 21cm
                                                     # rendered as "21.00 mm".)
     compliance: ComplianceProfile = None             # per-operator copy-sanitisation rules
+    field_schema: FieldSchema = None                 # per-operator core CSV column names
     notes: str = ""
 
     def __post_init__(self):
@@ -210,6 +258,8 @@ class OperatorConfig:
             self.per_sku_overrides = {}
         if self.compliance is None:
             self.compliance = ComplianceProfile()
+        if self.field_schema is None:
+            self.field_schema = _DEFAULT_FIELD_SCHEMA
 
 
 # ---------------------------------------------------------------------------
@@ -446,17 +496,61 @@ _TESCO_COMPLIANCE = ComplianceProfile(
     banned_promo=_BANNED_PROMO,
 )
 
+# Tesco column names (from /products/attributes, 2026-06-09) — completely
+# different from Kingfisher's. Tracer maps the required core fields only; weight
+# and dimensions are optional on Tesco and omitted for now.
+_TESCO_FIELD_SCHEMA = FieldSchema(
+    category="shopifyHierarchyId",
+    sku="sku",
+    name="description",          # Tesco "Title"
+    ean="barcode",
+    body="marketingText",        # Tesco "Description"
+    image_main="image1",
+    extra_images=tuple(f"image{i}" for i in range(2, 11)),
+    variant_group="variationId",
+)
+
+# Tesco categories use the Shopify product taxonomy (gid://shopify/...), NOT
+# Kingfisher's PIM_xxxxx. Resolved from /hierarchies 2026-06-09. The Spectrum
+# range sits in the Outdoor Power Equipment tree (hg-12-3...).
+_TX = "gid://shopify/TaxonomyCategory/"
+
 TESCO = OperatorConfig(
     name="TESCO",
     channel="",                       # TBC — confirm Tesco's channel code from the portal
-    common_attributes={},
-    by_product_type={},
-    name_max_chars=130,               # provisional; reconcile with Tesco template
+    # Required value-list / decimal constants common to every Spectrum row.
+    # Codes == labels on Tesco (verified 2026-06-09). vatRate is a plain decimal
+    # (20% standard-rated) — confirm format on first submission.
+    common_attributes={
+        "brand":               "Spectrum",
+        "baseColour":          "Green",     # Spectrum livery (Wayne, 2026-06-09)
+        "countryOfOriginName": "China",     # Wayne, 2026-06-09
+        "ageRestriction":      "No",
+        "unitQuantity":        "Each",
+        "vatRate":             "20",
+    },
+    by_product_type={
+        # category-specific required attrs (e.g. lawnMowerCuttingWidth) are
+        # optional for the tracer; only the generic required core is enforced.
+        "LAWN_MOWER_BARE":        {"category": _TX + "hg-12-3-5-4"},   # Walk-Behind Mowers
+        "LAWN_MOWER_KIT":         {"category": _TX + "hg-12-3-5-4"},
+        "LEAF_BLOWER_BARE":       {"category": _TX + "hg-12-3-7"},     # Leaf Blowers
+        "LEAF_BLOWER_KIT":        {"category": _TX + "hg-12-3-7"},
+        "HEDGE_TRIMMER_BARE":     {"category": _TX + "hg-12-3-3"},     # Hedge Trimmers
+        "HEDGE_TRIMMER_KIT":      {"category": _TX + "hg-12-3-3"},
+        "BATTERY_BARE":           {"category": _TX + "hg-12-4-7"},     # OPE Batteries
+        "CHARGER_BARE":           {"category": _TX + "ha-14-17"},      # Power Tool Chargers
+        "PRESSURE_WASHER_CORDED": {"category": _TX + "hg-12-3-12"},    # Pressure Washers
+    },
+    name_max_chars=None,              # Tesco title cap TBC — no truncation for now
     compliance=_TESCO_COMPLIANCE,
-    notes="Compliance profile (cross-retailer scrub + banned promo) ready. "
-          "Category/attribute schema still TBC: download the Tesco seller-portal "
-          "category template and walk /hierarchies + /values_lists once "
-          "MIRAKL_TESCO_BASE_URL + MIRAKL_TESCO_API_KEY are in .env.",
+    field_schema=_TESCO_FIELD_SCHEMA,
+    notes="Connected 2026-06-09 (base tescouk-prod.mirakl.net). Categories = "
+          "Shopify taxonomy; attribute schema is API-discoverable via "
+          "/products/attributes?hierarchy=<gid> (no portal template needed). "
+          "Required core verified on Walk-Behind Mowers (11 fields); other "
+          "categories share the generic core but may add category-specific "
+          "required attrs — verify per category on first dry-run.",
 )
 
 
@@ -740,23 +834,34 @@ def build_product_row(op: OperatorConfig, p: Any, report: dict | None = None) ->
         if scrub_hits:
             report.setdefault("scrub_hits", {})[p.sku] = scrub_hits
 
+    # ---- Core columns, named per the operator's field schema ----
+    fs = op.field_schema
     row: dict[str, str] = {
-        # ---- Core mandatory columns (universal across Mirakl operators) ----
-        "category":      pt_cfg["category"],
-        "shop_sku":      p.sku,
-        "name":          name_clean,
-        "ean":           p.ean,
-        "image_main_1":  p.image_url,
-        "Body Copy":     body_clean,
-
-        # ---- Numeric dims/weight (Mirakl: numeric, no unit, ≥0.01) ----
-        # Weight stays in kg. L/W/H multiplied by op.dimension_unit_multiplier
-        # (Kingfisher = 10, so cm → mm).
-        "Product_weight": f"{p.weight_kg:.2f}",
-        "Product_length": f"{p.dim_l_cm * op.dimension_unit_multiplier:.2f}",
-        "Product_width":  f"{p.dim_w_cm * op.dimension_unit_multiplier:.2f}",
-        "Product_height": f"{p.dim_h_cm * op.dimension_unit_multiplier:.2f}",
+        fs.category:   pt_cfg["category"],
+        fs.sku:        p.sku,
+        fs.name:       name_clean,
+        fs.ean:        p.ean,
+        fs.image_main: p.image_url,
+        fs.body:       body_clean,
     }
+
+    # Additional image slots, in order (operators that expose image2..imageN).
+    extra_urls = getattr(p, "image_urls", None) or []
+    for col, url in zip(fs.extra_images, extra_urls[1:]):
+        if url:
+            row[col] = url
+
+    # ---- Numeric dims/weight (only operators whose schema names them) ----
+    # Weight stays in kg. L/W/H multiplied by op.dimension_unit_multiplier
+    # (Kingfisher = 10, so cm → mm).
+    if fs.weight:
+        row[fs.weight] = f"{p.weight_kg:.2f}"
+    if fs.length:
+        row[fs.length] = f"{p.dim_l_cm * op.dimension_unit_multiplier:.2f}"
+    if fs.width:
+        row[fs.width] = f"{p.dim_w_cm * op.dimension_unit_multiplier:.2f}"
+    if fs.height:
+        row[fs.height] = f"{p.dim_h_cm * op.dimension_unit_multiplier:.2f}"
 
     # Apply operator-wide common attributes
     row.update(op.common_attributes)
@@ -807,6 +912,7 @@ def build_offer_row(op: OperatorConfig, p: Any) -> dict[str, str]:
 __all__ = [
     "OperatorConfig",
     "ComplianceProfile",
+    "FieldSchema",
     "KINGFISHER", "TESCO", "THERANGE",
     "OPERATORS",
     "build_product_row", "build_offer_row",
