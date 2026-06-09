@@ -313,6 +313,8 @@ query($q:String!){
       media(first:10){ edges{ node{ ... on MediaImage { image{ url } } } } }
       metafields(first:100){ edges{ node{ namespace key type value } } }
       variants(first:1){ edges{ node{
+        sku
+        barcode
         inventoryItem{ measurement{ weight{ value unit } } }
       } } }
     } }
@@ -367,6 +369,8 @@ def _shopify_lookup(client, ean, *skus):
                 url = (e.get("node") or {}).get("image", {}).get("url")
                 if url and url not in imgs:
                     imgs.append(url)
+            vedges = n.get("variants", {}).get("edges", [])
+            vnode = vedges[0]["node"] if vedges else {}
             return {
                 "title": n.get("title"),
                 "marketingText": _strip_html(n.get("descriptionHtml")),
@@ -375,27 +379,36 @@ def _shopify_lookup(client, ean, *skus):
                 "images": imgs,
                 "matched_by": q.split(":")[0],
                 "sources": shopify_sources(n),
+                "ean": (vnode.get("barcode") or "").strip(),
+                "brand": (n.get("vendor") or "").strip(),
             }
     return None
 
 
-def build(only_skus: set[str] | None = None, only_eans: set[str] | None = None):
+def build(only_skus: set[str] | None = None, only_eans: set[str] | None = None,
+          shopify_skus: list[str] | None = None):
     os.makedirs(_OUT_DIR, exist_ok=True)
-    k = MiraklClient("KINGFISHER")
     fs = TESCO.field_schema
     cp = TESCO.compliance
     jpg_cache = _load_jpg_cache()
 
-    offers = k.get("/offers", params={"max": 100}).get("offers", [])
-    active = [o for o in offers if o.get("active") is True]
-    if only_skus:
-        active = [o for o in active if o.get("shop_sku") in only_skus]
-    if only_eans:
-        active = [o for o in active if _ean_of(o) in only_eans]
+    if shopify_skus:
+        # Source products directly from arbitrary Shopify SKUs (not B&Q offers).
+        # brand + EAN come from Shopify (vendor / variant barcode) per product.
+        active = [{"shop_sku": s, "_shopify_direct": True} for s in shopify_skus]
+        print(f"Source: {len(active)} Shopify SKU(s) (direct)")
+    else:
+        k = MiraklClient("KINGFISHER")
+        offers = k.get("/offers", params={"max": 100}).get("offers", [])
+        active = [o for o in offers if o.get("active") is True]
+        if only_skus:
+            active = [o for o in active if o.get("shop_sku") in only_skus]
+        if only_eans:
+            active = [o for o in active if _ean_of(o) in only_eans]
+        print(f"Offers: {len(offers)} total, {len(active)} active"
+              + (f" (filtered to {len(active)} by EAN)" if only_eans else "")
+              + (f" (filtered to {sorted(only_skus)})" if only_skus else ""))
     registered = _tesco_registered_brands()
-    print(f"Offers: {len(offers)} total, {len(active)} active"
-          + (f" (filtered to {len(active)} by EAN)" if only_eans else "")
-          + (f" (filtered to {sorted(only_skus)})" if only_skus else ""))
 
     rows, listable_recs, outliers, scrub_log = [], [], [], {}
 
@@ -408,14 +421,19 @@ def build(only_skus: set[str] | None = None, only_eans: set[str] | None = None):
             if sku in _EXCLUDE_SKUS:
                 outliers.append((sku, brand, "—", _EXCLUDE_SKUS[sku]))
                 continue
-            if brand.lower() not in registered:
-                outliers.append((sku, brand, "—", "brand not registered on Tesco"))
-                continue
 
             sh = _shopify_lookup(sc, ean, sku, o.get("product_sku"))
             if not sh:
                 outliers.append((sku, brand, "—",
                                  "not found in Shopify by EAN/SKU — no category/images"))
+                continue
+
+            # In Shopify-direct mode brand + EAN come from Shopify, not an offer.
+            brand = brand or sh.get("brand", "")
+            ean = ean or sh.get("ean", "")
+
+            if brand.lower() not in registered:
+                outliers.append((sku, brand, "—", "brand not registered on Tesco"))
                 continue
 
             cat_gid = _SKU_CATEGORY.get(sku) or sh.get("category_gid")
@@ -546,10 +564,14 @@ def _write_report(listable, outliers, scrub_log):
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(description="B&Q active offers → Tesco products CSV")
-    ap.add_argument("--skus", help="Comma-separated shop_skus to limit to")
-    ap.add_argument("--eans", help="Comma-separated EANs/barcodes to limit to")
+    ap = argparse.ArgumentParser(description="MowDirect catalogue → Tesco products CSV")
+    ap.add_argument("--skus", help="Comma-separated B&Q shop_skus to limit the offer set to")
+    ap.add_argument("--eans", help="Comma-separated EANs/barcodes to limit the offer set to")
+    ap.add_argument("--shopify-skus", dest="shopify_skus",
+                    help="Comma-separated Shopify SKUs to source DIRECTLY (bypass B&Q "
+                         "offers); brand + EAN come from Shopify")
     args = ap.parse_args()
     only = {s.strip() for s in args.skus.split(",")} if args.skus else None
     eans = {e.strip() for e in args.eans.split(",")} if args.eans else None
-    build(only_skus=only, only_eans=eans)
+    shop = [s.strip() for s in args.shopify_skus.split(",")] if args.shopify_skus else None
+    build(only_skus=only, only_eans=eans, shopify_skus=shop)
