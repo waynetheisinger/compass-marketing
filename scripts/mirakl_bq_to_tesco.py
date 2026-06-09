@@ -1,26 +1,22 @@
 #!/usr/bin/env python3
 """
-B&Q (Kingfisher) active offers → Tesco product listings.
+B&Q (Kingfisher) active offers → Tesco product CSV (generate-then-review).
 
-Takes the products behind B&Q's *active* offers and prepares them as Tesco
-Mirakl product rows, reusing the proven Tesco operator config (field schema +
-cross-retailer compliance scrub). Category, rich copy and images come from
-Shopify — Tesco's category system IS the Shopify product taxonomy, so each
-product's Shopify category gid is used directly as Tesco's shopifyHierarchyId
-(no lossy B&Q→Tesco category guessing).
+Produces an editable Tesco products CSV from the products behind B&Q's *active*
+offers. The CSV is the deliverable: review it, hand-edit values (e.g. per-product
+baseColour, fix anything), then push it with scripts/mirakl_push_products.py.
 
-Pipeline:
-  1. Pull Kingfisher /offers, keep active=True only.
-  2. Drop brands not registered on Tesco (checked live against the brand list).
-  3. Resolve each product in Shopify by EAN (barcode), then SKU fallback:
-     title, descriptionHtml→marketingText, taxonomy category gid, images.
-  4. Build a Tesco row via the TESCO operator config (compliance scrub applied).
-  5. Validate each row against its category's LIVE required-attribute set;
-     anything missing is recorded as a gap.
-  6. Write a dry-run CSV + a gaps/scrub markdown report to workdir/mirakl-tesco/.
+Why generate-then-push: Tesco's import transformation report is the real
+validator, so there's no need to pre-validate each row against the live
+/products/attributes endpoint (which rate-limits hard). This script only calls
+Shopify (for category, copy, images) — never Tesco's attribute endpoint.
 
-This NEVER submits. Review the CSV + gaps report, fill gaps, then submit via
-the existing push path. Run from the repo root.
+Mechanism: Tesco's category system IS the Shopify product taxonomy, so each
+product's Shopify category gid is used directly as Tesco's shopifyHierarchyId.
+Copy + images come from Shopify (matched by EAN, then SKU). Copy is run through
+the Tesco cross-retailer compliance scrub.
+
+Run from the repo root. Output → workdir/mirakl-tesco/.
 """
 from __future__ import annotations
 
@@ -29,8 +25,7 @@ import html
 import os
 import re
 import sys
-import time
-from collections import Counter, defaultdict
+from collections import Counter
 
 _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.dirname(_THIS_DIR)
@@ -42,10 +37,11 @@ from scripts.shopify_client import ShopifyClient        # noqa: E402
 from scripts.mirakl_operators import TESCO              # noqa: E402
 
 _OUT_DIR = os.path.join(_REPO_ROOT, "workdir", "mirakl-tesco")
+_CSV_PATH = os.path.join(_OUT_DIR, "bq_active_to_tesco_products.csv")
+_REPORT_PATH = os.path.join(_OUT_DIR, "bq_active_to_tesco_REPORT.md")
 
-# Per-product value-list defaults for fields that are constant across this
-# catalogue. baseColour is deliberately NOT defaulted — it varies per product
-# and is surfaced as a gap where a category requires it.
+# Constant value-list fields for this catalogue (codes == labels on Tesco).
+# baseColour is set per brand below (varies per product — hand-edit in the CSV).
 _DEFAULTS = {
     "countryOfOriginName": "China",   # confirm per product on review
     "ageRestriction":      "No",
@@ -53,15 +49,37 @@ _DEFAULTS = {
     "vatRate":             "20",      # standard-rated; verified accepted 2026-06-09
 }
 
+# Per-brand baseColour starting value (hand-edit exceptions in the CSV).
+# Spectrum livery is green (confirmed for cordless). Leave others blank so they
+# surface for review rather than guessing wrong.
+_BRAND_COLOUR = {"spectrum": "Green"}
+
+# Shopify taxonomy nodes that Tesco does NOT open to third-party sellers
+# (verified via 404 on /products/attributes, 2026-06-09). Products landing here
+# can't be listed as-is — they need recategorising in Shopify (or are genuinely
+# out of scope). Kept out of the CSV; listed in the report.
+_KNOWN_UNSELLABLE_GIDS = {
+    "gid://shopify/TaxonomyCategory/vp-1-5-1",     # Portable Fuel Cans
+    "gid://shopify/TaxonomyCategory/vp-1-7-5",     # Motor Vehicle Trailers
+    "gid://shopify/TaxonomyCategory/vp-1-7-5-4",   # Utility & Cargo Trailers
+    "gid://shopify/TaxonomyCategory/bi-11-12",     # Heavy Machinery > Tractors (mis-tag)
+}
+
+# CSV column order — editable facets (baseColour) kept near the front.
+_COL_ORDER = [
+    "shopifyHierarchyId", "sku", "barcode", "brand", "baseColour",
+    "description", "marketingText",
+    "countryOfOriginName", "ageRestriction", "unitQuantity", "vatRate",
+    "image1",
+]
+
 _TAG_RE = re.compile(r"<[^>]+>")
 
 
 def _strip_html(s: str) -> str:
     if not s:
         return ""
-    s = _TAG_RE.sub(" ", s)
-    s = html.unescape(s)
-    return " ".join(s.split())
+    return " ".join(html.unescape(_TAG_RE.sub(" ", s)).split())
 
 
 def _ean_of(offer: dict) -> str | None:
@@ -93,14 +111,8 @@ query($q:String!){
 """
 
 
-def _shopify_lookup(client, ean: str | None, *skus: str) -> dict | None:
-    """Find a Shopify product by EAN (barcode) first, then by any SKU given."""
-    queries = []
-    if ean:
-        queries.append(f"barcode:{ean}")
-    for s in skus:
-        if s:
-            queries.append(f"sku:{s}")
+def _shopify_lookup(client, ean, *skus):
+    queries = ([f"barcode:{ean}"] if ean else []) + [f"sku:{s}" for s in skus if s]
     for q in queries:
         edges = client.execute(_SHOPIFY_Q, {"q": q})["products"]["edges"]
         if edges:
@@ -123,61 +135,18 @@ def _shopify_lookup(client, ean: str | None, *skus: str) -> dict | None:
     return None
 
 
-import requests
-
-# gid → set of required codes, or a sentinel string:
-#   "UNSUPPORTED" — Tesco returns 404, category not enabled for selling
-#   "UNKNOWN"     — persistent fetch failure (neither 404 nor recoverable 429)
-_req_cache: dict[str, set[str] | str] = {}
-
-
-def _required_attrs(tcli, gid: str):
-    """Required-attribute codes for a category gid, or a sentinel.
-
-    Tesco rate-limits /products/attributes hard (HTTP 429), so 429s are retried
-    with exponential backoff. A 404 means the Shopify taxonomy node is not a
-    sellable Tesco category ('UNSUPPORTED'). Never returns an empty set on
-    failure — a transient error must not read as 'no requirements / ready'."""
-    if gid in _req_cache:
-        return _req_cache[gid]
-    result = "UNKNOWN"
-    for attempt in range(6):
-        try:
-            attrs = tcli.get("/products/attributes", params={"hierarchy": gid})["attributes"]
-            result = {a["code"] for a in attrs if a.get("required")}
-            break
-        except requests.HTTPError as e:
-            code = e.response.status_code if e.response is not None else None
-            if code == 404:
-                result = "UNSUPPORTED"
-                break
-            if code == 429:
-                time.sleep(2 ** attempt)   # 1,2,4,8,16,32s
-                continue
-            time.sleep(2 ** attempt)
-        except Exception:
-            time.sleep(2 ** attempt)
-    _req_cache[gid] = result
-    return result
-
-
 def build():
     os.makedirs(_OUT_DIR, exist_ok=True)
     k = MiraklClient("KINGFISHER")
-    tcli = MiraklClient("TESCO")
     fs = TESCO.field_schema
     cp = TESCO.compliance
 
     offers = k.get("/offers", params={"max": 100}).get("offers", [])
     active = [o for o in offers if o.get("active") is True]
     registered = _tesco_registered_brands()
-
     print(f"Offers: {len(offers)} total, {len(active)} active")
 
-    rows: list[dict] = []
-    records: list[dict] = []          # parallel metadata for the report
-    skipped: list[tuple] = []
-    scrub_log: dict[str, dict] = {}
+    rows, listable_recs, outliers, scrub_log = [], [], [], {}
 
     with ShopifyClient() as sc:
         for o in active:
@@ -186,136 +155,111 @@ def build():
             ean = _ean_of(o)
 
             if brand.lower() not in registered:
-                skipped.append((sku, brand, "brand-not-registered-on-tesco"))
+                outliers.append((sku, brand, "—", "brand not registered on Tesco"))
                 continue
 
             sh = _shopify_lookup(sc, ean, sku, o.get("product_sku"))
-            title = (sh or {}).get("title") or o.get("product_title")
-            body = (sh or {}).get("marketingText") or _strip_html(o.get("product_description"))
-            cat_gid = (sh or {}).get("category_gid")
-            images = (sh or {}).get("images") or []
+            if not sh:
+                outliers.append((sku, brand, "—",
+                                 "not found in Shopify by EAN/SKU — no category/images"))
+                continue
 
+            cat_gid = sh.get("category_gid")
+            cat_name = sh.get("category_name") or "(none)"
+            if not cat_gid:
+                outliers.append((sku, brand, cat_name, "no Shopify category assigned"))
+                continue
+            if cat_gid in _KNOWN_UNSELLABLE_GIDS:
+                outliers.append((sku, brand, cat_name,
+                                 "Tesco category not sellable — recategorise in Shopify"))
+                continue
+            if not sh.get("images"):
+                outliers.append((sku, brand, cat_name, "no image in Shopify"))
+                continue
+
+            title = sh.get("title") or o.get("product_title")
+            body = sh.get("marketingText") or _strip_html(o.get("product_description"))
             name_clean = cp.clean_name(title)
             body_clean, body_hits = cp.sanitise_prose(body)
             _, name_hits = cp.scrub(title or "")
-            hits = {}
-            if name_hits: hits["name"] = name_hits
-            if body_hits: hits["marketingText"] = body_hits
+            hits = {**({"name": name_hits} if name_hits else {}),
+                    **({"marketingText": body_hits} if body_hits else {})}
             if hits:
                 scrub_log[sku] = hits
 
+            images = sh["images"]
             row = {
-                fs.category:   cat_gid or "",
-                fs.sku:        sku,
-                fs.name:       name_clean,
-                fs.ean:        ean or "",
-                fs.body:       body_clean,
-                "brand":       brand,
+                fs.category: cat_gid,
+                fs.sku: sku,
+                fs.ean: ean or "",
+                "brand": brand,
+                "baseColour": _BRAND_COLOUR.get(brand.lower(), ""),
+                fs.name: name_clean,
+                fs.body: body_clean,
+                fs.image_main: images[0],
             }
-            if images:
-                row[fs.image_main] = images[0]
-                for col, url in zip(fs.extra_images, images[1:]):
-                    row[col] = url
+            for col, url in zip(fs.extra_images, images[1:]):
+                row[col] = url
             row.update(_DEFAULTS)
-
-            # Gap analysis against the category's live required set.
-            # Three states: unmapped (no category), schema-unknown (fetch
-            # failed), or a concrete missing-attribute list.
-            if not cat_gid:
-                missing = ["(no Tesco category — unmapped)"]
-            else:
-                req = _required_attrs(tcli, cat_gid)
-                if req == "UNSUPPORTED":
-                    missing = ["(Tesco category not sellable — recategorise)"]
-                elif req == "UNKNOWN":
-                    missing = ["(category schema unavailable — re-check)"]
-                else:
-                    missing = sorted(c for c in req if not str(row.get(c, "")).strip())
-            if not images:
-                missing = missing + ["(no image)"]
-
             rows.append(row)
-            records.append({
-                "sku": sku, "brand": brand, "ean": ean,
-                "bq_category": o.get("category_label"),
-                "tesco_category": (sh or {}).get("category_name") or "(unmapped)",
-                "cat_gid": cat_gid, "matched_by": (sh or {}).get("matched_by") or "NO-SHOPIFY-MATCH",
-                "n_images": len(images), "missing": sorted(set(missing)),
+            listable_recs.append({
+                "sku": sku, "brand": brand, "cat": cat_name,
+                "colour": row["baseColour"], "imgs": len(images),
+                "matched_by": sh["matched_by"],
             })
 
     _write_csv(rows)
-    _write_report(records, skipped, scrub_log)
-    return rows, records, skipped
+    _write_report(listable_recs, outliers, scrub_log)
+    return rows, listable_recs, outliers
 
 
-def _write_csv(rows: list[dict]):
-    cols = []
+def _write_csv(rows):
+    cols = list(_COL_ORDER)
     for r in rows:
         for c in r:
             if c not in cols:
                 cols.append(c)
-    path = os.path.join(_OUT_DIR, "bq_active_to_tesco_products.csv")
-    with open(path, "w", newline="") as f:
+    with open(_CSV_PATH, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, delimiter=";", extrasaction="ignore")
         w.writeheader()
         for r in rows:
             w.writerow(r)
-    print(f"  CSV → {path}  ({len(rows)} rows, {len(cols)} columns)")
+    print(f"  CSV → {_CSV_PATH}  ({len(rows)} rows, {len(cols)} columns)")
 
 
-def _write_report(records, skipped, scrub_log):
-    path = os.path.join(_OUT_DIR, "bq_active_to_tesco_REPORT.md")
-    ready = [r for r in records if not r["missing"]]
-    gapped = [r for r in records if r["missing"]]
-    lines = []
-    lines.append("# B&Q active offers → Tesco — dry-run report\n")
-    lines.append(f"- Active offers processed: **{len(records)}**")
-    lines.append(f"- Ready to submit (no required-attr gaps): **{len(ready)}**")
-    lines.append(f"- With gaps to fill: **{len(gapped)}**")
-    lines.append(f"- Skipped: **{len(skipped)}**\n")
+def _write_report(listable, outliers, scrub_log):
+    blanks = [r["sku"] for r in listable if not r["colour"]]
+    lines = [
+        "# B&Q active offers → Tesco — products CSV\n",
+        f"- Active offers: **{sum(1 for _ in listable) + len(outliers)}** "
+        f"(after dropping inactive)",
+        f"- **In CSV (ready to review & push): {len(listable)}**",
+        f"- Held back (need a fix first): {len(outliers)}\n",
+        "## Before you push\n",
+        f"- `baseColour` is pre-filled **Green** for Spectrum. "
+        f"{len(blanks)} non-Spectrum row(s) have it **blank** — fill before push: "
+        f"{', '.join(blanks) or 'none'}.",
+        "- A few categories want extra required fields (batteries: `batterySize`, "
+        "recycling info; tyred items: tyre dims). Tesco's transformation report "
+        "after push will name any still missing — fill those in the CSV and re-push.",
+        "- `countryOfOriginName` defaulted to **China**, `vatRate` **20** — "
+        "override per row if wrong.\n",
+    ]
 
-    if skipped:
-        lines.append("## Skipped\n")
-        for sku, brand, why in skipped:
-            lines.append(f"- `{sku}` [{brand}] — {why}")
+    if outliers:
+        lines.append("## Held back\n")
+        lines.append("| SKU | brand | Shopify category | reason |")
+        lines.append("|---|---|---|---|")
+        for sku, brand, cat, why in outliers:
+            lines.append(f"| {sku} | {brand} | {cat} | {why} |")
         lines.append("")
 
-    nomatch = [r for r in records if r["matched_by"] == "NO-SHOPIFY-MATCH"]
-    if nomatch:
-        lines.append("## No Shopify match (no images / no category — used B&Q offer copy)\n")
-        for r in nomatch:
-            lines.append(f"- `{r['sku']}` [{r['brand']}] EAN={r['ean']} — B&Q cat: {r['bq_category']}")
-        lines.append("")
-
-    # Gap frequency
-    gapfreq = Counter()
-    for r in gapped:
-        for g in r["missing"]:
-            gapfreq[g] += 1
-    if gapfreq:
-        lines.append("## Required-attribute gaps (by frequency)\n")
-        lines.append("| attribute | # products missing |")
-        lines.append("|---|---|")
-        for attr, n in gapfreq.most_common():
-            lines.append(f"| `{attr}` | {n} |")
-        lines.append("")
-
-    # Category coverage
-    lines.append("## Tesco category resolution\n")
-    catc = Counter(r["tesco_category"] for r in records)
+    lines.append("## In CSV — by Tesco category\n")
+    catc = Counter(r["cat"] for r in listable)
     lines.append("| Tesco category (from Shopify) | # |")
     lines.append("|---|---|")
     for cat, n in catc.most_common():
         lines.append(f"| {cat} | {n} |")
-    lines.append("")
-
-    lines.append("## Per-product detail\n")
-    lines.append("| SKU | brand | matched | Tesco category | imgs | missing required |")
-    lines.append("|---|---|---|---|---|---|")
-    for r in sorted(records, key=lambda x: (bool(x["missing"]), x["sku"])):
-        miss = ", ".join(f"`{m}`" for m in r["missing"]) or "✓ none"
-        lines.append(f"| {r['sku']} | {r['brand']} | {r['matched_by']} | "
-                     f"{r['tesco_category']} | {r['n_images']} | {miss} |")
     lines.append("")
 
     if scrub_log:
@@ -324,10 +268,11 @@ def _write_report(records, skipped, scrub_log):
             lines.append(f"- `{sku}`: {hits}")
         lines.append("")
 
-    with open(path, "w") as f:
+    with open(_REPORT_PATH, "w") as f:
         f.write("\n".join(lines))
-    print(f"  Report → {path}")
-    print(f"\n  {len(ready)} ready, {len(gapped)} with gaps, {len(skipped)} skipped.")
+    print(f"  Report → {_REPORT_PATH}")
+    print(f"\n  {len(listable)} in CSV, {len(outliers)} held back, "
+          f"{len(blanks)} need baseColour.")
 
 
 if __name__ == "__main__":
