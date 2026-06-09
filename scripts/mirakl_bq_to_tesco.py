@@ -113,13 +113,21 @@ _COL_ORDER = [
 
 _TAG_RE = re.compile(r"<[^>]+>")
 
-# NB on image formats: Shopify's CDN content-negotiates on the Accept header
-# (Vary: Accept). A *browser* (Accept: image/webp) gets webp bytes from a .png
-# URL — which is why these URLs look like they "download as webp". A *server*
-# fetcher (Accept: */*, which Mirakl/Tesco use) gets image/png, matching the
-# .png extension. So the bare .png URL is correct for the import; do NOT pin
-# format=pjpg — that would force jpeg for everyone and create a jpeg-bytes-from-
-# a-.png-URL mismatch for Tesco's fetcher. (Verified 2026-06-09.)
+# Tesco accepts JPEG images only (confirmed in the seller portal 2026-06-09:
+# a non-JPEG image was rejected with "Supported image types are: JPEG"). We
+# therefore keep ONLY image URLs whose file extension is .jpg/.jpeg, decided
+# purely by string-matching the URL — no network probe of the actual bytes.
+# Any other extension (.png, .webp, …) is dropped from the row. If that leaves
+# a product with no images it falls to the "no image" held-back path.
+_JPG_EXT_RE = re.compile(r"\.jpe?g$", re.IGNORECASE)
+
+
+def _is_jpg_url(url: str) -> bool:
+    """True if the URL's file extension is .jpg/.jpeg (string match only)."""
+    if not url:
+        return False
+    path = url.split("?", 1)[0]            # drop query string (e.g. ?v=…)
+    return bool(_JPG_EXT_RE.search(path))
 
 
 def _strip_html(s: str) -> str:
@@ -164,11 +172,11 @@ def _shopify_lookup(client, ean, *skus):
         if edges:
             n = edges[0]["node"]
             imgs = []
-            if n.get("featuredImage"):
+            if n.get("featuredImage") and _is_jpg_url(n["featuredImage"]["url"]):
                 imgs.append(n["featuredImage"]["url"])
             for e in n.get("media", {}).get("edges", []):
                 url = (e.get("node") or {}).get("image", {}).get("url")
-                if url and url not in imgs:
+                if url and _is_jpg_url(url) and url not in imgs:
                     imgs.append(url)
             return {
                 "title": n.get("title"),
