@@ -70,11 +70,21 @@ Ask Wayne:
 
 ```
 Which products? Options:
-  all            — every B&Q active offer (the full Tesco expansion set)
-  eans <list>    — only these barcodes (comma/space-separated)
-  skus <list>    — only these B&Q shop_skus
+  all                 — every B&Q active offer (the full Tesco expansion set)
+  eans <list>         — only these barcodes (B&Q-offer set)
+  skus <list>         — only these B&Q shop_skus
+  shopify-skus <list> — source DIRECTLY from Shopify SKUs (products NOT on B&Q);
+                        brand + EAN come from Shopify
   > _
 ```
+
+For `shopify-skus`, pass `--shopify-skus "<s1,s2,…>"` to the generator in step 3.
+
+**Voice note:** this skill **reuses** Shopify copy verbatim (name-scrubbed —
+no MowDirect/retailer/promo leak). That's fine for bulk, but it duplicates
+mowdirect.co.uk's prose. For hero/important products, or where duplicate
+content matters, use **`/enrich-tesco`** instead — it rewrites the prose into a
+distinct voice per product.
 
 ## Step 3 — Generate the CSV
 
@@ -84,6 +94,8 @@ Which products? Options:
 # subset:
 .venv/bin/python scripts/mirakl_bq_to_tesco.py --eans "<e1,e2,…>"
 .venv/bin/python scripts/mirakl_bq_to_tesco.py --skus "<s1,s2,…>"
+# direct from Shopify (not B&Q offers):
+.venv/bin/python scripts/mirakl_bq_to_tesco.py --shopify-skus "<s1,s2,…>"
 ```
 
 This pulls offers, resolves categories, re-hosts images to JPEG (first run for
