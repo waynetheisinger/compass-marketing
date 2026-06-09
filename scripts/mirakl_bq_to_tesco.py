@@ -63,6 +63,33 @@ _SKU_COLOUR = {
 # SKUs to exclude even though they'd otherwise qualify (Wayne's call).
 _EXCLUDE_SKUS = {
     "2T2010483/M25": "Tractor — not selling on Tesco (2026-06-09)",
+    # Tipping trailer: its Shopify category (Tractor Parts) only has Tractor
+    # Tires/Wheels leaves on Tesco — no sellable trailer leaf. Held.
+    "C-SP22144": "No sellable Tesco leaf for a trailer (2026-06-09)",
+}
+
+# Per-SKU Tesco category overrides. Shopify assigned these products a non-leaf
+# (parent) taxonomy node; Tesco rejects non-leaf categories (error 1005), so
+# remap each to the correct leaf. Resolved 2026-06-09 from import 309131 errors.
+_PRE = "gid://shopify/TaxonomyCategory/"
+_SKU_CATEGORY = {
+    # Strimmer line/spools → Weed Trimmer Spools
+    "C-CL20-R-DUO": _PRE + "hg-12-4-11-1-2",
+    "C-CL24-R-DUO": _PRE + "hg-12-4-11-1-2",
+    "C-CL27-R-DUO": _PRE + "hg-12-4-11-1-2",
+    "C-CL30-R-DUO": _PRE + "hg-12-4-11-1-2",
+    "CL40-R-DUO":   _PRE + "hg-12-4-11-1-2",
+    # Towed lawn sweeper → Lawn Sweepers
+    "C-SP31109":    _PRE + "hg-12-4-4-13",
+    # Petrol scarifier → Dethatchers
+    "C-SW420-EXPERT": _PRE + "hg-12-3-4-1",
+    # 40V batteries → OPE Batteries leaf (the gid that worked in the cordless push)
+    "SBS40CB":      _PRE + "hg-12-4-7",
+    "SBS20CB":      _PRE + "hg-12-4-7",
+    # Replacement cement-mixer drums → Stand Cement Mixers (nearest leaf; review)
+    "100134S":      _PRE + "ha-15-34-2-2",
+    "100134O":      _PRE + "ha-15-34-2-2",
+    "100134Y-2":    _PRE + "ha-15-34-2-2",
 }
 
 # Shopify taxonomy nodes that Tesco does NOT open to third-party sellers
@@ -178,8 +205,10 @@ def build():
                                  "not found in Shopify by EAN/SKU — no category/images"))
                 continue
 
-            cat_gid = sh.get("category_gid")
+            cat_gid = _SKU_CATEGORY.get(sku) or sh.get("category_gid")
             cat_name = sh.get("category_name") or "(none)"
+            if sku in _SKU_CATEGORY:
+                cat_name = f"{cat_name} → leaf override {cat_gid.split('/')[-1]}"
             if not cat_gid:
                 outliers.append((sku, brand, cat_name, "no Shopify category assigned"))
                 continue
