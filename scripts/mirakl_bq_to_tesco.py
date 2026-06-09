@@ -52,68 +52,39 @@ _REPORT_PATH = os.path.join(_OUT_DIR, "bq_active_to_tesco_REPORT.md")
 # Makes re-runs cheap and avoids duplicate uploads to Shopify Files.
 _JPG_CACHE_PATH = os.path.join(_OUT_DIR, "image_jpg_cache.json")
 
-# Constant value-list fields for this catalogue (codes == labels on Tesco).
-# baseColour is set per brand below (varies per product — hand-edit in the CSV).
-_DEFAULTS = {
-    "countryOfOriginName": "China",   # confirm per product on review
-    "ageRestriction":      "No",
-    "unitQuantity":        "Each",
-    "vatRate":             "20",      # standard-rated; verified accepted 2026-06-09
-}
+# Per-product overrides + constants live in config/tesco_overrides.json,
+# maintained by the /tesco-shopify-shape skill. Loaded here so the generator
+# and the skill share one source of truth (no hardcoded SKU lists in code).
+_OVERRIDES_PATH = os.path.join(_REPO_ROOT, "config", "tesco_overrides.json")
 
-# Per-brand baseColour starting value (hand-edit exceptions in the CSV).
-# Spectrum livery is green (confirmed for cordless). Leave others blank so they
-# surface for review rather than guessing wrong.
-_BRAND_COLOUR = {"spectrum": "Green"}
 
-# Per-SKU baseColour overrides (confirmed by Wayne, 2026-06-09).
-_SKU_COLOUR = {
-    "GNP560-WT": "Green",    # Compass
-    "C-MTF66-MQ": "Red",     # Mountfield ride-on (kept)
-}
+def _load_overrides() -> dict:
+    with open(_OVERRIDES_PATH) as fh:
+        return json.load(fh)
 
-# SKUs to exclude even though they'd otherwise qualify (Wayne's call).
-_EXCLUDE_SKUS = {
-    "2T2010483/M25": "Tractor — not selling on Tesco (2026-06-09)",
-    # Tipping trailer: its Shopify category (Tractor Parts) only has Tractor
-    # Tires/Wheels leaves on Tesco — no sellable trailer leaf. Held.
-    "C-SP22144": "No sellable Tesco leaf for a trailer (2026-06-09)",
-}
 
-# Per-SKU Tesco category overrides. Shopify assigned these products a non-leaf
-# (parent) taxonomy node; Tesco rejects non-leaf categories (error 1005), so
-# remap each to the correct leaf. Resolved 2026-06-09 from import 309131 errors.
-_PRE = "gid://shopify/TaxonomyCategory/"
-_SKU_CATEGORY = {
-    # Strimmer line/spools → Weed Trimmer Spools
-    "C-CL20-R-DUO": _PRE + "hg-12-4-11-1-2",
-    "C-CL24-R-DUO": _PRE + "hg-12-4-11-1-2",
-    "C-CL27-R-DUO": _PRE + "hg-12-4-11-1-2",
-    "C-CL30-R-DUO": _PRE + "hg-12-4-11-1-2",
-    "CL40-R-DUO":   _PRE + "hg-12-4-11-1-2",
-    # Towed lawn sweeper → Lawn Sweepers
-    "C-SP31109":    _PRE + "hg-12-4-4-13",
-    # Petrol scarifier → Dethatchers
-    "C-SW420-EXPERT": _PRE + "hg-12-3-4-1",
-    # 40V batteries → OPE Batteries leaf (the gid that worked in the cordless push)
-    "SBS40CB":      _PRE + "hg-12-4-7",
-    "SBS20CB":      _PRE + "hg-12-4-7",
-    # Replacement cement-mixer drums → Stand Cement Mixers (nearest leaf; review)
-    "100134S":      _PRE + "ha-15-34-2-2",
-    "100134O":      _PRE + "ha-15-34-2-2",
-    "100134Y-2":    _PRE + "ha-15-34-2-2",
-}
+_OV = _load_overrides()
+_DEFAULTS = _OV.get("defaults", {})              # constant value-list fields
+_BRAND_COLOUR = _OV.get("brand_colour", {})      # baseColour by brand (lowercased)
+_SKU_COLOUR = _OV.get("sku_colour", {})          # baseColour by SKU (wins over brand)
+_EXCLUDE_SKUS = _OV.get("exclude_skus", {})      # SKU → reason held back
+_SKU_CATEGORY = _OV.get("sku_category", {})      # SKU → leaf-category gid override
+# Shopify taxonomy nodes Tesco doesn't open to sellers (404 on /products/attributes).
+_KNOWN_UNSELLABLE_GIDS = set(_OV.get("unsellable_gids", []))
+# Extra attribute values: {attrCode: {SKU_or_'*': value}} (SKU wins over '*').
+_ATTR_EXTRAS = {k: v for k, v in _OV.get("attribute_extras", {}).items()
+                if not k.startswith("_") and isinstance(v, dict)}
 
-# Shopify taxonomy nodes that Tesco does NOT open to third-party sellers
-# (verified via 404 on /products/attributes, 2026-06-09). Products landing here
-# can't be listed as-is — they need recategorising in Shopify (or are genuinely
-# out of scope). Kept out of the CSV; listed in the report.
-_KNOWN_UNSELLABLE_GIDS = {
-    "gid://shopify/TaxonomyCategory/vp-1-5-1",     # Portable Fuel Cans
-    "gid://shopify/TaxonomyCategory/vp-1-7-5",     # Motor Vehicle Trailers
-    "gid://shopify/TaxonomyCategory/vp-1-7-5-4",   # Utility & Cargo Trailers
-    "gid://shopify/TaxonomyCategory/bi-11-12",     # Heavy Machinery > Tractors (mis-tag)
-}
+
+def _extras_for(sku: str) -> dict:
+    """Resolve attribute_extras for a SKU: per-SKU value wins over '*' default."""
+    out = {}
+    for attr, by_sku in _ATTR_EXTRAS.items():
+        if sku in by_sku:
+            out[attr] = by_sku[sku]
+        elif "*" in by_sku:
+            out[attr] = by_sku["*"]
+    return out
 
 # CSV column order — editable facets (baseColour) kept near the front.
 _COL_ORDER = [
@@ -380,6 +351,7 @@ def build(only_skus: set[str] | None = None, only_eans: set[str] | None = None):
             for col, url in zip(fs.extra_images, images[1:]):
                 row[col] = url
             row.update(_DEFAULTS)
+            row.update(_extras_for(sku))   # category-specific attrs from config
             rows.append(row)
             listable_recs.append({
                 "sku": sku, "brand": brand, "cat": cat_name,

@@ -1,0 +1,43 @@
+{
+  "_doc": "Per-product Tesco listing overrides + constants. Edited by the /tesco-shopify-shape skill, read by scripts/mirakl_bq_to_tesco.py and scripts/tesco_csv_batch.py. Tesco categories ARE the Shopify product taxonomy; attribute schema is API-discoverable via /products/attributes?hierarchy=<gid>.",
+  "defaults": {
+    "countryOfOriginName": "China",
+    "ageRestriction": "No",
+    "unitQuantity": "Each",
+    "vatRate": "20"
+  },
+  "brand_colour": {
+    "spectrum": "Green"
+  },
+  "sku_colour": {
+    "GNP560-WT": "Green",
+    "C-MTF66-MQ": "Red"
+  },
+  "exclude_skus": {
+    "2T2010483/M25": "Tractor — not selling on Tesco (2026-06-09)",
+    "C-SP22144": "No sellable Tesco leaf for a trailer (2026-06-09)"
+  },
+  "sku_category": {
+    "C-CL20-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
+    "C-CL24-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
+    "C-CL27-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
+    "C-CL30-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
+    "CL40-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
+    "C-SP31109": "gid://shopify/TaxonomyCategory/hg-12-4-4-13",
+    "C-SW420-EXPERT": "gid://shopify/TaxonomyCategory/hg-12-3-4-1",
+    "SBS40CB": "gid://shopify/TaxonomyCategory/hg-12-4-7",
+    "SBS20CB": "gid://shopify/TaxonomyCategory/hg-12-4-7",
+    "100134S": "gid://shopify/TaxonomyCategory/ha-15-34-2-2",
+    "100134O": "gid://shopify/TaxonomyCategory/ha-15-34-2-2",
+    "100134Y-2": "gid://shopify/TaxonomyCategory/ha-15-34-2-2"
+  },
+  "unsellable_gids": [
+    "gid://shopify/TaxonomyCategory/vp-1-5-1",
+    "gid://shopify/TaxonomyCategory/vp-1-7-5",
+    "gid://shopify/TaxonomyCategory/vp-1-7-5-4",
+    "gid://shopify/TaxonomyCategory/bi-11-12"
+  ],
+  "attribute_extras": {
+    "_doc": "Extra Tesco attribute values to inject into rows. Shape: {attrCode: {SKU_or_'*': value}}. '*' applies to every product; a SKU key wins over '*'. Use for category-specific required attrs (e.g. batterySize) that aren't auto-filled."
+  }
+}
