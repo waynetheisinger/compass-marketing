@@ -517,7 +517,7 @@ _TX = "gid://shopify/TaxonomyCategory/"
 
 TESCO = OperatorConfig(
     name="TESCO",
-    channel="",                       # TBC — confirm Tesco's channel code from the portal
+    channel=os.environ.get("MIRAKL_TESCO_CHANNEL", ""),   # from .env (instance-specific)
     # Required value-list / decimal constants common to every Spectrum row.
     # Codes == labels on Tesco (verified 2026-06-09). vatRate is a plain decimal
     # (20% standard-rated) — confirm format on first submission.
