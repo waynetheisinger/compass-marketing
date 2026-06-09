@@ -54,6 +54,17 @@ _DEFAULTS = {
 # surface for review rather than guessing wrong.
 _BRAND_COLOUR = {"spectrum": "Green"}
 
+# Per-SKU baseColour overrides (confirmed by Wayne, 2026-06-09).
+_SKU_COLOUR = {
+    "GNP560-WT": "Green",    # Compass
+    "C-MTF66-MQ": "Red",     # Mountfield ride-on (kept)
+}
+
+# SKUs to exclude even though they'd otherwise qualify (Wayne's call).
+_EXCLUDE_SKUS = {
+    "2T2010483/M25": "Tractor — not selling on Tesco (2026-06-09)",
+}
+
 # Shopify taxonomy nodes that Tesco does NOT open to third-party sellers
 # (verified via 404 on /products/attributes, 2026-06-09). Products landing here
 # can't be listed as-is — they need recategorising in Shopify (or are genuinely
@@ -154,6 +165,9 @@ def build():
             brand = (o.get("product_brand") or "").strip()
             ean = _ean_of(o)
 
+            if sku in _EXCLUDE_SKUS:
+                outliers.append((sku, brand, "—", _EXCLUDE_SKUS[sku]))
+                continue
             if brand.lower() not in registered:
                 outliers.append((sku, brand, "—", "brand not registered on Tesco"))
                 continue
@@ -193,7 +207,7 @@ def build():
                 fs.sku: sku,
                 fs.ean: ean or "",
                 "brand": brand,
-                "baseColour": _BRAND_COLOUR.get(brand.lower(), ""),
+                "baseColour": _SKU_COLOUR.get(sku, _BRAND_COLOUR.get(brand.lower(), "")),
                 fs.name: name_clean,
                 fs.body: body_clean,
                 fs.image_main: images[0],
