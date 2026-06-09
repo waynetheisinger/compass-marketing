@@ -214,13 +214,19 @@ def run(operator_name: str,
         use_cache: bool,
         refresh_cache: bool) -> int:
     op = OPERATORS.get(operator_name)
-    if not op or not op.channel:
-        print(f"ERROR: operator '{operator_name}' is not configured "
-              f"(channel='{op.channel if op else ''}'). "
-              f"Populate mirakl_operators.{operator_name}.", file=sys.stderr)
+    if not op:
+        print(f"ERROR: operator '{operator_name}' is not in OPERATORS.", file=sys.stderr)
+        return 2
+    # The channel code is only required to actually submit. A product dry-run
+    # (CSV generation for review) does not need it.
+    if not op.channel and not dry_run:
+        print(f"ERROR: operator '{operator_name}' has no channel code set — "
+              f"required before live submission. Populate "
+              f"mirakl_operators.{operator_name}.channel, or use --dry-run.",
+              file=sys.stderr)
         return 2
 
-    print(f"Operator: {op.name}  (channel: {op.channel})")
+    print(f"Operator: {op.name}  (channel: {op.channel or '(unset — dry-run only)'})")
     print(f"Dry run: {dry_run}  Offers: {push_offers}\n")
 
     # ---- 1. Load catalogue ----

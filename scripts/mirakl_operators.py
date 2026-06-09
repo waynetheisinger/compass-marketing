@@ -28,8 +28,205 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from typing import Any, Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+
+# ---------------------------------------------------------------------------
+# Compliance profile — per-operator copy sanitisation
+# ---------------------------------------------------------------------------
+#
+# Each Mirakl operator enforces its own rules on free-text fields: restricted
+# characters, length caps, banned promotional/contact phrasing, and (critically
+# for marketplaces that are themselves retailers) a ban on competitor-retailer
+# references. A listing on Tesco that names "B&Q" or "Screwfix" is a fast route
+# to suppression. This profile carries all those rules per operator so the
+# operator-agnostic row builders can sanitise reused copy without hardcoding any
+# one operator's quirks.
+
+# Restricted special characters most Mirakl operators reject in text fields.
+# Kingfisher discovered these via dry-run error 2021 (2026-05-07); the set is a
+# safe baseline for any operator. Maps each to an ASCII-safe equivalent.
+_DEFAULT_CHAR_REPLACEMENTS: dict[str, str] = {
+    "—": " - ",   # em-dash → " - "
+    "–": "-",     # en-dash → hyphen
+    "×": "x",     # multiplication × → x
+    "°": "",      # degree symbol — restricted; strip
+    "“": '"',     # left smart quote
+    "”": '"',     # right smart quote
+    "‘": "'",     # left smart apostrophe
+    "’": "'",     # right smart apostrophe
+    "•": "*",     # bullet
+    "…": "...",   # ellipsis
+}
+
+# Contact-detail patterns scrubbed from prose on every operator (URLs, emails,
+# UK phone numbers). Listings must not route the buyer off the marketplace.
+_CONTACT_PATTERNS: tuple[re.Pattern, ...] = (
+    re.compile(r"https?://\S+", re.IGNORECASE),
+    re.compile(r"\bwww\.\S+", re.IGNORECASE),
+    re.compile(r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b", re.IGNORECASE),
+    re.compile(r"\b\S+\.(?:co\.uk|com|net|org)(?:/\S*)?\b", re.IGNORECASE),
+    re.compile(r"(?<!\d)(?:\+?44\s?|0)(?:\d\s?){9,10}(?!\d)"),
+)
+
+
+def _term_pattern(term: str) -> str:
+    """Build a case-insensitive, boundary-aware regex source for a brand term.
+
+    Handles multi-word terms (whitespace-flexible, e.g. ``Robert Dyas`` / ``B & Q``)
+    and terms containing internal punctuation (``Diy.com``). Boundaries are plain
+    word boundaries (``\\w``), so a trailing sentence period — ``Homebase.`` — or
+    apostrophe — ``B&Q's`` — does not block the match.
+    """
+    escaped = re.escape(term)
+    # Let any run of whitespace in the term match flexibly (zero-or-more, so
+    # "B&Q" and "B & Q" both match a single "B & Q" entry).
+    escaped = re.sub(r"\\?\s+", r"\\s*", escaped)
+    return r"(?<!\w)" + escaped + r"(?!\w)"
+
+
+@dataclass
+class ComplianceProfile:
+    """Per-operator copy-sanitisation rules.
+
+    Fields:
+      char_replacements : restricted char → ASCII replacement (applied to all text)
+      field_length_caps : portal-display-label → max chars (informational +
+                          name auto-truncation)
+      banned_phrases    : lowercase phrase → replacement (operator-flagged
+                          cross-promotional / off-brand wording, e.g. Kingfisher's
+                          "the range" → "the lineup")
+      retailer_scrub    : competitor / host-operator retailer brand names that
+                          must never appear in a listing on this operator
+      banned_promo      : promotional phrases banned by the operator
+                          ("best price", "free delivery", …)
+    """
+    char_replacements: dict[str, str] = field(default_factory=lambda: dict(_DEFAULT_CHAR_REPLACEMENTS))
+    field_length_caps: dict[str, int] = field(default_factory=dict)
+    banned_phrases: dict[str, str] = field(default_factory=dict)
+    retailer_scrub: tuple[str, ...] = ()
+    banned_promo: tuple[str, ...] = ()
+
+    def _replace_chars(self, s: str) -> str:
+        for ch, rep in self.char_replacements.items():
+            s = s.replace(ch, rep)
+        return s
+
+    def clean_name(self, s: str, max_chars: int | None = None) -> str:
+        """Make a product title acceptable: char-replace, scrub, collapse
+        whitespace, then truncate to max_chars at a word boundary."""
+        out, _ = self.scrub(self._replace_chars(s))
+        out = " ".join(out.split())
+        if max_chars and len(out) > max_chars:
+            truncated = out[:max_chars]
+            cut = truncated.rfind(" ")
+            if cut > max_chars * 0.7:
+                truncated = truncated[:cut]
+            out = truncated.rstrip(" ,.;-")
+        return out
+
+    def scrub(self, s: str) -> tuple[str, list[str]]:
+        """Remove retailer references, banned promo phrasing and contact details.
+
+        Returns (cleaned_text, hits) where hits is every removed fragment — the
+        caller logs these so a human can confirm nothing meaningful was lost.
+        """
+        if not s:
+            return s, []
+        out = s
+        hits: list[str] = []
+
+        def _strip(pattern: re.Pattern):
+            nonlocal out
+            found = pattern.findall(out)
+            if found:
+                hits.extend(m if isinstance(m, str) else " ".join(m) for m in found)
+                out = pattern.sub(" ", out)
+
+        # Contact details first, as whole units — otherwise a retailer/own-store
+        # token inside a URL/email (mowdirect.co.uk) would be picked off and
+        # leave a broken fragment behind.
+        for pat in _CONTACT_PATTERNS:
+            _strip(pat)
+        for term in self.retailer_scrub:
+            _strip(re.compile(_term_pattern(term), re.IGNORECASE))
+        for phrase in self.banned_promo:
+            _strip(re.compile(_term_pattern(phrase), re.IGNORECASE))
+
+        # Tidy whitespace and punctuation left by removals.
+        out = re.sub(r"\s{2,}", " ", out)
+        # Drop a separator dash orphaned between two removed fragments, incl.
+        # one left dangling before end punctuation ("... - !" → "...!").
+        out = re.sub(r"\s+[-–]\s*(?=[,.;:!?]|$)", "", out)
+        out = re.sub(r"(?:^|(?<=[.;:!?]))\s*[-–]\s+", " ", out)
+        out = re.sub(r"\s+([,.;:!?)])", r"\1", out)
+        out = re.sub(r"\(\s+", "(", out)
+        out = re.sub(r"\s{2,}", " ", out)
+        # Strip only dangling separators/whitespace at the ends — never a
+        # legitimate sentence-ending period.
+        out = out.strip(" ,;:-–")
+        return out.strip(), [h.strip() for h in hits if h.strip()]
+
+    def sanitise_prose(self, s: str) -> tuple[str, list[str]]:
+        """Full sanitisation for a prose field (Body Copy, USPs, Selling Copy).
+
+        Applies char replacement, operator banned-phrase rewrites, then the
+        retailer/promo/contact scrub. Returns (clean_text, hits)."""
+        if not s:
+            return s, []
+        out = self._replace_chars(s)
+        for phrase, rep in self.banned_phrases.items():
+            out = re.compile(_term_pattern(phrase), re.IGNORECASE).sub(rep, out)
+        return self.scrub(out)
+
+
+# ---------------------------------------------------------------------------
+# Field schema — per-operator CSV column names for the core product fields
+# ---------------------------------------------------------------------------
+#
+# Mirakl operators do NOT share column names. Kingfisher's product import uses
+# `name` / `ean` / `Body Copy` / `image_main_1`; Tesco's uses `description` /
+# `barcode` / `marketingText` / `image1`. The row builder maps each logical
+# product field to the operator's actual column via this schema, so no column
+# name is hardcoded in build_product_row().
+
+@dataclass
+class FieldSchema:
+    """Logical product field → operator CSV column-name mapping.
+
+    A field set to None means the operator does not take that field as a core
+    column (e.g. Tesco's minimal tracer omits weight/dimensions — they are
+    optional, not required)."""
+    category: str          # column holding the category code
+    sku: str               # seller SKU
+    name: str              # product title
+    ean: str               # barcode / EAN
+    body: str              # marketing / long description
+    image_main: str        # primary image
+    extra_images: tuple[str, ...] = ()   # additional image slots, in order
+    weight: str | None = None
+    length: str | None = None
+    width: str | None = None
+    height: str | None = None
+    variant_group: str | None = None
+
+
+# Default schema reproduces Kingfisher's historical column names so any operator
+# without an explicit field_schema behaves exactly as before this change.
+_DEFAULT_FIELD_SCHEMA = FieldSchema(
+    category="category",
+    sku="shop_sku",
+    name="name",
+    ean="ean",
+    body="Body Copy",
+    image_main="image_main_1",
+    weight="Product_weight",
+    length="Product_length",
+    width="Product_width",
+    height="Product_height",
+)
 
 
 # ---------------------------------------------------------------------------
@@ -52,11 +249,17 @@ class OperatorConfig:
                                                     # are stored in mm. Verified 2026-05-07 by reading
                                                     # SBS560CHT back from the seller portal: our 21cm
                                                     # rendered as "21.00 mm".)
+    compliance: ComplianceProfile = None             # per-operator copy-sanitisation rules
+    field_schema: FieldSchema = None                 # per-operator core CSV column names
     notes: str = ""
 
     def __post_init__(self):
         if self.per_sku_overrides is None:
             self.per_sku_overrides = {}
+        if self.compliance is None:
+            self.compliance = ComplianceProfile()
+        if self.field_schema is None:
+            self.field_schema = _DEFAULT_FIELD_SCHEMA
 
 
 # ---------------------------------------------------------------------------
@@ -92,12 +295,24 @@ _K_BATTERIES_SUPPLIED_YES = "1"  # kit — battery included (best guess; verify 
 _K_TECH_RECHARGEABLE  = "1"
 _K_USB_NO             = "2"      # USB-related no/N-A flags
 
+# Kingfisher compliance profile — codifies BQ_QUIRKS.md sanitisation rules.
+# B&Q is the host operator for these listings, so no cross-retailer scrub is
+# applied (only its own flagged phrase, "the range" on chargers, 2026-05-20).
+_KINGFISHER_COMPLIANCE = ComplianceProfile(
+    char_replacements=dict(_DEFAULT_CHAR_REPLACEMENTS),
+    field_length_caps={"Name": 130, "Key Feature": 30},
+    banned_phrases={"the range": "the lineup"},
+    retailer_scrub=(),
+    banned_promo=(),
+)
+
 KINGFISHER = OperatorConfig(
     name="KINGFISHER",
     channel="BQ_UK",
     state_code="11",
     leadtime_to_ship=1,
     name_max_chars=130,                          # B&Q caps product name length
+    compliance=_KINGFISHER_COMPLIANCE,
     dimension_unit_multiplier=10.0,              # Kingfisher stores L/W/H in mm; catalogue is in cm
     common_attributes={
         # Applied to every SBS product regardless of category
@@ -242,16 +457,100 @@ KINGFISHER = OperatorConfig(
 
 
 # ---------------------------------------------------------------------------
-# TESCO — stub. Populate when account goes live.
+# TESCO — Mirakl instance. Category/attribute schema TBC (needs the Tesco
+# seller-portal category template + a /hierarchies + /values_lists walk once
+# the API key is in .env). The compliance profile below is ready now and is the
+# headline of this slice: Tesco is itself a retailer, so any competitor- or
+# host-retailer reference in a listing is a fast route to suppression.
 # ---------------------------------------------------------------------------
+
+# UK retailer / marketplace brand names that must never leak into a Tesco
+# listing. Word-boundary, case-insensitive. Deliberately excludes ambiguous
+# common words (e.g. "Very") to avoid mangling legitimate prose; every scrub
+# hit is logged for human review regardless. Does NOT include "Spectrum" —
+# that is the brand we are selling.
+_UK_RETAILER_NAMES: tuple[str, ...] = (
+    "B&Q", "B & Q", "Kingfisher", "Diy.com",
+    "Screwfix", "Wickes", "Homebase", "Toolstation", "Robert Dyas",
+    "Argos", "Amazon", "eBay", "ManoMano", "OnBuy", "Rackhams", "Wilko",
+    "The Range",
+    # Our own storefronts — listings must not route the buyer off Tesco.
+    "MowDirect", "Mow Direct", "Compass", "compassgm",
+)
+
+# Promotional phrasing operators routinely ban from listing copy. The slice
+# brief names "best price" and "free delivery"; the rest are common variants.
+_BANNED_PROMO: tuple[str, ...] = (
+    "best price", "lowest price", "cheapest", "unbeatable price",
+    "free delivery", "free postage", "free p&p", "free shipping",
+    "buy now", "shop now", "best value",
+)
+
+_TESCO_COMPLIANCE = ComplianceProfile(
+    char_replacements=dict(_DEFAULT_CHAR_REPLACEMENTS),
+    # Caps unconfirmed until the Tesco template is downloaded; 130 mirrors the
+    # B&Q name cap as a safe default and is informational-only (manual rewrite).
+    field_length_caps={"Name": 130},
+    banned_phrases={},
+    retailer_scrub=_UK_RETAILER_NAMES,
+    banned_promo=_BANNED_PROMO,
+)
+
+# Tesco column names (from /products/attributes, 2026-06-09) — completely
+# different from Kingfisher's. Tracer maps the required core fields only; weight
+# and dimensions are optional on Tesco and omitted for now.
+_TESCO_FIELD_SCHEMA = FieldSchema(
+    category="shopifyHierarchyId",
+    sku="sku",
+    name="description",          # Tesco "Title"
+    ean="barcode",
+    body="marketingText",        # Tesco "Description"
+    image_main="image1",
+    extra_images=tuple(f"image{i}" for i in range(2, 11)),
+    variant_group="variationId",
+)
+
+# Tesco categories use the Shopify product taxonomy (gid://shopify/...), NOT
+# Kingfisher's PIM_xxxxx. Resolved from /hierarchies 2026-06-09. The Spectrum
+# range sits in the Outdoor Power Equipment tree (hg-12-3...).
+_TX = "gid://shopify/TaxonomyCategory/"
 
 TESCO = OperatorConfig(
     name="TESCO",
-    channel="",                       # TBC
-    common_attributes={},
-    by_product_type={},
-    notes="Stub — populate when Tesco Mirakl account is provisioned. "
-          "Walk /hierarchies + /values_lists when API key is in env.",
+    channel=os.environ.get("MIRAKL_TESCO_CHANNEL", ""),   # from .env (instance-specific)
+    # Required value-list / decimal constants common to every Spectrum row.
+    # Codes == labels on Tesco (verified 2026-06-09). vatRate is a plain decimal
+    # (20% standard-rated) — confirm format on first submission.
+    common_attributes={
+        "brand":               "Spectrum",
+        "baseColour":          "Green",     # Spectrum livery (Wayne, 2026-06-09)
+        "countryOfOriginName": "China",     # Wayne, 2026-06-09
+        "ageRestriction":      "No",
+        "unitQuantity":        "Each",
+        "vatRate":             "20",
+    },
+    by_product_type={
+        # category-specific required attrs (e.g. lawnMowerCuttingWidth) are
+        # optional for the tracer; only the generic required core is enforced.
+        "LAWN_MOWER_BARE":        {"category": _TX + "hg-12-3-5-4"},   # Walk-Behind Mowers
+        "LAWN_MOWER_KIT":         {"category": _TX + "hg-12-3-5-4"},
+        "LEAF_BLOWER_BARE":       {"category": _TX + "hg-12-3-7"},     # Leaf Blowers
+        "LEAF_BLOWER_KIT":        {"category": _TX + "hg-12-3-7"},
+        "HEDGE_TRIMMER_BARE":     {"category": _TX + "hg-12-3-3"},     # Hedge Trimmers
+        "HEDGE_TRIMMER_KIT":      {"category": _TX + "hg-12-3-3"},
+        "BATTERY_BARE":           {"category": _TX + "hg-12-4-7"},     # OPE Batteries
+        "CHARGER_BARE":           {"category": _TX + "ha-14-17"},      # Power Tool Chargers
+        "PRESSURE_WASHER_CORDED": {"category": _TX + "hg-12-3-12"},    # Pressure Washers
+    },
+    name_max_chars=None,              # Tesco title cap TBC — no truncation for now
+    compliance=_TESCO_COMPLIANCE,
+    field_schema=_TESCO_FIELD_SCHEMA,
+    notes="Connected 2026-06-09 (base tescouk-prod.mirakl.net). Categories = "
+          "Shopify taxonomy; attribute schema is API-discoverable via "
+          "/products/attributes?hierarchy=<gid> (no portal template needed). "
+          "Required core verified on Walk-Behind Mowers (11 fields); other "
+          "categories share the generic core but may add category-specific "
+          "required attrs — verify per category on first dry-run.",
 )
 
 
@@ -412,11 +711,9 @@ KINGFISHER_DISPLAY_TO_API: dict[str, str | None] = {
 
 # Per-field length caps that Kingfisher enforces (over-cap values are
 # rejected by the portal/Mirakl). Keyed by portal display label.
-# See .claude/skills/enrich-bq/BQ_QUIRKS.md for documentation.
-KINGFISHER_FIELD_LENGTH_CAPS: dict[str, int] = {
-    "Name":        130,   # also runs through clean_name() for char-replacement
-    "Key Feature": 30,
-}
+# Back-compat alias — canonical source is now the KINGFISHER compliance profile.
+# scripts/bq_enrich.py imports this name. See enrich-bq/BQ_QUIRKS.md.
+KINGFISHER_FIELD_LENGTH_CAPS: dict[str, int] = _KINGFISHER_COMPLIANCE.field_length_caps
 
 
 # Section headers that appear in portal text dumps — used by the parser to
@@ -479,46 +776,21 @@ _load_extensions()
 # Row builders
 # ---------------------------------------------------------------------------
 
-# Characters Mirakl/Kingfisher rejects as "restricted special characters" in
-# product names (per dry-run error 2021 on 2026-05-07). Map them to ASCII
-# equivalents that keep the title readable.
-_NAME_CHAR_REPLACEMENTS = {
-    "—": " - ",   # em-dash → " - "
-    "–": "-",     # en-dash → hyphen
-    "×": "x",     # multiplication × → x
-    "°": "",      # degree symbol — restricted on Kingfisher (per dry-run 1471724); strip
-    "“": '"',     # left smart quote
-    "”": '"',     # right smart quote
-    "‘": "'",     # left smart apostrophe
-    "’": "'",     # right smart apostrophe
-    "•": "*",     # bullet
-    "…": "...",   # ellipsis
-}
+# Back-compat aliases. The canonical char map + name-cleaning logic now live on
+# ComplianceProfile; these names are retained for any importer that still uses
+# them. clean_name() delegates to the Kingfisher profile (its historical home).
+_NAME_CHAR_REPLACEMENTS = _DEFAULT_CHAR_REPLACEMENTS
 
 
 def clean_name(s: str, max_chars: int | None = None) -> str:
-    """
-    Make a product title acceptable to Mirakl (or specifically Kingfisher):
-      1. Replace 'restricted special characters' with ASCII equivalents
-      2. Collapse whitespace
-      3. Truncate to max_chars at a word boundary if specified
-    """
-    out = s
-    for ch, rep in _NAME_CHAR_REPLACEMENTS.items():
-        out = out.replace(ch, rep)
-    # Collapse multiple spaces introduced by replacements
-    out = " ".join(out.split())
-    if max_chars and len(out) > max_chars:
-        # Truncate at the last word boundary that fits
-        truncated = out[:max_chars]
-        cut = truncated.rfind(" ")
-        if cut > max_chars * 0.7:   # only word-break if we don't lose too much
-            truncated = truncated[:cut]
-        out = truncated.rstrip(" ,.;-")
-    return out
+    """Make a product title acceptable to Mirakl (Kingfisher profile).
+
+    Back-compat wrapper around ``KINGFISHER.compliance.clean_name``. New code
+    should call ``op.compliance.clean_name(...)`` for the operator in hand."""
+    return _KINGFISHER_COMPLIANCE.clean_name(s, max_chars)
 
 
-def build_product_row(op: OperatorConfig, p: Any) -> dict[str, str]:
+def build_product_row(op: OperatorConfig, p: Any, report: dict | None = None) -> dict[str, str]:
     """
     Build a Mirakl /products/imports CSV row dict from an SBSProduct + operator config.
 
@@ -527,6 +799,12 @@ def build_product_row(op: OperatorConfig, p: Any) -> dict[str, str]:
 
     p is a sbs_catalogue.SBSProduct (duck-typed — uses sku, ean, product_type,
     title, body_copy, image_url, weight_kg, dim_l_cm, dim_w_cm, dim_h_cm, raw_specs).
+
+    Copy reuse + per-operator sanitisation: ``name`` and ``Body Copy`` are passed
+    through ``op.compliance`` (char replacement, banned-phrase rewrite, and the
+    cross-retailer / promo / contact scrub). If a ``report`` dict is supplied,
+    it is populated with ``report["scrub_hits"]`` (every fragment removed, per
+    field) so the caller can surface them in a log for human review.
 
     Application order (later wins):
       1. core mandatory columns
@@ -542,23 +820,48 @@ def build_product_row(op: OperatorConfig, p: Any) -> dict[str, str]:
             f"(SKU {p.sku}). Populate mirakl_operators.{op.name}.by_product_type."
         )
 
-    row: dict[str, str] = {
-        # ---- Core mandatory columns (universal across Mirakl operators) ----
-        "category":      pt_cfg["category"],
-        "shop_sku":      p.sku,
-        "name":          clean_name(p.title, op.name_max_chars),
-        "ean":           p.ean,
-        "image_main_1":  p.image_url,
-        "Body Copy":     p.body_copy.replace("\r", " ").replace("\n", " ").strip(),
+    cp = op.compliance
+    name_clean = cp.clean_name(p.title, op.name_max_chars)
+    body_raw = (p.body_copy or "").replace("\r", " ").replace("\n", " ").strip()
+    body_clean, body_hits = cp.sanitise_prose(body_raw)
+    _, name_hits = cp.scrub(p.title)
+    if report is not None:
+        scrub_hits = {}
+        if name_hits:
+            scrub_hits["name"] = name_hits
+        if body_hits:
+            scrub_hits["Body Copy"] = body_hits
+        if scrub_hits:
+            report.setdefault("scrub_hits", {})[p.sku] = scrub_hits
 
-        # ---- Numeric dims/weight (Mirakl: numeric, no unit, ≥0.01) ----
-        # Weight stays in kg. L/W/H multiplied by op.dimension_unit_multiplier
-        # (Kingfisher = 10, so cm → mm).
-        "Product_weight": f"{p.weight_kg:.2f}",
-        "Product_length": f"{p.dim_l_cm * op.dimension_unit_multiplier:.2f}",
-        "Product_width":  f"{p.dim_w_cm * op.dimension_unit_multiplier:.2f}",
-        "Product_height": f"{p.dim_h_cm * op.dimension_unit_multiplier:.2f}",
+    # ---- Core columns, named per the operator's field schema ----
+    fs = op.field_schema
+    row: dict[str, str] = {
+        fs.category:   pt_cfg["category"],
+        fs.sku:        p.sku,
+        fs.name:       name_clean,
+        fs.ean:        p.ean,
+        fs.image_main: p.image_url,
+        fs.body:       body_clean,
     }
+
+    # Additional image slots, in order (operators that expose image2..imageN).
+    extra_urls = getattr(p, "image_urls", None) or []
+    for col, url in zip(fs.extra_images, extra_urls[1:]):
+        if url:
+            row[col] = url
+
+    # ---- Numeric dims/weight (only operators whose schema names them) ----
+    # Weight stays in kg. L/W/H multiplied by op.dimension_unit_multiplier
+    # (Kingfisher = 10, so cm → mm).
+    if fs.weight:
+        row[fs.weight] = f"{p.weight_kg:.2f}"
+    if fs.length:
+        row[fs.length] = f"{p.dim_l_cm * op.dimension_unit_multiplier:.2f}"
+    if fs.width:
+        row[fs.width] = f"{p.dim_w_cm * op.dimension_unit_multiplier:.2f}"
+    if fs.height:
+        row[fs.height] = f"{p.dim_h_cm * op.dimension_unit_multiplier:.2f}"
 
     # Apply operator-wide common attributes
     row.update(op.common_attributes)
@@ -608,7 +911,10 @@ def build_offer_row(op: OperatorConfig, p: Any) -> dict[str, str]:
 
 __all__ = [
     "OperatorConfig",
+    "ComplianceProfile",
+    "FieldSchema",
     "KINGFISHER", "TESCO", "THERANGE",
     "OPERATORS",
     "build_product_row", "build_offer_row",
+    "clean_name",
 ]
