@@ -20,12 +20,18 @@ Run from the repo root. Output → workdir/mirakl-tesco/.
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import html
+import io
+import json
 import os
 import re
 import sys
+import time
 from collections import Counter
+
+import requests
 
 _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.dirname(_THIS_DIR)
@@ -35,10 +41,16 @@ if _REPO_ROOT not in sys.path:
 from scripts.mirakl_client import MiraklClient          # noqa: E402
 from scripts.shopify_client import ShopifyClient        # noqa: E402
 from scripts.mirakl_operators import TESCO              # noqa: E402
+from scripts.blog_publish import (                      # noqa: E402
+    STAGED_UPLOADS, FILE_CREATE, FILE_POLL,
+)
 
 _OUT_DIR = os.path.join(_REPO_ROOT, "workdir", "mirakl-tesco")
 _CSV_PATH = os.path.join(_OUT_DIR, "bq_active_to_tesco_products.csv")
 _REPORT_PATH = os.path.join(_OUT_DIR, "bq_active_to_tesco_REPORT.md")
+# Persistent map: source (non-jpg) Shopify image URL → re-hosted .jpg CDN URL.
+# Makes re-runs cheap and avoids duplicate uploads to Shopify Files.
+_JPG_CACHE_PATH = os.path.join(_OUT_DIR, "image_jpg_cache.json")
 
 # Constant value-list fields for this catalogue (codes == labels on Tesco).
 # baseColour is set per brand below (varies per product — hand-edit in the CSV).
@@ -114,11 +126,12 @@ _COL_ORDER = [
 _TAG_RE = re.compile(r"<[^>]+>")
 
 # Tesco accepts JPEG images only (confirmed in the seller portal 2026-06-09:
-# a non-JPEG image was rejected with "Supported image types are: JPEG"). We
-# therefore keep ONLY image URLs whose file extension is .jpg/.jpeg, decided
-# purely by string-matching the URL — no network probe of the actual bytes.
-# Any other extension (.png, .webp, …) is dropped from the row. If that leaves
-# a product with no images it falls to the "no image" held-back path.
+# non-JPEG images were rejected with "Supported image types are: JPEG"; and a
+# .png URL serving jpeg bytes via &format=pjpg was still rejected — Tesco keys
+# off the URL extension AND/OR bytes). So images that aren't already .jpg are
+# converted to real JPEG locally (Pillow) and re-uploaded to Shopify Files,
+# yielding a genuine .jpg URL that serves jpeg to Tesco's */* fetcher. The
+# storefront's own product images are untouched (these are separate files).
 _JPG_EXT_RE = re.compile(r"\.jpe?g$", re.IGNORECASE)
 
 
@@ -128,6 +141,92 @@ def _is_jpg_url(url: str) -> bool:
         return False
     path = url.split("?", 1)[0]            # drop query string (e.g. ?v=…)
     return bool(_JPG_EXT_RE.search(path))
+
+
+def _load_jpg_cache() -> dict:
+    if os.path.exists(_JPG_CACHE_PATH):
+        try:
+            with open(_JPG_CACHE_PATH) as fh:
+                return json.load(fh)
+        except (OSError, json.JSONDecodeError):
+            return {}
+    return {}
+
+
+def _save_jpg_cache(cache: dict) -> None:
+    with open(_JPG_CACHE_PATH, "w") as fh:
+        json.dump(cache, fh, indent=2, sort_keys=True)
+
+
+def _to_jpeg_bytes(raw: bytes) -> bytes:
+    """Convert image bytes to JPEG (q88, progressive), flattening any alpha
+    onto white (JPEG has no transparency)."""
+    from PIL import Image
+    im = Image.open(io.BytesIO(raw))
+    if im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info):
+        im = im.convert("RGBA")
+        bg = Image.new("RGB", im.size, (255, 255, 255))
+        bg.paste(im, mask=im.split()[-1])
+        im = bg
+    else:
+        im = im.convert("RGB")
+    buf = io.BytesIO()
+    im.save(buf, "JPEG", quality=88, progressive=True, optimize=True)
+    return buf.getvalue()
+
+
+def _upload_jpg(client, filename: str, data: bytes) -> str:
+    """Staged-upload JPEG bytes to Shopify Files; return the .jpg CDN URL."""
+    staged = client.execute(STAGED_UPLOADS, {"input": [{
+        "filename": filename, "mimeType": "image/jpeg",
+        "resource": "FILE", "httpMethod": "POST",
+    }]})
+    target = staged["stagedUploadsCreate"]["stagedTargets"][0]
+    form = {p["name"]: p["value"] for p in target["parameters"]}
+    up = requests.post(target["url"], data=form,
+                       files={"file": (filename, data, "image/jpeg")}, timeout=120)
+    up.raise_for_status()
+    created = client.execute(FILE_CREATE, {"files": [{
+        "originalSource": target["resourceUrl"], "contentType": "IMAGE", "alt": "",
+    }]})
+    errs = created["fileCreate"]["userErrors"]
+    if errs:
+        raise RuntimeError(f"fileCreate: {errs}")
+    node = created["fileCreate"]["files"][0]
+    fid = node["id"]
+    url = (node.get("image") or {}).get("url")
+    for _ in range(30):
+        if url:
+            return url
+        time.sleep(2)
+        n = client.execute(FILE_POLL, {"id": fid})["node"] or {}
+        if n.get("fileStatus") == "READY":
+            url = (n.get("image") or {}).get("url")
+        elif n.get("fileStatus") == "FAILED":
+            raise RuntimeError("Shopify fileStatus FAILED")
+    raise RuntimeError("timed out waiting for Shopify to process the jpg")
+
+
+def _ensure_jpg(client, url: str, cache: dict) -> str | None:
+    """Return a .jpg URL for the image: pass through native .jpg, else fetch,
+    convert to JPEG, upload to Shopify, and cache the new URL. None on failure."""
+    if _is_jpg_url(url):
+        return url
+    key = url.split("?", 1)[0]
+    if key in cache:
+        return cache[key]
+    try:
+        raw = requests.get(url, headers={"Accept": "*/*"}, timeout=60)
+        raw.raise_for_status()
+        data = _to_jpeg_bytes(raw.content)
+        base = re.sub(r"[^A-Za-z0-9_-]", "-", key.split("/")[-1].rsplit(".", 1)[0])
+        new_url = _upload_jpg(client, f"tesco-{base}.jpg", data)
+    except Exception as e:  # noqa: BLE001
+        print(f"    [rehost failed] {key.split('/')[-1]}: {e}", file=sys.stderr)
+        return None
+    cache[key] = new_url
+    _save_jpg_cache(cache)
+    return new_url
 
 
 def _strip_html(s: str) -> str:
@@ -171,12 +270,14 @@ def _shopify_lookup(client, ean, *skus):
         edges = client.execute(_SHOPIFY_Q, {"q": q})["products"]["edges"]
         if edges:
             n = edges[0]["node"]
+            # Collect all images in order; non-jpg ones are converted +
+            # re-hosted as .jpg later (build → _ensure_jpg).
             imgs = []
-            if n.get("featuredImage") and _is_jpg_url(n["featuredImage"]["url"]):
+            if n.get("featuredImage"):
                 imgs.append(n["featuredImage"]["url"])
             for e in n.get("media", {}).get("edges", []):
                 url = (e.get("node") or {}).get("image", {}).get("url")
-                if url and _is_jpg_url(url) and url not in imgs:
+                if url and url not in imgs:
                     imgs.append(url)
             return {
                 "title": n.get("title"),
@@ -189,16 +290,23 @@ def _shopify_lookup(client, ean, *skus):
     return None
 
 
-def build():
+def build(only_skus: set[str] | None = None, only_eans: set[str] | None = None):
     os.makedirs(_OUT_DIR, exist_ok=True)
     k = MiraklClient("KINGFISHER")
     fs = TESCO.field_schema
     cp = TESCO.compliance
+    jpg_cache = _load_jpg_cache()
 
     offers = k.get("/offers", params={"max": 100}).get("offers", [])
     active = [o for o in offers if o.get("active") is True]
+    if only_skus:
+        active = [o for o in active if o.get("shop_sku") in only_skus]
+    if only_eans:
+        active = [o for o in active if _ean_of(o) in only_eans]
     registered = _tesco_registered_brands()
-    print(f"Offers: {len(offers)} total, {len(active)} active")
+    print(f"Offers: {len(offers)} total, {len(active)} active"
+          + (f" (filtered to {len(active)} by EAN)" if only_eans else "")
+          + (f" (filtered to {sorted(only_skus)})" if only_skus else ""))
 
     rows, listable_recs, outliers, scrub_log = [], [], [], {}
 
@@ -236,6 +344,19 @@ def build():
                 outliers.append((sku, brand, cat_name, "no image in Shopify"))
                 continue
 
+            # Ensure every image is a real .jpg (Tesco accepts JPEG only):
+            # native .jpg pass through; others are converted + re-hosted. Cap
+            # at Tesco's 10 slots before converting so we don't upload extras.
+            print(f"  {sku}: resolving {min(len(sh['images']), 10)} image(s) to jpg…")
+            images = []
+            for u in sh["images"][:10]:
+                ju = _ensure_jpg(sc, u, jpg_cache)
+                if ju:
+                    images.append(ju)
+            if not images:
+                outliers.append((sku, brand, cat_name, "no usable image after jpg conversion"))
+                continue
+
             title = sh.get("title") or o.get("product_title")
             body = sh.get("marketingText") or _strip_html(o.get("product_description"))
             name_clean = cp.clean_name(title)
@@ -246,7 +367,6 @@ def build():
             if hits:
                 scrub_log[sku] = hits
 
-            images = sh["images"]
             row = {
                 fs.category: cat_gid,
                 fs.sku: sku,
@@ -335,4 +455,10 @@ def _write_report(listable, outliers, scrub_log):
 
 
 if __name__ == "__main__":
-    build()
+    ap = argparse.ArgumentParser(description="B&Q active offers → Tesco products CSV")
+    ap.add_argument("--skus", help="Comma-separated shop_skus to limit to")
+    ap.add_argument("--eans", help="Comma-separated EANs/barcodes to limit to")
+    args = ap.parse_args()
+    only = {s.strip() for s in args.skus.split(",")} if args.skus else None
+    eans = {e.strip() for e in args.eans.split(",")} if args.eans else None
+    build(only_skus=only, only_eans=eans)
