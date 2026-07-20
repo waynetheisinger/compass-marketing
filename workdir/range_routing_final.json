@@ -1,0 +1,170 @@
+{
+  "suggestions": [
+    {
+      "template": "range/templates/Leaf_Blowers_&_Vacs.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Leaf Blowers & Vacs",
+      "leaf": "Leaf Blowers & Vacs",
+      "skus": [
+        "C-DM26PBV",
+        "SBS480CBV-KIT",
+        "SBS480CBV"
+      ]
+    },
+    {
+      "template": "range/templates/Grass_&_Hedge_Trimmers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Grass & Hedge Trimmers",
+      "leaf": "Grass & Hedge Trimmers",
+      "skus": [
+        "C-DM26L",
+        "S154545",
+        "SBS240CPHT-KIT",
+        "SBS560CHT-KIT",
+        "SBS240CPHT",
+        "SBS560CHT",
+        "C-CL20-R-DUO",
+        "C-CL24-R-DUO",
+        "C-CL27-R-DUO",
+        "C-CL30-R-DUO",
+        "CL40-R-DUO",
+        "GNP560-WT"
+      ]
+    },
+    {
+      "template": "range/templates/Wheelbarrows.xlsx",
+      "category": "Garden/Garden Tools & Gardening Equipment/Wheelbarrows",
+      "leaf": "Wheelbarrows",
+      "skus": [
+        "C-SP22111"
+      ]
+    },
+    {
+      "template": "range/templates/Trailers.xlsx",
+      "category": "DIY/Automotive/Caravans & Trailers/Trailers",
+      "leaf": "Trailers",
+      "skus": [
+        "C-SP22125",
+        "C-SP22124"
+      ]
+    },
+    {
+      "template": "range/templates/Rakes_Hoes_&_Cultivators.xlsx",
+      "category": "Garden/Garden Tools & Gardening Equipment/Rakes, Hoes & Cultivators",
+      "leaf": "Rakes, Hoes & Cultivators",
+      "skus": [
+        "TG480RTTR",
+        "C-HRTF220",
+        "C-RAC139PTIL",
+        "C-TG60FTTR"
+      ]
+    },
+    {
+      "template": "range/templates/Lawn_Mower_Accessories.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Lawn Mower Accessories",
+      "leaf": "Lawn Mower Accessories",
+      "skus": [
+        "C-PFC-10R-P",
+        "C-PFC-20R-P",
+        "C-PFC-5R-P",
+        "C-PFC-SPOUT",
+        "C-PFC-20G-M",
+        "C-SP31105",
+        "C-SP31109",
+        "JR-BC003"
+      ]
+    },
+    {
+      "template": "range/templates/Petrol_Lawn_Mowers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Petrol Lawn Mowers",
+      "leaf": "Petrol Lawn Mowers",
+      "skus": [
+        "C-TG40SE",
+        "S221749",
+        "2T2010483/M25",
+        "C-MTF66-MQ"
+      ]
+    },
+    {
+      "template": "range/templates/Cordless_Lawn_Mowers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Cordless Lawn Mowers",
+      "leaf": "Cordless Lawn Mowers",
+      "skus": [
+        "SBS220CHM-KIT",
+        "SBS460CLM-KIT",
+        "SBS220CHM",
+        "SBS460CLM"
+      ]
+    },
+    {
+      "template": "range/templates/Scarifiers_&_Aerators.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Scarifiers & Aerators",
+      "leaf": "Scarifiers & Aerators",
+      "skus": [
+        "C-SW420-EXPERT",
+        "C-SP31130",
+        "TG45SC",
+        "TG45SC-E"
+      ]
+    },
+    {
+      "template": "range/templates/Batteries_&_Chargers.xlsx",
+      "category": "DIY/Electrical Accessories/Batteries & Chargers",
+      "leaf": "Batteries & Chargers",
+      "skus": [
+        "SBSCBC",
+        "SBSCDC",
+        "SBSCSC",
+        "SBS20CB",
+        "SBS40CB"
+      ]
+    },
+    {
+      "template": "range/templates/Pressure_Washers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Pressure Washers",
+      "leaf": "Pressure Washers",
+      "skus": [
+        "LPW1600",
+        "LPW2200"
+      ]
+    }
+  ],
+  "unmatched_skus": [
+    {
+      "sku": "100134O",
+      "shopify_category": "Hardware > Tools > Masonry Tools > Cement Mixers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "100134S",
+      "shopify_category": "Hardware > Tools > Masonry Tools > Cement Mixers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "100134Y-2",
+      "shopify_category": "Hardware > Tools > Masonry Tools > Cement Mixers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-TY5000H",
+      "shopify_category": "Hardware > Tools > Log Splitters > Power Log Splitters",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-TY7000H",
+      "shopify_category": "Hardware > Tools > Log Splitters > Power Log Splitters",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-TY8000V",
+      "shopify_category": "Hardware > Tools > Log Splitters > Power Log Splitters",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    }
+  ],
+  "skus_not_found": [],
+  "single_template": false
+}

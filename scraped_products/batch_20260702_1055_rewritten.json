@@ -1,0 +1,111 @@
+{
+  "title": "Spectrum TG56PD Self-Propelled Petrol Lawnmower – 56cm, 196cc",
+  "description_html": "<p>Big lawns deserve a mower that keeps pace. The <strong>Spectrum TG56PD</strong> pairs a wide 56cm cutting deck with self-propelled drive, so you cover more ground in fewer passes and let the mower do the pushing. It's built for homeowners with medium to large gardens who want a dependable, powerful cut without wrestling the machine up every slope.</p><p><iframe title=\"YouTube video player\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\" class=\"perfmatters-lazy\" data-src=\"https://www.youtube.com/embed/f2IYzKd6rtc?si=m9R0UQwMYapGhx43\"></iframe></p><h2>Petrol power that doesn't quit</h2><p>A robust 196cc four-stroke petrol engine drives through long, thick and damp grass without bogging down. With no cable to manage and no battery to recharge, you're free to roam the whole garden and keep mowing for as long as the job takes — ideal for lawns up to 1,800m².</p><h2>Self-propelled drive takes the effort out</h2><p>The powered drive pulls the TG56PD forward at a steady walking pace, so you guide rather than shove. On larger plots and gentle inclines, that's the difference between a chore and a comfortable morning's work.</p><h2>The finish you want, every time</h2><p>Eight cutting heights, set from a single lever, let you dial in anything from a tight, tidy cut to a longer length that protects the lawn through dry spells. One lever, both sides — no fiddling with each wheel.</p><h2>Collect or mulch — your choice</h2><p>Fit the generous 60-litre textile grass box for a clean, collected finish, with fewer trips to empty thanks to its size and a built-in grass-box-full indicator. Prefer to feed the lawn? Switch to mulching and the clippings are cut fine and returned to the turf, breaking down to release nutrients back into the soil.</p><h2>Built to last, easy to store</h2><p>A steel cutting deck stands up to season-after-season use, while foldable, adjustable soft-grip handles make the mower comfortable to steer and compact to store away. Backed by Spectrum's 5-year warranty (T&Cs apply), it's a mower built for the long haul.</p>",
+  "vendor": "Spectrum",
+  "product_type": "Petrol Lawnmowers",
+  "status": "active",
+  "sku": "TG56PD",
+  "barcode": "5061122340318",
+  "price": "299.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "5 Years (T&C's Apply)"
+      },
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Spectrum"
+      },
+      {
+        "code": "engine_capacity",
+        "label": "Engine Capacity",
+        "value": "196cc"
+      },
+      {
+        "code": "engine_starting_system",
+        "label": "Engine Starting System",
+        "value": "Recoil"
+      },
+      {
+        "code": "drive",
+        "label": "Drive",
+        "value": "Self Propelled"
+      },
+      {
+        "code": "cutting_width",
+        "label": "Cutting Width",
+        "value": "56cm"
+      },
+      {
+        "code": "cutting_heights",
+        "label": "Cutting Heights",
+        "value": "8 Cutting Positions"
+      },
+      {
+        "code": "height_adjustment",
+        "label": "Height Adjustment",
+        "value": "Single Lever"
+      },
+      {
+        "code": "grass_collector",
+        "label": "Grass Collector",
+        "value": "60 Litres – Textile"
+      },
+      {
+        "code": "grassbag_full_indicator",
+        "label": "‘Grassbag Full’ Indicator",
+        "value": "Yes"
+      },
+      {
+        "code": "mulching",
+        "label": "Mulching",
+        "value": "Yes"
+      },
+      {
+        "code": "side_discharge",
+        "label": "Side-Discharge",
+        "value": "No"
+      },
+      {
+        "code": "cutting_deck_material",
+        "label": "Cutting deck material",
+        "value": "Steel"
+      },
+      {
+        "code": "handles",
+        "label": "Handles",
+        "value": "Foldable / Adjustable with Soft Grip"
+      },
+      {
+        "code": "lawn_size",
+        "label": "Lawn Size",
+        "value": "Up to 1800m2"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "38kg"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>Powerful 196cc four-stroke petrol engine</li><li>Self-propelled drive takes the effort out of larger lawns</li><li>Wide 56cm cutting width for fewer passes</li><li>8 cutting heights set from a single lever</li><li>Collection and mulching in one machine</li><li>Large 60-litre textile grass box with full indicator</li><li>Durable steel cutting deck</li><li>Foldable, adjustable soft-grip handles</li><li>Ideal for lawns up to 1,800m²</li><li>Backed by Spectrum's 5-year warranty (T&Cs apply)</li>\n</ul>",
+    "custom.bullet_two": "Self-propelled drive and a wide 56cm deck mean fewer passes and far less effort on medium to large lawns.",
+    "custom.bullet_three": "A robust 196cc four-stroke petrol engine powers through long, thick and damp grass, backed by Spectrum's 5-year warranty.",
+    "filter.brand": "Spectrum",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/SP1.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/SP6.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/SP3.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/ll.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/SP5.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/SP2.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/DP1.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/DP2.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/DP3.webp"
+  ],
+  "source_url": "https://compassgm.co.uk/product/spectrum-tg56pd-self-propelled-petrol-lawn-mower-56cm/"
+}

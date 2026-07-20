@@ -1,0 +1,85 @@
+{
+  "title": "Spectrum DM600HT Petrol Hedgetrimmer - 60cm Double Sided Blades",
+  "description_html": "<h3>Spectrum DM600HT Petrol Hedge Trimmer</h3><h3>Powerful, Lightweight Performance for Precision Hedge Maintenance</h3><p class=\"isSelectedEnd\">Take on demanding hedge trimming and shaping tasks with confidence using the <strong>Spectrum DM600HT Petrol Hedge Trimmer</strong>. Combining a lightweight design with robust construction and professional cutting performance, it’s the ideal choice for maintaining everything from ornamental shrubs to large established hedges.</p><p class=\"isSelectedEnd\">At its heart is a <strong>high-performance 25.4cc two-stroke engine</strong>, delivering smooth, reliable power for fast and efficient cutting. Engineered for excellent fuel efficiency and dependable starting, it provides the performance needed to tackle thicker growth with ease.</p><p class=\"isSelectedEnd\">Designed with operator comfort in mind, the DM600HT features an advanced <strong>anti-vibration system</strong>, using strategically positioned shock-absorbing springs to significantly reduce vibration transferred to the handles. This minimises fatigue during extended periods of use, making long trimming sessions far more comfortable.</p><p class=\"isSelectedEnd\">The <strong>professional-grade aluminium gearbox</strong> offers exceptional strength while keeping overall weight to a minimum, while a <strong>bearing-mounted drive linkage</strong> reduces noise, vibration and component wear, helping to maximise durability and prolong service life.</p><p class=\"isSelectedEnd\">Equipped with <strong>long, laser-cut double-sided blades</strong>, the DM600HT delivers fast, clean and precise cutting from either direction, making quick work of large hedges while producing a professional-quality finish. Its <strong>28mm tooth spacing</strong> enables it to cut through thicker branches and mature growth with ease.</p><p class=\"isSelectedEnd\">For greater versatility, the <strong>five-position rotating rear handle</strong> adjusts through <strong>180°</strong>, allowing you to maintain a comfortable and natural working position whether trimming vertically, horizontally or at awkward angles.</p><p class=\"isSelectedEnd\">Weighing just <strong>5.4kg</strong>, the DM600HT remains easy to manoeuvre without compromising on power, while the <strong>transparent fuel tank</strong> lets you quickly monitor fuel levels, helping to minimise interruptions while you work.</p><p>Whether you’re maintaining formal hedges or tackling overgrown boundaries, the Spectrum DM600HT delivers the ideal combination of power, comfort and precision.</p><p>To see our full range of petrol hedge trimmers, click <a href=\"https://compassgm.co.uk/product-category/hedge-trimmers/petrol-hedgecutters/\">here</a>.</p>",
+  "vendor": "Spectrum",
+  "product_type": "Hedgetrimmers",
+  "status": "active",
+  "sku": "DM600HT",
+  "barcode": "5065022450856",
+  "price": "149.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Spectrum"
+      },
+      {
+        "code": "engine_type",
+        "label": "Engine Type",
+        "value": "Petrol 2-stroke"
+      },
+      {
+        "code": "engine_make",
+        "label": "Engine Make",
+        "value": "Spectrum"
+      },
+      {
+        "code": "engine_capacity",
+        "label": "Engine Capacity",
+        "value": "25.4cc"
+      },
+      {
+        "code": "engine_fuel_tank_capacity",
+        "label": "Engine Fuel-Tank Capacity",
+        "value": "0.23 Litres"
+      },
+      {
+        "code": "blade_type",
+        "label": "Blade Type",
+        "value": "Double Sided"
+      },
+      {
+        "code": "blade_length",
+        "label": "Blade Length",
+        "value": "60cm"
+      },
+      {
+        "code": "attribute_tooth_gap",
+        "label": "Tooth Gap",
+        "value": "28mm"
+      },
+      {
+        "code": "attribute_rotating_rear_handle",
+        "label": "Rotating Rear Handle",
+        "value": "Yes / 180¬∞ / 3 Positions"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "5.4kg"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "5 Years (T&C's Apply)"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>Powerful 25.4cc two-stroke petrol engine delivers reliable cutting performance for demanding hedge maintenance</li><li>Long laser-cut, double-sided blades provide fast, clean and precise trimming from either direction</li><li>28mm blade tooth spacing easily cuts through thicker branches and mature hedge growth</li><li>Professional aluminium gearbox and bearing-mounted drive system for enhanced durability and reduced wear</li><li>Three-position rotating rear handle adjusts through 180° for comfortable cutting at any angle</li><li>Advanced anti-vibration system reduces hand and arm fatigue during extended use</li><li>Lightweight 5.4kg design offers excellent manoeuvrability without compromising on power</li><li>Transparent fuel tank allows quick and easy fuel level checks while you work</li><li>Backed by an extended 5-year manufacturer’s warranty</li>\n</ul>",
+    "custom.bullet_two": "Long laser-cut, double-sided blades provide fast, clean and precise trimming from either direction",
+    "custom.bullet_three": "28mm blade tooth spacing easily cuts through thicker branches and mature hedge growth",
+    "filter.brand": "Spectrum",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Main.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Top-View.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Recoil.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Front-Handle.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Right-Swivel.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Handle.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Handle-Left-Swivel.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Spectrum-DM600HT-Blades.png"
+  ],
+  "source_url": "https://compassgm.co.uk/product/spectrum-dm600ht-petrol-hedgetrimmer-60cm-double-sided-blades/"
+}

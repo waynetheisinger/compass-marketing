@@ -1,0 +1,41 @@
+{
+  "_comment": "Per-product + catalogue overrides for /range-csv-batch (The Range Mirakl). Mirrors config/tesco_overrides.json. Colour is per-brand here (The Range is multi-brand); brand itself comes from the Shopify vendor. GPSR economic-operator fields are REQUIRED for compliance but left blank until Wayne supplies the real registered details — never guess an address.",
+
+  "defaults": {
+    "made_to_order": "No",
+    "main_product_image": "Yes"
+  },
+
+  "brand_colour": {
+    "spectrum": "Green",
+    "feider": "Red",
+    "mountfield": "Red"
+  },
+  "colour_hex": {
+    "Green": "#2E7D32",
+    "Black": "#000000",
+    "Grey": "#808080",
+    "Orange": "#E8590C",
+    "Red": "#C92A2A"
+  },
+
+  "gpsr": {
+    "_comment": "Fill from the registered GPSR responsible-person details, then these flow into every row. Manufacturer fields default per-brand below; economic operator is the GB importer/responsible person.",
+    "economic_operator_name_10394": "",
+    "economic_operator_address_10399": "",
+    "economic_operator_email_10404": ""
+  },
+
+  "sku_category": {},
+
+  "exclude_skus": {
+    "C-DC24-4": "Shop soiled — not pushed to Tesco; exclude from Range too",
+    "JR-BC003": "Dropped from Range — non-Spectrum JR-brand accessory, no colour/spec depth (Wayne 2026-06-19)",
+    "C-TY5000H": "Log splitter — no Range category exists to list it in (Wayne 2026-06-17)",
+    "C-TY7000H": "Log splitter — no Range category exists to list it in (Wayne 2026-06-17)",
+    "C-TY8000V": "Log splitter — no Range category exists to list it in (Wayne 2026-06-17)",
+    "100134O": "Cement mixer — no Range category exists to list it in (Wayne 2026-06-17)",
+    "100134S": "Cement mixer — no Range category exists to list it in (Wayne 2026-06-17)",
+    "100134Y-2": "Cement mixer — no Range category exists to list it in (Wayne 2026-06-17)"
+  }
+}

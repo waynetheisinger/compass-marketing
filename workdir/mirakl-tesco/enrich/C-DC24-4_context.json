@@ -1,0 +1,57 @@
+{
+  "sku": "C-DC24-4",
+  "category": "gid://shopify/TaxonomyCategory/hg-12-3-5-1",
+  "brand": "Spectrum",
+  "base_row": {
+    "shopifyHierarchyId": "gid://shopify/TaxonomyCategory/hg-12-3-5-1",
+    "sku": "C-DC24-4",
+    "barcode": "5065022450429",
+    "brand": "Spectrum",
+    "baseColour": "Green",
+    "description": "*SHOP SOILED* Spectrum DC24-4 Ultra-Compact Rear-Collect/Side-Discharge Ride-On Mower with Manual Drive",
+    "marketingText": "Please note - this mower is sold with a few cosmetic marks, but is still sold with a full warranty. Offering one of the most compact working-widths of any ride-on - 61cm is just 7cm wider than the biggest walk-behind - the Spectrum DC24-4 comes highly recommended for seeking an effortless way to manage a less substantial lawn, but one that's a tad too big to cover efficiently with a conventional mower. Not just one of the smallest lawn riders in production, the three-in-one Spectrum DC24-4 Ultra-Compact Ride-On Mower is also one of the most versatile, with its collection, mulching and side-discharge options providing the flexibility needed to tackle areas of differing grass types. Its wide turf wheels and lightweight built (115kg) means it won't damage delicate, easily marked lawn surfaces; its five-position cutting-height range allows you to gradually fine-tune the finish until it's what you're looking for. Further attractive features on this high-quality but attractively priced ride-on mower include a five-speed manual transmission (4+1), which makes it possible to drive a speed most suitable for the length of grass and the nature of your garden's terrain; and a large-displacement, 224cc four-stroke air-cooled engine, which, due to its OHV design, delivers its ample power - 6hp - cleanly, quietly and smoothly. It should be noted that Spectrum pedestrian lawnmowers and ride-on mowers are covered by an extended five-year manufacturer's warranty for parts*. * Ts & Cs apply - to maintain a valid warranty, the machine must be serviced annually from year two onwards.",
+    "countryOfOriginName": "China",
+    "ageRestriction": "No",
+    "unitQuantity": "Each",
+    "vatRate": "20",
+    "image1": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Rider_2025_Left.jpg?v=1781019565",
+    "image2": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Rider_2025.jpg?v=1781019571",
+    "image3": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Lights.jpg?v=1781019575",
+    "image4": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Parking_Brake.jpg?v=1781019578",
+    "image5": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Front_Consul.jpg?v=1781019583",
+    "image6": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Battery.jpg?v=1781019588",
+    "image7": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Foot_Pedal.jpg?v=1781019592",
+    "image8": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Gear_Selector.jpg?v=1781019595",
+    "image9": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Hoc_Blade_Engage.jpg?v=1781019598",
+    "image10": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/tesco-Spectrum_DC24-4_Ignition.jpg?v=1781019602",
+    "grossWeight": "131",
+    "lawnMowerCuttingWidth": "61",
+    "lawnMowerManufacturerWarrantyDescription": "5 Year Warranty (T&C's)",
+    "productFeatures1": "One of the most compact ride-on lawnmowers available!",
+    "productFeatures2": "Bigger than the largest walk-behinds; more compact than the smallest tractor mowers",
+    "productFeatures3": "Perfect if access to different areas of your garden is tight"
+  },
+  "source": {
+    "title": "*SHOP SOILED* Spectrum DC24-4 Ultra-Compact Rear-Collect/Side-Discharge Ride-On Mower with Manual Drive",
+    "body_text": "Please note - this mower is sold with a few cosmetic marks, but is still sold with a full warranty. Offering one of the most compact working-widths of any ride-on – 61cm is just 7cm wider than the biggest walk-behind – the Spectrum DC24-4 comes highly recommended for seeking an effortless way to manage a less substantial lawn, but one that’s a tad too big to cover efficiently with a conventional mower. Not just one of the smallest lawn riders in production, the three-in-one Spectrum DC24-4 Ultra-Compact Ride-On Mower is also one of the most versatile, with its collection, mulching and side-discharge options providing the flexibility needed to tackle areas of differing grass types. Its wide turf wheels and lightweight built (115kg) means it won’t damage delicate, easily marked lawn surfaces; its five-position cutting-height range allows you to gradually fine-tune the finish until it’s what you’re looking for. Further attractive features on this high-quality but attractively priced ride-on mower include a five-speed manual transmission (4+1), which makes it possible to drive a speed most suitable for the length of grass and the nature of your garden’s terrain; and a large-displacement, 224cc four-stroke air-cooled engine, which, due to its OHV design, delivers its ample power – 6hp – cleanly, quietly and smoothly. It should be noted that Spectrum pedestrian lawnmowers and ride-on mowers are covered by an extended five-year manufacturer’s warranty for parts*. * Ts & Cs apply – to maintain a valid warranty, the machine must be serviced annually from year two onwards.",
+    "bullets": [
+      "One of the most compact ride-on lawnmowers available!",
+      "Bigger than the largest walk-behinds; more compact than the smallest tractor mowers",
+      "Perfect if access to different areas of your garden is tight",
+      "Powerful, high-capacity four-stroke overhead-valve engine",
+      "Three cutting modes and five preset heights of cut deliver impressive flexibility",
+      "Straightforward, low-maintenance manual transmission",
+      "Extended five-year manufacturer's warranty"
+    ]
+  },
+  "rewrite_fields": [
+    "description",
+    "marketingText",
+    "productFeatures1",
+    "productFeatures2",
+    "productFeatures3",
+    "whatIsInBox"
+  ],
+  "voice_doc": ".claude/skills/enrich-bq/BRAND_VOICE.md",
+  "instructions": "Rewrite the prose fields into a distinct voice per BRAND_VOICE.md: different lead/structure/verbs from mowdirect.co.uk, same product facts. NEVER name MowDirect, Compass, Tesco, any retailer, price, or delivery. Then call: tesco_enrich.py apply --sku C-DC24-4 --row-json <file>"
+}

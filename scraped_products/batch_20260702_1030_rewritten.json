@@ -1,0 +1,88 @@
+{
+  "title": "Racing RACST2540 Petrol Scarifier & Aerator – 42cm, 6HP",
+  "description_html": "<p>A tired, moss-choked lawn rarely fixes itself. The <strong>Racing RACST2540 Petrol Scarifier</strong> is built to strip out the moss, dead grass and thatch that smother healthy growth — clearing the way for air, water and nutrients to reach the roots. Scarify in spring and autumn and you give your lawn the reset it needs to come back thicker, greener and stronger.</p><h2>Petrol power for bigger lawns</h2><p>A 6HP (4.5kW) easy-start petrol engine drives the RACST2540 through compacted soil, thick moss and stubborn thatch without stalling. There's no cord to trip over and no battery to run flat — just fill up with standard unleaded, pull the recoil start and work through lawns of up to 2,000m² in a single session.</p><h2>Scarify and aerate in one pass</h2><p>A generous 42cm working width and 18 heavy-duty blades lift moss and thatch to the surface while opening up the soil beneath. Six height positions, adjustable from -12mm to +10mm, let you set a gentle grooming pass or a deep renovation cut to suit the season and the state of your lawn.</p><ul><li>Better airflow and drainage to the root zone</li><li>Improved water and nutrient uptake</li><li>Less moss and thatch build-up</li><li>Thicker, healthier grass growth</li></ul><h2>Work without stopping the engine</h2><p>A handy blade engagement lever lets you disengage the cassette to empty the collector or cross a path, then re-engage it — all without shutting the engine down. It saves time, avoids needless restarts and gives you more control as you work.</p><h2>Built to last, easy to store</h2><p>A robust steel deck stands up to season-after-season use, while double ball-bearing wheels keep the machine rolling smoothly across uneven ground. Soft-grip, foldable handles make it comfortable to guide and compact to store away when the job's done.</p><h2>Tidy collection as you go</h2><p>The 45-litre collection bag gathers moss and debris as you scarify, cutting down on raking and clean-up. For heavy moss removal, many gardeners prefer to run without the collector and rake afterwards to shift larger volumes in one go.</p><h2>Top tip</h2><p>Keep scarified moss out of your compost heap where you can. Moss spores can survive composting and re-establish themselves once the compost is spread back onto the lawn.</p>",
+  "vendor": "Racing",
+  "product_type": "Aerators & Scarifiers",
+  "status": "active",
+  "sku": "RACST2540",
+  "barcode": "3661602061652",
+  "price": "269.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Racing"
+      },
+      {
+        "code": "engine_power",
+        "label": "Engine Power",
+        "value": "6hp / 4.5kW"
+      },
+      {
+        "code": "engine_fuel_tank_capacity",
+        "label": "Engine Fuel-Tank Capacity",
+        "value": "3.6 Litres"
+      },
+      {
+        "code": "starting_system",
+        "label": "Starting System",
+        "value": "Recoil"
+      },
+      {
+        "code": "working_height",
+        "label": "Working Height",
+        "value": "-12 to +10mm (6 Positions)"
+      },
+      {
+        "code": "blades",
+        "label": "Blades",
+        "value": "18"
+      },
+      {
+        "code": "drive",
+        "label": "Drive",
+        "value": "Hand Propelled"
+      },
+      {
+        "code": "handles",
+        "label": "Handles",
+        "value": "Foldable with Soft Grip"
+      },
+      {
+        "code": "deck_material",
+        "label": "Deck Material",
+        "value": "Steel"
+      },
+      {
+        "code": "debris_collector",
+        "label": "Debris Collector",
+        "value": "45 Litres"
+      },
+      {
+        "code": "lawn_size",
+        "label": "Lawn Size",
+        "value": "Up to 2000 m2"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "34kg"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "2 Years"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>Powerful 6HP (4.5kW) easy-start petrol engine</li><li>2-in-1 scarifying and aerating in a single pass</li><li>Wide 42cm working width with 18 heavy-duty blades</li><li>6-position working height, -12mm to +10mm</li><li>Blade engagement lever — no need to stop the engine</li><li>Durable steel deck built for repeat seasonal use</li><li>Large 45-litre debris collection bag</li><li>Foldable soft-grip handles for compact storage</li><li>Double ball-bearing wheels for smooth handling</li><li>Ideal for lawns up to 2,000m²</li><li>2-year warranty</li>\n</ul>",
+    "custom.bullet_two": "Petrol power that drives through thick moss, thatch and compacted soil on lawns up to 2,000m² — no cord, no battery to run flat.",
+    "custom.bullet_three": "A 42cm cutting width and 18 heavy-duty blades scarify and aerate in one pass, restoring airflow and drainage for thicker, healthier grass.",
+    "filter.brand": "Racing",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Racing-RACST2540-Main-Image.png"
+  ],
+  "source_url": "https://compassgm.co.uk/product/racing-racst2540-petrol-scarifier/"
+}

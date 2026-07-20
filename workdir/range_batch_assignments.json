@@ -1,0 +1,106 @@
+{
+  "Leaf Blowers & Vacs": {
+    "category": "Garden/Garden Machinery & Power Tools/Leaf Blowers & Vacs",
+    "tokens": [
+      "C-DM26PBV=5065022450443",
+      "SBS480CBV-KIT=5061122340158",
+      "SBS480CBV=5065022450641"
+    ]
+  },
+  "Grass & Hedge Trimmers": {
+    "category": "Garden/Garden Machinery & Power Tools/Grass & Hedge Trimmers",
+    "tokens": [
+      "C-DM26L=5065022450030",
+      "S154545=5065022450023",
+      "SBS240CPHT-KIT=5061122340172",
+      "SBS560CHT-KIT=5061122340165",
+      "SBS240CPHT=5065022450665",
+      "SBS560CHT=5065022450658",
+      "C-CL20-R-DUO=5065022450238",
+      "C-CL24-R-DUO=5065022450245",
+      "C-CL27-R-DUO=5065022450252",
+      "C-CL30-R-DUO=5065022450269",
+      "CL40-R-DUO=5065022450276",
+      "GNP560-WT=5065022450450"
+    ]
+  },
+  "Wheelbarrows": {
+    "category": "Garden/Garden Tools & Gardening Equipment/Wheelbarrows",
+    "tokens": [
+      "C-SP22111=5065022450412"
+    ]
+  },
+  "Trailers": {
+    "category": "DIY/Automotive/Caravans & Trailers/Trailers",
+    "tokens": [
+      "C-SP22125=5065022450436",
+      "C-SP22124=9506272847721"
+    ]
+  },
+  "Rakes, Hoes & Cultivators": {
+    "category": "Garden/Garden Tools & Gardening Equipment/Rakes, Hoes & Cultivators",
+    "tokens": [
+      "TG480RTTR=5061122340196",
+      "C-HRTF220=3661602049346",
+      "C-RAC139PTIL=3661602011428",
+      "C-TG60FTTR=5065022450207"
+    ]
+  },
+  "Lawn Mower Accessories": {
+    "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Lawn Mower Accessories",
+    "tokens": [
+      "C-PFC-10R-P=5065022450368",
+      "C-PFC-20R-P=5065022450375",
+      "C-PFC-5R-P=5065022450351",
+      "C-PFC-SPOUT=5065022450405",
+      "C-PFC-20G-M=5065022450399",
+      "C-SP31105=5065022450085",
+      "C-SP31109=5065022450078",
+      "JR-BC003=3760011424536"
+    ]
+  },
+  "Petrol Lawn Mowers": {
+    "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Petrol Lawn Mowers",
+    "tokens": [
+      "C-TG40SE=5065022450115",
+      "S221749=5065022450177",
+      "2T2010483/M25=8008984869042",
+      "C-MTF66-MQ=8008984509856"
+    ]
+  },
+  "Cordless Lawn Mowers": {
+    "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Cordless Lawn Mowers",
+    "tokens": [
+      "SBS220CHM-KIT=5061122340141",
+      "SBS460CLM-KIT=5061122340134",
+      "SBS220CHM=5065022450627",
+      "SBS460CLM=5065022450634"
+    ]
+  },
+  "Scarifiers & Aerators": {
+    "category": "Garden/Garden Machinery & Power Tools/Scarifiers & Aerators",
+    "tokens": [
+      "C-SW420-EXPERT=5065022450337",
+      "C-SP31130=5065022450054",
+      "TG45SC=5061122340127",
+      "TG45SC-E=5061122340189"
+    ]
+  },
+  "Batteries & Chargers": {
+    "category": "DIY/Electrical Accessories/Batteries & Chargers",
+    "tokens": [
+      "SBSCBC=5065022450719",
+      "SBSCDC=5065022450702",
+      "SBSCSC=5065022450696",
+      "SBS20CB=5065022450672",
+      "SBS40CB=5065022450689"
+    ]
+  },
+  "Pressure Washers": {
+    "category": "Garden/Garden Machinery & Power Tools/Pressure Washers",
+    "tokens": [
+      "LPW1600=5065022450726",
+      "LPW2200=5065022450733"
+    ]
+  }
+}

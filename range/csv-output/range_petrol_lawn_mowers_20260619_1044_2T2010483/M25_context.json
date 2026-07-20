@@ -1,0 +1,1298 @@
+{
+  "sku": "2T2010483/M25",
+  "batch_id": "range_petrol_lawn_mowers_20260619_1044",
+  "category_breadcrumb": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Petrol Lawn Mowers",
+  "auto_filled": {
+    "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Petrol Lawn Mowers",
+    "shop_sku": "2T2010483/M25",
+    "gtin": "8008984869042",
+    "title": "Mountfield T30M Gear Drive 2-in-1 Lawn Tractor",
+    "description": "Mountfield T30M Lawn Tractor This ride-on mower will collect or mulch making it a 2-in-1 machine. Having come to a special arrangement with the manufacturer, are now able to provide our customers with an unbeatable deal on this powerful, high-specification lawn tractor from classic British brand, Mountfield! The Mountfield T30M is the perfect 'go to' lawn and garden tractor for customers seeking coverage for lawns around the one acre size. What sets the T30M apart is its twin-bladed 84cm cutter deck - a rare feature in a compact tractor of this size. Twin blades provide a neater, more consistent finish on uneven ground and improve bagging performance, making it possible to mow damp grass without clogging the discharge chute. The deck is fitted with gauge wheels to prevent scalping and turf damage when navigating uneven terrain. Power comes from a 414cc STIGA air-cooled four-stroke engine delivering 8.4hp. Equipped with overhead-valve (OHV) technology, the engine offers reduced noise, lower emissions and excellent fuel efficiency. A six-litre petrol tank and electric key start maximise productivity by reducing downtime and ensuring stress-free starting every time. The Mountfield T30M offers versatile mowing options to suit changing conditions. Grass can be collected in the spacious 200-litre rear bag, rear-discharged directly onto the lawn, or mulched to provide a natural feed for your turf. A seven-position cutting-height adjustment and six-speed manual transmission (5+1) further enhance flexibility. To prolong the life of the cutter deck, Mountfield have incorporated a clever little cleaning port. Simply click your Hozelock attachment to the deck wash, lower your deck, then when you turn the water on and engage your cutters, watch the magic happen! Practical features include from-the-seat grassbag emptying, a front-mounted bumper for engine protection, push-button PTO engagement and a smooth-riding, fully adjustable seat with sprung suspension. The tractor also includes a convenient mow-in-reverse function, saving time and effort when manoeuvring in tight spaces. We think this is just the perfect size lawn tractor to facilitate gardens around the 1 acre size. If you are looking for something a little on the smaller size for the not so large areas, you may wish to look at the MTF66MQ-827, also from Mountfield. This is a compact rider style mower: Why not scroll down to the bottom of this page to see what other products/services we offer in conjunction with this mower?",
+    "variant_group_code": "2T2010483/M25",
+    "main_product_name": "Mountfield T30M Gear Drive 2-in-1 Lawn Tractor",
+    "brand": "Mountfield",
+    "made_to_order": "No",
+    "main_product_image": "Yes",
+    "weight_61": "187.00",
+    "weight_61_uom": "Kilograms",
+    "main_image": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full02.jpg?v=1765551807",
+    "image_1": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full03.jpg?v=1773425444",
+    "image_2": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full01_2.jpg?v=1765551807",
+    "image_3": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_detail01.jpg?v=1773425444",
+    "image_4": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_detail05.jpg?v=1773425444",
+    "image_5": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_detail02.jpg?v=1773425444",
+    "image_6": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330m_2t2010483m25_full01.jpg?v=1734710455",
+    "image_7": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full04.jpg?v=1765551807",
+    "image_8": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full05.jpg?v=1765551807"
+  },
+  "scrub_hits": [
+    "CompassGM"
+  ],
+  "spec_columns": [
+    {
+      "api_code": "colour_group",
+      "portal_label": "Colour Group",
+      "description": "The general colour family (e.g. Red, Blue, Green, Yellow, Brown, Grey).",
+      "required": "REQUIRED",
+      "value_list": [
+        "Black",
+        "Blue",
+        "Bronze",
+        "Brown",
+        "Gold",
+        "Green",
+        "Grey",
+        "Neutral",
+        "Orange",
+        "Pink",
+        "Purple",
+        "Red",
+        "Silver",
+        "Teal",
+        "Turquoise",
+        "White",
+        "Yellow"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "colour_display_name",
+      "portal_label": "Colour Display Name",
+      "description": "A specific name for the colour (e.g. Sky Blue, Olive Green, Crimson, Charcoal).",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "colour_hex_code",
+      "portal_label": "Colour Hex Code",
+      "description": "The hexadecimal code representing the colour (e.g. #1E90FF, #556B2F, #DC143C).",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_9",
+      "portal_label": "Image 9",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_10",
+      "portal_label": "Image 10",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_11",
+      "portal_label": "Image 11",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_12",
+      "portal_label": "Image 12",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_13",
+      "portal_label": "Image 13",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_14",
+      "portal_label": "Image 14",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_15",
+      "portal_label": "Image 15",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_16",
+      "portal_label": "Image 16",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_17",
+      "portal_label": "Image 17",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_18",
+      "portal_label": "Image 18",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_19",
+      "portal_label": "Image 19",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "image_20",
+      "portal_label": "Image 20",
+      "description": "Acceptable formats are JPEG and PNG, maximum file size 10240KB, minimum width and height 1500px",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_1",
+      "portal_label": "Feature 1",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_2",
+      "portal_label": "Feature 2",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_3",
+      "portal_label": "Feature 3",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_4",
+      "portal_label": "Feature 4",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_5",
+      "portal_label": "Feature 5",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_6",
+      "portal_label": "Feature 6",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_7",
+      "portal_label": "Feature 7",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_8",
+      "portal_label": "Feature 8",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_9",
+      "portal_label": "Feature 9",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "feature_10",
+      "portal_label": "Feature 10",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "disclaimer_options",
+      "portal_label": "Disclaimer Options",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": [
+        "Never leave a burning candle unattended. Burn candles out of reach of children & pets. Do not move whilst lit or if wax is molten. Place on a flat, level, heat-resistant surface away from other sources of heat & out of draughts.",
+        "All Textiles: Keep away from fire. Coloured Textiles: Do not place on light coloured surfaces as dye may transfer. Keep away from fire.",
+        "If you are purchasing a hutch or run for a rabbit, ensure you follow RSPCA guidelines (www.rspca.org.uk).",
+        "Food Supplements are intended to supplement the diet and should not be substituted for a varied diet or healthy lifestyle.",
+        "Warning: Choking Hazard. Contains small parts. Remove all tags and ties before giving this toy to a child. Please retain packaging for all future reference.",
+        "To get the most enjoyment out of this toy for you and your pet, always supervise them when playing and remove the toy if it becomes damaged.",
+        "A gazebo is a seasonal item and not a permanent structure. Canopies should be removed when not in use.",
+        "Standard Bed Frames: Bedding and mattress not included. Mid-Sleeper: Bedding and mattress not included. Mattress depth should not exceed __cm.",
+        "Please Note: We only offer curbside delivery for this item. We cannot deliver this item to your room of choice or to properties above ground level."
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "width_4",
+      "portal_label": "Width",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "width_4_uom",
+      "portal_label": "Width Unit",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": [
+        "Centimetres",
+        "Millimetres",
+        "Metres",
+        "Inches",
+        "Feet",
+        "Yards",
+        "Hands",
+        "Kilometres",
+        "Miles",
+        "Microns"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "height_7",
+      "portal_label": "Height",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "height_7_uom",
+      "portal_label": "Height Unit",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": [
+        "Centimetres",
+        "Millimetres",
+        "Metres",
+        "Inches",
+        "Feet",
+        "Yards",
+        "Hands",
+        "Kilometres",
+        "Miles",
+        "Microns"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "material_11",
+      "portal_label": "Material",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": [
+        "AB",
+        "ABS",
+        "Acacia",
+        "Acrylic",
+        "al",
+        "Alloy",
+        "Aluminium",
+        "Aqua",
+        "as",
+        "Ash",
+        "Asphalt",
+        "Bamboo",
+        "Banana Leaf",
+        "Bark",
+        "Bassine",
+        "Beech",
+        "Bentwood",
+        "Birch",
+        "Board",
+        "Bone China",
+        "Boucle",
+        "Brass",
+        "Bronze",
+        "Brown",
+        "Buffalo Hide",
+        "Calcium",
+        "Calcium Carbonate",
+        "Cane",
+        "Canvas",
+        "Capiz Shell",
+        "Carbon",
+        "Carbon Steel",
+        "Card",
+        "Cardboard",
+        "Carpet",
+        "Cashmere",
+        "cast",
+        "Cast Iron",
+        "Catnip",
+        "Cedar",
+        "Cellophane",
+        "Cement",
+        "Ceramic",
+        "Chalk",
+        "Charcoal",
+        "Chenille",
+        "China",
+        "Chipboard",
+        "Chrome",
+        "Citronella Oil",
+        "Clay",
+        "Cloth",
+        "Coco Fibre",
+        "Coconut",
+        "Composite Board",
+        "Concrete",
+        "Copper",
+        "Corduroy",
+        "Cork",
+        "Cornstarch",
+        "Cotton",
+        "Crystal",
+        "Cubic Zirconia",
+        "Dacron",
+        "Delete",
+        "Denim",
+        "Diamond",
+        "Dolomite",
+        "Driftwood",
+        "Duck Feather",
+        "Duroplast",
+        "Earthenware",
+        "Elastane",
+        "Elastic",
+        "Elastine",
+        "Elm",
+        "Enamel",
+        "Eucalyptus",
+        "EVA",
+        "EVA Foam",
+        "fab",
+        "Fabric",
+        "Faux Crocodile Skin",
+        "Faux Fur",
+        "Faux Leather",
+        "Faux Silk",
+        "Faux Suede",
+        "Feather",
+        "Feathers",
+        "Felt",
+        "Fibre",
+        "Fibreboard",
+        "Fibreglass",
+        "Fibrewood",
+        "Fir",
+        "Fleece",
+        "Foam",
+        "Foil",
+        "Forged aluminium",
+        "Fur",
+        "Glass",
+        "Glitter",
+        "Goose Feather",
+        "Granite",
+        "Graphite",
+        "Grass",
+        "Grosgrain",
+        "Hardboard",
+        "Hardwood",
+        "Hay",
+        "Hemp",
+        "Hessian",
+        "High Impact Polystyrene",
+        "Husk",
+        "Iron",
+        "Isotex",
+        "Ivory Laminated",
+        "Jute",
+        "Kirksite",
+        "Konjac",
+        "Laminate",
+        "Laminated Board",
+        "Laminated Chipboard",
+        "Latex",
+        "Leather",
+        "LED",
+        "Limestone",
+        "Linen",
+        "Linoleum",
+        "Lurex",
+        "Magnesia",
+        "Magnesium",
+        "Mango",
+        "Marble",
+        "matt",
+        "Matt Black",
+        "MDF",
+        "Medium Grey Laminated",
+        "Melamine",
+        "Melimine",
+        "Memory Foam",
+        "Mesh",
+        "Metal",
+        "MGO Wallboard",
+        "Mica Powder",
+        "Microfibre",
+        "Mineral Catalysts",
+        "Nickel",
+        "Nylon",
+        "Oak",
+        "oil",
+        "Oriented Strand Board",
+        "Ostrich Feather",
+        "Palm Leaf",
+        "Paper",
+        "Paraffin",
+        "Particle Board",
+        "Paulownia",
+        "pe",
+        "PET",
+        "Photopolymer",
+        "Pine",
+        "Pinecone",
+        "Plaster",
+        "Plastic",
+        "Plasticine",
+        "Plush",
+        "Plywood",
+        "Polished Chrome",
+        "Polyamide",
+        "Polycanvas",
+        "Polycarbonate",
+        "Polycotton",
+        "polyes",
+        "polyest",
+        "Polyester",
+        "Polyethylene",
+        "Polyfoam",
+        "Polyform",
+        "polymer",
+        "Polypropane",
+        "Polypropylene",
+        "Polyresin",
+        "Polystyrene",
+        "polyu",
+        "Polyurethane",
+        "polyvinyl",
+        "Polyvinyl Chloride",
+        "Porcelain",
+        "Powder Coating",
+        "pp",
+        "Pre-Finished Chocolate Grey",
+        "Pre-Finished Grey",
+        "Pre-Finished Light Grey",
+        "Pre-finished Oak",
+        "Pre-finished Sapele",
+        "Pre-finished Walnut",
+        "Pre-Finished Walut",
+        "Pre-finished White Composite",
+        "Prefinished Oak",
+        "Primed Plus White",
+        "Primed White",
+        "PS",
+        "PTFE",
+        "pu",
+        "PU Leather",
+        "Pumice",
+        "pv",
+        "PVA",
+        "PVC",
+        "Raffia",
+        "Rattan",
+        "Ratten",
+        "Rayon",
+        "Reed",
+        "Resin",
+        "Rhinestone",
+        "Ribbon",
+        "Rope",
+        "Rose Bronze",
+        "Rotocast",
+        "Rubber",
+        "Rubberwood",
+        "Sable Hair",
+        "Sand",
+        "Sandstone",
+        "Satin",
+        "Satin Chrome",
+        "Sea Grass",
+        "Shell",
+        "Sherpa",
+        "Silicon",
+        "Silicone",
+        "Silk",
+        "Silver",
+        "Sisal",
+        "Slate",
+        "Slime",
+        "Softwood",
+        "Solar Panel",
+        "Spandex",
+        "Sponge",
+        "Stainless Steel",
+        "Starch",
+        "Steel",
+        "Stone",
+        "Stone Powder",
+        "Stoneware",
+        "Straw",
+        "String",
+        "styrene",
+        "Styrofoam",
+        "Suede",
+        "Swarovski",
+        "Taffeta",
+        "Taklon",
+        "Teflon",
+        "Tempered Glass",
+        "Terrafibre",
+        "Terrazzo",
+        "Textilene",
+        "Thermoplastic",
+        "Thermoplastic Rubber",
+        "Timber",
+        "Tin",
+        "Tinsel",
+        "Titanium",
+        "Tungsten",
+        "Twig",
+        "Unfinished HDF",
+        "Unfinished Oak",
+        "UPVC",
+        "UV Coated Printed design on fibreboard",
+        "Velour",
+        "Velvet",
+        "Vine",
+        "Vinyl",
+        "Viscose",
+        "Walnut",
+        "Walnut Laminated",
+        "Wax",
+        "White",
+        "White Primed",
+        "Wicker",
+        "Willow",
+        "Wire",
+        "Wood",
+        "Wool",
+        "Woven Glass Fibre",
+        "Woven Hyacinth",
+        "Yarn",
+        "Zinc",
+        "Zinc alloy",
+        "Gravel",
+        "Grit"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "depth_23",
+      "portal_label": "Depth",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "depth_23_uom",
+      "portal_label": "Depth Unit",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": [
+        "Centimetres",
+        "Millimetres",
+        "Metres",
+        "Inches",
+        "Feet",
+        "Yards",
+        "Hands",
+        "Kilometres",
+        "Miles",
+        "Microns"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "wattage_67",
+      "portal_label": "Wattage",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "wattage_67_uom",
+      "portal_label": "Wattage Unit",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": [
+        "Watts",
+        "Horsepower",
+        "Kilowatts"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "cable_length_103",
+      "portal_label": "Cable Length",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "cable_length_103_uom",
+      "portal_label": "Cable Length Unit",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": [
+        "Centimetres",
+        "Millimetres",
+        "Metres",
+        "Inches",
+        "Feet",
+        "Yards",
+        "Hands",
+        "Kilometres",
+        "Miles",
+        "Microns"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "cutting_height_112",
+      "portal_label": "Cutting Height",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "cutting_height_112_uom",
+      "portal_label": "Cutting Height Unit",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": [
+        "Centimetres",
+        "Millimetres",
+        "Metres",
+        "Inches",
+        "Feet",
+        "Yards",
+        "Hands",
+        "Kilometres",
+        "Miles",
+        "Microns"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "blade_length_130",
+      "portal_label": "Blade Length",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "blade_length_130_uom",
+      "portal_label": "Blade Length Unit",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": [
+        "Centimetres",
+        "Millimetres",
+        "Metres",
+        "Inches",
+        "Feet",
+        "Yards",
+        "Hands",
+        "Kilometres",
+        "Miles",
+        "Microns"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "capacity_1164",
+      "portal_label": "Capacity",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "capacity_1164_uom",
+      "portal_label": "Capacity Unit",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": [
+        "Cubic centimetres",
+        "Cubic metres",
+        "Cubic feet",
+        "Cubic inches",
+        "Litres",
+        "Centilitres",
+        "Millilitres",
+        "Pints",
+        "Gallons"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "shipping_weight_10054",
+      "portal_label": "Shipping Weight",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "shipping_weight_10054_uom",
+      "portal_label": "Shipping Weight Unit",
+      "description": "",
+      "required": "REQUIRED",
+      "value_list": [
+        "Kilograms",
+        "Grams",
+        "Ounces",
+        "Pounds",
+        "Stones",
+        "Tons (imperial)",
+        "Tonnes (metric)",
+        "Milligrams"
+      ],
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "economic_operator_name_10394",
+      "portal_label": "Economic Operator Name",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "economic_operator_address_10399",
+      "portal_label": "Economic Operator Address",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "economic_operator_email_10404",
+      "portal_label": "Economic Operator Email",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "manufacturer_name_10409",
+      "portal_label": "Manufacturer Name",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "manufacturer_address_10414",
+      "portal_label": "Manufacturer Address",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "manufacturer_email_10419",
+      "portal_label": "Manufacturer Email",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "product_model_number_10424",
+      "portal_label": "Product Model Number",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    },
+    {
+      "api_code": "product_safety_warnings_or_safety_guidance_10429",
+      "portal_label": "Product Safety - Warnings or Safety Guidance",
+      "description": "",
+      "required": "OPTIONAL",
+      "value_list": null,
+      "unit": null,
+      "numeric_only": false
+    }
+  ],
+  "shopify": {
+    "sku": "2T2010483/M25",
+    "barcode": "8008984869042",
+    "price": "1999.00",
+    "inventoryQuantity": 62,
+    "weight": {
+      "value": 187.0,
+      "unit": "KILOGRAMS"
+    },
+    "product": {
+      "title": "Mountfield T30M Gear Drive 2-in-1 Lawn Tractor",
+      "descriptionHtml": "<p data-end=\"115\" data-start=\"80\"><strong data-end=\"113\" data-start=\"80\">Mountfield T30M Lawn Tractor<br><br>This ride-on mower will collect or mulch making it a 2-in-1 machine.</strong></p>\n<p data-end=\"115\" data-start=\"80\">Having come to a special arrangement with the manufacturer, CompassGM are now able to provide our customers with an unbeatable deal on this powerful, high-specification lawn tractor from classic British brand, Mountfield!</p>\n<p data-end=\"115\" data-start=\"80\">The Mountfield T30M is the perfect 'go to' lawn and garden tractor for customers seeking coverage for lawns around the one acre size.</p>\n<p data-end=\"712\" data-start=\"315\">What sets the T30M apart is its twin-bladed 84cm cutter deck—a rare feature in a compact tractor of this size. Twin blades provide a neater, more consistent finish on uneven ground and improve bagging performance, making it possible to mow damp grass without clogging the discharge chute. The deck is fitted with gauge wheels to prevent scalping and turf damage when navigating uneven terrain.</p>\n<p data-end=\"1057\" data-start=\"714\">Power comes from a 414cc STIGA air-cooled four-stroke engine delivering 8.4hp. Equipped with overhead-valve (OHV) technology, the engine offers reduced noise, lower emissions and excellent fuel efficiency. A six-litre petrol tank and electric key start maximise productivity by reducing downtime and ensuring stress-free starting every time.</p>\n<p data-end=\"1405\" data-start=\"1059\">The Mountfield T30M offers versatile mowing options to suit changing conditions. Grass can be collected in the spacious 200-litre rear bag, rear-discharged directly onto the lawn, or mulched to provide a natural feed for your turf. A seven-position cutting-height adjustment and six-speed manual transmission (5+1) further enhance flexibility.</p>\n<p data-end=\"1405\" data-start=\"1059\">To prolong the life of the cutter deck, Mountfield have incorporated a clever little cleaning port. Simply click your Hozelock attachment to the deck wash, lower your deck, then when you turn the water on and engage your cutters, watch the magic happen!</p>\n<p data-end=\"1405\" data-start=\"1059\">Practical features include from-the-seat grassbag emptying, a front-mounted bumper for engine protection, push-button PTO engagement and a smooth-riding, fully adjustable seat with sprung suspension. The tractor also includes a convenient mow-in-reverse function, saving time and effort when manoeuvring in tight spaces.</p>\n<p data-end=\"1405\" data-start=\"1059\">We think this is just the perfect size lawn tractor to facilitate gardens around the 1 acre size. If you are looking for something a little on the smaller size for the not so large areas, you may wish to look at the <a rel=\"noopener\" title=\"MTF66MQ-827 two-in-on Ride-On Mower\" href=\"https://www.mowdirect.co.uk/products/mountfield-mtf66-mq-compact-rear-collect-side-discharge-ride-on-mower-with-manual-drive\" target=\"_blank\"><strong>MTF66MQ-827</strong></a>, also from Mountfield. This is a compact rider style mower:</p>\n<p data-end=\"1729\" data-start=\"1407\">Why not scroll down to the bottom of this page to see what other products/services we offer in conjunction with this mower?</p>\n<p data-end=\"1729\" data-start=\"1407\"><br></p>",
+      "vendor": "Mountfield",
+      "productType": "Lawn Tractors",
+      "tags": [
+        "Best Garden Tractor Deals",
+        "Best Lawn Tractor Deals",
+        "Best Rear Collect Garden Tractors",
+        "Garden Tractor Deals",
+        "Homepage Recommendations",
+        "Lawn Tractor Deals",
+        "Lawn Tractors | MowDirect Black Friday Garden Deals",
+        "Spring Sale",
+        "Winter Sale"
+      ],
+      "status": "ACTIVE",
+      "category": {
+        "id": "gid://shopify/TaxonomyCategory/hg-12-3-14",
+        "name": "Tractors",
+        "fullName": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Tractors"
+      },
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full02.jpg?v=1765551807",
+          "altText": ""
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full03.jpg?v=1773425444",
+          "altText": ""
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full01_2.jpg?v=1765551807",
+          "altText": ""
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_detail01.jpg?v=1773425444",
+          "altText": ""
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_detail05.jpg?v=1773425444",
+          "altText": ""
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_detail02.jpg?v=1773425444",
+          "altText": ""
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330m_2t2010483m25_full01.jpg?v=1734710455",
+          "altText": "Mountfield 1330M Rear-Collect Lawn Tractor with Manual Drive"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full04.jpg?v=1765551807",
+          "altText": ""
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full05.jpg?v=1765551807",
+          "altText": ""
+        }
+      ]
+    },
+    "metafields": {
+      "custom.bullet_three": {
+        "owner_type": "PRODUCT",
+        "type": "single_line_text_field",
+        "raw_value": "5 Year Manufacturer's Warranty (T&C's Apply)",
+        "value": "5 Year Manufacturer's Warranty (T&C's Apply)"
+      },
+      "custom.bullet_two": {
+        "owner_type": "PRODUCT",
+        "type": "single_line_text_field",
+        "raw_value": "Includes mulch plug and tow bar",
+        "value": "Includes mulch plug and tow bar"
+      },
+      "custom.delivery_time": {
+        "owner_type": "PRODUCT",
+        "type": "single_line_text_field",
+        "raw_value": "5-7 days",
+        "value": "5-7 days"
+      },
+      "custom.display_attributes": {
+        "owner_type": "PRODUCT",
+        "type": "json",
+        "raw_value": "[{\"code\":\"engine_make\",\"label\":\"Engine Make\",\"value\":\"Stiga\"},{\"code\":\"engine_model\",\"label\":\"Engine Model\",\"value\":\"ST 400 OHV\"},{\"code\":\"engine_type\",\"label\":\"Engine Type\",\"value\":\"Petrol 4-stroke\"},{\"code\":\"engine_capacity\",\"label\":\"Engine Capacity\",\"value\":\"414cc\"},{\"code\":\"engine_cylinders\",\"label\":\"Engine Cylinders\",\"value\":\"Single\"},{\"code\":\"engine_starting_system\",\"label\":\"Engine Starting System\",\"value\":\"Electric Key Start\"},{\"code\":\"engine_fuel_tank_capacity\",\"label\":\"Engine Fuel Tank Capacity\",\"value\":\"6 Litres\"},{\"code\":\"transmission\",\"label\":\"Transmission\",\"value\":\"Manual Gears, 5 forward plus reverse\"},{\"code\":\"speed\",\"label\":\"Speed\",\"value\":\"0-8.8km/h\"},{\"code\":\"cutting_width\",\"label\":\"Cutting Width\",\"value\":\"84cm\"},{\"code\":\"cutting_heights\",\"label\":\"Cutting Heights\",\"value\":\"25-80mm (7 Positions)\"},{\"code\":\"height_adjustment\",\"label\":\"Height Adjustment\",\"value\":\"Lever\"},{\"code\":\"pto_power_take_off\",\"label\":\"Blade Engagement (PTO)\",\"value\":\"Electronic\"},{\"code\":\"turning_circle\",\"label\":\"Turning Circle\",\"value\":\"160cm\"},{\"code\":\"blades\",\"label\":\"Blades\",\"value\":\"Twin - Untimed\"},{\"code\":\"grass_collector\",\"label\":\"Grass Collector\",\"value\":\"200 Litres\"},{\"code\":\"empty_grassbag_from_seat\",\"label\":\"Empty Grassbag from Seat\",\"value\":\"Yes\"},{\"code\":\"grassbag_full_indicator\",\"label\":\"Grassbag Full Indicator\",\"value\":\"Yes\"},{\"code\":\"mulching\",\"label\":\"Mulching\",\"value\":\"Yes - Mulch Kit Included\"},{\"code\":\"headlights\",\"label\":\"Headlights\",\"value\":\"Yes\"},{\"code\":\"seat\",\"label\":\"Seat\",\"value\":\"Adjustable / Sprung\"},{\"code\":\"deck_washout_port\",\"label\":\"Deck Washout Port\",\"value\":\"Yes\"},{\"code\":\"anti_scalp_deck_wheels\",\"label\":\"Anti-Scalp Deck Wheels\",\"value\":\"Yes - 2\"},{\"code\":\"tow_bar\",\"label\":\"Tow Bar\",\"value\":\"Included\"},{\"code\":\"front_bumper\",\"label\":\"Front Bumper\",\"value\":\"Yes\"},{\"code\":\"wheels_front\",\"label\":\"Wheels - Front\",\"value\":\"381mm\"},{\"code\":\"wheels_rear\",\"label\":\"Wheels - Rear\",\"value\":\"457mm\"},{\"code\":\"dimensions\",\"label\":\"Dimensions (HxWxL)\",\"value\":\"110cm x 88cm x 239cm\"},{\"code\":\"sound_level\",\"label\":\"Sound Level\",\"value\":\"86dB (A) - at Operator's Ear\"},{\"code\":\"weight_product\",\"label\":\"Product Weight\",\"value\":\"187kg\"},{\"code\":\"lawn_size\",\"label\":\"Lawn Size\",\"value\":\"Up to 4000m2\"},{\"code\":\"warranty\",\"label\":\"Warranty\",\"value\":\"5 Years Warrnty (T&C's Apply)\"}]",
+        "value": [
+          {
+            "code": "engine_make",
+            "label": "Engine Make",
+            "value": "Stiga"
+          },
+          {
+            "code": "engine_model",
+            "label": "Engine Model",
+            "value": "ST 400 OHV"
+          },
+          {
+            "code": "engine_type",
+            "label": "Engine Type",
+            "value": "Petrol 4-stroke"
+          },
+          {
+            "code": "engine_capacity",
+            "label": "Engine Capacity",
+            "value": "414cc"
+          },
+          {
+            "code": "engine_cylinders",
+            "label": "Engine Cylinders",
+            "value": "Single"
+          },
+          {
+            "code": "engine_starting_system",
+            "label": "Engine Starting System",
+            "value": "Electric Key Start"
+          },
+          {
+            "code": "engine_fuel_tank_capacity",
+            "label": "Engine Fuel Tank Capacity",
+            "value": "6 Litres"
+          },
+          {
+            "code": "transmission",
+            "label": "Transmission",
+            "value": "Manual Gears, 5 forward plus reverse"
+          },
+          {
+            "code": "speed",
+            "label": "Speed",
+            "value": "0-8.8km/h"
+          },
+          {
+            "code": "cutting_width",
+            "label": "Cutting Width",
+            "value": "84cm"
+          },
+          {
+            "code": "cutting_heights",
+            "label": "Cutting Heights",
+            "value": "25-80mm (7 Positions)"
+          },
+          {
+            "code": "height_adjustment",
+            "label": "Height Adjustment",
+            "value": "Lever"
+          },
+          {
+            "code": "pto_power_take_off",
+            "label": "Blade Engagement (PTO)",
+            "value": "Electronic"
+          },
+          {
+            "code": "turning_circle",
+            "label": "Turning Circle",
+            "value": "160cm"
+          },
+          {
+            "code": "blades",
+            "label": "Blades",
+            "value": "Twin - Untimed"
+          },
+          {
+            "code": "grass_collector",
+            "label": "Grass Collector",
+            "value": "200 Litres"
+          },
+          {
+            "code": "empty_grassbag_from_seat",
+            "label": "Empty Grassbag from Seat",
+            "value": "Yes"
+          },
+          {
+            "code": "grassbag_full_indicator",
+            "label": "Grassbag Full Indicator",
+            "value": "Yes"
+          },
+          {
+            "code": "mulching",
+            "label": "Mulching",
+            "value": "Yes - Mulch Kit Included"
+          },
+          {
+            "code": "headlights",
+            "label": "Headlights",
+            "value": "Yes"
+          },
+          {
+            "code": "seat",
+            "label": "Seat",
+            "value": "Adjustable / Sprung"
+          },
+          {
+            "code": "deck_washout_port",
+            "label": "Deck Washout Port",
+            "value": "Yes"
+          },
+          {
+            "code": "anti_scalp_deck_wheels",
+            "label": "Anti-Scalp Deck Wheels",
+            "value": "Yes - 2"
+          },
+          {
+            "code": "tow_bar",
+            "label": "Tow Bar",
+            "value": "Included"
+          },
+          {
+            "code": "front_bumper",
+            "label": "Front Bumper",
+            "value": "Yes"
+          },
+          {
+            "code": "wheels_front",
+            "label": "Wheels - Front",
+            "value": "381mm"
+          },
+          {
+            "code": "wheels_rear",
+            "label": "Wheels - Rear",
+            "value": "457mm"
+          },
+          {
+            "code": "dimensions",
+            "label": "Dimensions (HxWxL)",
+            "value": "110cm x 88cm x 239cm"
+          },
+          {
+            "code": "sound_level",
+            "label": "Sound Level",
+            "value": "86dB (A) - at Operator's Ear"
+          },
+          {
+            "code": "weight_product",
+            "label": "Product Weight",
+            "value": "187kg"
+          },
+          {
+            "code": "lawn_size",
+            "label": "Lawn Size",
+            "value": "Up to 4000m2"
+          },
+          {
+            "code": "warranty",
+            "label": "Warranty",
+            "value": "5 Years Warrnty (T&C's Apply)"
+          }
+        ]
+      },
+      "custom.feature_bullets": {
+        "owner_type": "PRODUCT",
+        "type": "multi_line_text_field",
+        "raw_value": "    <ul>\n        <li><strong>Unbeatable Value:</strong> The best deal available for a lawn tractor of this specification—unmatched in quality and performance!</li>\n        <li><strong>Ready to Use:</strong> Price includes full assembly and a comprehensive pre-shipping inspection, so your tractor arrives ready to mow.</li>\n        <li><strong>Innovative Twin-Blade Design:</strong> The first-ever garden tractor with a twin-bladed cutter deck under 90cm, delivering a cleaner, more consistent cut.</li>\n        <li><strong>Exceptional Damp-Weather Performance:</strong> Twin blades ensure superior grass collection, even in damp or challenging conditions.</li>\n        <li><strong>Convenient Grassbag Design:</strong> A spacious, 200-litre grassbag minimises downtime and can be emptied without leaving the driver’s seat.</li>\n        <li><strong>Overfill Protection:</strong> The collector’s full alarm prevents overfilling and blockages, ensuring uninterrupted mowing.</li>\n        <li><strong>Precision Cutting:</strong> Seven preset cutting heights, easily adjusted with a spring-assisted lever for perfect lawn customisation.</li>\n        <li><strong>Versatile Drive Options:</strong> A six-speed manual transmission (five forward, one reverse) provides the ideal speed for any mowing task.</li>\n        <li><strong>Effortless Manoeuvrability:</strong> A tight turning radius makes end-of-pass realignment quick and easy.</li>\n        <li><strong>Comfortable Operation:</strong> Enjoy light-touch steering and an adjustable high-back seat for a smooth, comfortable ride.</li>\n        <li><strong>Turf-Friendly Design:</strong> Large-diameter drive wheels enhance manoeuvrability and help prevent turf damage.</li>\n        <li><strong>Enhanced Safety:</strong> Built-in headlights ensure safe mowing and towing, even in low-light conditions.</li>\n        <li><strong>Powerful Performance:</strong> Equipped with a high-performance 414cc STIGA 4-stroke OHV engine for reliable, fuel-efficient operation.</li>\n        <li><strong>Time-Saving Feature:</strong> Mow-in-reverse capability allows you to tackle hard-to-reach areas without interruption.</li>\n        <li><strong>Customisable Options:</strong> Mulch kit and Tow Hitch included and rear deflector optional attachment to tailor your tractor to your needs.</li>\n        <li><strong>Expand Your Capabilities:</strong> Choose from a range of trailed accessories to enhance your lawn care toolkit.</li>\n        <li><strong>Peace of Mind:</strong> Backed by an extended five-year manufacturer’s warranty for long-term reliability.</li>\n    </ul>\n",
+        "value": "    <ul>\n        <li><strong>Unbeatable Value:</strong> The best deal available for a lawn tractor of this specification—unmatched in quality and performance!</li>\n        <li><strong>Ready to Use:</strong> Price includes full assembly and a comprehensive pre-shipping inspection, so your tractor arrives ready to mow.</li>\n        <li><strong>Innovative Twin-Blade Design:</strong> The first-ever garden tractor with a twin-bladed cutter deck under 90cm, delivering a cleaner, more consistent cut.</li>\n        <li><strong>Exceptional Damp-Weather Performance:</strong> Twin blades ensure superior grass collection, even in damp or challenging conditions.</li>\n        <li><strong>Convenient Grassbag Design:</strong> A spacious, 200-litre grassbag minimises downtime and can be emptied without leaving the driver’s seat.</li>\n        <li><strong>Overfill Protection:</strong> The collector’s full alarm prevents overfilling and blockages, ensuring uninterrupted mowing.</li>\n        <li><strong>Precision Cutting:</strong> Seven preset cutting heights, easily adjusted with a spring-assisted lever for perfect lawn customisation.</li>\n        <li><strong>Versatile Drive Options:</strong> A six-speed manual transmission (five forward, one reverse) provides the ideal speed for any mowing task.</li>\n        <li><strong>Effortless Manoeuvrability:</strong> A tight turning radius makes end-of-pass realignment quick and easy.</li>\n        <li><strong>Comfortable Operation:</strong> Enjoy light-touch steering and an adjustable high-back seat for a smooth, comfortable ride.</li>\n        <li><strong>Turf-Friendly Design:</strong> Large-diameter drive wheels enhance manoeuvrability and help prevent turf damage.</li>\n        <li><strong>Enhanced Safety:</strong> Built-in headlights ensure safe mowing and towing, even in low-light conditions.</li>\n        <li><strong>Powerful Performance:</strong> Equipped with a high-performance 414cc STIGA 4-stroke OHV engine for reliable, fuel-efficient operation.</li>\n        <li><strong>Time-Saving Feature:</strong> Mow-in-reverse capability allows you to tackle hard-to-reach areas without interruption.</li>\n        <li><strong>Customisable Options:</strong> Mulch kit and Tow Hitch included and rear deflector optional attachment to tailor your tractor to your needs.</li>\n        <li><strong>Expand Your Capabilities:</strong> Choose from a range of trailed accessories to enhance your lawn care toolkit.</li>\n        <li><strong>Peace of Mind:</strong> Backed by an extended five-year manufacturer’s warranty for long-term reliability.</li>\n    </ul>\n"
+      },
+      "custom.supplier_sku": {
+        "owner_type": "PRODUCT",
+        "type": "single_line_text_field",
+        "raw_value": "2T2007404/A22",
+        "value": "2T2007404/A22"
+      },
+      "filter.brand": {
+        "owner_type": "PRODUCT",
+        "type": "single_line_text_field",
+        "raw_value": "Mountfield",
+        "value": "Mountfield"
+      },
+      "filter.collection_capacity_l": {
+        "owner_type": "PRODUCT",
+        "type": "volume",
+        "raw_value": "{\"value\":200.0,\"unit\":\"LITERS\"}",
+        "value": "{\"value\":200.0,\"unit\":\"LITERS\"}"
+      },
+      "filter.cutting_width": {
+        "owner_type": "PRODUCT",
+        "type": "dimension",
+        "raw_value": "{\"value\":84.0,\"unit\":\"CENTIMETERS\"}",
+        "value": "{\"value\":84.0,\"unit\":\"CENTIMETERS\"}"
+      },
+      "filter.fuel_group": {
+        "owner_type": "PRODUCT",
+        "type": "list.single_line_text_field",
+        "raw_value": "[\"Petrol\"]",
+        "value": "[\"Petrol\"]"
+      },
+      "filter.lawnmower_type": {
+        "owner_type": "PRODUCT",
+        "type": "list.single_line_text_field",
+        "raw_value": "[\"Rotary\"]",
+        "value": "[\"Rotary\"]"
+      },
+      "judgeme.badge": {
+        "owner_type": "PRODUCT",
+        "type": "string",
+        "raw_value": "<div style='display:none' class='jdgm-prev-badge' data-average-rating='0.00' data-number-of-reviews='0' data-number-of-questions='0'> <span class='jdgm-prev-badge__stars' data-score='0.00' tabindex='0' aria-label='0.00 stars' role='button'> <span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span> </span> <span class='jdgm-prev-badge__text'> No reviews </span> </div>",
+        "value": "<div style='display:none' class='jdgm-prev-badge' data-average-rating='0.00' data-number-of-reviews='0' data-number-of-questions='0'> <span class='jdgm-prev-badge__stars' data-score='0.00' tabindex='0' aria-label='0.00 stars' role='button'> <span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span> </span> <span class='jdgm-prev-badge__text'> No reviews </span> </div>"
+      },
+      "judgeme.widget": {
+        "owner_type": "PRODUCT",
+        "type": "string",
+        "raw_value": "<div class='jdgm-rev-widg' data-updated-at='2026-05-13T11:18:31Z' data-average-rating='0.00' data-number-of-reviews='0' data-number-of-questions='0' data-image-url='https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full02.jpg?v=1765551807'> <style class='jdgm-temp-hiding-style'>.jdgm-rev-widg{ display: none }</style> <div class='jdgm-rev-widg__header'> <h2 class='jdgm-rev-widg__title'>Customer Reviews</h2>  <div class='jdgm-rev-widg__summary'> <div class='jdgm-rev-widg__summary-stars' aria-label='Average rating is 0.00 stars' role='img'> <span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span> </div> <div class='jdgm-rev-widg__summary-text'>Be the first to write a review</div> </div> <a style='display: none' href='#' class='jdgm-write-rev-link' role='button'>Write a review</a> <div class='jdgm-histogram jdgm-temp-hidden'>  <div class='jdgm-histogram__row' data-rating='5' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 5 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='4' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 4 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='3' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 3 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='2' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 2 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='1' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 1 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row jdgm-histogram__clear-filter' data-rating=null tabindex='0'></div> </div>     <div class='jdgm-rev-widg__sort-wrapper'></div> </div> <div class='jdgm-rev-widg__body'>  <div class='jdgm-rev-widg__reviews'></div> <div class='jdgm-paginate' data-per-page='5' data-url='https://api.judge.me/reviews/reviews_for_widget' style=\"display: none;\"></div>  </div> <div class='jdgm-rev-widg__paginate-spinner-wrapper'> <div class='jdgm-spinner'></div> </div> </div>",
+        "value": "<div class='jdgm-rev-widg' data-updated-at='2026-05-13T11:18:31Z' data-average-rating='0.00' data-number-of-reviews='0' data-number-of-questions='0' data-image-url='https://cdn.shopify.com/s/files/1/0654/0004/5735/files/1330M_2T2010483M25_full02.jpg?v=1765551807'> <style class='jdgm-temp-hiding-style'>.jdgm-rev-widg{ display: none }</style> <div class='jdgm-rev-widg__header'> <h2 class='jdgm-rev-widg__title'>Customer Reviews</h2>  <div class='jdgm-rev-widg__summary'> <div class='jdgm-rev-widg__summary-stars' aria-label='Average rating is 0.00 stars' role='img'> <span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span> </div> <div class='jdgm-rev-widg__summary-text'>Be the first to write a review</div> </div> <a style='display: none' href='#' class='jdgm-write-rev-link' role='button'>Write a review</a> <div class='jdgm-histogram jdgm-temp-hidden'>  <div class='jdgm-histogram__row' data-rating='5' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 5 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='4' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 4 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='3' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 3 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='2' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 2 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row' data-rating='1' data-frequency='0' data-percentage='0'>  <div class='jdgm-histogram__star' role='button' aria-label=\"0% (0) reviews with 1 star rating\"  tabindex='0' ><span class='jdgm-star jdgm--on'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span><span class='jdgm-star jdgm--off'></span></div> <div class='jdgm-histogram__bar'> <div class='jdgm-histogram__bar-content' style='width: 0%;'> </div> </div> <div class='jdgm-histogram__percentage'>0%</div> <div class='jdgm-histogram__frequency'>(0)</div> </div>  <div class='jdgm-histogram__row jdgm-histogram__clear-filter' data-rating=null tabindex='0'></div> </div>     <div class='jdgm-rev-widg__sort-wrapper'></div> </div> <div class='jdgm-rev-widg__body'>  <div class='jdgm-rev-widg__reviews'></div> <div class='jdgm-paginate' data-per-page='5' data-url='https://api.judge.me/reviews/reviews_for_widget' style=\"display: none;\"></div>  </div> <div class='jdgm-rev-widg__paginate-spinner-wrapper'> <div class='jdgm-spinner'></div> </div> </div>"
+      },
+      "market.depth": {
+        "owner_type": "PRODUCT",
+        "type": "dimension",
+        "raw_value": "{\"value\":239.0,\"unit\":\"CENTIMETERS\"}",
+        "value": "{\"value\":239.0,\"unit\":\"CENTIMETERS\"}"
+      },
+      "market.height": {
+        "owner_type": "PRODUCT",
+        "type": "dimension",
+        "raw_value": "{\"value\":110.0,\"unit\":\"CENTIMETERS\"}",
+        "value": "{\"value\":110.0,\"unit\":\"CENTIMETERS\"}"
+      },
+      "marketplace.width": {
+        "owner_type": "PRODUCT",
+        "type": "dimension",
+        "raw_value": "{\"value\":88.0,\"unit\":\"CENTIMETERS\"}",
+        "value": "{\"value\":88.0,\"unit\":\"CENTIMETERS\"}"
+      },
+      "mm-google-shopping.google_product_category": {
+        "owner_type": "PRODUCT",
+        "type": "string",
+        "raw_value": "3311",
+        "value": "3311"
+      },
+      "shopify.color-pattern": {
+        "owner_type": "PRODUCT",
+        "type": "list.metaobject_reference",
+        "raw_value": "[\"gid://shopify/Metaobject/305773773173\",\"gid://shopify/Metaobject/305773740405\"]",
+        "value": [
+          "Black",
+          "Red"
+        ]
+      },
+      "shopify.power-source": {
+        "owner_type": "PRODUCT",
+        "type": "list.metaobject_reference",
+        "raw_value": "[\"gid://shopify/Metaobject/359302791541\"]",
+        "value": [
+          "Petrol"
+        ]
+      },
+      "shopify.tractor-accessories-included": {
+        "owner_type": "PRODUCT",
+        "type": "list.metaobject_reference",
+        "raw_value": "[\"gid://shopify/Metaobject/345311805813\",\"gid://shopify/Metaobject/405642936693\"]",
+        "value": [
+          "Mulching kit",
+          "Hitch kit"
+        ]
+      }
+    }
+  },
+  "row_output_schema": {
+    "filled": "{<api_code>: <value as string>, ...} — ONLY the spec_columns you can support from Shopify data; the auto_filled core is already handled, do not repeat it.",
+    "unknown": "[{column: <api_code>, reason: <short>}, ...] for spec_columns you cannot fill."
+  },
+  "validator_will_check": {
+    "value_list_fields": "value must appear in the column's value_list (case sensitive)",
+    "numeric_fields": "value must parse as a number",
+    "uom_fields": "columns ending _uom are value-lists; pair each numeric spec (e.g. width_4) with its unit (width_4_uom)"
+  },
+  "guidance": "Fill REQUIRED spec columns first (dimensions+_uom, material, wattage, feature_1..3), then RECOMMENDED/OPTIONAL. Map custom.feature_bullets <li> items to feature_1..N. For each numeric dimension also set its *_uom partner from the unit value-list. For value-list columns write an EXACT value from value_list or mark UNKNOWN.",
+  "warnings": [
+    "colour_group unresolved for 2T2010483/M25 (brand 'Mountfield') — REQUIRED. Add a brand_colour/sku_colour entry in config/range_overrides.json."
+  ]
+}

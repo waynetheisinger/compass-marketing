@@ -1,0 +1,937 @@
+[
+  {
+    "shop_sku": "JR-BC003",
+    "ean": "3760011424536",
+    "title": "JR BCH003 Protective Cover for 102cm+ Tractor Mowers",
+    "active": true,
+    "category": "Lawnmower Blade Covers",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "FRT75BS125",
+    "ean": "3661602018434",
+    "title": "Feider FRT75BS125-SD Compact Side-Discharge Ride-On Mower with Manual Drive & Briggs Engine",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "S154460",
+    "ean": "9508199981861",
+    "title": "Spectrum TG51SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+    "active": true,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "STIG-298472048/ST2",
+    "ean": "8008984851979",
+    "title": "Stiga Multiclip 547 S Self-Propelled Petrol Mulching Lawnmower",
+    "active": false,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "S154511",
+    "ean": "9506726832853",
+    "title": "Spectrum DM26PB Petrol Leaf Blower",
+    "active": false,
+    "category": "Blowers & Vacuums (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "S154545",
+    "ean": "5065022450023",
+    "title": "Spectrum DM26C Curved-Shaft Petrol Grass-Trimmer",
+    "active": true,
+    "category": "Brushcutters & Line Trimmers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "S154554",
+    "ean": "9502325335849",
+    "title": "Spectrum TG56SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+    "active": true,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "S154562",
+    "ean": "3661602049223",
+    "title": "Feider 8500w Single-Phase Open-Frame Petrol Generator - FG8500RS",
+    "active": false,
+    "category": "Generators (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-RAC139PTIL",
+    "ean": "3661602011428",
+    "title": "Racing 139PTIL63 Petrol Front-Tine Tiller",
+    "active": true,
+    "category": "Tillers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-EZN1600",
+    "ean": "3661602041098",
+    "title": "Energizer EZN1600-UK 1600W 130 Bar Electric Pressure Washer",
+    "active": false,
+    "category": "Pressure Washers (Corded)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-EZN1200-UK",
+    "ean": "3661602041081",
+    "title": "Energizer EZN1200-UK 1200W 100 Bar Electric Pressure Washer",
+    "active": false,
+    "category": "Pressure Washers (Corded)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-FAST175T",
+    "ean": "3661602025678",
+    "title": "Feider FAST175T Self-Propelled Wheeled Garden Vacuum",
+    "active": false,
+    "category": "Blowers & Vacuums (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SP22144",
+    "ean": "5065022450344",
+    "title": "Spectrum 272kg-Capacity Poly Tipping Trailer SP22144",
+    "active": false,
+    "category": "Trailers",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SP22125",
+    "ean": "5065022450436",
+    "title": "Spectrum 408kg-Capacity High-Sided Steel Tipping Trailer SP22125",
+    "active": false,
+    "category": "Carts",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SP22111",
+    "ean": "5065022450412",
+    "title": "Spectrum 227kg-Capacity Poly Tipping-Cart and Wheelbarrow SP22111",
+    "active": true,
+    "category": "Carts",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-DM26H",
+    "ean": "5065022450047",
+    "title": "Spectrum DM26H Petrol Brushcutter",
+    "active": false,
+    "category": "Brushcutters & Line Trimmers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-DM26L",
+    "ean": "5065022450030",
+    "title": "Spectrum DM26L Petrol Brushcutter",
+    "active": true,
+    "category": "Brushcutters & Line Trimmers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-DM26PBV",
+    "ean": "5065022450443",
+    "title": "Spectrum DM26PBV Petrol Blower-Vac",
+    "active": true,
+    "category": "Blowers & Vacuums (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-FBT270",
+    "ean": "3661602025883",
+    "title": "Feider FBT270 Petrol Chipper-Shredder",
+    "active": false,
+    "category": "Garden Shredders (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "S172974",
+    "ean": "3661602025883",
+    "title": "Feider FBT270 Petrol Chipper-Shredder",
+    "active": false,
+    "category": "Garden Shredders (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SP22124",
+    "ean": "9506272847721",
+    "title": "Spectrum 227kg-Capacity Steel Tipping TrailerSP22124",
+    "active": true,
+    "category": "Wheelbarrow Wheels",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TG46S",
+    "ean": "9505615365151",
+    "title": "Spectrum TG46S 3-in-1 Self-Propelled Petrol Lawnmower",
+    "active": false,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TG40S",
+    "ean": "5065022450092",
+    "title": "Spectrum TG40S Self-Propelled Petrol Lawnmower",
+    "active": false,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TY8000V",
+    "ean": "5065022450313",
+    "title": "Spectrum TY8000V Electric Upright 8-Tonne log Splitter",
+    "active": true,
+    "category": "Log Splitters (Corded)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-CL20-R-DUO",
+    "ean": "5065022450238",
+    "title": "Spectrum CL20-R-DUO 2mm Round Strimmer Line",
+    "active": true,
+    "category": "Line Trimmer Spools & Lines",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-CL30-R-DUO",
+    "ean": "5065022450269",
+    "title": "Spectrum CL30-R-DUO 3.0mm Round Strimmer Line",
+    "active": true,
+    "category": "Line Trimmer Spools & Lines",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-CL24-R-DUO",
+    "ean": "5065022450245",
+    "title": "Spectrum CL24-R-DUO 2.4mm Round Strimmer Line",
+    "active": true,
+    "category": "Line Trimmer Spools & Lines",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-CL27-R-DUO",
+    "ean": "5065022450252",
+    "title": "Spectrum CL27-R-DUO 2.7mm Round Strimmer Line",
+    "active": true,
+    "category": "Line Trimmer Spools & Lines",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "CL40-R-DUO",
+    "ean": "5065022450276",
+    "title": "Spectrum CL40-R-DUO 4.0mm Round Strimmer Line",
+    "active": false,
+    "category": "Line Trimmer Spools & Lines",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-2T0053404/A22",
+    "ean": "8008984851313",
+    "title": "Alpina AT2 66 QA Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SP31105",
+    "ean": "5065022450085",
+    "title": "Spectrum 97cm Towed Lawn & Leaf SweeperSP31105",
+    "active": true,
+    "category": "Lawn Sweepers",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SP31109",
+    "ean": "5065022450078",
+    "title": "Spectrum 122cm Towed Lawn & Leaf SweeperSP31109",
+    "active": true,
+    "category": "Lawn Sweepers",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-STF600-PRO",
+    "ean": "5065022450221",
+    "title": "Spectrum STF600-PRO Flail Mower",
+    "active": false,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TG40PD",
+    "ean": "5065022450108",
+    "title": "Spectrum TG40PD Self-Propelled Petrol Lawnmower",
+    "active": false,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TG51PD",
+    "ean": "5065022450146",
+    "title": "Spectrum TG51PD Self-Propelled Petrol Lawnmower",
+    "active": false,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SW420-EXPERT",
+    "ean": "5065022450337",
+    "title": "Spectrum SW420-Expert 2-in-1 Petrol Lawn Scarifier Aerator",
+    "active": true,
+    "category": "Manual Lawn Aerators",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TY5000H",
+    "ean": "5065022450290",
+    "title": "Spectrum TY5000H 5 Tonne Log Splitter",
+    "active": true,
+    "category": "Log Splitters (Corded)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TY7000H",
+    "ean": "5065022450306",
+    "title": "Spectrum TY7000H 7 Tonne Log Splitter",
+    "active": true,
+    "category": "Log Splitters (Corded)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TG46SE",
+    "ean": "5065022450139",
+    "title": "Spectrum TG46SE 3-in-1 Self-Propelled Petrol Lawnmower with Electric Start",
+    "active": false,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TG40SE",
+    "ean": "5065022450115",
+    "title": "Spectrum TG40SE Self-Propelled Petrol Lawnmower with Electric Start",
+    "active": true,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-DC24-4",
+    "ean": "5065022450429",
+    "title": "Spectrum DC24-4 Ultra-Compact Rear-Collect Side-Discharge or Ride-On Mower with Manual Drive",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-SP31130",
+    "ean": "5065022450054",
+    "title": "Spectrum 122cm Towed Spike-Type Roller Aerator - SP31130",
+    "active": false,
+    "category": "Wheeled Lawn Aerators",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-TG60FTTR",
+    "ean": "5065022450207",
+    "title": "Spectrum TG60FTTR Petrol Cultivator",
+    "active": true,
+    "category": "Tillers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-2T2000404/A22",
+    "ean": "8008984856660",
+    "title": "Alpina AT4 84 A 2-in-1 Lawn Tractor",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-2T0510404/A22",
+    "ean": "8008984851177",
+    "title": "Alpina AT3 98 A Side Discharge Lawn Tractor",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-PFC-20G-M",
+    "ean": "5065022450399",
+    "title": "Spectrum PFC-20G-M Jerry Can - 20 Litre",
+    "active": true,
+    "category": "Jerry Cans",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-PFC-20R-P",
+    "ean": "5065022450375",
+    "title": "Spectrum PFC-20R-P Anti Spill Petrol Can - 20 Litre",
+    "active": true,
+    "category": "Fuel & Oil Cans",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-PFC-5R-P",
+    "ean": "5065022450351",
+    "title": "Spectrum PFC-5R-P Anti Spill Petrol Can - 5 Litre",
+    "active": true,
+    "category": "Fuel & Oil Cans",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-PFC-SPOUT",
+    "ean": "5065022450405",
+    "title": "Spectrum Metal Jerry Can Spout - PFC-SPOUT",
+    "active": true,
+    "category": "Fuel & Oil Cans",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-PFC-10G-M",
+    "ean": "5065022450382",
+    "title": "Spectrum PFC-10G-M Jerry Can - 10 Litre",
+    "active": false,
+    "category": "Fuel & Oil Cans",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-PFC-10R-P",
+    "ean": "5065022450368",
+    "title": "Spectrum PFC-10R-P Anti Spill Petrol Can - 10 Litre",
+    "active": true,
+    "category": "Fuel & Oil Cans",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "GNP560-WT",
+    "ean": "5065022450450",
+    "title": "Spectrum GNP560-WT 56cm Petrol Wheeled Trimmer",
+    "active": true,
+    "category": "Plate Compactors (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-T92H",
+    "ean": "5391549590011",
+    "title": "Harry T92H Rear-Collect Lawn Tractor with Hydrostatic Transmission",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-T84H",
+    "ean": "5391549590004",
+    "title": "Harry T84H Rear-Collect Lawn Tractor with Hydrostatic Drive",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "S221749",
+    "ean": "5065022450177",
+    "title": "Spectrum TG48-PRO Petrol Lawnmower",
+    "active": true,
+    "category": "Lawnmowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "2T2010483/M25",
+    "ean": "8008984869042",
+    "title": "Mountfield T30M Gear Drive two-in-one Lawn Tractor",
+    "active": true,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-MTF66-MQ",
+    "ean": "8008984509856",
+    "title": "Mountfield MTF66M Compact Rear-Collect & Side-Discharge Ride-On Mower with Manual Drive",
+    "active": true,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "DCT38H",
+    "ean": "5065022450528",
+    "title": "Spectrum DCT38H 38\" Lawn Tractor with Hydrostatic Drive",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "KT400-3 PRO",
+    "ean": "5065022450573",
+    "title": "Spectrum KT400-3 Pro 3-in-1 Petrol Lawn Scarifier, Aerator & Sweeper-Groomer",
+    "active": true,
+    "category": "Manual Lawn Aerators",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "C-HRTF220",
+    "ean": "3661602049346",
+    "title": "Feider HRTF220 Pro Two-Wheel Rear-Tine Rotary Cultivator",
+    "active": true,
+    "category": "Tillers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "DCT38M-RDM",
+    "ean": "5065022450603",
+    "title": "Spectrum DCT38M-RDM  38\" Lawn Tractor with Manual Drive",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "DCT38M-SDM",
+    "ean": "5065022450610",
+    "title": "Spectrum DCT38M-SD  38\" Side Discharge and Mulch Lawn Tractor with Manual Drive",
+    "active": false,
+    "category": "Ride-On Mowers (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS40CB",
+    "ean": "5065022450689",
+    "title": "SPECTRUM SBS40CB 40V 4.0Ah Lithium-Ion Battery Pack, 21700 Cells, Thermal Protection, Compatible with All Spectrum 40V Cordless",
+    "active": true,
+    "category": "Rechargeable & Non-Rechargeable Batteries",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS240CPHT",
+    "ean": "5065022450665",
+    "title": "SPECTRUM SBS240CPHT 40V Cordless Pole Hedge Trimmer, 2.4m Reach, 46cm Dual-Action Laser-Cut Blade, 180 Adjustable Head, 18mm",
+    "active": true,
+    "category": "Hedge Trimmers without Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "LPW1600",
+    "ean": "5065022450726",
+    "title": "Spectrum LPW1600 Electric Pressure Washer - 1600W, 130 Bar",
+    "active": true,
+    "category": "Pressure Washers (Corded)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "LPW2200",
+    "ean": "5065022450733",
+    "title": "Spectrum LPW2200 Electric Pressure Washer - 2200W, 170 Bar, Cleaning Kit Included",
+    "active": true,
+    "category": "Pressure Washers (Corded)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBSCDC",
+    "ean": "5065022450702",
+    "title": "Spectrum SBSCDC 40V Dual Battery Charger (2A Fast Charge)",
+    "active": true,
+    "category": "Power Tool Battery Chargers without Batteries",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBSCSC",
+    "ean": "5065022450696",
+    "title": "Spectrum SBSCSC 40V Fast Battery Charger (2A)",
+    "active": true,
+    "category": "Power Tool Battery Chargers without Batteries",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBSCBC",
+    "ean": "5065022450719",
+    "title": "Spectrum SBSCBC 40V Standard Battery Charger (0.5A)",
+    "active": true,
+    "category": "Power Tool Battery Chargers without Batteries",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS560CHT",
+    "ean": "5065022450658",
+    "title": "SPECTRUM SBS560CHT 40V Cordless Hedge Trimmer, 45cm Laser-Cut Blade, Brushless Motor, 2,600 Cuts/Min, 18mm Capacity, 90 Rotating",
+    "active": true,
+    "category": "Hedge Trimmers without Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS220CHM-KIT",
+    "ean": "5061122340141",
+    "title": "Spectrum SBS220CHM 22cm Cordless Handy Mower - Complete Kit (2.0Ah Battery + Charger)",
+    "active": true,
+    "category": "Lawnmowers with Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS560CHT-KIT",
+    "ean": "5061122340165",
+    "title": "Spectrum SBS560CHT 40V Cordless Hedge Trimmer Kit 45cm Laser-Cut Blade with 2.0Ah Battery and Charger",
+    "active": true,
+    "category": "Hedge Trimmers with Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS460CLM-KIT",
+    "ean": "5061122340134",
+    "title": "SPECTRUM SBS460CLM 40V Cordless Self-Propelled Lawn Mower 46cm Brushless 60L Bag (2x 4.0Ah Batteries + Dual Fast Charger)",
+    "active": true,
+    "category": "Lawnmowers with Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS460CLM",
+    "ean": "5065022450634",
+    "title": "SPECTRUM SBS460CLM 40V Cordless Self-Propelled Lawn Mower 46cm Brushless 60L Bag (Battery & Charger Sold Separately)",
+    "active": true,
+    "category": "Lawnmowers without Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS220CHM",
+    "ean": "5065022450627",
+    "title": "SPECTRUM SBS220CHM 40V Cordless Handy Lawn Mower, 22cm Cutting Width, Brushless Motor, 3 Cutting Heights (30-50mm), Mulching",
+    "active": true,
+    "category": "Lawnmowers without Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS240CPHT-KIT",
+    "ean": "5061122340172",
+    "title": "Spectrum SBS240CPHT 40V Cordless Pole Hedge Trimmer Kit, 2.4m Reach, 46cm Blade, 4.0Ah Battery + Charger",
+    "active": true,
+    "category": "Hedge Trimmers with Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS480CBV",
+    "ean": "5065022450641",
+    "title": "SPECTRUM SBS480CBV 40V Cordless Leaf Blower Vacuum, 3-in-1 Blow/Vac/Mulch, 52m/s Airspeed, 12L Bag, 30:1 Mulch Ratio - Bare Tool",
+    "active": true,
+    "category": "Blowers & Vacuums without Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS480CBV-KIT",
+    "ean": "5061122340158",
+    "title": "Spectrum SBS480CBV 40V Cordless Leaf Blower Vacuum 3-in-1 Kit with 4.0Ah Battery and Standard Charger",
+    "active": true,
+    "category": "Blowers & Vacuums with Batteries (Cordless)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "SBS20CB",
+    "ean": "5065022450672",
+    "title": "SPECTRUM SBS20CB 40V 2.0Ah Lithium-Ion Battery Pack, 18650 Cells, 710g Compact Size, Compatible with All Spectrum 40V Cordless",
+    "active": true,
+    "category": "Rechargeable & Non-Rechargeable Batteries",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "TG45SC",
+    "ean": "5061122340127",
+    "title": "Spectrum TG45SC Petrol Scarifier & Aerator - 223cc, 45cm, 2-in-1",
+    "active": true,
+    "category": "Wheeled Lawn Aerators",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "TG45SC-E",
+    "ean": "5061122340189",
+    "title": "Spectrum TG45SC-E Petrol Scarifier & Aerator - 223cc, 45cm, Electric Key Start",
+    "active": true,
+    "category": "Wheeled Lawn Aerators",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "100134S",
+    "ean": "5065022450771",
+    "title": "Chipperfield 100134S Replacement Concrete Mixer Drum - fits Belle, Build Buddy & Screwfix Mixers",
+    "active": false,
+    "category": "Cement Mixer Drums",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "TG480RTTR",
+    "ean": "5061122340196",
+    "title": "Spectrum TG480RTTR Rear-Tine Petrol Cultivator - 211cc, 48cm Working Width",
+    "active": true,
+    "category": "Cultivators (Petrol)",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "100134O",
+    "ean": "5065022450740",
+    "title": "Chipperfield 100134O Replacement Concrete Mixer Drum - fits Belle, Build Buddy & Screwfix Mixers",
+    "active": true,
+    "category": "Cement Mixer Drums",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  },
+  {
+    "shop_sku": "100134Y-2",
+    "ean": "5065022450764",
+    "title": "Chipperfield 100134Y Replacement Concrete Mixer Drum - fits Belle, Build Buddy & Screwfix Mixers",
+    "active": true,
+    "category": "Cement Mixer Drums",
+    "logistic_class": {
+      "code": "S",
+      "label": "Default"
+    }
+  }
+]

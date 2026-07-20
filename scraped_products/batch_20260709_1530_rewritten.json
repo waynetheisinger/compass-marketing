@@ -1,0 +1,128 @@
+{
+  "title": "Chipperfield R8-24 Ultra-Compact Petrol Ride-On Mower — Automatic Transmission",
+  "description_html": "<p>The <strong>Chipperfield R8-24</strong> bridges the gap between the biggest walk-behind mowers and the smallest garden tractors — giving you the comfort and pace of a ride-on in a footprint compact enough to work around trees, borders and tight corners. It is built to keep medium to large lawns of up to <strong>3,000m&sup2;</strong> looking their best with far less effort than pushing a mower.</p><h2>Powerful, dependable engine</h2><p>A <strong>224cc single-cylinder four-stroke petrol engine</strong> delivers a healthy <strong>6hp (4.4kW)</strong> — plenty of torque to power through thick, damp or fast-growing grass. <strong>Electric key start</strong> gets you going at the turn of a key, and a <strong>recoil back-up starter</strong> means a flat battery never stops you finishing the job.</p><h2>Effortless automatic drive</h2><p>The <strong>automatic CVT transmission</strong> is operated by a single foot pedal for smooth forward and reverse control — no clutch, no gear changes. Simply press to set your pace and adjust on the move as the ground and grass length change, keeping both hands free for steering.</p><h2>Three ways to manage your clippings</h2><p>The <strong>61cm steel cutting deck</strong> offers <strong>eight cutting heights from 30 to 75mm</strong>, so you can dial in the ideal finish through every stage of the growing season. Choose the option that suits the day:</p><ul><li><strong>Collect</strong> into the generous 150-litre grass box for a clean, tidy finish with fewer stops to empty</li><li><strong>Side discharge</strong> to power through longer or overgrown grass more quickly</li><li><strong>Mulch</strong> the clippings back into the lawn to feed the soil and cut down on waste</li></ul><h2>Compact, comfortable and easy to handle</h2><p>At roughly <strong>128kg</strong> with a tight turning circle and a comfortable riding position, the R8-24 is genuinely easy to manoeuvre. Its compact size lets you weave around obstacles and trim close to edges, while the seated position takes the strain out of larger lawns and reduces fatigue.</p><h2>Built to last</h2><p>A durable steel deck and quality steel blade are made for the long haul. A <strong>manual PTO</strong> gives simple, positive engagement of the cutting deck, and a built-in <strong>deck wash port</strong> makes cleaning down after mowing quick and straightforward. The R8-24 is supplied with a <strong>2-year domestic warranty</strong> for complete peace of mind.</p><h2>Key specifications</h2><ul><li>Engine: 224cc single-cylinder four-stroke petrol, 6hp / 4.4kW</li><li>Starting: electric key start with recoil back-up</li><li>Transmission: automatic CVT, foot-pedal control (forward / neutral / reverse)</li><li>Cutting width: 61cm</li><li>Cutting heights: 30&ndash;75mm across 8 positions</li><li>Grass management: 150-litre collector, side discharge and mulching</li><li>Recommended lawn size: up to 3,000m&sup2;</li><li>Weight: approx. 128kg</li><li>Warranty: 2 years domestic</li></ul>",
+  "vendor": "Chipperfield",
+  "product_type": "Compact Ride-On Mowers",
+  "status": "active",
+  "sku": "R8-24",
+  "barcode": "",
+  "price": "1299.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Chipperfield"
+      },
+      {
+        "code": "engine_type",
+        "label": "Engine Type",
+        "value": "Petrol 4-Stroke"
+      },
+      {
+        "code": "engine_capacity",
+        "label": "Engine Capacity",
+        "value": "224cc"
+      },
+      {
+        "code": "engine_power",
+        "label": "Engine Power",
+        "value": "6hp / 4.4kW"
+      },
+      {
+        "code": "engine_cylinders",
+        "label": "Engine Cylinders",
+        "value": "Single"
+      },
+      {
+        "code": "engine_starting_system",
+        "label": "Engine Starting System",
+        "value": "Electric Key Start"
+      },
+      {
+        "code": "attribute_transmission",
+        "label": "Transmission",
+        "value": "CVT Automatic Transmission (Forward -Neutral-Reverse)"
+      },
+      {
+        "code": "attribute_speed",
+        "label": "Speed",
+        "value": "Forward: 6.2km/h Reverse: 4km/h"
+      },
+      {
+        "code": "cutting_width",
+        "label": "Cutting Width",
+        "value": "61cm"
+      },
+      {
+        "code": "cutting_heights",
+        "label": "Cutting Heights",
+        "value": "30 – 75 (8 Positions)"
+      },
+      {
+        "code": "height_adjustment",
+        "label": "Height Adjustment",
+        "value": "Lever"
+      },
+      {
+        "code": "power_take_off",
+        "label": "Power Take-Off",
+        "value": "Manual"
+      },
+      {
+        "code": "blades",
+        "label": "Blades",
+        "value": "Single"
+      },
+      {
+        "code": "grass_collector",
+        "label": "Grass Collector",
+        "value": "150 Litres"
+      },
+      {
+        "code": "side_discharge",
+        "label": "Side-Discharge",
+        "value": "Yes"
+      },
+      {
+        "code": "mulching",
+        "label": "Mulching",
+        "value": "Yes"
+      },
+      {
+        "code": "attribute_dimensions",
+        "label": "Dimensions",
+        "value": "L: 180cm / 135cm (With Grassbox / Without Grassbox) W: 70cm H: 105cm"
+      },
+      {
+        "code": "lawn_size",
+        "label": "Lawn Size",
+        "value": "Up to 3000m2"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "128kg"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "2 Year"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>Automatic CVT transmission with simple foot-pedal control — no clutch, no gear changes</li><li>Powerful 224cc four-stroke petrol engine (6hp / 4.4kW) with electric key start</li><li>Ultra-compact footprint — bigger than any walk-behind, smaller than the tightest garden tractor</li><li>61cm steel deck with 8 cutting heights (30–75mm) to suit every season</li><li>Three-way grass management: collect, side discharge or mulch</li><li>Large 150-litre grass collector for fewer stops and longer mowing sessions</li>\n</ul>",
+    "custom.bullet_two": "Ultra-compact design slips into spaces a garden tractor can't reach, yet mows medium to large lawns of up to 3,000m² with the ease of a ride-on.",
+    "custom.bullet_three": "Automatic CVT transmission with foot-pedal control means smooth, effortless driving — set your pace and go, with no clutch or gear changes.",
+    "filter.brand": "Chipperfield",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/07/Chipperfield-R8-24-Right-1.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/07/Chipperfield-R8-24-Main.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/07/Chipperfield-R8-24-Right-Side.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/07/Chipperfield-R8-24-Rear-Right.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/07/Chipperfield-R8-24-Left.png",
+    "https://compassgm.co.uk/wp-content/uploads/2026/07/Chipperfield-R8-24-Left-Side.png"
+  ],
+  "source_url": "https://compassgm.co.uk/product/chipperfield-r8-24-ultra-compact-ride-on-mower-with-automatic-transmission/"
+}

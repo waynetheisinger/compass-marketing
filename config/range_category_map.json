@@ -1,0 +1,51 @@
+{
+  "_comment": "Routes a product's Shopify taxonomy category -> a Range template leaf (range/templates). Keys are matched against the product's Shopify category fullName, then its leaf segment (case/delimiter-insensitive). The Range breadcrumbs are its own taxonomy and never equal Shopify's, hence this hand-curated map. Value __MOWER_BY_POWER__ defers to power-source detection (Cordless/Electric/Petrol Lawn Mowers). Shopify categories with no entry here have no Range template = out of scope until a template is downloaded.",
+
+  "Walk-Behind Mowers": "__MOWER_BY_POWER__",
+  "Lawn Mowers": "__MOWER_BY_POWER__",
+  "_comment_ride_on": "Wayne 2026-06-17: The Range has no ride-on/tractor category, so treat ride-ons as lawn mowers (power-split -> almost always Petrol). If The Range rejects them on import, they either create a category or decline the range.",
+  "Riding Mowers": "__MOWER_BY_POWER__",
+  "Tractors": "__MOWER_BY_POWER__",
+  "Lawn Tractors": "__MOWER_BY_POWER__",
+
+  "Lawn Mower Accessories": "Lawn Mower Accessories",
+  "Lawn Sweepers": "Lawn Mower Accessories",
+  "Portable Fuel Cans": "Lawn Mower Accessories",
+
+  "Leaf Blowers": "Leaf Blowers & Vacs",
+  "Lawn Vacuums": "Leaf Blowers & Vacs",
+
+  "Weed Trimmers": "Grass & Hedge Trimmers",
+  "Hedge Trimmers": "Grass & Hedge Trimmers",
+  "Weed Trimmer Accessories": "Grass & Hedge Trimmers",
+
+  "Generators": "Generators",
+
+  "Power Tillers": "Rakes, Hoes & Cultivators",
+  "Cultivators": "Rakes, Hoes & Cultivators",
+  "Power Cultivators": "Rakes, Hoes & Cultivators",
+  "Cultivating Tools": "Rakes, Hoes & Cultivators",
+
+  "Pressure Washers": "Pressure Washers",
+
+  "Lawn Aerators": "Scarifiers & Aerators",
+  "Lawn Aerators & Dethatchers": "Scarifiers & Aerators",
+  "Dethatchers": "Scarifiers & Aerators",
+
+  "Chainsaws": "Chainsaws",
+
+  "_comment_power": "Spectrum 40V packs + chargers all into the one Batteries & Chargers template.",
+  "General Purpose Batteries": "Batteries & Chargers",
+  "Power Tool Batteries": "Batteries & Chargers",
+  "Power Tool Chargers": "Batteries & Chargers",
+  "General Purpose Battery Chargers": "Batteries & Chargers",
+
+  "_comment_wheeled": "Wayne 2026-06-17: wheelbarrow -> Wheelbarrows; garden cart + wheelbarrow wheels -> Trailers (a caravan/automotive category — they can push back).",
+  "Wheelbarrows": "Wheelbarrows",
+  "Motor Vehicle Trailers": "Trailers",
+  "Utility & Cargo Trailers": "Trailers",
+  "Trailers": "Trailers",
+
+  "Garden Shredders": "Garden Shredders & Grinders",
+  "Garden Shredders & Grinders": "Garden Shredders & Grinders"
+}

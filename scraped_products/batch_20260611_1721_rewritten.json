@@ -1,0 +1,59 @@
+{
+  "title": "Chipperfield MuckMate 134L Electric Concrete & Cement Mixer",
+  "description_html": "<p>The <strong>Chipperfield MuckMate</strong> is a tough, no-nonsense mixer built for the realities of the job site and the garden project alike. Whether you're laying a patio, setting fence posts, rendering a wall or pouring a base, it takes the back-breaking graft out of mixing concrete, mortar and screed.</p><p>At its heart is a <strong>134-litre drum</strong> with a generous <strong>100-litre working capacity</strong>, driven by a <strong>370W double-insulated motor</strong> that runs straight off a standard <strong>230V domestic supply</strong> — no generator, no fuss. An <strong>IP44 rating</strong> means it shrugs off the dust and splashes that come as standard on any building project.</p><p>When the mix is ready, the <strong>swivel stand and tipping mechanism</strong> let you angle and discharge the load cleanly into your barrow with minimal spillage. A sturdy chassis keeps everything stable while it turns, and <strong>large 10-inch wheels</strong> mean you can trundle it across rough ground from the van to the work face without a struggle.</p><p>Ergonomic handles with comfort grips make repositioning easy, and the machine arrives ready to plug in with a <strong>3-metre cable and BS moulded plug</strong>. Robust enough for trade use yet straightforward enough for the weekend project, the MuckMate is the dependable mixing partner for DIY enthusiasts, landscapers and builders alike — and it's backed by a <strong>2-year domestic warranty</strong>.</p>",
+  "vendor": "Chipperfield",
+  "product_type": "Concrete Mixer",
+  "status": "active",
+  "sku": "MUCKMATE",
+  "barcode": "5065022450740",
+  "price": "369.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Chipperfield"
+      },
+      {
+        "code": "motor",
+        "label": "Motor",
+        "value": "Electric"
+      },
+      {
+        "code": "power",
+        "label": "Power",
+        "value": "370W"
+      },
+      {
+        "code": "attribute_drum_capacity",
+        "label": "Drum Capacity",
+        "value": "134 Litre"
+      },
+      {
+        "code": "transport_wheels",
+        "label": "Transport Wheels",
+        "value": "Yes"
+      },
+      {
+        "code": "product_weight",
+        "label": "Product Weight",
+        "value": "57kg"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "2 Year Domestic Warranty"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>134-litre drum with a 100-litre working mixing capacity</li><li>Powerful 370W double-insulated motor</li><li>Runs from a standard 230V domestic supply</li><li>IP44-rated for protection against dust and splashes</li><li>Swivel stand with tipping mechanism for clean, controlled discharge</li><li>Large 10-inch wheels for easy transport across rough ground</li><li>Sturdy chassis with ergonomic comfort-grip handles</li><li>Supplied with a 3-metre cable and BS moulded plug</li><li>Ideal for concrete, mortar, screed and general mixing</li><li>Backed by a 2-year domestic warranty</li>\n</ul>",
+    "custom.bullet_two": "A generous 134-litre drum and 370W motor make light work of concrete, mortar and screed for projects big and small.",
+    "custom.bullet_three": "Swivel-and-tip discharge plus large 10-inch transport wheels mean less heavy lifting and easy moves around the site.",
+    "filter.brand": "Chipperfield",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Chipperfield-Muckmate-Left-2.webp",
+    "https://compassgm.co.uk/wp-content/uploads/2026/06/Chipperfield-Muckmate-Left.webp"
+  ],
+  "source_url": "https://compassgm.co.uk/product/chipperfield-muckmate-electric-concrete-cement-mixer/"
+}

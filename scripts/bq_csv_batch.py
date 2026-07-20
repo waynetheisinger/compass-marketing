@@ -2,7 +2,7 @@
 Batch CSV generator for the /bq-csv-batch skill.
 
 Pulls MowDirect Shopify products, applies the Shopify->B&Q mapping config
-(maintained by /bq-shopify-shape), and produces a Mirakl-importable CSV row
+(config/bq_shopify_mapping.json), and produces a Mirakl-importable CSV row
 per SKU. One subcategory per batch. The AI work (deciding values, rewriting
 prose, fanning out display_attributes JSON) is done by Claude in the skill
 loop; this script handles all the deterministic plumbing.
@@ -20,8 +20,9 @@ Subcommands:
     check-metafields --skus "S1 S2 ..."
         Pull metafields for each SKU. Cross-check against the mapping config.
         Emit list of metafields (namespace.key) seen on these SKUs that are
-        not in the config. Skill uses this to decide whether to reactively
-        invoke /bq-shopify-shape.
+        not in config/bq_shopify_mapping.json. The skill surfaces these so
+        Claude can add a mapping entry inline (or rely on judgement during
+        the per-SKU pass, which reads the full metafield set regardless).
 
     gather --batch-state PATH --sku SKU
         For one SKU, pull Shopify data + deref metaobjects, subset the mapping
@@ -74,6 +75,8 @@ warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
 _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 if _THIS_DIR not in sys.path:
     sys.path.insert(0, _THIS_DIR)
+
+import marketplace_dims  # noqa: E402  (needs _THIS_DIR on sys.path)
 
 _REPO_ROOT = os.path.dirname(_THIS_DIR)
 _TEMPLATES_DIR = os.path.join(_REPO_ROOT, "bq/templates")
@@ -237,7 +240,7 @@ def _load_mapping() -> dict[str, Any]:
     if not os.path.exists(_MAPPING_PATH):
         raise SystemExit(
             "config/bq_shopify_mapping.json does not exist. "
-            "Run /bq-shopify-shape first to bootstrap it."
+            "Restore it from git (git checkout config/bq_shopify_mapping.json)."
         )
     with open(_MAPPING_PATH) as fh:
         return json.load(fh)
@@ -804,7 +807,7 @@ def _cmd_check_metafields(skus: list[str]) -> int:
 
     summary["unmapped_metafields"]["PRODUCT"] = sorted(seen_unmapped["PRODUCT"])
     summary["unmapped_metafields"]["PRODUCTVARIANT"] = sorted(seen_unmapped["PRODUCTVARIANT"])
-    summary["needs_skill1"] = bool(seen_unmapped["PRODUCT"] or seen_unmapped["PRODUCTVARIANT"])
+    summary["has_unmapped_metafields"] = bool(seen_unmapped["PRODUCT"] or seen_unmapped["PRODUCTVARIANT"])
     print(json.dumps(summary, indent=2))
     return 0
 
@@ -1139,6 +1142,18 @@ def _cmd_write_row(state_path: str, sku: str, row_json_path: str) -> int:
         writer = csv.writer(fh)
         writer.writerow(out_row)
 
+    # Physical product/shipping dimensions blank → surface as gaps regardless of
+    # the template's REQUIRED marker (they must never regress silently). Runs
+    # after the upsert restore + value-list translation so restored dims count.
+    dimension_gaps = marketplace_dims.missing_dimension_gaps(columns, cleaned_filled)
+    for gap in dimension_gaps:
+        if not any(u["column"] == gap["column"] for u in unknown):
+            unknown.append(gap)
+    if dimension_gaps:
+        print(f"[DIMENSION] {sku}: {len(dimension_gaps)} physical dimension "
+              f"cell(s) blank — {', '.join(g['column'] for g in dimension_gaps)}",
+              file=sys.stderr)
+
     # Build log section
     log_path = os.path.join(_REPO_ROOT, state["log_path"])
     cells_filled = sum(1 for v in cleaned_filled.values() if v)
@@ -1187,6 +1202,8 @@ def _cmd_write_row(state_path: str, sku: str, row_json_path: str) -> int:
                 tag = "[REQUIRED]" if col in required_codes else ("[RECOMMENDED]" if col in recommended_codes else "[OPTIONAL]")
                 if str(u.get("reason", "")).startswith("VALIDATOR:"):
                     tag = "[VALIDATOR]"
+                if u.get("dimension"):
+                    tag = "[DIMENSION]"
                 fh.write(f"- {tag} {col} — {u.get('reason') or 'no reason given'}\n")
 
     # Update state
@@ -1196,6 +1213,8 @@ def _cmd_write_row(state_path: str, sku: str, row_json_path: str) -> int:
     state["stats"]["validator_failures"] += len(validator_failures)
     state["stats"].setdefault("cells_restored", 0)
     state["stats"]["cells_restored"] += cells_restored
+    state["stats"].setdefault("dimensions_blank", 0)
+    state["stats"]["dimensions_blank"] += len(dimension_gaps)
     _save_state(state_path, state)
 
     print(json.dumps({
@@ -1204,6 +1223,7 @@ def _cmd_write_row(state_path: str, sku: str, row_json_path: str) -> int:
         "cells_filled": cells_filled,
         "cells_restored": cells_restored,
         "cells_unknown": cells_unknown,
+        "dimensions_blank": [g["column"] for g in dimension_gaps],
         "validator_failures": validator_failures,
         "upsert_match": {"kind": match_kind, "source": match_source} if match_kind else None,
         "restored_columns": [r["column"] for r in restored],

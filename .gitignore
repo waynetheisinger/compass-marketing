@@ -29,6 +29,19 @@ bq/csv-output/.state_*.json
 bq/csv-output/*_context.json
 bq/csv-output/*_row.json
 
+# Tesco batch working state (mirrors bq/csv-output above). Templates in
+# tesco/templates/ are the SOURCE OF TRUTH and stay tracked; the CSV + log.md
+# are the per-batch deliverables.
+tesco/csv-output/.state_*.json
+tesco/csv-output/*_context.json
+tesco/csv-output/*_row.json
+
+# The Range — same split: range/templates/ are the SOURCE OF TRUTH and stay
+# tracked; per-batch state/context/row JSON are working artefacts.
+range/csv-output/.state_*.json
+range/csv-output/*_context.json
+range/csv-output/*_row.json
+
 # Stiga price-match scratch from scripts/sku_matcher (intermediates, not deliverables).
 workdir/sku-matcher/stiga_prices_normalized.csv
 workdir/sku-matcher/stiga_needs_review.csv

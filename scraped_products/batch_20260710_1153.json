@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Sealey RS600 RoadStart® Lithium-Ion Jump-Starter Power Pack | 12v/600a",
+    "description_html": "<h2>Sealey RS600 RoadStart® Lithium-Ion Jump-Starter Power Pack</h2><p>Both ultra-compact and ultra-lightweight, the <a href=\"https://www.sealey.co.uk/about-us\" target=\"_blank\" rel=\"noopener\">Sealey</a> RS600 RoadStart® Jump-Starter Power Pack fits comfortably in your pocket.</p><p>The Sealey RS600 comprises a long-lasting and fast-charging lithium-ion battery with one, 5v/1.5a Micro USB input; and one, 5v/2.1a USB Type-A outlet (the latter is ideal for charging or powering small, low-demand electronic items).</p><p>The waterproofed Sealey RS600 benefits from a handy integrated torch, and is capable of firing-up a standard 4-litre petrol engine, or a standard 2.5-litre diesel engine.</p><p>With the Sealey RS600, you’ll also get full protection against reverse polarity, short circuit and overload.</p><p>You might also be interested in the <a href=\"https://compassgm.co.uk/product/sealey-sbc4-automatic-battery-charger/\">Sealey SBC4</a> Fully Automatic Battery Charger/Maintainer.</p><ul><li>Auxiliary output: USB (x1) – 5v/2.1a</li><li>Cable and clamp length: 385mm</li><li>Capacity: 7.2Ah @ 3.7v or 1.8Ah @ 14.8v</li><li>Maximum current: 600a peak / 300a cranking</li><li>Maximum starting capacity: 4-litre petrol / 2.5-litre diesel</li><li>Net weight: 0.36kg</li><li>Size (W x D x H): 85 x 27 x 140mm</li><li>Voltage: 12v</li></ul>",
+    "vendor": "",
+    "product_type": "Parts &amp; Accessories",
+    "status": "active",
+    "sku": "SEAL-RS600",
+    "barcode": "",
+    "price": "59.00",
+    "metafields": {
+      "custom.display_attributes": [],
+      "custom.feature_bullets": "<ul>\n<li>Auxiliary output: USB (x1) – 5v/2.1a</li><li>Cable and clamp length: 385mm</li><li>Capacity: 7.2Ah @ 3.7v or 1.8Ah @ 14.8v</li><li>Maximum current: 600a peak, 300a cranking</li><li>Maximum starting capacity: 4-litre petrol / 2.5-litre diesel</li><li>Net weight: 0.36kg</li><li>Size (W x D x H): 85 x 27 x 140mm</li><li>Voltage: 12v</li>\n</ul>",
+      "custom.bullet_two": "Cable and clamp length: 385mm",
+      "custom.bullet_three": "Capacity: 7.2Ah @ 3.7v or 1.8Ah @ 14.8v",
+      "filter.brand": "",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2024/07/RS600_DFC1237496_500x.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/sealey-rs600-jump-starter-power-pack/"
+  },
+  {
+    "title": "Sealey SBC4 Fully Automatic Battery Charger/Maintainer | 12v/4Ah",
+    "description_html": "<h2>Sealey SBC4 Fully Automatic Battery Charger/Maintainer</h2><p>Charge and maintain a range of 12v battery types – including lead-acid, gel, AGM/EFB and Leisure – with the fully automatic Sealey SBC4!</p><p>Flexible in use, the Sealey SBC4 is capable of recovering and charging a fully discharged battery, and offers a useful sulfation-repair function.</p><p>Protections include overcharging, over-voltage, over-temperature, short-circuit and reverse polarity; LED indicators provide at-a-glance information on power status and charging-stages.</p><p>The Sealey SBC4 is backed by a reassuring two-year manufacturer’s warranty.</p><p>Click <a href=\"https://compassgm.co.uk/product/sealey-bc1630-aluminium-booster-cables/\">here</a> to check out <a href=\"https://www.sealey.co.uk/about-us\" target=\"_blank\" rel=\"noopener\">Sealey</a>‘s aluminium booster cables.</p><p>Sealey SBC4 – Specifications:</p><p>Cable and clamp length: 1m<br> Net weight: 0.405Kg<br> Supply: 230v<br> Output: 12v<br> Output charge: 4a<br> Battery range: 40 to 80Ah<br> Charging-cable length: 1m<br> IP rating: IP33<br> Dimensions: 150 x 69 x 42mm</p>",
+    "vendor": "",
+    "product_type": "Parts &amp; Accessories",
+    "status": "active",
+    "sku": "SEAL-SBC4",
+    "barcode": "",
+    "price": "27.00",
+    "metafields": {
+      "custom.display_attributes": [],
+      "custom.feature_bullets": "<ul>\n<li>Cable and clamp length: 1m</li><li>Net weight: 0.405Kg</li><li>Supply: 230v</li><li>Output: 12v</li><li>Output charge: 4a</li><li>Battery range: 40 to 80Ah</li><li>Charging-cable length: 1m</li><li>IP rating: IP33</li><li>Dimensions: 150 x 69 x 42mm</li>\n</ul>",
+      "custom.bullet_two": "Net weight: 0.405Kg",
+      "custom.bullet_three": "Supply: 230v",
+      "filter.brand": "",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2024/07/SBC4_DFC1141723.png"
+    ],
+    "source_url": "https://compassgm.co.uk/product/sealey-sbc4-automatic-battery-charger/"
+  }
+]

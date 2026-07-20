@@ -555,15 +555,63 @@ TESCO = OperatorConfig(
 
 
 # ---------------------------------------------------------------------------
-# THERANGE — stub.
+# THERANGE — Mirakl instance, connected 2026-06-17 (therangeuk-prod.mirakl.net,
+# shop_id 2568). Dialect learned template-first from range/templates/*.xlsx:
+# same 3-sheet Mirakl workbook as Tesco/B&Q, but with its OWN column names and
+# a category VALUE that is the breadcrumb path itself (e.g.
+# "DIY/Power Tools/Chainsaws"), not a Shopify gid (Tesco) or PIM code (B&Q).
+# The Range catalogue is MULTI-BRAND (Spectrum + Feider/Alpina/Mountfield/…), so
+# brand comes from the Shopify vendor per-product — there is no blanket brand.
 # ---------------------------------------------------------------------------
+
+# The Range is itself a retailer, so other-retailer references must be scrubbed —
+# but NOT "The Range" (the host) — and Tesco is added (a fellow marketplace we
+# also list on). Reuses the Tesco/UK retailer set minus the host plus Tesco.
+_THERANGE_RETAILER_NAMES: tuple[str, ...] = tuple(
+    n for n in _UK_RETAILER_NAMES if n != "The Range"
+) + ("Tesco",)
+
+_THERANGE_COMPLIANCE = ComplianceProfile(
+    char_replacements=dict(_DEFAULT_CHAR_REPLACEMENTS),
+    field_length_caps={"Title": 130},   # cap unconfirmed; 130 safe default, informational
+    banned_phrases={},
+    retailer_scrub=_THERANGE_RETAILER_NAMES,
+    banned_promo=_BANNED_PROMO,
+)
+
+# The Range core column names (from range/templates Data sheet, row 1 = api codes).
+# Note: EAN column is `gtin` (not Tesco's `barcode` nor B&Q's `ean`); 20 image
+# slots image_1..image_20 after main_image.
+_THERANGE_FIELD_SCHEMA = FieldSchema(
+    category="category",
+    sku="shop_sku",
+    name="title",
+    ean="gtin",
+    body="description",
+    image_main="main_image",
+    extra_images=tuple(f"image_{i}" for i in range(1, 21)),
+    variant_group="variant_group_code",
+)
 
 THERANGE = OperatorConfig(
     name="THERANGE",
-    channel="",
-    common_attributes={},
-    by_product_type={},
-    notes="Stub — populate when The Range Mirakl account is provisioned.",
+    channel=os.environ.get("MIRAKL_THERANGE_CHANNEL", ""),
+    # Catalogue-wide value-list defaults that are real Range columns. `brand` and
+    # `colour_*` are deliberately NOT here — The Range is multi-brand, so brand is
+    # the Shopify vendor and colour is resolved per-brand/per-SKU in the batcher.
+    common_attributes={
+        "made_to_order": "No",
+    },
+    by_product_type={},   # unused by the template-first range_csv_batch flow
+    name_max_chars=None,
+    compliance=_THERANGE_COMPLIANCE,
+    field_schema=_THERANGE_FIELD_SCHEMA,
+    notes="Connected 2026-06-17 (base therangeuk-prod.mirakl.net, shop_id 2568). "
+          "Category shape is template-first from range/templates/*.xlsx — NEVER the "
+          "API. Category value = the template breadcrumb string. Multi-brand "
+          "catalogue (brand = Shopify vendor). Heavier REQUIRED set than Tesco "
+          "(colour trio, feature_1..3, dimensions + _uom, material). See "
+          "scripts/range_csv_batch.py + the /range-csv-batch skill.",
 )
 
 

@@ -1,0 +1,83 @@
+{
+  "title": "Spectrum DM435MT 4-in-1 Petrol Multi-Tool",
+  "description_html": "<h1>Spectrum DM435MT 4-in-1 Petrol Multi-Tool</h1><p class=\"isSelectedEnd\">Tackle a wide range of garden maintenance tasks with just one powerful machine. The <strong>Spectrum DM435MT 4-in-1 Petrol Multi-Tool</strong> combines four essential garden tools into a single, versatile unit, helping to reduce the cost, storage space, and maintenance associated with owning multiple powered machines.</p><p class=\"isSelectedEnd\">Powered by one reliable petrol engine, the DM435MT quickly converts between a <strong>grass trimmer, brushcutter, long-reach hedge trimmer, and pole pruner</strong>, making it an ideal choice for maintaining lawns, hedges, overgrown areas, and trees.</p><p class=\"isSelectedEnd\">Designed for comfort and ease of use, the machine is well balanced with every attachment and features an ergonomic loop handle and single-shoulder harness for excellent control and reduced operator fatigue.</p><p>The practical split-shaft design makes the Spectrum DM435MT easy to transport and store, while allowing fast, tool-free changes between attachments. A robust locking mechanism keeps each attachment securely in place, providing safe, reliable performance during operation.</p><h2>Grass Trimmer Attachment</h2><p class=\"isSelectedEnd\">The grass trimmer is ideal for edging lawns and clearing long grass around borders, fences, and obstacles.</p><ul data-spread=\"false\"><li>43cm cutting width for fast coverage</li><li>Durable 2mm nylon cutting line for tackling heavier grass and weeds</li><li>Convenient bump-feed head for quick line advancement</li></ul><h2>Brushcutter Attachment</h2><p class=\"isSelectedEnd\">For tougher vegetation, simply switch to the brushcutter attachment.</p><ul data-spread=\"false\"><li>25.5cm three-tooth metal blade</li><li>Ideal for clearing dense weeds, nettles, brambles, and established scrub</li><li>Built to handle demanding clearing work with ease</li></ul><h2>Long-Reach Hedge Trimmer Attachment</h2><p class=\"isSelectedEnd\">Maintain tall hedges safely from the ground without the need for ladders.</p><ul data-spread=\"false\"><li>40cm dual-action cutting blade</li><li>25mm tooth spacing for cutting thicker, mature hedge growth</li><li>180° adjustable cutting head for trimming the tops and sides of hedges at a variety of angles</li></ul><h2>Pole Pruner Attachment</h2><p class=\"isSelectedEnd\">The pole pruner makes pruning high branches safer and more convenient.</p><ul data-spread=\"false\"><li>25cm chainsaw bar for efficient branch cutting</li><li>Automatic chain lubrication for smooth performance and extended chain life</li><li>Ideal for removing overhanging or light-blocking branches while keeping both feet safely on the ground</li></ul><p><strong>Important:</strong> Use <strong>10W30&nbsp;lawnmower engine oil</strong> (or an equivalent light engine oil) to lubricate the chain. <strong>Do not use standard chainsaw chain oil</strong>, as its higher viscosity is designed for pressure-fed oiling systems. The Spectrum DM435MT pole pruner uses a <strong>gravity-fed lubrication system</strong>, so a lighter oil is required to flow correctly and provide effective lubrication to the chain and guide bar during operation.</p><p>The Spectrum DM435MT is an excellent all-in-one solution for homeowners seeking versatile, reliable garden equipment capable of handling everything from routine lawn edging to heavy-duty vegetation clearance and tree pruning.</p>",
+  "vendor": "Spectrum",
+  "product_type": "Borders &amp; Overgrowth",
+  "status": "active",
+  "sku": "DM435MT",
+  "barcode": "5065022450870",
+  "price": "179.95",
+  "metafields": {
+    "custom.display_attributes": [
+      {
+        "code": "manufacturer",
+        "label": "Manufacturer",
+        "value": "Spectrum"
+      },
+      {
+        "code": "engine_type",
+        "label": "Engine Type",
+        "value": "Petrol 2-stroke"
+      },
+      {
+        "code": "attribute_engine_size",
+        "label": "Engine Size",
+        "value": "43cc"
+      },
+      {
+        "code": "attribute_tooth_gap",
+        "label": "Tooth Gap",
+        "value": "25mm"
+      },
+      {
+        "code": "blade_adjustment_degrees",
+        "label": "Blade Adjustment Degrees",
+        "value": "180°"
+      },
+      {
+        "code": "blade_diameter",
+        "label": "Blade Diameter",
+        "value": "25.5cm"
+      },
+      {
+        "code": "blade_length",
+        "label": "Blade Length",
+        "value": "40cm"
+      },
+      {
+        "code": "blade_type",
+        "label": "Blade Type",
+        "value": "Double Sided"
+      },
+      {
+        "code": "chain_oiler",
+        "label": "Chain Oiler",
+        "value": "Automatic"
+      },
+      {
+        "code": "engine_fuel_tank_capacity",
+        "label": "Engine Fuel-Tank Capacity",
+        "value": "0.65 Litres"
+      },
+      {
+        "code": "line_diameter",
+        "label": "Line Diameter",
+        "value": "2.4mm"
+      },
+      {
+        "code": "warranty",
+        "label": "Warranty",
+        "value": "5 Years (T&C's Apply)"
+      }
+    ],
+    "custom.feature_bullets": "<ul>\n<li>4-in-1 multi-tool system</li><li>One petrol engine powers four interchangeable attachments</li><li>Grass trimmer, brushcutter, hedge trimmer, and pole pruner included</li><li>Comfortable loop handle for improved manoeuvrability</li><li>Single-shoulder harness included</li><li>Space-saving, cost-effective alternative to owning multiple garden machines</li>\n</ul>",
+    "custom.bullet_two": "One petrol engine powers four interchangeable attachments",
+    "custom.bullet_three": "Grass trimmer, brushcutter, hedge trimmer, and pole pruner included",
+    "filter.brand": "Spectrum",
+    "filter.condition": "New"
+  },
+  "images": [
+    "https://compassgm.co.uk/wp-content/uploads/2026/07/Spectrum-DM435MT-Main-Image.png"
+  ],
+  "source_url": "https://compassgm.co.uk/product/spectrum-dm435mt-4-in-1-petrol-multi-tool/"
+}

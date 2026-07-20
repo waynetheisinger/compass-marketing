@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Spectrum DM435MT 4-in-1 Petrol Multi-Tool — 43cc Split-Shaft",
+    "description_html": "<h2>Spectrum DM435MT 4-in-1 Petrol Multi-Tool</h2><p>One engine, four jobs. The Spectrum DM435MT replaces a shed full of separate machines with a single 43cc petrol power unit and four quick-change attachments — a grass trimmer, a brushcutter, a long-reach hedge trimmer and a pole pruner. It is the practical way to keep lawns, borders, hedges, overgrown ground and trees in shape without buying, storing and servicing four different tools.</p><p>At the heart of the machine is a reliable 43cc two-stroke engine that delivers the torque needed for heavy going while staying light enough to handle comfortably all day. An ergonomic loop handle and a single-shoulder harness spread the load and keep the tool balanced with every attachment fitted, so you stay in control and feel less fatigue on longer jobs.</p><p>The split-shaft design is what makes the DM435MT so easy to live with. Attachments swap over in seconds without tools, a solid locking collar holds each one securely in place, and the machine breaks down into shorter sections that are far simpler to transport and store than four full-length tools.</p><h3>Grass trimmer</h3><p>For edging lawns and clearing long grass around borders, fences and obstacles. The 43cm cutting width covers ground fast, a durable 2.4mm nylon line powers through heavier grass and weeds, and the bump-feed head advances fresh line with a quick tap on the ground.</p><h3>Brushcutter</h3><p>When grass turns to scrub, switch to the 25.5cm three-tooth metal blade. It shears through dense weeds, nettles, brambles and established growth that would stop a trimmer line dead, making light work of reclaiming neglected corners.</p><h3>Long-reach hedge trimmer</h3><p>Maintain tall hedges safely from the ground — no ladders required. The 40cm dual-action blade with 25mm tooth spacing cuts thicker, mature growth cleanly, and the 180° adjustable head angles to trim the tops and sides of a hedge in comfort.</p><h3>Pole pruner</h3><p>Take down high and overhanging branches while keeping both feet firmly on the ground. The 25cm chainsaw bar cuts efficiently and an automatic oiler keeps the chain lubricated for smooth running and longer chain life.</p><p><strong>Important — chain oil:</strong> the pole pruner uses a gravity-fed lubrication system, so lubricate the chain with 10W30 lawnmower engine oil (or an equivalent light engine oil). Do not use standard chainsaw chain oil — its higher viscosity is intended for pressure-fed systems and is too thick to flow correctly here.</p><p>From routine lawn edging to serious vegetation clearance and tree work, the DM435MT is a genuine all-in-one solution for gardeners who want versatile, dependable kit without the clutter. Like every Spectrum machine, it is backed by a reassuring 5-year warranty (terms and conditions apply).</p><ul><li>4-in-1 system: one 43cc petrol engine, four quick-change attachments</li><li>Grass trimmer — 43cm width with a 2.4mm bump-feed nylon line</li><li>Brushcutter — 25.5cm three-tooth metal blade for dense scrub</li><li>Long-reach hedge trimmer — 40cm dual-action blade, 180° adjustable head</li><li>Pole pruner — 25cm bar with an automatic chain oiler</li><li>Tool-free split-shaft changes with a secure locking collar</li><li>Loop handle and single-shoulder harness for balance and comfort</li><li>Backed by a 5-year Spectrum warranty (T&Cs apply)</li></ul>",
+    "vendor": "Spectrum",
+    "product_type": "Petrol Multi-Tools",
+    "status": "active",
+    "sku": "DM435MT",
+    "barcode": "5065022450870",
+    "price": "179.95",
+    "metafields": {
+      "custom.display_attributes": [
+        {
+          "code": "manufacturer",
+          "label": "Manufacturer",
+          "value": "Spectrum"
+        },
+        {
+          "code": "engine_type",
+          "label": "Engine Type",
+          "value": "Petrol 2-stroke"
+        },
+        {
+          "code": "attribute_engine_size",
+          "label": "Engine Size",
+          "value": "43cc"
+        },
+        {
+          "code": "attribute_tooth_gap",
+          "label": "Tooth Gap",
+          "value": "25mm"
+        },
+        {
+          "code": "blade_adjustment_degrees",
+          "label": "Blade Adjustment Degrees",
+          "value": "180°"
+        },
+        {
+          "code": "blade_diameter",
+          "label": "Blade Diameter",
+          "value": "25.5cm"
+        },
+        {
+          "code": "blade_length",
+          "label": "Blade Length",
+          "value": "40cm"
+        },
+        {
+          "code": "blade_type",
+          "label": "Blade Type",
+          "value": "Double Sided"
+        },
+        {
+          "code": "chain_oiler",
+          "label": "Chain Oiler",
+          "value": "Automatic"
+        },
+        {
+          "code": "engine_fuel_tank_capacity",
+          "label": "Engine Fuel-Tank Capacity",
+          "value": "0.65 Litres"
+        },
+        {
+          "code": "line_diameter",
+          "label": "Line Diameter",
+          "value": "2.4mm"
+        },
+        {
+          "code": "warranty",
+          "label": "Warranty",
+          "value": "5 Years (T&C's Apply)"
+        }
+      ],
+      "custom.feature_bullets": "<ul>\n<li>4-in-1 system: one 43cc petrol engine, four quick-change attachments</li><li>Grass trimmer — 43cm width with a 2.4mm bump-feed nylon line</li><li>Brushcutter — 25.5cm three-tooth metal blade for dense scrub</li><li>Long-reach hedge trimmer — 40cm dual-action blade, 180° adjustable head</li><li>Pole pruner — 25cm bar with an automatic chain oiler</li><li>Tool-free split-shaft changes with a secure locking collar</li><li>Loop handle and single-shoulder harness for balance and comfort</li><li>Backed by a 5-year Spectrum warranty (T&Cs apply)</li>\n</ul>",
+      "custom.bullet_two": "One reliable 43cc petrol engine powers four quick-change attachments — trimmer, brushcutter, hedge trimmer and pole pruner — so a single machine does the work of four.",
+      "custom.bullet_three": "The tool-free split-shaft design swaps attachments in seconds and breaks down for easy transport and storage, with a secure locking collar keeping every tool safely in place.",
+      "filter.brand": "Spectrum",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2026/07/Spectrum-DM435MT-Main-Image.png"
+    ],
+    "source_url": "https://compassgm.co.uk/product/spectrum-dm435mt-4-in-1-petrol-multi-tool/"
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "range_sku": "SBS220CHM-KIT",
+    "category": "cordless_lawn_mowers",
+    "amazon_sku": "SBS220CHM-KIT",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "50.0 centimeters",
+    "width": "35.0 centimeters",
+    "height": "25.0 centimeters"
+  },
+  {
+    "range_sku": "SBS460CLM-KIT",
+    "category": "cordless_lawn_mowers",
+    "amazon_sku": "SBS460CLM-KIT",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "84.0 centimeters",
+    "width": "52.0 centimeters",
+    "height": "50.0 centimeters"
+  },
+  {
+    "range_sku": "SBS220CHM",
+    "category": "cordless_lawn_mowers",
+    "amazon_sku": "SBS220CHM",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "50.0 centimeters",
+    "width": "35.0 centimeters",
+    "height": "25.0 centimeters"
+  },
+  {
+    "range_sku": "SBS460CLM",
+    "category": "cordless_lawn_mowers",
+    "amazon_sku": "SBS460CLM",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "84.0 centimeters",
+    "width": "55.0 centimeters",
+    "height": "52.0 centimeters"
+  },
+  {
+    "range_sku": "C-DM26L",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "S154545",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "SBS240CPHT-KIT",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": "SBS240CPHT-KIT",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "250.0 centimeters",
+    "width": "25.0 centimeters",
+    "height": "25.0 centimeters"
+  },
+  {
+    "range_sku": "SBS560CHT-KIT",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": "SBS560CHT-KIT",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "95.0 centimeters",
+    "width": "25.0 centimeters",
+    "height": "25.0 centimeters"
+  },
+  {
+    "range_sku": "SBS240CPHT",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": "SBS240CPHT",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "81.0 centimeters",
+    "width": "33.0 centimeters",
+    "height": "12.5 centimeters"
+  },
+  {
+    "range_sku": "SBS560CHT",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": "SBS560CHT",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "114.0 centimeters",
+    "width": "25.0 centimeters",
+    "height": "21.0 centimeters"
+  },
+  {
+    "range_sku": "C-CL20-R-DUO",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-CL24-R-DUO",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-CL27-R-DUO",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-CL30-R-DUO",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "CL40-R-DUO",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "GNP560-WT",
+    "category": "grass_hedge_trimmers",
+    "amazon_sku": "GNP560-WT",
+    "status": "OK",
+    "dim_source": null
+  },
+  {
+    "range_sku": "C-PFC-10R-P",
+    "category": "lawn_mower_accessories",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-PFC-20R-P",
+    "category": "lawn_mower_accessories",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-PFC-5R-P",
+    "category": "lawn_mower_accessories",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-PFC-20G-M",
+    "category": "lawn_mower_accessories",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-PFC-SPOUT",
+    "category": "lawn_mower_accessories",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-SP31105",
+    "category": "lawn_mower_accessories",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-SP31109",
+    "category": "lawn_mower_accessories",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-DM26PBV",
+    "category": "leaf_blowers_vacs",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "SBS480CBV-KIT",
+    "category": "leaf_blowers_vacs",
+    "amazon_sku": "SBS480CBV-KIT",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "90.0 centimeters",
+    "width": "25.0 centimeters",
+    "height": "30.0 centimeters"
+  },
+  {
+    "range_sku": "SBS480CBV",
+    "category": "leaf_blowers_vacs",
+    "amazon_sku": "SBS480CBV",
+    "status": "OK",
+    "dim_source": "package",
+    "length": "51.0 centimeters",
+    "width": "32.5 centimeters",
+    "height": "29.0 centimeters"
+  },
+  {
+    "range_sku": "C-TG40SE",
+    "category": "petrol_lawn_mowers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "S221749",
+    "category": "petrol_lawn_mowers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "LPW1600",
+    "category": "pressure_washers",
+    "amazon_sku": "LPW1600",
+    "status": "OK",
+    "dim_source": null
+  },
+  {
+    "range_sku": "LPW2200",
+    "category": "pressure_washers",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "TG480RTTR",
+    "category": "rakes_hoes_cultivators",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-HRTF220",
+    "category": "rakes_hoes_cultivators",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-RAC139PTIL",
+    "category": "rakes_hoes_cultivators",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-TG60FTTR",
+    "category": "rakes_hoes_cultivators",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-SP31130",
+    "category": "scarifiers_aerators",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "TG45SC",
+    "category": "scarifiers_aerators",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "TG45SC-E",
+    "category": "scarifiers_aerators",
+    "amazon_sku": null,
+    "status": 404
+  },
+  {
+    "range_sku": "C-SP22125",
+    "category": "trailers",
+    "amazon_sku": null,
+    "status": 404
+  }
+]

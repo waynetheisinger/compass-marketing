@@ -15,7 +15,8 @@
   },
   "exclude_skus": {
     "2T2010483/M25": "Tractor — not selling on Tesco (2026-06-09)",
-    "C-SP22144": "No sellable Tesco leaf for a trailer (2026-06-09)"
+    "C-SP22144": "No sellable Tesco leaf for a trailer (2026-06-09)",
+    "C-DC24-4": "Shop soiled — not for Tesco"
   },
   "sku_category": {
     "C-CL20-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
@@ -24,12 +25,13 @@
     "C-CL30-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
     "CL40-R-DUO": "gid://shopify/TaxonomyCategory/hg-12-4-11-1-2",
     "C-SP31109": "gid://shopify/TaxonomyCategory/hg-12-4-4-13",
-    "C-SW420-EXPERT": "gid://shopify/TaxonomyCategory/hg-12-3-4-1",
+    "C-SW420-EXPERT": "gid://shopify/TaxonomyCategory/hg-12-3-4-2",
     "SBS40CB": "gid://shopify/TaxonomyCategory/hg-12-4-7",
     "SBS20CB": "gid://shopify/TaxonomyCategory/hg-12-4-7",
     "100134S": "gid://shopify/TaxonomyCategory/ha-15-34-2-2",
     "100134O": "gid://shopify/TaxonomyCategory/ha-15-34-2-2",
-    "100134Y-2": "gid://shopify/TaxonomyCategory/ha-15-34-2-2"
+    "100134Y-2": "gid://shopify/TaxonomyCategory/ha-15-34-2-2",
+    "TG480RTTR": "gid://shopify/TaxonomyCategory/hg-12-3-11-1"
   },
   "unsellable_gids": [
     "gid://shopify/TaxonomyCategory/vp-1-5-1",

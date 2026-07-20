@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Sealey RS600 RoadStart® 600A Lithium-Ion Jump Starter & Power Pack — 12V",
+    "description_html": "<h2>Sealey RS600 RoadStart® Lithium-Ion Jump Starter</h2><p>Small enough to slip into a jacket pocket yet powerful enough to crank a stalled engine into life, the Sealey RS600 RoadStart® is the pocket-sized safety net every driver and garden-machinery owner should keep to hand. Weighing just 360g, it delivers a 600A peak surge — ample to fire up a standard 4-litre petrol or 2.5-litre diesel engine — without the bulk of a traditional booster pack.</p><p>Its fast-charging lithium-ion cell holds its charge for months, so it is ready when you are. A built-in USB output (5V/2.1A) turns the RS600 into a handy power bank for phones and other low-demand devices, while the integrated LED torch is a welcome extra during a roadside breakdown or an early start in the workshop.</p><p>Because peace of mind matters when you are working with 12V systems, the RS600 carries full protection against reverse polarity, short circuit and overload, and its weatherproof housing shrugs off the damp. Compact, dependable and genuinely useful all year round.</p><p>Pair it with the <a href=\"https://compassgm.co.uk/product/sealey-sbc4-automatic-battery-charger/\">Sealey SBC4 Automatic Battery Charger &amp; Maintainer</a> to keep your batteries in peak condition between jobs.</p><ul><li>600A peak / 300A cranking output — starts petrol engines up to 4 litres and diesels up to 2.5 litres</li><li>Ultra-compact and pocket-sized at just 360g</li><li>Fast-charging lithium-ion cell that holds its charge for months</li><li>USB output (5V/2.1A) doubles as a power bank for phones and small devices</li><li>Integrated LED torch for roadside and low-light use</li><li>Weatherproof housing with reverse-polarity, short-circuit and overload protection</li><li>12V system with 7.2Ah @ 3.7V capacity and 385mm cables</li></ul>",
+    "vendor": "Sealey",
+    "product_type": "Jump Starters",
+    "status": "active",
+    "sku": "SEAL-RS600",
+    "barcode": "",
+    "price": "62.46",
+    "metafields": {
+      "custom.display_attributes": [],
+      "custom.feature_bullets": "<ul>\n<li>600A peak / 300A cranking output — starts petrol engines up to 4 litres and diesels up to 2.5 litres</li><li>Ultra-compact and pocket-sized at just 360g</li><li>Fast-charging lithium-ion cell that holds its charge for months</li><li>USB output (5V/2.1A) doubles as a power bank for phones and small devices</li><li>Integrated LED torch for roadside and low-light use</li><li>Weatherproof housing with full reverse-polarity, short-circuit and overload protection</li><li>12V system with 7.2Ah @ 3.7V capacity and 385mm cables</li>\n</ul>",
+      "custom.bullet_two": "A 600A peak surge cranks a stalled 4-litre petrol or 2.5-litre diesel engine back to life, all from a unit that weighs just 360g.",
+      "custom.bullet_three": "The fast-charging lithium-ion cell holds its charge for months and doubles as a USB power bank, so it is always ready when you need it.",
+      "filter.brand": "Sealey",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2024/07/RS600_DFC1237496_500x.webp"
+    ],
+    "source_url": "https://compassgm.co.uk/product/sealey-rs600-jump-starter-power-pack/"
+  },
+  {
+    "title": "Sealey SBC4 Fully Automatic 12V Battery Charger & Maintainer — 4A",
+    "description_html": "<h2>Sealey SBC4 Fully Automatic Battery Charger &amp; Maintainer</h2><p>Flat batteries have a habit of striking at the worst moment — the mower that will not start on the first warm weekend, the car left standing over winter. The Sealey SBC4 takes the worry out of it. This fully automatic 12V charger tops up and maintains lead-acid, gel, AGM/EFB and leisure batteries in the 40–80Ah range, then holds them at the ideal level indefinitely, so your machinery is always ready to go.</p><p>It is more capable than its compact size suggests. The SBC4 can recover and recharge a fully discharged battery, and its sulfation-repair function helps breathe life back into tired cells that a basic charger would give up on. Clear LED indicators show power and charging status at a glance, so you always know where you stand.</p><p>Safety is built in throughout, with protection against overcharging, over-voltage, over-temperature, short circuit and reverse polarity. An IP33 rating means it copes with a typical garage or workshop environment, and it is backed by a reassuring two-year manufacturer's warranty.</p><p>Ideal for keeping ride-on mowers, cars, motorcycles and leisure batteries in peak condition through the off-season.</p><ul><li>Fully automatic charging and maintenance for 12V lead-acid, gel, AGM/EFB and leisure batteries</li><li>Suits batteries from 40 to 80Ah with a 4A output</li><li>Recovers and recharges fully discharged batteries</li><li>Sulfation-repair function revives tired cells</li><li>LED indicators for power and charging status</li><li>Protected against overcharge, over-voltage, over-temperature, short circuit and reverse polarity</li><li>IP33 rated with a 1m charging cable and two-year manufacturer's warranty</li></ul>",
+    "vendor": "Sealey",
+    "product_type": "Battery Chargers",
+    "status": "active",
+    "sku": "SEAL-SBC4",
+    "barcode": "",
+    "price": "33.29",
+    "metafields": {
+      "custom.display_attributes": [],
+      "custom.feature_bullets": "<ul>\n<li>Fully automatic charging and maintenance for 12V lead-acid, gel, AGM/EFB and leisure batteries</li><li>Suits batteries from 40 to 80Ah with a 4A output</li><li>Recovers and recharges fully discharged batteries</li><li>Sulfation-repair function revives tired cells</li><li>LED indicators for power and charging status</li><li>Protected against overcharge, over-voltage, over-temperature, short circuit and reverse polarity</li><li>IP33 rated with a 1m charging cable and two-year manufacturer's warranty</li>\n</ul>",
+      "custom.bullet_two": "Keeps ride-on mowers, cars, motorcycles and leisure batteries topped up and ready through the off-season, then holds them at the ideal level indefinitely.",
+      "custom.bullet_three": "A sulfation-repair function and full discharge recovery breathe life back into tired batteries that a basic charger would give up on.",
+      "filter.brand": "Sealey",
+      "filter.condition": "New"
+    },
+    "images": [
+      "https://compassgm.co.uk/wp-content/uploads/2024/07/SBC4_DFC1141723.png"
+    ],
+    "source_url": "https://compassgm.co.uk/product/sealey-sbc4-automatic-battery-charger/"
+  }
+]

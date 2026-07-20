@@ -1,0 +1,31 @@
+{
+  "filled": {
+    "feature_1": "Unbeatable Value: The best deal available for a lawn tractor of this specification - unmatched in quality and performance.",
+    "feature_2": "Ready to Use: Price includes full assembly and a comprehensive pre-shipping inspection, so your tractor arrives ready to mow.",
+    "feature_3": "Innovative Twin-Blade Design: The first-ever garden tractor with a twin-bladed cutter deck under 90cm, delivering a cleaner, more consistent cut.",
+    "feature_4": "Convenient Grassbag Design: A spacious 200-litre grassbag minimises downtime and can be emptied without leaving the driver's seat.",
+    "feature_5": "Precision Cutting: Seven preset cutting heights, easily adjusted with a spring-assisted lever.",
+    "feature_6": "Versatile Drive Options: A six-speed manual transmission (five forward, one reverse) provides the ideal speed for any mowing task.",
+    "feature_7": "Powerful Performance: Equipped with a high-performance 414cc STIGA 4-stroke OHV engine for reliable, fuel-efficient operation.",
+    "feature_8": "Enhanced Safety: Built-in headlights ensure safe mowing and towing, even in low-light conditions.",
+    "feature_9": "Mow-in-reverse capability allows you to tackle hard-to-reach areas without interruption.",
+    "feature_10": "Backed by an extended five-year manufacturer's warranty for long-term reliability.",
+    "width_4": "110",
+    "width_4_uom": "Centimetres",
+    "height_7": "88",
+    "height_7_uom": "Centimetres",
+    "depth_23": "239",
+    "depth_23_uom": "Centimetres",
+    "capacity_1164": "200",
+    "capacity_1164_uom": "Litres",
+    "shipping_weight_10054": "187",
+    "shipping_weight_10054_uom": "Kilograms"
+  },
+  "unknown": [
+    {"column": "colour_group", "reason": "Mountfield brand has no colour override in config/range_overrides.json (Spectrum-only); REQUIRED, left blank - do not guess"},
+    {"column": "material_11", "reason": "Shopify display_attributes lists no deck/chassis material for this Mountfield tractor"},
+    {"column": "wattage_67", "reason": "engine published as 414cc displacement only; no kW/HP power figure available, so wattage cannot be filled"},
+    {"column": "wattage_67_uom", "reason": "no wattage value to pair"},
+    {"column": "cutting_height_112", "reason": "published as a range 25-80mm (7 positions); single numeric cell cannot hold a range"}
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: bq-csv-batch
-description: Convert a list of MowDirect Shopify SKUs into a Mirakl-importable CSV for one B&Q subcategory. Bare invocation; asks for B&Q category then SKUs. Pulls Shopify data, applies the Shopify→B&Q mapping config, runs one AI pass per SKU, validates, writes CSV + markdown log. Reactively invokes /bq-shopify-shape if it detects metafields not in the config.
+description: Convert a list of MowDirect Shopify SKUs into a Mirakl-importable CSV for one B&Q subcategory. Bare invocation; asks for B&Q category then SKUs. Reads the chosen subcategory's downloaded Mirakl template (bq/templates/*.xlsx) as the source of truth for which columns exist, pulls Shopify data, applies the Shopify→B&Q mapping config, runs one AI pass per SKU, validates, writes CSV + markdown log.
 ---
 
 # /bq-csv-batch — Generate a B&Q import CSV for a SKU batch
@@ -33,6 +33,12 @@ Does:
 - Runs a deterministic validator on top: value-list membership, numeric
   parsing, `name` ≤130 chars + no banned chars per BQ_QUIRKS. Failures
   get demoted to UNKNOWN automatically.
+- **Physical-dimension guard** (`scripts/marketplace_dims.py`, shared with
+  the Tesco/Range builders): after merge + upsert restore, any blank product
+  OR shipping/package dimension/weight column present in the template is
+  flagged `[DIMENSION]` in the log and returned as `dimensions_blank` in each
+  SKU's JSON — even when the template marks it OPTIONAL, so a missing
+  measurement never regresses silently. **Surface `dimensions_blank` to Wayne.**
 - **Upsert safety net.** If `bq/csv-upsert/` contains B&Q catalogue
   exports, every UNKNOWN/omitted cell is auto-restored from the matching
   existing product (EAN-first, shop_sku-fallback) so a blank in our CSV
@@ -49,8 +55,9 @@ Does:
 - Writes one row per SKU to the CSV — including rows with empty REQUIRED
   cells (Wayne fills these manually before upload).
 - Detects metafield gaps before the run: if SKUs use metafields not in
-  the mapping config, invokes `/bq-shopify-shape` reactively to capture
-  them inline before generating any rows.
+  `config/bq_shopify_mapping.json`, surfaces them so you can add a mapping
+  entry inline (or leave them — the per-SKU pass reads the full metafield
+  set regardless and can use any of them with judgement).
 
 Doesn't:
 
@@ -123,23 +130,26 @@ PYTHONPATH=. .venv/bin/python scripts/bq_csv_batch.py check-metafields \
     --skus "S1 S2 S3 ..."
 ```
 
-Read the JSON output. If `needs_skill1` is true:
+Read the JSON output. If `has_unmapped_metafields` is true:
 
 ```
-These SKUs use metafields not yet in the mapping config:
+These SKUs use metafields not yet in config/bq_shopify_mapping.json:
   PRODUCT:        <list>
   PRODUCTVARIANT: <list>
-
-Running /bq-shopify-shape to capture them — you'll be asked to map
-each one (or skip) before we continue with the batch.
 ```
 
-Invoke the bq-shopify-shape skill inline. It will use `scan-skus` against
-the batch SKUs so example values get populated, then walk Wayne through
-filling B&Q targets. Once Skill 1 finishes ("done" / "quit"), continue
-here.
+These are **not** a blocker. The mapping config only pre-routes a Shopify
+field to a B&Q column with a transform hint; the per-SKU pass (step 6)
+reads the full metafield set anyway, so you can use any of these with
+judgement even if unmapped. For each one that *clearly* feeds a B&Q
+column in this subcategory and is worth reusing across batches, add an
+entry to `config/bq_shopify_mapping.json` directly (the file's existing
+entries show the shape: keyed by `<namespace>.<key>` under
+`shopify_metafields.PRODUCT` / `.PRODUCTVARIANT`, each with `bq_targets`
+and an optional free-text `hint`). Ask Wayne which, if any, are worth
+mapping; skip the rest. Then proceed.
 
-If `needs_skill1` is false, proceed directly.
+If `has_unmapped_metafields` is false, proceed directly.
 
 Also surface any `skus_not_found` to Wayne — these will fail at `gather`
 time anyway, so flag them now so Wayne can drop them from the batch
@@ -366,8 +376,9 @@ Exit cleanly.
 ## Failure modes — handle directly, never silently
 
 - **No templates in `bq/templates/`** → tell Wayne, exit at step 1.
-- **`config/bq_shopify_mapping.json` missing** → invoke
-  `/bq-shopify-shape` first to bootstrap, then resume from step 1.
+- **`config/bq_shopify_mapping.json` missing** → it's committed; restore
+  it from git (`git checkout config/bq_shopify_mapping.json`), then resume
+  from step 1. Don't recreate it by hand.
 - **A SKU isn't on Shopify** → `check-metafields` reports it in
   `skus_not_found`. Tell Wayne; ask whether to drop it from the batch
   or abort. Don't proceed to `init-batch` until resolved.

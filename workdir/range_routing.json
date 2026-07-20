@@ -1,0 +1,375 @@
+{
+  "suggestions": [
+    {
+      "template": "range/templates/Lawn_Mower_Accessories.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Lawn Mower Accessories",
+      "leaf": "Lawn Mower Accessories",
+      "skus": [
+        "JR-BC003",
+        "C-SP31105",
+        "C-SP31109"
+      ]
+    },
+    {
+      "template": "range/templates/Petrol_Lawn_Mowers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Petrol Lawn Mowers",
+      "leaf": "Petrol Lawn Mowers",
+      "skus": [
+        "STIG-298472048/ST2",
+        "C-TG46S",
+        "C-TG40S",
+        "C-TG40PD",
+        "C-TG51PD",
+        "C-TG46SE",
+        "C-TG40SE",
+        "S221749"
+      ]
+    },
+    {
+      "template": "range/templates/Leaf_Blowers_&_Vacs.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Leaf Blowers & Vacs",
+      "leaf": "Leaf Blowers & Vacs",
+      "skus": [
+        "S154511",
+        "C-FAST175T",
+        "C-DM26PBV",
+        "SBS480CBV",
+        "SBS480CBV-KIT"
+      ]
+    },
+    {
+      "template": "range/templates/Grass_&_Hedge_Trimmers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Grass & Hedge Trimmers",
+      "leaf": "Grass & Hedge Trimmers",
+      "skus": [
+        "S154545",
+        "C-DM26H",
+        "C-DM26L",
+        "GNP560-WT",
+        "SBS240CPHT",
+        "SBS560CHT",
+        "SBS560CHT-KIT",
+        "SBS240CPHT-KIT"
+      ]
+    },
+    {
+      "template": "range/templates/Scarifiers_&_Aerators.xlsx",
+      "category": "DIY/Electrical Accessories/Generators",
+      "leaf": "Generators",
+      "skus": [
+        "S154562"
+      ]
+    },
+    {
+      "template": "range/templates/Rakes_Hoes_&_Cultivators.xlsx",
+      "category": "Garden/Garden Tools & Gardening Equipment/Rakes, Hoes & Cultivators",
+      "leaf": "Rakes, Hoes & Cultivators",
+      "skus": [
+        "C-RAC139PTIL",
+        "C-TG60FTTR",
+        "C-HRTF220",
+        "TG480RTTR"
+      ]
+    },
+    {
+      "template": "range/templates/Pressure_Washers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Pressure Washers",
+      "leaf": "Pressure Washers",
+      "skus": [
+        "C-EZN1600",
+        "C-EZN1200-UK",
+        "LPW1600",
+        "LPW2200"
+      ]
+    },
+    {
+      "template": "range/templates/Cordless_Lawn_Mowers.xlsx",
+      "category": "Garden/Garden Machinery & Power Tools/Lawn Mowers/Cordless Lawn Mowers",
+      "leaf": "Cordless Lawn Mowers",
+      "skus": [
+        "SBS220CHM-KIT",
+        "SBS460CLM-KIT",
+        "SBS460CLM",
+        "SBS220CHM"
+      ]
+    }
+  ],
+  "unmatched_skus": [
+    {
+      "sku": "FRT75BS125",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Riding Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-SP22144",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment Accessories > Tractor Parts & Accessories",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-SP22125",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Storage & Cargo > Motor Vehicle Trailers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-SP22111",
+      "shopify_category": "Home & Garden > Lawn & Garden > Gardening > Gardening Tools > Wheelbarrows",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-FBT270",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-SP22124",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Storage & Cargo > Motor Vehicle Trailers > Utility & Cargo Trailers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-TY8000V",
+      "shopify_category": "Hardware > Tools > Log Splitters > Power Log Splitters",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-CL20-R-DUO",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment Accessories > Weed Trimmer Accessories",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-CL30-R-DUO",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment Accessories > Weed Trimmer Accessories",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-CL24-R-DUO",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment Accessories > Weed Trimmer Accessories",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-CL27-R-DUO",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment Accessories > Weed Trimmer Accessories",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "CL40-R-DUO",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment Accessories > Weed Trimmer Accessories",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-2T0053404/A22",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Riding Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-STF600-PRO",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Walk-Behind Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-SW420-EXPERT",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Aerators & Dethatchers",
+      "mapped_to": "Scarifiers & Aerators",
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-TY5000H",
+      "shopify_category": "Hardware > Tools > Log Splitters > Power Log Splitters",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-TY7000H",
+      "shopify_category": "Hardware > Tools > Log Splitters > Power Log Splitters",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-DC24-4",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Riding Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-SP31130",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Aerators & Dethatchers > Lawn Aerators",
+      "mapped_to": "Scarifiers & Aerators",
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-2T2000404/A22",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Tractors",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-2T0510404/A22",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Tractors",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-PFC-20G-M",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor > Portable Fuel Cans",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-PFC-20R-P",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor > Portable Fuel Cans",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-PFC-5R-P",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor > Portable Fuel Cans",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-PFC-SPOUT",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor > Portable Fuel Cans",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-PFC-10G-M",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor > Portable Fuel Cans",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-PFC-10R-P",
+      "shopify_category": "Vehicles & Parts > Vehicle Parts & Accessories > Vehicle Maintenance, Care & Decor > Portable Fuel Cans",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-T92H",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Tractors",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-T84H",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Tractors",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "2T2010483/M25",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Tractors",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "C-MTF66-MQ",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Riding Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "DCT38H",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Riding Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "PRO",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Aerators & Dethatchers",
+      "mapped_to": "Scarifiers & Aerators",
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "DCT38M-RDM",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Riding Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "DCT38M-SDM",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Mowers > Riding Mowers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "SBS40CB",
+      "shopify_category": "Hardware > Tool Accessories > Power Tool Batteries",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "SBSCDC",
+      "shopify_category": "Electronics > Electronics Accessories > Power > Battery Accessories > General Purpose Battery Chargers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "SBSCSC",
+      "shopify_category": "Hardware > Tool Accessories > Power Tool Chargers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "SBSCBC",
+      "shopify_category": "Hardware > Tool Accessories > Power Tool Chargers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "SBS20CB",
+      "shopify_category": "Electronics > Electronics Accessories > Power > Batteries > General Purpose Batteries",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "TG45SC",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Aerators & Dethatchers > Lawn Aerators",
+      "mapped_to": "Scarifiers & Aerators",
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "TG45SC-E",
+      "shopify_category": "Home & Garden > Lawn & Garden > Outdoor Power Equipment > Lawn Aerators & Dethatchers > Lawn Aerators",
+      "mapped_to": "Scarifiers & Aerators",
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "100134S",
+      "shopify_category": "Hardware > Tools > Masonry Tools > Cement Mixers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "100134O",
+      "shopify_category": "Hardware > Tools > Masonry Tools > Cement Mixers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    },
+    {
+      "sku": "100134Y-2",
+      "shopify_category": "Hardware > Tools > Masonry Tools > Cement Mixers",
+      "mapped_to": null,
+      "reason": "no config/range_category_map.json entry maps this Shopify category to a Range template (or the mapped leaf has no template). Add a mapping."
+    }
+  ],
+  "skus_not_found": [
+    "S154460",
+    "S154554",
+    "KT400-3"
+  ],
+  "single_template": false
+}
